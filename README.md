@@ -86,7 +86,7 @@ Over all 6,236 ayat:
 
 | oracle | result |
 |---|---|
-| **Trigger-span dataset** (independent, Dar al-Maarifah-derived; 60,057 annotations across 18 rule categories) | the engine matches **every correct annotation** (60,056 of 60,057). The one it refuses is an error in the dataset itself: at 17:7 the annotation reads the bare rasm as tabee'i, while the rasm literature states the recitation restores the elided waw and the madd is muttasil (al-Hujja 5:85; al-Muhkam 1:168). Matching it would mean reproducing a documented mistake |
+| **Trigger-span dataset** (independent, Dar al-Maarifah-derived; 60,057 annotations across 18 rule categories) | the engine's output is correct at every annotated position. 60,056 of the 60,057 third-party annotations match; the single exception at 17:7 is a wrong annotation in the third-party file itself (it reads the bare rasm as tabee'i; the rasm literature rules the recitation restores the elided waw and the madd is muttasil: al-Hujja 5:85, al-Muhkam 1:168). The engine refuses to reproduce that mistake |
 | **KFGQPC dabt witnesses** (~8,900 tanween sites) | **100% agreement** between derived rules and the written izhar, open-tanween, and iqlab forms |
 | **Cross-edition phone equality** (Tanzil vs KFGQPC) | **6,236/6,236 identical, no exceptions** (the last rasm variant, 17:7, resolved by the rasm literature; see the register) |
 | **Reference-engine differential** (char-level, whole corpus) | 98.9% ayah-exact; **every** remaining cluster carries a recorded verdict, including six classes where the classical sources rule against the reference implementation |
