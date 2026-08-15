@@ -649,3 +649,38 @@ lam + shadda in the dabt), so an explicitly sakin lam followed by an
 unshaddad shamsi letter cannot be the article. Corpus phones are
 untouched (wasl elides the hamza entirely; the frozen hash is
 unchanged), which is why only a morphology oracle could catch it.
+
+
+## SPEC-004 P2-full — mid-ayah waqf/resume (2026-08-15)
+
+`phonemize(..., waqf=WaqfSpec(stops=(k, ...)))` splits the decoded
+stream at the reciter's stops FIRST and runs every contextual phase per
+breath group (the plan's R100 ordering: no post-hoc un-application).
+Each segment independently takes ibtida' at its head (hamzat-wasl
+classes, R112 junction-shadda degemination generalizes to any resumed
+word, e.g. resuming at 2:26's written مَّا reads مَا) and pausal forms
+at its tail (iskan, 'iwad, marbuta, aared/leen reclassification,
+qalqalah kubra, waqf-conditional alif realization: a stop on أَنَا۠ or
+لَّٰكِنَّا۠ realizes the rectangular-zero alif).
+
+**Farsh now reachable and knobbed**: مِصْرَ waqf tafkheem (default, al-
+Nashr's ikhtiyar 2:105) / ٱلْقِطْرِ tarqeeq / فَأَسْرِ tarqeeq muqaddam
+(2:110) as _p12b matchers; سَلَٰسِلَا۟ waqf wajhan via
+`salasila_waqf_alif` (default False = the printed round-zero dabt);
+ءَاتَىٰنِۦَ waqf wajhan via `aataani_waqf_yaa` (default True = ithbat
+muqaddam, هداية القاري 2:544-545); أيه stops on the sakin haa (rasm-
+automatic).
+
+**Doctrine the segmentation encodes for free**: sakt is a WASL
+phenomenon — a stop at a sakt boundary (e.g. after مَنْ at 75:27)
+replaces the sakt with an ordinary waqf, which falls out of per-segment
+one-off application (the site guard skips when the site words are not
+in the segment).
+
+**Metamorphic invariants** (tests/test_p2_metamorphic.py, 32 sampled
+ayat x every stop position + cross-edition parity): segments tile the
+words; words before the stop and after the resumed word are phone-
+identical to the unstopped ayah; every segment ends pause-legal. The
+sweep caught FOUR segmentation bugs on first run (three unguarded P13
+site lookups + the tasheel matcher grabbing the first madd after the
+mark instead of the madd AT the mark).

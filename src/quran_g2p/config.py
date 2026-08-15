@@ -58,6 +58,13 @@ class HafsConfig:
     misr_waqf_tafkheem: bool = True
     qitr_waqf_tafkheem: bool = False
     asr_waqf_tafkheem: bool = False
+    # 76:4 سَلَٰسِلَا۟ waqf: wajhan from the Shatibiyyah; the printed
+    # round-zero dabt selects HADHF (default); ithbat = the other wajh
+    # (النويري 2:603؛ العميد 1:160-161؛ هداية القاري 2:526).
+    salasila_waqf_alif: bool = False
+    # 27:36 ءَاتَىٰنِۦَ waqf: wajhan; ITHBAT of the sakin yaa muqaddam
+    # (هداية القاري 2:544-545؛ الوجيز 1:55-56). False = hadhf wajh.
+    aataani_waqf_yaa: bool = True
 
     # --- madd lengths (P10; SPEC-18x) -----------------------------------
     # Canonical emission choices; allowed/scoring sets live in the rules.

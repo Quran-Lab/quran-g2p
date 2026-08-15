@@ -55,13 +55,36 @@ def phonemize(text: str, edition: str, ref: AyahRef | None = None,
               waqf: WaqfSpec | None = None) -> PhonemizeResult:
     config = config or HafsConfig()
     waqf = waqf or WaqfSpec.ayah_end()
-    if waqf.stops:
-        raise NotImplementedError("mid-ayah stops land with full P2")
     ctx = run(text, edition=edition, ref=ref, config=config)
 
-    segs = list(ctx.segs)
+    all_segs = list(ctx.segs)
     trace = list(ctx.trace)
 
+    # P2 (R100): split at the reciter's stops FIRST; every contextual
+    # phase then runs per breath group, so pausal forms, ibtida', and
+    # junction rules all see exactly the context the recitation has.
+    n_words = max((s.word_index for s in all_segs), default=0) + 1
+    stops = sorted(set(waqf.stops))
+    if any(k < 0 or k >= n_words - 1 for k in stops):
+        raise ValueError(f"waqf stop out of range for {n_words}-word text: "
+                         f"{stops}")
+    bounds = stops + [n_words - 1]
+    groups: list[list] = [[] for _ in bounds]
+    for seg in all_segs:
+        for gi, k in enumerate(bounds):
+            if seg.word_index <= k:
+                groups[gi].append(seg)
+                break
+
+    segments = []
+    for gi, group in enumerate(groups):
+        kind = "ayah_end" if gi == len(groups) - 1 else f"waqf@{bounds[gi]}"
+        segments.append(Segment(_run_phases(group, trace, config, ref, ctx),
+                                kind))
+    return PhonemizeResult(segments=segments, trace=trace)
+
+
+def _run_phases(segs, trace, config, ref, ctx):
     segs = _p3_ibtida(segs, trace)
     segs = _p3_strip_initial_shadda(segs, trace)
     segs = _p4_pausal(segs, trace)
@@ -73,8 +96,8 @@ def phonemize(text: str, edition: str, ref: AyahRef | None = None,
     phones = _p11_qalqalah(phones, trace)
     phones = _p12_tafkheem(phones, trace, config)
     phones = _p12b_waqf_ra_khilaf(phones, trace, config)
-    phones = _p13_oneoffs(phones, trace, ref, ctx)
-    return PhonemizeResult(segments=[Segment(phones, "ayah_end")], trace=trace)
+    phones = _p13_oneoffs(phones, trace, ref, ctx, config)
+    return phones
 
 
 # --- P3 -----------------------------------------------------------------
@@ -608,7 +631,8 @@ def _p12_tafkheem(phones: list[Phone], trace, config: HafsConfig) -> list[Phone]
 
 # --- P13: Hafs one-off events (SPEC-132, 220, 221, 222) -------------------
 
-def _p13_oneoffs(phones: list[Phone], trace, ref, ctx) -> list[Phone]:
+def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
+                 config: HafsConfig | None = None) -> list[Phone]:
     from dataclasses import replace as _replace
     from . import codepoints as cp
 
@@ -646,7 +670,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx) -> list[Phone]:
                 if p.word_index == word and (base is None or p.base is base)
                 and (base is None or _sakin(i))]
         if not idxs:
-            raise DecodeError(f"R132 sakt target not found at {key}")
+            return out  # site word not in this waqf segment (sakt is wasl-only)
         i = idxs[-1] if base is None else idxs[0]
         app = RuleApp("R132_SAKT", "SPEC-132", out[i].src_span)
         trace.append(app)
@@ -661,8 +685,11 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx) -> list[Phone]:
         # The imala mark occupies the reh's vowel slot in the rasm, so the reh
         # decoded bare with the dagger madd right after: reh -> reh,
         # +FATHA_IMALA inserted, madd -> ALEF_IMALA, all moraqaq.
-        reh_i = next(i for i, p in enumerate(out)
-                     if p.base is Base.REH and p.src_span[0] == pos[0] - 1)
+        reh_i = next((i for i, p in enumerate(out)
+                      if p.base is Base.REH and p.src_span[0] == pos[0] - 1),
+                     None)
+        if reh_i is None:
+            return out  # site in the other waqf segment
         app = RuleApp("R221_IMALA", "SPEC-221", out[reh_i].src_span)
         trace.append(app)
         host = out[reh_i]
@@ -681,8 +708,12 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx) -> list[Phone]:
         pos = mark_positions({cp.ROUNDED_HIGH_STOP_WITH_FILLED_CENTRE,
                               cp.EMPTY_CENTRE_HIGH_STOP})
         assert pos, "tasheel witness missing"
-        target = next(i for i, p in enumerate(out)
-                      if p.kind == "madd" and p.src_span[0] >= pos[0] - 1)
+        target = next((i for i, p in enumerate(out)
+                       if p.kind == "madd"
+                       and pos[0] - 1 <= p.src_span[0] <= pos[0] + 1),
+                      None)
+        if target is None:
+            return out  # site in the other waqf segment
         app = RuleApp("R222_TASHEEL", "SPEC-222", out[target].src_span)
         trace.append(app)
         host = out[target]
@@ -733,12 +764,44 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx) -> list[Phone]:
     # R220 — ishmam 12:11 (Tanzil U+06EB; KFGQPC U+06EC): attribute event on
     # the geminated noon of ta'manna.
     if key == (12, 11):
-        noon_i = next(i for i, p in enumerate(out)
-                      if p.base is Base.NOON and p.geminated)
-        app = RuleApp("R220_ISHMAM", "SPEC-220", out[noon_i].src_span)
+        noon_i = next((i for i, p in enumerate(out)
+                       if p.base is Base.NOON and p.geminated), None)
+        if noon_i is not None:
+            app = RuleApp("R220_ISHMAM", "SPEC-220", out[noon_i].src_span)
+            trace.append(app)
+            out[noon_i] = _replace(out[noon_i],
+                                   provenance=out[noon_i].provenance + (app,))
+
+    # R190B — سَلَٰسِلَا۟ 76:4 waqf wajhan (SPEC-184): the printed dabt is
+    # hadhf (default); the ithbat wajh appends the itlaq alif on the lam.
+    if (key == (76, 4) and config is not None and config.salasila_waqf_alif
+            and len(out) >= 3 and out[-1].base is Base.LAM
+            and out[-1].kind == "consonant"
+            and out[-2].base is Base.KASRA and out[-3].base is Base.SEEN):
+        app = RuleApp("R190B_SALASILA_ITHBAT", "SPEC-184", out[-1].src_span)
         trace.append(app)
-        out[noon_i] = _replace(out[noon_i],
-                               provenance=out[noon_i].provenance + (app,))
+        lam = out[-1]
+        out.append(Phone(base=Base.FATHA, kind="vowel", geminated=False,
+                         length=None, ghunna=None, qalqalah=None,
+                         tafkheem="moraqaq", sakt_after=False,
+                         pausal_role="pausal", provenance=(app,),
+                         src_span=lam.src_span, word_index=lam.word_index))
+        out.append(Phone(base=Base.ALEF_MADD, kind="madd", geminated=False,
+                         length=_TABEEI, ghunna=None, qalqalah=None,
+                         tafkheem="moraqaq", sakt_after=False,
+                         pausal_role="pausal", provenance=(app,),
+                         src_span=lam.src_span, word_index=lam.word_index))
+
+    # R190C — ءَاتَىٰنِۦَ 27:36 waqf wajhan (SPEC-184): ithbat of the sakin
+    # yaa is muqaddam (default, the yaa stands as the madd letter); the
+    # hadhf wajh stops on the sakin noon.
+    if (key == (27, 36) and config is not None and not config.aataani_waqf_yaa
+            and len(out) >= 3 and out[-1].base is Base.YEH_MADD
+            and out[-2].base is Base.KASRA and out[-3].base is Base.NOON):
+        app = RuleApp("R190C_AATAANI_HADHF", "SPEC-184", out[-1].src_span)
+        trace.append(app)
+        out = out[:-2]
+        out[-1] = _replace(out[-1], provenance=out[-1].provenance + (app,))
     return out
 
 
@@ -770,6 +833,18 @@ def _p12b_waqf_ra_khilaf(phones: list[Phone], trace, config: HafsConfig) -> list
             and prev is not None and prev.base is Base.SEEN):
         knob = config.yasr_waqf_tafkheem
         note = "yasr"
+    elif (letters[-3:] == (Base.MEEM, Base.SAD, Base.REH)
+            and prev is not None and prev.base is Base.SAD):
+        # definite مِصْرَ (the tanween form ends in 'iwad alif and never
+        # reaches here): tafkheem is al-Nashr's ikhtiyar (2:105)
+        knob = config.misr_waqf_tafkheem
+        note = "misr"
+    elif (letters[-3:] == (Base.HAMZA, Base.SEEN, Base.REH)
+            and prev is not None and prev.base is Base.SEEN):
+        # أَسْرِ / فَأَسْرِ: tarqeeq muqaddam (kasrat al-binaa, al-Nashr
+        # 2:110)
+        knob = config.asr_waqf_tafkheem
+        note = "asr"
     if knob is None:
         return out
     level = "mofakham" if knob else "moraqaq"
