@@ -388,7 +388,7 @@ Engine status: all EIGHT sites emit the sourced phones from the pinned
 rasm alone (verified 2026-08-15, both editions agree). No code change was
 needed — this round was pure verification + goldens.
 
-**Second-retrieval refinements (2026-08-15, same day):**
+**Further source refinements (2026-08-15):**
 - **The يَرْضَهُ «qasr» carries an interpretation khilaf**: Ibn al-Qasih
   glosses it «يعني باختلاس ضمة الهاء» (سراج القارئ 1:47) while the
   received Hafs ada' is a FULL damma bila silah (and Abu Shama's «له
@@ -407,7 +407,7 @@ needed — this round was pure verification + goldens.
 - The hasr is re-confirmed complete: five silah/qasr/iskan specials +
   the two damm specials = our eight sites exactly.
 
-**RESOLVED (5th retrieval, 2026-08-15) — rawm/ishmam on the pronoun haa:**
+**RESOLVED (2026-08-15) — rawm/ishmam on the pronoun haa:**
 the three madhahib of النشر 2:124-125 with Ibn al-Jazari's own tarjih:
 jawaz mutlaqan (التيسير، التجريد، التلخيص، الإرشاد، الكفاية؛ اختيار ابن
 مجاهد) / man' mutlaqan (the haraka is 'arida; ZAHIR of the Shatibiyyah;
@@ -487,7 +487,7 @@ obligations («الأحكام التي تجب لحفص حال القصر في ا
 `aataani_waqf_yaa` default True (ithbat).
 
 **أيه ×3 (43:49، 24:31، 55:31) — RESOLVED from the local corpus,
-cross-validated by a second remote retrieval**: الشاطبية بيت 382 «ويا
+confirmed by independent source checks**: الشاطبية بيت 382 «ويا
 أيها فوق الدخان وأيها لدى النور والرحمن رافقن حملا»؛ الوافي 1:182
 («فإذا وقفوا أسكنوا الهاء... مرسوم المصاحف... بحذف الألف»). Waqf
 bil-haa (sakin) following the rasm for Hafs — «فوقف عليه بالألف في
@@ -558,7 +558,7 @@ projection: **inhiraf (ل ر)** and **idhlaq/ismat (فر من لب)**. Both
 added — the table now carries the Jazariyya's full seventeen. (Leen as a
 sifa needs neighbor context and stays with the madd machinery.)
 
-**Bayt-verified (17th RAG round)**: the Jazariyya's sifat bayts 20-26
+**Bayt-verified against the matn**: the Jazariyya's sifat bayts 20-26
 (المقدمة 1:59-61) list all thirteen named sets exactly as implemented —
 «مهموسها فحثه شخص سكت / شديدها لفظ أجد قط بكت / وبين رخو والشديد لن عمر
 / وسبع علو خص ضغط قظ حصر / وصاد ضاد طاء ظاء مطبقه / وفر من لب الحروف
