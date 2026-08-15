@@ -89,6 +89,9 @@ def find_seq(phones, constraints, start_at=0):
 @pytest.mark.parametrize(
     "row", GOLDENS, ids=[r.get("id", f"row{i}") for i, r in enumerate(GOLDENS)])
 def test_golden(row):
+    if row.get("review_only"):
+        pytest.skip("statement ruling for the expert packet; engine "
+                    "coverage lives in the dedicated python tests")
     ph = phones_for(row)
     if "expect" in row:
         assert find_seq(ph, row["expect"]) >= 0, (
