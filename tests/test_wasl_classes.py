@@ -96,3 +96,16 @@ def test_17_7_liyasuu_restored_waw_both_editions():
         assert ph[i + 3].base is Base.HAMZA, edition
         assert ph[i + 4].base is Base.DAMMA, edition
         assert ph[i + 5].kind == "madd", edition
+
+
+def test_iltaqa_family_is_verb_not_article():
+    # QAC oracle catch: form-VIII verbs of root l-q-y begin with a ROOT lam,
+    # not the article; ibtida' = hamza + KASRA (iftiʿal wasl rule), never
+    # the article's fath. Sites: 3:155 ٱلْتَقَى, 3:13 ٱلْتَقَتَا, 8:44
+    # ٱلْتَقَيْتُمْ.
+    for s, a, prefix in ((3, 155, "ٱلْتَقَى"), (3, 13, "ٱلْتَقَتَا"),
+                         (8, 44, "ٱلْتَقَيْتُ")):
+        ayah = TB.ayah(AyahRef(s, a))
+        w = next(w for w in ayah.split(" ") if w.startswith(prefix))
+        ph = start_of(w)
+        assert ph[0].base is Base.HAMZA and ph[1].base is Base.KASRA, (s, a)

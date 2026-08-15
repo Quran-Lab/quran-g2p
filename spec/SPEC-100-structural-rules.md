@@ -628,3 +628,24 @@ site); v1 ayah-end scope contains no open-taa waqf site (all mudaf,
 mid-ayah) → P2-full inherits the behavior automatically. Cross-ref: the
 open-taa waqf keeps rawm/ishmam (the taa bears the i'rab) per النشر
 2:126 — already in the isharah gate's written-taa note.
+
+
+## SPEC-110 addendum — the QAC morphology oracle + the iltaqa fix (2026-08-15)
+
+The Quranic Arabic Corpus morphology v0.4 (Kais Dukes; official
+distribution verified byte-identical across three supply chains, pinned
+sha256 a1d12923...) is now wired as the fifth oracle: every
+wasl-initial word's ibtida' class is checked against its POS tag
+(tools/qac_crosscheck.py; tests/test_qac_crosscheck.py; ~2,000 unique
+pairs, zero disagreements; four QAC/Tanzil tokenization variants
+excluded with reason: بعد ما ×3 merged, إل ياسين merged).
+
+**Engine fix the oracle forced (R110)**: the iltaqa family (ٱلْتَقَى
+3:155، ٱلْتَقَتَا 3:13، ٱلْتَقَيْتُمْ 8:44) is form VIII of the
+lam-initial root ل-ق-ي; the opening lam is a RADICAL, not the article,
+and ibtida' takes KASRA by the verb rule. Structural distinguisher, no
+hasr list: the article before a shamsi letter always assimilates (bare
+lam + shadda in the dabt), so an explicitly sakin lam followed by an
+unshaddad shamsi letter cannot be the article. Corpus phones are
+untouched (wasl elides the hamza entirely; the frozen hash is
+unchanged), which is why only a morphology oracle could catch it.

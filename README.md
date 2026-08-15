@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tests-421%20passing-brightgreen" alt="tests">
+  <img src="https://img.shields.io/badge/tests-425%20passing-brightgreen" alt="tests">
   <img src="https://img.shields.io/badge/riwaya-Hafs%20%CA%BFan%20%CA%BFAsim%20(al--Shatibiyyah)-0b3d2e" alt="riwaya">
   <img src="https://img.shields.io/badge/license-Apache--2.0-blue" alt="license">
 </p>
@@ -29,7 +29,7 @@ building open technology in the service of the Quran.
 | `src/quran_g2p/` | the engine: pinned text loading, orthographic decode, 14 rule phases, typed phone IR with full provenance |
 | `spec/` | the normative specification, every rule with its classical basis |
 | `artifacts/tokenizer_tj1/` | `tokens.txt` (234 tokens including the `~` ghunna axis, blank last, hash-manifested), `vocab_manifest.json`, `ayah_tokens.jsonl`, `rule_index.jsonl` (set-valued prescriptions), `quran_labels_v1.jsonl` (dual-format labels), `bijection_old250.json` (warm-start map) |
-| `tests/` | 421 tests: golden ayat (177 reviewable YAML rows in `tests/goldens/`), corpus invariants, oracle gates, a 25-mutant seeded-bug drill, frozen determinism hash |
+| `tests/` | 425 tests: golden ayat (177 reviewable YAML rows in `tests/goldens/`), corpus invariants, oracle gates, a 25-mutant seeded-bug drill, frozen determinism hash |
 | `tests/verdicts/` | the differential triage record: every disagreement with the reference implementation, verdicted with citations |
 
 ## Quick start
@@ -38,7 +38,7 @@ building open technology in the service of the Quran.
 git clone https://github.com/Muno459/quran-g2p
 cd quran-g2p
 pip install -e .
-python -m pytest tests/   # 421 tests, no GPU needed
+python -m pytest tests/   # 425 tests, no GPU needed
 ```
 
 ```python
@@ -90,6 +90,7 @@ Over all 6,236 ayat:
 | **KFGQPC dabt witnesses** (~8,900 tanween sites) | **100% agreement** between derived rules and the written izhar, open-tanween, and iqlab forms |
 | **Cross-edition phone equality** (Tanzil vs KFGQPC) | **6,236/6,236 identical, no exceptions** (the last rasm variant, 17:7, resolved by the rasm literature; see the register) |
 | **Reference-engine differential** (char-level, whole corpus) | 98.9% ayah-exact; **every** remaining cluster carries a recorded verdict, including six classes where the classical sources rule against the reference implementation |
+| **QAC morphology cross-check** (the Quranic Arabic Corpus, Kais Dukes; pinned sha256) | every hamzat-al-wasl word class-checked against the POS tags: **~2,000 unique word/class pairs, zero disagreements** (the oracle caught and fixed one ibtida' bug on first contact) |
 | **Seeded-bug drill** | 25 hand-designed mutants, 100% kill rate |
 | **Determinism** | frozen corpus hash; every intentional change logged with its ruling |
 
@@ -215,14 +216,15 @@ closed on any drift.
 - **[quran-tajweed](https://github.com/cpfair/quran-tajweed)** tajweed
   span annotations (Dar al-Maarifah-derived), with the project's own
   pinned base text: the independent trigger-span oracle.
-- **The Quranic Arabic Corpus** morphology by Kais Dukes
-  ([corpus.quran.com](https://corpus.quran.com)): POS cross-check for the
-  hamzat al-wasl word classes.
+- **The Quranic Arabic Corpus** morphology v0.4 by Kais Dukes
+  ([corpus.quran.com](https://corpus.quran.com)), vendored verbatim with
+  its GPL copyright block intact and pinned by SHA-256: the POS oracle
+  for the hamzat al-wasl word classes (see the validation table).
 
 ## Status
 
 The engine core, token layer, warm-start bijection, and validation harness
-are complete and green (421 tests). In progress: mid-ayah waqf and resume
+are complete and green (425 tests). In progress: mid-ayah waqf and resume
 segmentation, the alignment-based realized-length pipeline (with a blind
 fixed-madd recovery gate before any corpus relabeling), and the downstream
 ASR integration.

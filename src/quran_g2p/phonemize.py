@@ -90,7 +90,22 @@ def _p3_ibtida(segs, trace):
 
     nxt = segs[1] if len(segs) > 1 else None
     letters = word_letters_after_wasla(segs, head.word_index)
-    if isinstance(nxt, ConsSeg) and nxt.letter is Base.LAM:
+    # A lam can open a VERB's radicals (form-VIII of lam-initial roots:
+    # ٱلْتَقَى، ٱلْتَقَتَا، ٱلْتَقَيْتُمْ — QAC oracle catch). The article
+    # before a shamsi letter always assimilates (bare lam + shadda in the
+    # dabt), so an explicitly sakin lam followed by an UNshaddad shamsi
+    # letter cannot be the article.
+    _SHAMSI = {Base.TEH, Base.THEH, Base.DAL, Base.THAL, Base.REH, Base.ZAIN,
+               Base.SEEN, Base.SHEEN, Base.SAD, Base.DAD, Base.TAH, Base.ZAH,
+               Base.LAM, Base.NOON}
+    nxt2 = segs[2] if len(segs) > 2 else None
+    lam_is_article = (isinstance(nxt, ConsSeg) and nxt.letter is Base.LAM
+                      and not (nxt.vowel is None and nxt.shadda is False
+                               and isinstance(nxt2, ConsSeg)
+                               and nxt2.letter in _SHAMSI
+                               and not nxt2.shadda
+                               and nxt2.letter is not Base.LAM))
+    if lam_is_article:
         # Definite article: hamza + FATHA (R110).
         vq, note = VQ.A, "article->a"
     elif is_wasl_noun(letters):
