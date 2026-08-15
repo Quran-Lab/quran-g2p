@@ -30,7 +30,7 @@ building open technology in the service of the Quran.
 | `spec/` | the normative specification, every rule with its classical basis |
 | `artifacts/tokenizer_tj1/` | `tokens.txt` (234 tokens including the `~` ghunna axis, blank last, hash-manifested), `vocab_manifest.json`, `ayah_tokens.jsonl`, `rule_index.jsonl` (set-valued prescriptions), `quran_labels_v1.jsonl` (dual-format labels), `bijection_old250.json` (warm-start map) |
 | `tests/` | 497 tests: golden ayat (177 reviewable YAML rows in `tests/goldens/`), corpus invariants, oracle gates, a 25-mutant seeded-bug drill, frozen determinism hash |
-| `tests/verdicts/` | the differential triage record: every disagreement with the reference implementation, verdicted with citations |
+| `tests/verdicts/` | the differential triage record: every disagreement with quran-transcript, verdicted with citations |
 
 ## Quick start
 
@@ -89,7 +89,7 @@ Over all 6,236 ayat:
 | **Trigger-span dataset** (independent, Dar al-Maarifah-derived; 60,057 annotations across 18 rule categories) | the engine's output is correct at every annotated position. 60,056 of the 60,057 third-party annotations match; the single exception at 17:7 is a wrong annotation in the third-party file itself (it reads the bare rasm as tabee'i; the rasm literature rules the recitation restores the elided waw and the madd is muttasil: al-Hujja 5:85, al-Muhkam 1:168). The engine refuses to reproduce that mistake |
 | **KFGQPC dabt witnesses** (~8,900 tanween sites) | **100% agreement** between derived rules and the written izhar, open-tanween, and iqlab forms |
 | **Cross-edition phone equality** (Tanzil vs KFGQPC) | **6,236/6,236 identical, no exceptions** (the last rasm variant, 17:7, resolved by the rasm literature; see the register) |
-| **Reference-engine differential** (char-level, whole corpus) | 98.9% ayah-exact; **every** remaining cluster carries a recorded verdict, including six classes where the classical sources rule against the reference implementation |
+| **Differential vs quran-transcript** (char-level, whole corpus) | 98.9% ayah-exact; **every** remaining cluster carries a recorded verdict, including six classes where the classical sources rule against it |
 | **QAC morphology cross-check** (the Quranic Arabic Corpus, Kais Dukes; pinned sha256) | every hamzat-al-wasl word class-checked against the POS tags: **~2,000 unique word/class pairs, zero disagreements** (the oracle caught and fixed one ibtida' bug on first contact) |
 | **Seeded-bug drill** | 25 hand-designed mutants, 100% kill rate |
 | **Determinism** | frozen corpus hash; every intentional change logged with its ruling |
@@ -216,6 +216,15 @@ closed on any drift.
 - **[quran-tajweed](https://github.com/cpfair/quran-tajweed)** tajweed
   span annotations (Dar al-Maarifah-derived), with the project's own
   pinned base text: the independent trigger-span oracle.
+- **quran-transcript** by Abdullah Aml (the المعلم القرآني project): the
+  pioneering open tajweed phonetizer. This engine was built clean-room
+  from the classical sources and shares none of its code, but
+  quran-transcript served as the differential baseline for our
+  validation: a character-level comparison across all 6,236 ayat, on
+  which the two independent implementations agree at 98.9%. Every
+  divergence carries a sourced verdict in `tests/verdicts/`. That a
+  volunteer-built system stood at this level against a specification
+  built directly from the books is a testament to its author's care.
 - **The Quranic Arabic Corpus** morphology v0.4 by Kais Dukes
   ([corpus.quran.com](https://corpus.quran.com)), vendored verbatim with
   its GPL copyright block intact and pinned by SHA-256: the POS oracle
