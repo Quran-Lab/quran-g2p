@@ -3,11 +3,11 @@ Version 1.1 (NPL-1.1)
 
 Copyright (c) 2026 Muno459 / Quran-Lab
 
-This model, including its weights, configuration, tokenizer, code, and any
-file distributed alongside it (the "Model"), is made available under the
-following terms. By downloading, using, running, copying, or adapting the
-Model, you agree to these terms. If you do not agree, you may not use the
-Model.
+This work, including its source code, specification documents, data
+artifacts, token lexicon, generated labels, and any file distributed
+alongside it (the "Work"), is made available under the following terms.
+By downloading, using, running, copying, or adapting the Work, you agree
+to these terms. If you do not agree, you may not use the Work.
 
 Changes from Version 1.0: the attribution requirement has been removed. No
 credit of any kind is required. Everything else is unchanged.
@@ -16,22 +16,24 @@ credit of any kind is required. Everything else is unchanged.
 
    "You" means the individual or entity exercising rights under this License.
 
-   "Derivative" means any work based on the Model, including any fine-tune,
-   further training, quantization, distillation, pruning, format conversion,
-   or re-export, and any model, file, or artifact produced from the Model or
-   from another Derivative.
+   "Derivative" means any work based on the Work, including any
+   modification, fork, port, translation, format conversion, or re-export,
+   any dataset, lexicon, label set, or artifact produced from the Work,
+   any machine-learning model trained, fine-tuned, aligned, or evaluated
+   using the Work or its outputs, and any model, file, or artifact
+   produced from the Work or from another Derivative.
 
    "Profit" means any financial gain, revenue, or benefit obtained in
-   connection with the Model or a Derivative, whether direct or indirect. This
+   connection with the Work or a Derivative, whether direct or indirect. This
    includes sale, licensing for a fee, paid products or features, paid
    subscriptions, advertising revenue, and use as part of, or in support of,
    any revenue-generating product, service, or operation.
 
-   "Hosted Service" means making the Model or a Derivative available to other
+   "Hosted Service" means making the Work or a Derivative available to other
    people over a network, for example through an API, a web application, or an
    inference endpoint.
 
-   "Local Use" means running the Model or a Derivative for yourself, on your
+   "Local Use" means running the Work or a Derivative for yourself, on your
    own device or infrastructure, without making it available to other people
    over a network.
 
@@ -46,62 +48,62 @@ credit of any kind is required. Everything else is unchanged.
 
    Subject to the conditions below, You are granted a worldwide, royalty-free,
    non-exclusive, non-transferable license to use, run, copy, and create
-   Derivatives of the Model, solely for non-profit purposes.
+   Derivatives of the Work, solely for non-profit purposes.
 
 3. NO PROFIT
 
-   You may not use the Model or any Derivative to obtain Profit. No sale, no
+   You may not use the Work or any Derivative to obtain Profit. No sale, no
    paid product or feature, no paid subscription, no advertising monetization,
    and no use as part of or in support of any revenue-generating product,
    service, or operation is permitted.
 
    This applies to the app or service as a whole, not only to the feature that
-   uses the Model. An application that charges its users for anything, even for
-   features unrelated to the Model, is a revenue-generating product and is not
-   permitted to include the Model.
+   uses the Work. An application that charges its users for anything, even for
+   features unrelated to the Work, is a revenue-generating product and is not
+   permitted to include the Work.
 
 4. LOCAL USE MUST BE FREE
 
    Local Use must be free of charge. No money may change hands in connection
-   with Local Use of the Model or a Derivative.
+   with Local Use of the Work or a Derivative.
 
 5. HOSTED SERVICE: COST RECOVERY ONLY
 
-   You may operate the Model or a Derivative as a Hosted Service only on a
+   You may operate the Work or a Derivative as a Hosted Service only on a
    Cost Recovery basis. You may recover from users no more than Cost Recovery
    as defined above, and never any amount that yields Profit. On reasonable
    request, You must be able to demonstrate that the amounts charged do not
    exceed Cost Recovery.
 
-   Cost Recovery covers the cost of running the Model for a user. It does not
+   Cost Recovery covers the cost of running the Work for a user. It does not
    cover development time, effort, expertise, support, or a service fee, and no
-   user may be denied the Model for declining to pay.
+   user may be denied the Work for declining to pay.
 
 6. NO ATTRIBUTION REQUIRED
 
    No credit, acknowledgement, or attribution to the author is required, in any
    form, anywhere. You must retain this License file when you distribute the
-   Model or a Derivative (see Section 7), but you owe the author no mention.
+   Work or a Derivative (see Section 7), but you owe the author no mention.
 
 7. SHARE-ALIKE
 
    You must distribute and make available every Derivative under this same
    License, Version 1.1, with no additional or different terms. You may not
-   sublicense the Model or a Derivative under any other license, and You may
+   sublicense the Work or a Derivative under any other license, and You may
    not relicense a Derivative to remove or weaken these terms.
 
 8. UPSTREAM COMPONENTS
 
-   Where this Model builds on upstream components released under other terms,
+   Where this Work builds on upstream components released under other terms,
    those components retain their own terms for their original portions, and
-   this License governs the Model as distributed in this repository. Nothing
+   this License governs the Work as distributed in this repository. Nothing
    here purports to revoke any rights granted by an upstream license for the
    original upstream material. Any upstream components are identified in the
    repository README.
 
 9. NO COMMERCIAL LICENSE
 
-   There is no commercial license for this Model and none will be granted. It
+   There is no commercial license for this Work and none will be granted. It
    is not available for a fee, a revenue share, a one-time payment, or any
    other arrangement. If your use requires Profit as defined above, you do not
    have a license under these terms and no separate license is obtainable.
@@ -113,20 +115,20 @@ credit of any kind is required. Everything else is unchanged.
 
 11. NO WARRANTY
 
-   The Model is provided "as is", without warranty of any kind, express or
+   The Work is provided "as is", without warranty of any kind, express or
    implied, including but not limited to the warranties of merchantability,
    fitness for a particular purpose, and noninfringement. In no event shall
    the authors or copyright holders be liable for any claim, damages, or other
-   liability arising from or in connection with the Model or its use.
+   liability arising from or in connection with the Work or its use.
 
 12. NOT LEGAL ADVICE
 
-   This License text sets out the author's terms of use for the Model. It is
+   This License text sets out the author's terms of use for the Work. It is
    not, and does not constitute, legal advice.
 
 ---
 
-This Model is shared freely for the sake of Allah, so that it reaches as many
+This work is shared freely for the sake of Allah, so that it reaches as many
 people as possible and so that whoever builds on it does so as sadaqah.
 
   وَما أَسأَلُكُم عَلَيهِ مِن أَجرٍ إِن أَجرِيَ إِلّا عَلىٰ رَبِّ العالَمِين
