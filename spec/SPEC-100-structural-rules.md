@@ -684,3 +684,34 @@ identical to the unstopped ayah; every segment ends pause-legal. The
 sweep caught FOUR segmentation bugs on first run (three unguarded P13
 site lookups + the tasheel matcher grabbing the first madd after the
 mark instead of the madd AT the mark).
+
+
+## SPEC-123b — waqf-variant enumeration (2026-08-15)
+
+`variants.enumerate_variants(...)` surfaces, per segment, the tagged
+waqf alternates the grading layer consumes: sukun (canonical, always
+first), rawm and ishmam wherever the five-sanf taxonomy permits (the
+`isharah_modes` gate; the dropped haraka is recovered from the P4 rule
+notes), and the transmitted site wajhs (تأمنا ikhtilas with the
+mukhtalasa damma; سلاسلا ithbat; آتاني hadhf). Under rawm the 'aared
+madd reverts to qasr and the final letter loses its qalqalah (it is no
+longer fully sakin); ishmam leaves the sukun phones intact and tags the
+final letter (visual only). A final haa after a vowel or madd is
+conservatively treated as the pronoun (withholds the isharah, never
+emits it illegally). Ambiguity is enumerated, never averaged.
+
+## SPEC-005b — concat implementation (2026-08-15)
+
+`concat.phonemize_concat(items, edition)` joins consecutive ayat in
+wasl: each ayah decodes with its own ref (site tables, dabt), the seg
+streams merge with char/word offsets, and the phase chain runs once, so
+every junction rule fires across ayah boundaries (verified: wasl
+elision 2:2→3, noon al-wiqaya + jalala tarqeeq 112:1→2, the printed
+Anfal→Tawba iqlab 8:75→9:1). Cross-ayah specials: الم+الله (connective
+FATHA + jalala mofakham, the meem-name's lazim untouched); عوجا's
+'iwad-alif stands in wasl BY THE RASM (no repair needed) and its sakt
+site joins sakt_targets with the general guard that a sakt target must
+not be a segment's last phone (sakt is wasl-only, moot at any stop);
+ماليه هلك izhar-with-sakt muqaddam (the h+h idgham broken at that
+junction). Basmala policy is compositional per SPEC-005; the forbidden
+fourth join is documented at the API.

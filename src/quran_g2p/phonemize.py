@@ -206,7 +206,8 @@ def _p4_pausal(segs, trace):
                               prev.shadda, prev.hamza_carrier, prev.madda,
                               False, prev.span, prev.word_index)
             trace.append(RuleApp("R183_SILAH_WAQF_DROP", "SPEC-183", prev.span))
-            trace.append(RuleApp("R120_ISKAN", "SPEC-120", prev.span))
+            trace.append(RuleApp("R120_ISKAN", "SPEC-120", prev.span,
+                                 note=f"silah:{prev.vowel.value if prev.vowel else '?'}"))
             return out
         # R121 madd al-'iwad: a final madd seat after tanween-fath replaces
         # the tanween at waqf (هُدًى -> hudaa). Drop the tanween, keep fatha.
@@ -241,11 +242,15 @@ def _p4_pausal(segs, trace):
                                  note="seatless"))
             return out
         # damm/kasr tanween drop at waqf (R120).
+        q = tanween.quality.value
         tanween = None
-        trace.append(RuleApp("R120_ISKAN", "SPEC-120", last.span, note="tanween"))
+        trace.append(RuleApp("R120_ISKAN", "SPEC-120", last.span,
+                             note=f"tanween:{q}"))
     elif vowel is not None:
+        q = vowel.value
         vowel = None
-        trace.append(RuleApp("R120_ISKAN", "SPEC-120", last.span))
+        trace.append(RuleApp("R120_ISKAN", "SPEC-120", last.span,
+                             note=f"iskan:{q}"))
     out[-1] = ConsSeg(letter, vowel, tanween, last.sukun or SukunKind.MARKED,
                       last.shadda, last.hamza_carrier, last.madda,
                       last.iqlab_mark, last.span, last.word_index)
@@ -638,7 +643,9 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
 
     if ref is None:
         return phones
-    key = (ref.surah, ref.ayah)
+    refs = ref if isinstance(ref, tuple) else (ref,)
+    keys = {(r.surah, r.ayah) for r in refs}
+    key = (refs[0].surah, refs[0].ayah)
     out = list(phones)
 
     def mark_positions(markset):
@@ -661,17 +668,21 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
         (75, 27): (Base.NOON, 1),   # وَقِيلَ(0) مَنْ(1)ۜ رَاقٍ
         (83, 14): (Base.LAM, 1),    # كَلَّا(0) بَلْ(1)ۜ رَانَ — the SAKIN lam
         (36, 52): (None, 5),        # مِن مَّرْقَدِنَا(5)ۜ هَٰذَا
+        (18, 1): (None, 10),        # عِوَجَا(10)ۜ — obligatory in wasl only
     }
-    if key in sakt_targets:
+    for key in (keys & set(sakt_targets)):
         base, word = sakt_targets[key]
+        word += getattr(ctx, "word_offsets", {}).get(key, 0)
         def _sakin(i):
             return i + 1 >= len(out) or out[i + 1].kind != "vowel"
         idxs = [i for i, p in enumerate(out)
                 if p.word_index == word and (base is None or p.base is base)
                 and (base is None or _sakin(i))]
         if not idxs:
-            return out  # site word not in this waqf segment (sakt is wasl-only)
+            continue  # site word not in this waqf segment (sakt is wasl-only)
         i = idxs[-1] if base is None else idxs[0]
+        if i >= len(out) - 1:
+            continue  # sakt needs a continuation: moot at a segment end
         app = RuleApp("R132_SAKT", "SPEC-132", out[i].src_span)
         trace.append(app)
         out[i] = _replace(out[i], sakt_after=True,
@@ -679,7 +690,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
 
     # R221 — imala 11:41 (U+06EA witness): reh's fatha -> fatha_imala, the
     # dagger madd -> alef_imala, reh itself moraqaq.
-    if key == (11, 41):
+    if (11, 41) in keys:
         pos = mark_positions({cp.EMPTY_CENTRE_LOW_STOP})
         assert pos, "imala witness missing"
         # The imala mark occupies the reh's vowel slot in the rasm, so the reh
@@ -704,7 +715,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
         ]
 
     # R222 — tasheel 41:44: the marked alef seat is a hamza musahhala + fatha.
-    if key == (41, 44):
+    if (41, 44) in keys:
         pos = mark_positions({cp.ROUNDED_HIGH_STOP_WITH_FILLED_CENTRE,
                               cp.EMPTY_CENTRE_HIGH_STOP})
         assert pos, "tasheel witness missing"
@@ -729,7 +740,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
     # alif (lazim 6) with HAMZA_MUSAHHALA + fatha — no madd (فتح الوصيد
     # 1:350 «المسهلة في زنة المحركة... لم يقع مع التسهيل اجتماع ساكنين»).
     ISTIFHAM_SITES = {(6, 143), (6, 144), (10, 51), (10, 59), (10, 91), (27, 59)}
-    if key in ISTIFHAM_SITES and ctx.config.istifham_tasheel:
+    if (keys & ISTIFHAM_SITES) and ctx.config.istifham_tasheel:
         for i, p in enumerate(out):
             if (p.kind == "madd" and p.base is Base.ALEF_MADD
                     and p.length is not None
@@ -750,7 +761,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
     # R012b — ضعف 30:54 ×3: damm wajh (Hafs' ikhtiyar; fath = the riwaya,
     # muqaddam — Shatibiyya 722-723, al-Taysir 174-176). Vowel substitution
     # on the dad of the three ضعف words when the knob flips.
-    if key == (30, 54) and ctx.config.daaf_30_54_damm:
+    if (30, 54) in keys and ctx.config.daaf_30_54_damm:
         for i, p in enumerate(out):
             if (p.base is Base.DAD and i + 1 < len(out)
                     and out[i + 1].kind == "vowel"
@@ -763,7 +774,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
 
     # R220 — ishmam 12:11 (Tanzil U+06EB; KFGQPC U+06EC): attribute event on
     # the geminated noon of ta'manna.
-    if key == (12, 11):
+    if (12, 11) in keys:
         noon_i = next((i for i, p in enumerate(out)
                        if p.base is Base.NOON and p.geminated), None)
         if noon_i is not None:
