@@ -1,0 +1,4 @@
+# Pinned corpus files are byte-exact contracts: no EOL conversion, ever.
+data/** -text
+# Everything else: normalize to LF in the repo.
+* text=auto eol=lf

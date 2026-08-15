@@ -1,0 +1,426 @@
+# Mutajanisayn/mutaqaribayn (SPEC-100 P8), qalqalah (SPEC-200),
+# the raa tafkheem table (SPEC-210), ghunna grades (SPEC-170).
+
+# --- mutajanisayn / mutaqaribayn ----------------------------------------
+- id: naqis-tah-basatta
+  surah: 5
+  ayah: 28
+  rule: R161_MUTAJANIS
+  rule_ar: إدغام ناقص للطاء في التاء مع بقاء الإطباق (بَسَطتَ)، ولا قلقلة
+  cite: الجزرية «وبين الإطباق من أحطت مع بسطت»؛ النشر 2:19
+  expert_reviewed: false
+  expect:
+    - {base: tah, qalqalah: null}
+    - {base: teh}
+- id: naqis-tah-ahatt
+  surah: 27
+  ayah: 22
+  rule: R161_MUTAJANIS
+  rule_ar: إدغام ناقص (أَحَطتُ)
+  cite: الجزرية؛ النشر 2:19
+  expert_reviewed: false
+  expect:
+    - {base: tah, qalqalah: null}
+    - {base: teh}
+- id: naqis-tah-farrattum
+  surah: 12
+  ayah: 80
+  rule: R161_MUTAJANIS
+  rule_ar: إدغام ناقص (فَرَّطتُمْ)
+  cite: الجزرية؛ النشر 2:19
+  expert_reviewed: false
+  expect:
+    - {base: tah, qalqalah: null}
+    - {base: teh}
+- id: mutajanis-teh-tah
+  surah: 3
+  ayah: 69
+  rule: R161_MUTAJANIS
+  rule_ar: إدغام التاء في الطاء (وَدَّت طَّآئِفَةٌ)
+  cite: النشر 2:18؛ هداية القاري 1:252
+  expert_reviewed: false
+  expect:
+    - {base: tah, geminated: true}
+- id: mutajanis-teh-dal
+  surah: 10
+  ayah: 89
+  rule: R161_MUTAJANIS
+  rule_ar: إدغام التاء في الدال (أُجِيبَت دَّعْوَتُكُمَا)
+  cite: النشر 2:18
+  expert_reviewed: false
+  expect:
+    - {base: dal, geminated: true}
+- id: mutajanis-dal-teh
+  surah: 2
+  ayah: 256
+  rule: R161_MUTAJANIS
+  rule_ar: إدغام الدال في التاء (قَد تَّبَيَّنَ)
+  cite: النشر 2:18
+  expert_reviewed: false
+  expect:
+    - {base: teh, geminated: true}
+- id: mutajanis-thal-zah
+  surah: 4
+  ayah: 64
+  rule: R161_MUTAJANIS
+  rule_ar: إدغام الذال في الظاء (إِذ ظَّلَمُوٓا۟)
+  cite: النشر 2:18
+  expert_reviewed: false
+  expect:
+    - {base: zah, geminated: true}
+- id: mutajanis-theh-thal
+  surah: 7
+  ayah: 176
+  rule: R161_MUTAJANIS
+  rule_ar: إدغام الثاء في الذال قولًا واحدًا (يَلْهَث ذَّٰلِكَ)
+  cite: الشاطبية بيت 284؛ سراج القارئ 1:100-101
+  expert_reviewed: false
+  expect:
+    - {base: thal, geminated: true}
+- id: mutajanis-beh-meem
+  surah: 11
+  ayah: 42
+  rule: R161_MUTAJANIS
+  rule_ar: إدغام الباء في الميم قولًا واحدًا (ٱرْكَب مَّعَنَا)
+  cite: الشاطبية بيت 284؛ إبراز المعاني 1:199-200
+  expert_reviewed: false
+  expect:
+    - {base: meem, geminated: true}
+- id: mutaqarib-qaf-kaf
+  surah: 77
+  ayah: 20
+  rule: R162_MUTAQARIB
+  rule_ar: إدغام القاف في الكاف كاملًا (نَخْلُقكُّم)
+  cite: النشر 1:221، 2:19-20؛ فريدة الدهر 1:444-445
+  expert_reviewed: false
+  expect:
+    - {base: kaf, geminated: true}
+- id: mutaqarib-lam-reh
+  surah: 23
+  ayah: 93
+  rule: R162_MUTAQARIB
+  rule_ar: إدغام اللام في الراء (قُل رَّبِّ)
+  cite: النشر 2:18
+  expert_reviewed: false
+  expect:
+    - {base: reh, geminated: true}
+- id: mutaqarib-bal-rafa
+  surah: 4
+  ayah: 158
+  rule: R162_MUTAQARIB
+  rule_ar: إدغام اللام في الراء (بَل رَّفَعَهُ)
+  cite: النشر 2:18
+  expert_reviewed: false
+  expect:
+    - {base: reh, geminated: true}
+
+# --- qalqalah ------------------------------------------------------------
+- id: qlq-sughra-qaf
+  surah: 2
+  ayah: 3
+  rule: R200_QALQALAH
+  rule_ar: قلقلة صغرى للقاف (رَزَقْنَٰهُمْ)
+  cite: تحفة الأطفال «قطب جد»؛ النشر 1:203
+  expert_reviewed: false
+  expect:
+    - {base: qaf, qalqalah: any}
+    - {base: noon}
+- id: qlq-sughra-tah
+  surah: 106
+  ayah: 4
+  rule: R200_QALQALAH
+  rule_ar: قلقلة صغرى للطاء الساكنة (أَطْعَمَهُم)
+  cite: تحفة الأطفال؛ النشر 1:203
+  expert_reviewed: false
+  expect:
+    - {base: tah, qalqalah: any}
+    - {base: ain}
+- id: qlq-sughra-beh
+  surah: 2
+  ayah: 4
+  rule: R200_QALQALAH
+  rule_ar: قلقلة صغرى للباء (قَبْلِكَ)
+  cite: تحفة الأطفال؛ النشر 1:203
+  expert_reviewed: false
+  expect:
+    - {base: beh, qalqalah: any}
+    - {base: lam}
+- id: qlq-sughra-jeem
+  surah: 2
+  ayah: 19
+  rule: R200_QALQALAH
+  rule_ar: قلقلة صغرى للجيم الساكنة (يَجْعَلُونَ)
+  cite: تحفة الأطفال؛ النشر 1:203
+  expert_reviewed: false
+  expect:
+    - {base: jeem, qalqalah: any}
+    - {base: ain}
+- id: qlq-sughra-dal
+  surah: 91
+  ayah: 9
+  rule: R200_QALQALAH
+  rule_ar: قلقلة صغرى للدال الساكنة (قَدْ أَفْلَحَ)
+  cite: تحفة الأطفال؛ النشر 1:203
+  expert_reviewed: false
+  expect:
+    - {base: dal, qalqalah: any}
+- id: qlq-kubra-falaq
+  surah: 113
+  ayah: 1
+  rule: R201_QALQALAH_KUBRA
+  rule_ar: قلقلة كبرى وقفًا (ٱلْفَلَقِ)
+  cite: تحفة الأطفال؛ هداية القاري 1:84-87
+  expert_reviewed: false
+  expect_at_end:
+    - {base: qaf, qalqalah: any}
+- id: qlq-kubra-tabb
+  surah: 111
+  ayah: 1
+  rule: R201_QALQALAH_KUBRA
+  rule_ar: قلقلة كبرى وقفًا مع التشديد (وَتَبَّ)
+  cite: تحفة الأطفال؛ هداية القاري 1:84-87
+  expert_reviewed: false
+  expect_at_end:
+    - {base: beh, geminated: true, qalqalah: any}
+- id: qlq-kubra-ahad
+  surah: 112
+  ayah: 1
+  rule: R201_QALQALAH_KUBRA
+  rule_ar: قلقلة كبرى وقفًا (أَحَدٌ — بعد حذف التنوين)
+  cite: تحفة الأطفال؛ هداية القاري 1:84-87
+  expert_reviewed: false
+  expect_at_end:
+    - {base: dal, qalqalah: any}
+- id: qlq-kubra-muheet
+  surah: 85
+  ayah: 20
+  rule: R201_QALQALAH_KUBRA
+  rule_ar: قلقلة كبرى وقفًا للطاء (مُّحِيطُۢ)
+  cite: تحفة الأطفال؛ هداية القاري 1:84-87
+  expert_reviewed: false
+  expect_at_end:
+    - {base: tah, qalqalah: any}
+- id: qlq-kubra-bahij
+  surah: 22
+  ayah: 5
+  rule: R201_QALQALAH_KUBRA
+  rule_ar: قلقلة كبرى وقفًا للجيم (بَهِيجٍ)
+  cite: تحفة الأطفال؛ هداية القاري 1:84-87
+  expert_reviewed: false
+  expect_at_end:
+    - {base: jeem, qalqalah: any}
+
+# --- raa tafkheem/tarqeeq table ------------------------------------------
+- id: ra-fath-tafkheem
+  surah: 1
+  ayah: 2
+  rule: R211_RA
+  rule_ar: تفخيم الراء المفتوحة (رَبِّ)
+  cite: الجزرية باب الراءات؛ هداية القاري 1:130
+  expert_reviewed: false
+  expect:
+    - {base: reh, tafkheem: mofakham}
+    - {base: fatha}
+- id: ra-damm-tafkheem
+  surah: 2
+  ayah: 25
+  rule: R211_RA
+  rule_ar: تفخيم الراء المضمومة (رُزِقْنَا)
+  cite: الجزرية؛ هداية القاري 1:130
+  expert_reviewed: false
+  expect:
+    - {base: reh, tafkheem: mofakham}
+    - {base: damma}
+- id: ra-kasr-tarqeeq
+  surah: 2
+  ayah: 22
+  rule: R211_RA
+  rule_ar: ترقيق الراء المكسورة (رِزْقًا)
+  cite: الجزرية «ورقق الراء إذا ما كسرت»
+  expert_reviewed: false
+  expect:
+    - {base: reh, tafkheem: moraqaq}
+    - {base: kasra}
+- id: ra-sakin-after-fath
+  surah: 3
+  ayah: 36
+  rule: R211_RA
+  rule_ar: تفخيم الراء الساكنة بعد فتح (مَرْيَمَ)
+  cite: الجزرية؛ هداية القاري 1:131
+  expert_reviewed: false
+  expect:
+    - {base: meem}
+    - {base: fatha}
+    - {base: reh, tafkheem: mofakham}
+    - {base: yeh}
+- id: ra-sakin-after-damm
+  surah: 2
+  ayah: 185
+  rule: R211_RA
+  rule_ar: تفخيم الراء الساكنة بعد ضم (ٱلْقُرْءَانُ)
+  cite: الجزرية؛ هداية القاري 1:131
+  expert_reviewed: false
+  expect:
+    - {base: qaf}
+    - {base: damma}
+    - {base: reh, tafkheem: mofakham}
+- id: ra-sakin-after-kasr-tarqeeq
+  surah: 2
+  ayah: 49
+  rule: R211_RA
+  rule_ar: ترقيق الراء الساكنة بعد كسر (فِرْعَوْنَ)
+  cite: الجزرية «إن لم تكن من قبل حرف استعلا»
+  expert_reviewed: false
+  expect:
+    - {base: feh}
+    - {base: kasra}
+    - {base: reh, tafkheem: moraqaq}
+- id: ra-sakin-kasr-istila-mirsad
+  surah: 78
+  ayah: 21
+  rule: R211_RA
+  rule_ar: تفخيم الراء الساكنة بعد كسر قبل استعلاء متصل (مِرْصَادًا)
+  cite: الجزرية «إن لم تكن من قبل حرف استعلا»؛ هداية القاري 1:131
+  expert_reviewed: false
+  expect:
+    - {base: meem}
+    - {base: kasra}
+    - {base: reh, tafkheem: mofakham}
+    - {base: sad}
+- id: ra-sakin-kasr-istila-qirtas
+  surah: 6
+  ayah: 7
+  rule: R211_RA
+  rule_ar: تفخيم الراء قبل الاستعلاء (قِرْطَاسٍ)
+  cite: الجزرية؛ هداية القاري 1:131
+  expert_reviewed: false
+  expect:
+    - {base: qaf}
+    - {base: kasra}
+    - {base: reh, tafkheem: mofakham}
+    - {base: tah}
+- id: ra-sakin-kasr-istila-firqa
+  surah: 9
+  ayah: 122
+  rule: R211_RA
+  rule_ar: تفخيم الراء قبل الاستعلاء (فِرْقَةٍ)
+  cite: الجزرية؛ هداية القاري 1:131
+  expert_reviewed: false
+  expect:
+    - {base: feh}
+    - {base: kasra}
+    - {base: reh, tafkheem: mofakham}
+    - {base: qaf}
+- id: ra-firq-wasl-tarqeeq
+  surah: 26
+  ayah: 63
+  rule: R211_RA_KHILAF
+  rule_ar: ترقيق راء فِرْقٍ وصلًا (الوجه المأخوذ به؛ الاستعلاء مكسور فضعف)
+  cite: فتح الوصيد 1:526؛ سراج القارئ 1:120
+  expert_reviewed: false
+  expect:
+    - {base: feh}
+    - {base: kasra}
+    - {base: reh, tafkheem: moraqaq}
+    - {base: qaf}
+- id: ra-nudhur-waqf-tarqeeq
+  surah: 54
+  ayah: 16
+  rule: R211_RA_KHILAF
+  rule_ar: ترقيق راء نُذُرِ وقفًا (المقدَّم؛ لمحذوف الياء)
+  cite: النشر 2:110؛ هداية القاري 1:132
+  expert_reviewed: false
+  expect_at_end:
+    - {base: reh, tafkheem: moraqaq}
+- id: ra-yasr-waqf-tarqeeq
+  surah: 89
+  ayah: 4
+  rule: R211_RA_KHILAF
+  rule_ar: ترقيق راء يَسْرِ وقفًا (الأولى)
+  cite: النشر 2:110-111
+  expert_reviewed: false
+  expect_at_end:
+    - {base: reh, tafkheem: moraqaq}
+- id: ra-tafkheem-inherits-vowel
+  surah: 2
+  ayah: 5
+  rule: R213_INHERIT
+  rule_ar: "تبع الحركةُ الراءَ المفخمة (رَّبِّهِمْ: الفتحة مفخمة تبعًا)"
+  cite: (وراثة الحركة لحكم حرفها — SPEC-213)
+  expert_reviewed: false
+  expect:
+    - {base: reh, geminated: true, tafkheem: mofakham}
+    - {base: fatha, tafkheem: mofakham}
+- id: ra-riya-tarqeeq
+  surah: 2
+  ayah: 264
+  rule: R211_RA
+  rule_ar: ترقيق الراء المكسورة (رِئَآءَ)
+  cite: الجزرية
+  expert_reviewed: false
+  expect:
+    - {base: reh, tafkheem: moraqaq}
+    - {base: kasra}
+- id: ra-fajr-waqf-tafkheem
+  surah: 89
+  ayah: 1
+  rule: R211_RA
+  rule_ar: تفخيم راء الفجر وقفًا (ساكنة بعد ساكن قبله فتح — العبرة بما قبل
+    الساكن)
+  cite: الجزرية باب الراءات؛ هداية القاري 1:131
+  expert_reviewed: false
+  expect_at_end:
+    - {base: reh, tafkheem: mofakham}
+- id: ra-khabir-waqf-tarqeeq
+  surah: 100
+  ayah: 11
+  rule: R211_RA
+  rule_ar: ترقيق الراء وقفًا بعد ياء مدية (لَخَبِيرٌ)
+  cite: الجزرية؛ هداية القاري 1:132
+  expert_reviewed: false
+  expect_at_end:
+    - {base: reh, tafkheem: moraqaq}
+
+# --- ghunna grades -------------------------------------------------------
+- id: ghunna-noon-mushaddad
+  surah: 114
+  ayah: 1
+  rule: R170_GHUNNA
+  rule_ar: غنة النون المشددة (ٱلنَّاسِ) — أكمل المراتب
+  cite: تحفة الأطفال «وغن ميمًا ثم نونًا شددا»؛ لطائف الإشارات 1:350
+  expert_reviewed: false
+  expect:
+    - {base: noon, geminated: true, ghunna: mushaddadah}
+- id: ghunna-meem-amma
+  surah: 78
+  ayah: 1
+  rule: R170_GHUNNA
+  rule_ar: غنة الميم المشددة (عَمَّ يَتَسَآءَلُونَ)
+  cite: تحفة الأطفال؛ لطائف الإشارات 1:350
+  expert_reviewed: false
+  expect:
+    - {base: ain}
+    - {base: fatha}
+    - {base: meem, geminated: true, ghunna: mushaddadah}
+- id: ghunna-inna
+  surah: 2
+  ayah: 6
+  rule: R170_GHUNNA
+  rule_ar: غنة النون المشددة (إِنَّ)
+  cite: تحفة الأطفال
+  expert_reviewed: false
+  expect:
+    - {base: hamza}
+    - {base: kasra}
+    - {base: noon, geminated: true, ghunna: mushaddadah}
+- id: ghunna-thumma
+  surah: 2
+  ayah: 29
+  rule: R170_GHUNNA
+  rule_ar: غنة الميم المشددة (ثُمَّ)
+  cite: تحفة الأطفال
+  expert_reviewed: false
+  expect:
+    - {base: theh}
+    - {base: damma}
+    - {base: meem, geminated: true, ghunna: mushaddadah}

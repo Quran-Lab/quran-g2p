@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quran-g2p"
+version = "0.1.0"
+description = "Specification-first tajweed phonemizer for Hafs 'an 'Asim (tariq al-Shatibiyyah)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Quran Lab" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "pyyaml", "openpyxl"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.urls]
+Repository = "https://github.com/Muno459/quran-g2p"

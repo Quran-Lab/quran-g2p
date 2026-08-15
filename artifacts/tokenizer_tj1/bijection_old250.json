@@ -1,0 +1,1682 @@
+{
+ "meta": {
+  "old_vocab_path": "C:\\Users\\Anon\\research\\tarteel-asr\\data\\zipformer_rnnt_ctc\\tokenizer\\phoneme_units.json",
+  "old_vocab_sha256": "6f24ec1556b3bcdea33a341ae687e8ca1eda2d9960185999d0bd70f082a68ede",
+  "old_units": [
+   "ؙ",
+   "ء",
+   "ءَ",
+   "ءُ",
+   "ءِ",
+   "ا",
+   "اا",
+   "اااا",
+   "ااااا",
+   "اااااا",
+   "ااۜ",
+   "ب",
+   "ببَ",
+   "ببُ",
+   "ببِ",
+   "ببڇ",
+   "بَ",
+   "بُ",
+   "بِ",
+   "بڇ",
+   "ت",
+   "تت",
+   "تتَ",
+   "تتُ",
+   "تتِ",
+   "تَ",
+   "تُ",
+   "تِ",
+   "ث",
+   "ثثَ",
+   "ثثُ",
+   "ثثِ",
+   "ثَ",
+   "ثُ",
+   "ثِ",
+   "ج",
+   "ججَ",
+   "ججُ",
+   "ججِ",
+   "ججڇ",
+   "جَ",
+   "جُ",
+   "جِ",
+   "جڇ",
+   "ح",
+   "حح",
+   "ححَ",
+   "ححِ",
+   "حَ",
+   "حُ",
+   "حِ",
+   "خ",
+   "خخَ",
+   "خخِ",
+   "خَ",
+   "خُ",
+   "خِ",
+   "د",
+   "ددَ",
+   "ددُ",
+   "ددِ",
+   "ددڇ",
+   "دَ",
+   "دُ",
+   "دِ",
+   "دڇ",
+   "ذ",
+   "ذذَ",
+   "ذذُ",
+   "ذذِ",
+   "ذَ",
+   "ذُ",
+   "ذِ",
+   "ر",
+   "رر",
+   "ررَ",
+   "ررُ",
+   "ررِ",
+   "رَ",
+   "رُ",
+   "رِ",
+   "ر۪",
+   "ز",
+   "ززَ",
+   "ززُ",
+   "ززِ",
+   "زَ",
+   "زُ",
+   "زِ",
+   "س",
+   "سس",
+   "سسَ",
+   "سسُ",
+   "سسِ",
+   "سَ",
+   "سُ",
+   "سِ",
+   "ش",
+   "ششَ",
+   "ششُ",
+   "ششِ",
+   "شَ",
+   "شُ",
+   "شِ",
+   "ص",
+   "صصَ",
+   "صصُ",
+   "صصِ",
+   "صَ",
+   "صُ",
+   "صِ",
+   "ض",
+   "ضضَ",
+   "ضضُ",
+   "ضضِ",
+   "ضَ",
+   "ضُ",
+   "ضِ",
+   "ط",
+   "ططَ",
+   "ططُ",
+   "ططِ",
+   "طَ",
+   "طُ",
+   "طِ",
+   "طڇ",
+   "ظ",
+   "ظظَ",
+   "ظظُ",
+   "ظظِ",
+   "ظَ",
+   "ظُ",
+   "ظِ",
+   "ع",
+   "ععَ",
+   "ععُ",
+   "ععِ",
+   "عَ",
+   "عُ",
+   "عِ",
+   "غ",
+   "غَ",
+   "غُ",
+   "غِ",
+   "ـ",
+   "ــ",
+   "ف",
+   "فف",
+   "ففَ",
+   "ففُ",
+   "ففِ",
+   "فَ",
+   "فُ",
+   "فِ",
+   "ق",
+   "ققَ",
+   "ققُ",
+   "ققِ",
+   "ققڇ",
+   "قَ",
+   "قُ",
+   "قِ",
+   "قڇ",
+   "ك",
+   "كك",
+   "ككَ",
+   "ككُ",
+   "ككِ",
+   "كَ",
+   "كُ",
+   "كِ",
+   "ل",
+   "لل",
+   "للَ",
+   "للُ",
+   "للِ",
+   "لَ",
+   "لُ",
+   "لِ",
+   "لۜ",
+   "م",
+   "ممم",
+   "ممممَ",
+   "ممممُ",
+   "ممممِ",
+   "مَ",
+   "مُ",
+   "مِ",
+   "ن",
+   "نؙ",
+   "ننن",
+   "ننننَ",
+   "ننننُ",
+   "ننننِ",
+   "نَ",
+   "نُ",
+   "نِ",
+   "نۜ",
+   "ه",
+   "ههَ",
+   "ههُ",
+   "ههِ",
+   "هَ",
+   "هُ",
+   "هِ",
+   "و",
+   "وو",
+   "ووو",
+   "وووَ",
+   "وووُ",
+   "وووِ",
+   "ووَ",
+   "ووُ",
+   "ووِ",
+   "وَ",
+   "وُ",
+   "وِ",
+   "ي",
+   "يي",
+   "ييي",
+   "ييييي",
+   "يييَ",
+   "يييُ",
+   "ييَ",
+   "ييُ",
+   "ييِ",
+   "يَ",
+   "يُ",
+   "يِ",
+   "َ",
+   "ُ",
+   "ِ",
+   "ٲ",
+   "ڇ",
+   "ں",
+   "ںںں",
+   "ۜ",
+   "ۥ",
+   "ۥۥ",
+   "ۥۥۥۥ",
+   "ۥۥۥۥۥ",
+   "ۥۥۥۥۥۥ",
+   "ۦ",
+   "ۦۦ",
+   "ۦۦۦۦ",
+   "ۦۦۦۦۦ",
+   "ۦۦۦۦۦۦ",
+   "۪",
+   "۾",
+   "۾۾۾"
+  ],
+  "old_blank_file_id": 0,
+  "old_blank_trainer_id": 250,
+  "new_blank_id": 233,
+  "ayat_aligned": 6236,
+  "alignment_mismatches": 0,
+  "n_observed": 220,
+  "n_unmapped": 13,
+  "n_conflicts": 0
+ },
+ "map": {
+  "بِ": {
+   "old_unit": "بِ",
+   "old_id_file": 49,
+   "count": 4121,
+   "provenance": "observed"
+  },
+  "س": {
+   "old_unit": "س",
+   "old_id_file": 14,
+   "count": 1315,
+   "provenance": "observed"
+  },
+  "مِ": {
+   "old_unit": "مِ",
+   "old_id_file": 130,
+   "count": 4190,
+   "provenance": "observed"
+  },
+  "لَّ": {
+   "old_unit": "للَ",
+   "old_id_file": 212,
+   "count": 4084,
+   "provenance": "observed"
+  },
+  "ا:2": {
+   "old_unit": "اا",
+   "old_id_file": 46,
+   "count": 26613,
+   "provenance": "observed"
+  },
+  "هِ": {
+   "old_unit": "هِ",
+   "old_id_file": 138,
+   "count": 4127,
+   "provenance": "observed"
+  },
+  "رّ^َ": {
+   "old_unit": "ررَ",
+   "old_id_file": 175,
+   "count": 709,
+   "provenance": "observed"
+  },
+  "ح": {
+   "old_unit": "ح",
+   "old_id_file": 8,
+   "count": 1006,
+   "provenance": "observed"
+  },
+  "مَ": {
+   "old_unit": "مَ",
+   "old_id_file": 128,
+   "count": 7794,
+   "provenance": "observed"
+  },
+  "نِ": {
+   "old_unit": "نِ",
+   "old_id_file": 134,
+   "count": 1827,
+   "provenance": "observed"
+  },
+  "حِ": {
+   "old_unit": "حِ",
+   "old_id_file": 65,
+   "count": 721,
+   "provenance": "observed"
+  },
+  "ۦ:4": {
+   "old_unit": "ۦۦۦۦ",
+   "old_id_file": 237,
+   "count": 2872,
+   "provenance": "observed"
+  },
+  "م": {
+   "old_unit": "م",
+   "old_id_file": 27,
+   "count": 6826,
+   "provenance": "observed"
+  },
+  "ءَ": {
+   "old_unit": "ءَ",
+   "old_id_file": 43,
+   "count": 10347,
+   "provenance": "observed"
+  },
+  "ل": {
+   "old_unit": "ل",
+   "old_id_file": 26,
+   "count": 7399,
+   "provenance": "observed"
+  },
+  "حَ": {
+   "old_unit": "حَ",
+   "old_id_file": 63,
+   "count": 1981,
+   "provenance": "observed"
+  },
+  "دُ": {
+   "old_unit": "دُ",
+   "old_id_file": 70,
+   "count": 1232,
+   "provenance": "observed"
+  },
+  "لِ": {
+   "old_unit": "لِ",
+   "old_id_file": 126,
+   "count": 4255,
+   "provenance": "observed"
+  },
+  "ر^َ": {
+   "old_unit": "رَ",
+   "old_id_file": 77,
+   "count": 4663,
+   "provenance": "observed"
+  },
+  "بِّ": {
+   "old_unit": "ببِ",
+   "old_id_file": 152,
+   "count": 736,
+   "provenance": "observed"
+  },
+  "عَ": {
+   "old_unit": "عَ",
+   "old_id_file": 104,
+   "count": 5367,
+   "provenance": "observed"
+  },
+  "لَ": {
+   "old_unit": "لَ",
+   "old_id_file": 124,
+   "count": 11666,
+   "provenance": "observed"
+  },
+  "ن": {
+   "old_unit": "ن",
+   "old_id_file": 28,
+   "count": 6257,
+   "provenance": "observed"
+  },
+  "كِ": {
+   "old_unit": "كِ",
+   "old_id_file": 122,
+   "count": 866,
+   "provenance": "observed"
+  },
+  "يَ": {
+   "old_unit": "يَ",
+   "old_id_file": 144,
+   "count": 5260,
+   "provenance": "observed"
+  },
+  "و": {
+   "old_unit": "و",
+   "old_id_file": 30,
+   "count": 2422,
+   "provenance": "observed"
+  },
+  "دِّ": {
+   "old_unit": "ددِ",
+   "old_id_file": 170,
+   "count": 127,
+   "provenance": "observed"
+  },
+  "ءِ": {
+   "old_unit": "ءِ",
+   "old_id_file": 45,
+   "count": 6426,
+   "provenance": "observed"
+  },
+  "يَّ": {
+   "old_unit": "ييَ",
+   "old_id_file": 225,
+   "count": 386,
+   "provenance": "observed"
+  },
+  "كَ": {
+   "old_unit": "كَ",
+   "old_id_file": 120,
+   "count": 4729,
+   "provenance": "observed"
+  },
+  "نَ": {
+   "old_unit": "نَ",
+   "old_id_file": 132,
+   "count": 9316,
+   "provenance": "observed"
+  },
+  "ع": {
+   "old_unit": "ع",
+   "old_id_file": 20,
+   "count": 2023,
+   "provenance": "observed"
+  },
+  "بُ": {
+   "old_unit": "بُ",
+   "old_id_file": 48,
+   "count": 1208,
+   "provenance": "observed"
+  },
+  "وَ": {
+   "old_unit": "وَ",
+   "old_id_file": 140,
+   "count": 10327,
+   "provenance": "observed"
+  },
+  "تَ": {
+   "old_unit": "تَ",
+   "old_id_file": 52,
+   "count": 5749,
+   "provenance": "observed"
+  },
+  "عِ": {
+   "old_unit": "عِ",
+   "old_id_file": 106,
+   "count": 1008,
+   "provenance": "observed"
+  },
+  "ه": {
+   "old_unit": "ه",
+   "old_id_file": 29,
+   "count": 730,
+   "provenance": "observed"
+  },
+  "دِ": {
+   "old_unit": "دِ",
+   "old_id_file": 71,
+   "count": 1233,
+   "provenance": "observed"
+  },
+  "صِّ": {
+   "old_unit": "صصِ",
+   "old_id_file": 189,
+   "count": 30,
+   "provenance": "observed"
+  },
+  "طَ": {
+   "old_unit": "طَ",
+   "old_id_file": 97,
+   "count": 550,
+   "provenance": "observed"
+  },
+  "مُ": {
+   "old_unit": "مُ",
+   "old_id_file": 129,
+   "count": 3419,
+   "provenance": "observed"
+  },
+  "قِ": {
+   "old_unit": "قِ",
+   "old_id_file": 117,
+   "count": 854,
+   "provenance": "observed"
+  },
+  "صِ": {
+   "old_unit": "صِ",
+   "old_id_file": 93,
+   "count": 454,
+   "provenance": "observed"
+  },
+  "ذِ": {
+   "old_unit": "ذِ",
+   "old_id_file": 75,
+   "count": 1852,
+   "provenance": "observed"
+  },
+  "ۦ:2": {
+   "old_unit": "ۦۦ",
+   "old_id_file": 148,
+   "count": 7139,
+   "provenance": "observed"
+  },
+  "ي": {
+   "old_unit": "ي",
+   "old_id_file": 31,
+   "count": 3282,
+   "provenance": "observed"
+  },
+  "غَ": {
+   "old_unit": "غَ",
+   "old_id_file": 107,
+   "count": 648,
+   "provenance": "observed"
+  },
+  "رِ": {
+   "old_unit": "رِ",
+   "old_id_file": 79,
+   "count": 2137,
+   "provenance": "observed"
+  },
+  "غ": {
+   "old_unit": "غ",
+   "old_id_file": 21,
+   "count": 353,
+   "provenance": "observed"
+  },
+  "ضُ": {
+   "old_unit": "ضُ",
+   "old_id_file": 95,
+   "count": 241,
+   "provenance": "observed"
+  },
+  "ۥ:2": {
+   "old_unit": "ۥۥ",
+   "old_id_file": 147,
+   "count": 7790,
+   "provenance": "observed"
+  },
+  "ضَّ": {
+   "old_unit": "ضضَ",
+   "old_id_file": 190,
+   "count": 55,
+   "provenance": "observed"
+  },
+  "ا:6": {
+   "old_unit": "اااااا",
+   "old_id_file": 248,
+   "count": 121,
+   "provenance": "observed"
+  },
+  "لِّ": {
+   "old_unit": "للِ",
+   "old_id_file": 214,
+   "count": 629,
+   "provenance": "observed"
+  },
+  "ف": {
+   "old_unit": "ف",
+   "old_id_file": 23,
+   "count": 671,
+   "provenance": "observed"
+  },
+  "مِّ": {
+   "old_unit": "ممممِ",
+   "old_id_file": 241,
+   "count": 1200,
+   "provenance": "observed"
+  },
+  "ۦ:6": {
+   "old_unit": "ۦۦۦۦۦۦ",
+   "old_id_file": 250,
+   "count": 22,
+   "provenance": "observed"
+  },
+  "ذَ": {
+   "old_unit": "ذَ",
+   "old_id_file": 73,
+   "count": 1942,
+   "provenance": "observed"
+  },
+  "بَ": {
+   "old_unit": "بَ",
+   "old_id_file": 47,
+   "count": 3575,
+   "provenance": "observed"
+  },
+  "فِ": {
+   "old_unit": "فِ",
+   "old_id_file": 114,
+   "count": 2552,
+   "provenance": "observed"
+  },
+  "هُ": {
+   "old_unit": "هُ",
+   "old_id_file": 137,
+   "count": 6825,
+   "provenance": "observed"
+  },
+  "دَ": {
+   "old_unit": "دَ",
+   "old_id_file": 69,
+   "count": 1689,
+   "provenance": "observed"
+  },
+  "تَّ": {
+   "old_unit": "تتَ",
+   "old_id_file": 154,
+   "count": 754,
+   "provenance": "observed"
+  },
+  "يُ": {
+   "old_unit": "يُ",
+   "old_id_file": 145,
+   "count": 1443,
+   "provenance": "observed"
+  },
+  "ء": {
+   "old_unit": "ء",
+   "old_id_file": 2,
+   "count": 1164,
+   "provenance": "observed"
+  },
+  "نُ": {
+   "old_unit": "نُ",
+   "old_id_file": 133,
+   "count": 1833,
+   "provenance": "observed"
+  },
+  "صَّ": {
+   "old_unit": "صصَ",
+   "old_id_file": 187,
+   "count": 275,
+   "provenance": "observed"
+  },
+  "مَّ": {
+   "old_unit": "ممممَ",
+   "old_id_file": 239,
+   "count": 1520,
+   "provenance": "observed"
+  },
+  "زَ": {
+   "old_unit": "زَ",
+   "old_id_file": 81,
+   "count": 569,
+   "provenance": "observed"
+  },
+  "قڇ": {
+   "old_unit": "قڇ",
+   "old_id_file": 118,
+   "count": 556,
+   "provenance": "observed"
+  },
+  "ں": {
+   "old_unit": "ںںں",
+   "old_id_file": 228,
+   "count": 5305,
+   "provenance": "observed"
+  },
+  "قُ": {
+   "old_unit": "قُ",
+   "old_id_file": 116,
+   "count": 1628,
+   "provenance": "observed"
+  },
+  "ۥ:4": {
+   "old_unit": "ۥۥۥۥ",
+   "old_id_file": 236,
+   "count": 2680,
+   "provenance": "observed"
+  },
+  "ا:4": {
+   "old_unit": "اااا",
+   "old_id_file": 230,
+   "count": 4154,
+   "provenance": "observed"
+  },
+  "ءُ": {
+   "old_unit": "ءُ",
+   "old_id_file": 44,
+   "count": 1477,
+   "provenance": "observed"
+  },
+  "زِ": {
+   "old_unit": "زِ",
+   "old_id_file": 83,
+   "count": 440,
+   "provenance": "observed"
+  },
+  "قَ": {
+   "old_unit": "قَ",
+   "old_id_file": 115,
+   "count": 3664,
+   "provenance": "observed"
+  },
+  "بڇ": {
+   "old_unit": "بڇ",
+   "old_id_file": 50,
+   "count": 1294,
+   "provenance": "observed"
+  },
+  "خِ": {
+   "old_unit": "خِ",
+   "old_id_file": 68,
+   "count": 404,
+   "provenance": "observed"
+  },
+  "تِ": {
+   "old_unit": "تِ",
+   "old_id_file": 54,
+   "count": 2738,
+   "provenance": "observed"
+  },
+  "حُ": {
+   "old_unit": "حُ",
+   "old_id_file": 64,
+   "count": 422,
+   "provenance": "observed"
+  },
+  "نَّ": {
+   "old_unit": "ننننَ",
+   "old_id_file": 242,
+   "count": 3675,
+   "provenance": "observed"
+  },
+  "فَ": {
+   "old_unit": "فَ",
+   "old_id_file": 112,
+   "count": 4579,
+   "provenance": "observed"
+  },
+  "ر^ُ": {
+   "old_unit": "رُ",
+   "old_id_file": 78,
+   "count": 2285,
+   "provenance": "observed"
+  },
+  "سَ": {
+   "old_unit": "سَ",
+   "old_id_file": 85,
+   "count": 2234,
+   "provenance": "observed"
+  },
+  "ر^": {
+   "old_unit": "ر",
+   "old_id_file": 12,
+   "count": 1791,
+   "provenance": "observed"
+  },
+  "تُ": {
+   "old_unit": "تُ",
+   "old_id_file": 53,
+   "count": 2738,
+   "provenance": "observed"
+  },
+  "ر": {
+   "old_unit": "ر",
+   "old_id_file": 12,
+   "count": 459,
+   "provenance": "observed"
+  },
+  "خَ": {
+   "old_unit": "خَ",
+   "old_id_file": 66,
+   "count": 1298,
+   "provenance": "observed"
+  },
+  "لّ^َ": {
+   "old_unit": "للَ",
+   "old_id_file": 212,
+   "count": 1990,
+   "provenance": "observed"
+  },
+  "لُ": {
+   "old_unit": "لُ",
+   "old_id_file": 125,
+   "count": 2483,
+   "provenance": "observed"
+  },
+  "صَ": {
+   "old_unit": "صَ",
+   "old_id_file": 91,
+   "count": 696,
+   "provenance": "observed"
+  },
+  "غِ": {
+   "old_unit": "غِ",
+   "old_id_file": 109,
+   "count": 71,
+   "provenance": "observed"
+  },
+  "شَ": {
+   "old_unit": "شَ",
+   "old_id_file": 88,
+   "count": 1091,
+   "provenance": "observed"
+  },
+  "و~َ": {
+   "old_unit": "وووَ",
+   "old_id_file": 231,
+   "count": 1448,
+   "provenance": "observed"
+  },
+  "ظِ": {
+   "old_unit": "ظِ",
+   "old_id_file": 103,
+   "count": 164,
+   "provenance": "observed"
+  },
+  "سِ": {
+   "old_unit": "سِ",
+   "old_id_file": 87,
+   "count": 960,
+   "provenance": "observed"
+  },
+  "ي~َ": {
+   "old_unit": "يييَ",
+   "old_id_file": 234,
+   "count": 688,
+   "provenance": "observed"
+  },
+  "۾": {
+   "old_unit": "۾۾۾",
+   "old_id_file": 229,
+   "count": 1058,
+   "provenance": "observed"
+  },
+  "عُ": {
+   "old_unit": "عُ",
+   "old_id_file": 105,
+   "count": 994,
+   "provenance": "observed"
+  },
+  "هَ": {
+   "old_unit": "هَ",
+   "old_id_file": 136,
+   "count": 3246,
+   "provenance": "observed"
+  },
+  "خ": {
+   "old_unit": "خ",
+   "old_id_file": 9,
+   "count": 549,
+   "provenance": "observed"
+  },
+  "فُ": {
+   "old_unit": "فُ",
+   "old_id_file": 113,
+   "count": 807,
+   "provenance": "observed"
+  },
+  "ش": {
+   "old_unit": "ش",
+   "old_id_file": 15,
+   "count": 416,
+   "provenance": "observed"
+  },
+  "ضَ": {
+   "old_unit": "ضَ",
+   "old_id_file": 94,
+   "count": 540,
+   "provenance": "observed"
+  },
+  "ك": {
+   "old_unit": "ك",
+   "old_id_file": 25,
+   "count": 656,
+   "provenance": "observed"
+  },
+  "ضِ": {
+   "old_unit": "ضِ",
+   "old_id_file": 96,
+   "count": 590,
+   "provenance": "observed"
+  },
+  "ص": {
+   "old_unit": "ص",
+   "old_id_file": 16,
+   "count": 398,
+   "provenance": "observed"
+  },
+  "سُ": {
+   "old_unit": "سُ",
+   "old_id_file": 86,
+   "count": 826,
+   "provenance": "observed"
+  },
+  "سُّ": {
+   "old_unit": "سسُ",
+   "old_id_file": 182,
+   "count": 51,
+   "provenance": "observed"
+  },
+  "طِ": {
+   "old_unit": "طِ",
+   "old_id_file": 99,
+   "count": 305,
+   "provenance": "observed"
+  },
+  "كُ": {
+   "old_unit": "كُ",
+   "old_id_file": 121,
+   "count": 4034,
+   "provenance": "observed"
+  },
+  "دُّ": {
+   "old_unit": "ددُ",
+   "old_id_file": 169,
+   "count": 243,
+   "provenance": "observed"
+  },
+  "طُ": {
+   "old_unit": "طُ",
+   "old_id_file": 98,
+   "count": 123,
+   "provenance": "observed"
+  },
+  "وُ": {
+   "old_unit": "وُ",
+   "old_id_file": 141,
+   "count": 128,
+   "provenance": "observed"
+  },
+  "تِّ": {
+   "old_unit": "تتِ",
+   "old_id_file": 156,
+   "count": 20,
+   "provenance": "observed"
+  },
+  "جَ": {
+   "old_unit": "جَ",
+   "old_id_file": 58,
+   "count": 1586,
+   "provenance": "observed"
+  },
+  "ثَ": {
+   "old_unit": "ثَ",
+   "old_id_file": 55,
+   "count": 484,
+   "provenance": "observed"
+  },
+  "ت": {
+   "old_unit": "ت",
+   "old_id_file": 5,
+   "count": 683,
+   "provenance": "observed"
+  },
+  "ظُ": {
+   "old_unit": "ظُ",
+   "old_id_file": 102,
+   "count": 192,
+   "provenance": "observed"
+  },
+  "صُ": {
+   "old_unit": "صُ",
+   "old_id_file": 92,
+   "count": 165,
+   "provenance": "observed"
+  },
+  "مُّ": {
+   "old_unit": "ممممُ",
+   "old_id_file": 240,
+   "count": 480,
+   "provenance": "observed"
+  },
+  "جِ": {
+   "old_unit": "جِ",
+   "old_id_file": 60,
+   "count": 505,
+   "provenance": "observed"
+  },
+  "يِّ": {
+   "old_unit": "ييِ",
+   "old_id_file": 227,
+   "count": 418,
+   "provenance": "observed"
+  },
+  "سَّ": {
+   "old_unit": "سسَ",
+   "old_id_file": 181,
+   "count": 591,
+   "provenance": "observed"
+  },
+  "جڇ": {
+   "old_unit": "جڇ",
+   "old_id_file": 61,
+   "count": 667,
+   "provenance": "observed"
+  },
+  "ظ": {
+   "old_unit": "ظ",
+   "old_id_file": 19,
+   "count": 102,
+   "provenance": "observed"
+  },
+  "يُّ": {
+   "old_unit": "ييُ",
+   "old_id_file": 226,
+   "count": 273,
+   "provenance": "observed"
+  },
+  "بَّ": {
+   "old_unit": "ببَ",
+   "old_id_file": 150,
+   "count": 302,
+   "provenance": "observed"
+  },
+  "ثَّ": {
+   "old_unit": "ثثَ",
+   "old_id_file": 157,
+   "count": 30,
+   "provenance": "observed"
+  },
+  "ز": {
+   "old_unit": "ز",
+   "old_id_file": 13,
+   "count": 207,
+   "provenance": "observed"
+  },
+  "زَّ": {
+   "old_unit": "ززَ",
+   "old_id_file": 178,
+   "count": 123,
+   "provenance": "observed"
+  },
+  "ث": {
+   "old_unit": "ث",
+   "old_id_file": 6,
+   "count": 227,
+   "provenance": "observed"
+  },
+  "دڇ": {
+   "old_unit": "دڇ",
+   "old_id_file": 72,
+   "count": 1165,
+   "provenance": "observed"
+  },
+  "شُ": {
+   "old_unit": "شُ",
+   "old_id_file": 89,
+   "count": 149,
+   "provenance": "observed"
+  },
+  "دَّ": {
+   "old_unit": "ددَ",
+   "old_id_file": 168,
+   "count": 259,
+   "provenance": "observed"
+  },
+  "شِّ": {
+   "old_unit": "ششِ",
+   "old_id_file": 186,
+   "count": 53,
+   "provenance": "observed"
+  },
+  "رِّ": {
+   "old_unit": "ررِ",
+   "old_id_file": 177,
+   "count": 193,
+   "provenance": "observed"
+  },
+  "جُ": {
+   "old_unit": "جُ",
+   "old_id_file": 59,
+   "count": 441,
+   "provenance": "observed"
+  },
+  "هَّ": {
+   "old_unit": "ههَ",
+   "old_id_file": 217,
+   "count": 27,
+   "provenance": "observed"
+  },
+  "يِ": {
+   "old_unit": "يِ",
+   "old_id_file": 146,
+   "count": 73,
+   "provenance": "observed"
+  },
+  "ض": {
+   "old_unit": "ض",
+   "old_id_file": 17,
+   "count": 235,
+   "provenance": "observed"
+  },
+  "قُّ": {
+   "old_unit": "ققُ",
+   "old_id_file": 206,
+   "count": 89,
+   "provenance": "observed"
+  },
+  "ي~ُ": {
+   "old_unit": "يييُ",
+   "old_id_file": 235,
+   "count": 282,
+   "provenance": "observed"
+  },
+  "لُّ": {
+   "old_unit": "للُ",
+   "old_id_file": 213,
+   "count": 215,
+   "provenance": "observed"
+  },
+  "ثِ": {
+   "old_unit": "ثِ",
+   "old_id_file": 57,
+   "count": 170,
+   "provenance": "observed"
+  },
+  "ثُ": {
+   "old_unit": "ثُ",
+   "old_id_file": 56,
+   "count": 494,
+   "provenance": "observed"
+  },
+  "وَّ": {
+   "old_unit": "ووَ",
+   "old_id_file": 221,
+   "count": 219,
+   "provenance": "observed"
+  },
+  "ذ": {
+   "old_unit": "ذ",
+   "old_id_file": 11,
+   "count": 486,
+   "provenance": "observed"
+  },
+  "بُّ": {
+   "old_unit": "ببُ",
+   "old_id_file": 151,
+   "count": 246,
+   "provenance": "observed"
+  },
+  "نِّ": {
+   "old_unit": "ننننِ",
+   "old_id_file": 244,
+   "count": 267,
+   "provenance": "observed"
+  },
+  "شِ": {
+   "old_unit": "شِ",
+   "old_id_file": 90,
+   "count": 204,
+   "provenance": "observed"
+  },
+  "شَّ": {
+   "old_unit": "ششَ",
+   "old_id_file": 184,
+   "count": 200,
+   "provenance": "observed"
+  },
+  "ظَّ": {
+   "old_unit": "ظظَ",
+   "old_id_file": 196,
+   "count": 129,
+   "provenance": "observed"
+  },
+  "وُّ": {
+   "old_unit": "ووُ",
+   "old_id_file": 222,
+   "count": 26,
+   "provenance": "observed"
+  },
+  "رّ^ُ": {
+   "old_unit": "ررُ",
+   "old_id_file": 176,
+   "count": 155,
+   "provenance": "observed"
+  },
+  "قَّ": {
+   "old_unit": "ققَ",
+   "old_id_file": 205,
+   "count": 106,
+   "provenance": "observed"
+  },
+  "ذَّ": {
+   "old_unit": "ذذَ",
+   "old_id_file": 172,
+   "count": 167,
+   "provenance": "observed"
+  },
+  "نُّ": {
+   "old_unit": "ننننُ",
+   "old_id_file": 243,
+   "count": 146,
+   "provenance": "observed"
+  },
+  "ذُ": {
+   "old_unit": "ذُ",
+   "old_id_file": 74,
+   "count": 310,
+   "provenance": "observed"
+  },
+  "جَّ": {
+   "old_unit": "ججَ",
+   "old_id_file": 160,
+   "count": 67,
+   "provenance": "observed"
+  },
+  "ظَ": {
+   "old_unit": "ظَ",
+   "old_id_file": 101,
+   "count": 240,
+   "provenance": "observed"
+  },
+  "خُ": {
+   "old_unit": "خُ",
+   "old_id_file": 67,
+   "count": 200,
+   "provenance": "observed"
+  },
+  "طَّ": {
+   "old_unit": "ططَ",
+   "old_id_file": 193,
+   "count": 114,
+   "provenance": "observed"
+  },
+  "ذِّ": {
+   "old_unit": "ذذِ",
+   "old_id_file": 174,
+   "count": 163,
+   "provenance": "observed"
+  },
+  "قِّ": {
+   "old_unit": "ققِ",
+   "old_id_file": 207,
+   "count": 136,
+   "provenance": "observed"
+  },
+  "طُّ": {
+   "old_unit": "ططُ",
+   "old_id_file": 194,
+   "count": 11,
+   "provenance": "observed"
+  },
+  "زُ": {
+   "old_unit": "زُ",
+   "old_id_file": 82,
+   "count": 205,
+   "provenance": "observed"
+  },
+  "طڇ": {
+   "old_unit": "طڇ",
+   "old_id_file": 100,
+   "count": 154,
+   "provenance": "observed"
+  },
+  "جُّ": {
+   "old_unit": "ججُ",
+   "old_id_file": 161,
+   "count": 15,
+   "provenance": "observed"
+  },
+  "فَّ": {
+   "old_unit": "ففَ",
+   "old_id_file": 202,
+   "count": 114,
+   "provenance": "observed"
+  },
+  "غُ": {
+   "old_unit": "غُ",
+   "old_id_file": 108,
+   "count": 149,
+   "provenance": "observed"
+  },
+  "زِّ": {
+   "old_unit": "ززِ",
+   "old_id_file": 180,
+   "count": 38,
+   "provenance": "observed"
+  },
+  "سِّ": {
+   "old_unit": "سسِ",
+   "old_id_file": 183,
+   "count": 35,
+   "provenance": "observed"
+  },
+  "صُّ": {
+   "old_unit": "صصُ",
+   "old_id_file": 188,
+   "count": 54,
+   "provenance": "observed"
+  },
+  "هِّ": {
+   "old_unit": "ههِ",
+   "old_id_file": 219,
+   "count": 13,
+   "provenance": "observed"
+  },
+  "كَّ": {
+   "old_unit": "ككَ",
+   "old_id_file": 209,
+   "count": 147,
+   "provenance": "observed"
+  },
+  "كِّ": {
+   "old_unit": "ككِ",
+   "old_id_file": 211,
+   "count": 58,
+   "provenance": "observed"
+  },
+  "و~ِ": {
+   "old_unit": "وووِ",
+   "old_id_file": 233,
+   "count": 8,
+   "provenance": "observed"
+  },
+  "وِ": {
+   "old_unit": "وِ",
+   "old_id_file": 142,
+   "count": 139,
+   "provenance": "observed"
+  },
+  "خَّ": {
+   "old_unit": "خخَ",
+   "old_id_file": 166,
+   "count": 38,
+   "provenance": "observed"
+  },
+  "تُّ": {
+   "old_unit": "تتُ",
+   "old_id_file": 155,
+   "count": 43,
+   "provenance": "observed"
+  },
+  "جِّ": {
+   "old_unit": "ججِ",
+   "old_id_file": 162,
+   "count": 36,
+   "provenance": "observed"
+  },
+  "ظُّ": {
+   "old_unit": "ظظُ",
+   "old_id_file": 197,
+   "count": 17,
+   "provenance": "observed"
+  },
+  "فِّ": {
+   "old_unit": "ففِ",
+   "old_id_file": 204,
+   "count": 31,
+   "provenance": "observed"
+  },
+  "فُّ": {
+   "old_unit": "ففُ",
+   "old_id_file": 203,
+   "count": 8,
+   "provenance": "observed"
+  },
+  "شُّ": {
+   "old_unit": "ششُ",
+   "old_id_file": 185,
+   "count": 11,
+   "provenance": "observed"
+  },
+  "وِّ": {
+   "old_unit": "ووِ",
+   "old_id_file": 223,
+   "count": 34,
+   "provenance": "observed"
+  },
+  "زُّ": {
+   "old_unit": "ززُ",
+   "old_id_file": 179,
+   "count": 17,
+   "provenance": "observed"
+  },
+  "طِّ": {
+   "old_unit": "ططِ",
+   "old_id_file": 195,
+   "count": 12,
+   "provenance": "observed"
+  },
+  "و~ُ": {
+   "old_unit": "وووُ",
+   "old_id_file": 232,
+   "count": 4,
+   "provenance": "observed"
+  },
+  "ضُّ": {
+   "old_unit": "ضضُ",
+   "old_id_file": 191,
+   "count": 22,
+   "provenance": "observed"
+  },
+  "ذُّ": {
+   "old_unit": "ذذُ",
+   "old_id_file": 173,
+   "count": 9,
+   "provenance": "observed"
+  },
+  "حِّ": {
+   "old_unit": "ححِ",
+   "old_id_file": 165,
+   "count": 2,
+   "provenance": "observed"
+  },
+  "ظِّ": {
+   "old_unit": "ظظِ",
+   "old_id_file": 198,
+   "count": 9,
+   "provenance": "observed"
+  },
+  "ثُّ": {
+   "old_unit": "ثثُ",
+   "old_id_file": 158,
+   "count": 5,
+   "provenance": "observed"
+  },
+  "كُّ": {
+   "old_unit": "ككُ",
+   "old_id_file": 210,
+   "count": 6,
+   "provenance": "observed"
+  },
+  "حَّ": {
+   "old_unit": "ححَ",
+   "old_id_file": 164,
+   "count": 8,
+   "provenance": "observed"
+  },
+  "ط": {
+   "old_unit": "ط",
+   "old_id_file": 18,
+   "count": 4,
+   "provenance": "observed"
+  },
+  "ۥ:6": {
+   "old_unit": "ۥۥۥۥۥۥ",
+   "old_id_file": 249,
+   "count": 3,
+   "provenance": "observed"
+  },
+  "عَّ": {
+   "old_unit": "ععَ",
+   "old_id_file": 199,
+   "count": 7,
+   "provenance": "observed"
+  },
+  "ر۪": {
+   "old_unit": "ر۪",
+   "old_id_file": 80,
+   "count": 1,
+   "provenance": "observed"
+  },
+  "ـ:2": {
+   "old_unit": "ــ",
+   "old_id_file": 110,
+   "count": 1,
+   "provenance": "observed"
+  },
+  "خِّ": {
+   "old_unit": "خخِ",
+   "old_id_file": 167,
+   "count": 8,
+   "provenance": "observed"
+  },
+  "ثِّ": {
+   "old_unit": "ثثِ",
+   "old_id_file": 159,
+   "count": 3,
+   "provenance": "observed"
+  },
+  "ضِّ": {
+   "old_unit": "ضضِ",
+   "old_id_file": 192,
+   "count": 3,
+   "provenance": "observed"
+  },
+  "هُّ": {
+   "old_unit": "ههُ",
+   "old_id_file": 218,
+   "count": 2,
+   "provenance": "observed"
+  },
+  "ي:6": {
+   "old_unit": "ييييي",
+   "old_id_file": 245,
+   "old_unit_tail": "يي",
+   "count": 2,
+   "provenance": "observed_split"
+  },
+  "يّ": {
+   "old_unit": "يي",
+   "old_id_file": 143,
+   "count": 3,
+   "provenance": "observed"
+  },
+  "عِّ": {
+   "old_unit": "ععِ",
+   "old_id_file": 201,
+   "count": 2,
+   "provenance": "observed"
+  },
+  "ٲَ": {
+   "old_unit": "ٲ",
+   "old_id_file": 35,
+   "old_unit_tail": "َ",
+   "count": 1,
+   "provenance": "observed_split"
+  },
+  "عُّ": {
+   "old_unit": "ععُ",
+   "old_id_file": 200,
+   "count": 2,
+   "provenance": "observed"
+  },
+  "رّ": {
+   "old_unit": "رر",
+   "old_id_file": 76,
+   "count": 4,
+   "provenance": "observed"
+  },
+  "رّ^": {
+   "old_unit": "رر",
+   "old_id_file": 76,
+   "count": 3,
+   "provenance": "observed"
+  },
+  "ي:2": {
+   "old_unit": "ييي",
+   "old_id_file": 224,
+   "count": 7,
+   "provenance": "observed"
+  },
+  "نّ": {
+   "old_unit": "ننن",
+   "old_id_file": 216,
+   "old_unit_tail": "ن",
+   "count": 3,
+   "provenance": "observed_split"
+  },
+  "نۜ": {
+   "old_unit": "نۜ",
+   "old_id_file": 135,
+   "count": 1,
+   "provenance": "observed"
+  },
+  "لۜ": {
+   "old_unit": "لۜ",
+   "old_id_file": 127,
+   "count": 1,
+   "provenance": "observed"
+  },
+  "و:2": {
+   "old_unit": "ووو",
+   "old_id_file": 220,
+   "count": 1,
+   "provenance": "observed"
+  },
+  "بّڇ": {
+   "old_unit": "ببڇ",
+   "old_id_file": 153,
+   "count": 1,
+   "provenance": "observed"
+  },
+  "ا:3": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "ا:2"
+  },
+  "ا:5": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "ا:6"
+  },
+  "و:3": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "و:2"
+  },
+  "و:4": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "و:2"
+  },
+  "و:5": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "و:2"
+  },
+  "و:6": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "و:2"
+  },
+  "ي:3": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "ي:2"
+  },
+  "ي:4": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "ي:2"
+  },
+  "ي:5": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "ي:6"
+  },
+  "ۥ:3": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "ۥ:2"
+  },
+  "ۥ:5": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "ۥ:6"
+  },
+  "ۦ:3": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "ۦ:2"
+  },
+  "ۦ:5": {
+   "old_unit": null,
+   "old_id_file": null,
+   "count": 0,
+   "provenance": "unmapped",
+   "parent_token": "ۦ:6"
+  }
+ }
+}

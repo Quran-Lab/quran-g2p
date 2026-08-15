@@ -1,0 +1,541 @@
+# Madd classes (SPEC-180), hamzat al-wasl classes (SPEC-110),
+# lam shamsiyya/qamariyya, one-off wasl coverage, muqatta'at.
+
+# --- madd ----------------------------------------------------------------
+- id: madd-tabeei-qala
+  surah: 2
+  ayah: 30
+  rule: R180_TABEEI
+  rule_ar: مد طبيعي (قَالَ)
+  cite: تحفة الأطفال «والمد أصلي وفرعي له»
+  expert_reviewed: false
+  expect:
+    - {base: qaf}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2, len_kind: fixed}
+    - {base: lam}
+- id: madd-muttasil-jaa
+  surah: 4
+  ayah: 43
+  rule: R182_MUTTASIL
+  rule_ar: مد واجب متصل (جَآءَ)
+  cite: الشاطبية باب المد؛ النشر 1:315
+  expert_reviewed: false
+  expect:
+    - {base: jeem}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [4, 5]}
+    - {base: hamza}
+- id: madd-muttasil-samaa
+  surah: 2
+  ayah: 19
+  rule: R182_MUTTASIL
+  rule_ar: مد متصل (ٱلسَّمَآءِ)
+  cite: الشاطبية؛ النشر 1:315
+  expert_reviewed: false
+  expect:
+    - {base: meem}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [4, 5]}
+    - {base: hamza}
+    - {base: kasra}
+- id: madd-munfasil-bima-unzila
+  surah: 2
+  ayah: 4
+  rule: R183_MUNFASIL
+  rule_ar: مد جائز منفصل (بِمَآ أُنزِلَ)
+  cite: الشاطبية؛ النشر 1:322
+  expert_reviewed: false
+  expect:
+    - {base: meem}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [4, 5]}
+    - {base: hamza}
+    - {base: damma}
+- id: madd-lazim-daalleen
+  surah: 1
+  ayah: 7
+  rule: R184_LAZIM
+  rule_ar: مد لازم كلمي مثقل (ٱلضَّآلِّينَ)
+  cite: تحفة الأطفال «ولازم إن السكون أصلا»؛ النشر 1:342
+  expert_reviewed: false
+  expect:
+    - {base: dad, geminated: true}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [6], len_kind: fixed}
+    - {base: lam, geminated: true}
+- id: madd-lazim-haaqqah
+  surah: 69
+  ayah: 1
+  rule: R184_LAZIM
+  rule_ar: مد لازم كلمي مثقل (ٱلْحَآقَّةُ)
+  cite: النشر 1:342
+  expert_reviewed: false
+  expect:
+    - {base: hah}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [6]}
+    - {base: qaf, geminated: true}
+- id: madd-lazim-taammah
+  surah: 79
+  ayah: 34
+  rule: R184_LAZIM
+  rule_ar: مد لازم كلمي مثقل (ٱلطَّآمَّةُ)
+  cite: النشر 1:342
+  expert_reviewed: false
+  expect:
+    - {base: tah, geminated: true}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [6]}
+    - {base: meem, geminated: true}
+- id: madd-lazim-mukhaffaf-aalaan
+  surah: 10
+  ayah: 51
+  rule: R184_LAZIM
+  rule_ar: مد لازم كلمي مخفف على وجه الإبدال (ءَآلْـَٰٔنَ)
+  cite: الشاطبية أبيات 192-194؛ النشر 1:377-378
+  expert_reviewed: false
+  expect:
+    - {base: hamza}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [6]}
+    - {base: lam}
+- id: madd-harfi-laam
+  surah: 2
+  ayah: 1
+  rule: R184_LAZIM_HARFI
+  rule_ar: مد لازم حرفي (لَامْ من الٓمٓ)
+  cite: تحفة الأطفال «واللازم الحرفي أول السور»؛ النشر 1:346
+  expert_reviewed: false
+  expect:
+    - {base: lam}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [6]}
+    - {base: meem}
+- id: madd-harfi-meem
+  surah: 2
+  ayah: 1
+  rule: R184_LAZIM_HARFI
+  rule_ar: مد لازم حرفي (مِيمْ من الٓمٓ)
+  cite: النشر 1:346
+  expert_reviewed: false
+  expect:
+    - {base: meem}
+    - {base: kasra}
+    - {base: yeh_madd, len_allowed: [6]}
+    - {base: meem}
+- id: madd-harfi-kaf-19-1
+  surah: 19
+  ayah: 1
+  rule: R184_LAZIM_HARFI
+  rule_ar: مد لازم حرفي (كَافْ من كٓهيعٓصٓ)
+  cite: النشر 1:346
+  expert_reviewed: false
+  expect:
+    - {base: kaf}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [6]}
+    - {base: feh}
+- id: madd-harfi-sad-19-1
+  surah: 19
+  ayah: 1
+  rule: R184_LAZIM_HARFI
+  rule_ar: مد لازم حرفي (صَادْ من كٓهيعٓصٓ)
+  cite: النشر 1:346
+  expert_reviewed: false
+  expect:
+    - {base: sad}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [6]}
+    - {base: dal}
+- id: madd-harfi-ha-two
+  surah: 19
+  ayah: 1
+  rule: R011_MUQATTAAT
+  rule_ar: هَا مقصورة حركتين (من حي طهر)
+  cite: تحفة الأطفال «وذاك أيضًا في فواتح السور في لفظ حي طاهر»
+  expert_reviewed: false
+  expect:
+    - {base: heh}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2}
+    - {base: yeh}
+- id: madd-ain-19-1
+  surah: 19
+  ayah: 1
+  rule: R185_AIN
+  rule_ar: عَيْن بمد اللين المشبع (وجهان 4/6) ونونها تخفى في صاد بالإجماع
+  cite: الشاطبية بيت 177؛ هداية القاري 1:343؛ حجة القراءات 1:521-522
+  expert_reviewed: false
+  expect:
+    - {base: ain}
+    - {base: fatha}
+    - {base: yeh, len_allowed: [4, 6]}
+    - {base: noon_mukhfah}
+- id: madd-silah-sughra
+  surah: 2
+  ayah: 37
+  rule: R186_SILAH
+  rule_ar: صلة صغرى (إِنَّهُۥ هُوَ)
+  cite: الشاطبية أبيات 158-159؛ سراج القارئ 1:45
+  expert_reviewed: false
+  expect:
+    - {base: heh}
+    - {base: damma}
+    - {base: waw_madd, len_canonical: 2}
+    - {base: heh}
+- id: madd-silah-kubra
+  surah: 104
+  ayah: 3
+  rule: R186_SILAH_KUBRA
+  rule_ar: صلة كبرى قبل الهمز (مَالَهُۥٓ أَخْلَدَهُۥ)
+  cite: الشاطبية بيت 158؛ النشر 1:306
+  expert_reviewed: false
+  expect:
+    - {base: heh}
+    - {base: damma}
+    - {base: waw_madd, len_allowed: [4, 5]}
+    - {base: hamza}
+- id: madd-badal
+  surah: 2
+  ayah: 9
+  rule: R181_BADAL
+  rule_ar: مد بدل (ءَامَنُوا)
+  cite: الشاطبية باب المد؛ النشر 1:339
+  expert_reviewed: false
+  expect:
+    - {base: hamza}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2}
+    - {base: meem}
+- id: madd-iwad
+  surah: 4
+  ayah: 74
+  rule: R187_IWAD
+  rule_ar: مد عوض وقفًا على التنوين المنصوب (عَظِيمًا)
+  cite: تحفة الأطفال؛ هداية القاري
+  expert_reviewed: false
+  expect_at_end:
+    - {base: meem}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2}
+- id: madd-leen-quraysh
+  surah: 106
+  ayah: 1
+  rule: R188_LEEN
+  rule_ar: مد لين وقفًا (قُرَيْشٍ)
+  cite: الشاطبية «وإن تسكن اليا بين فتح ومسكن»؛ النشر 1:333
+  expert_reviewed: false
+  expect:
+    - {base: reh}
+    - {base: fatha}
+    - {base: yeh, len_allowed: [2, 4, 6]}
+- id: madd-leen-khawf
+  surah: 106
+  ayah: 4
+  rule: R188_LEEN
+  rule_ar: مد لين وقفًا (خَوْفِۭ)
+  cite: الشاطبية؛ النشر 1:333
+  expert_reviewed: false
+  expect:
+    - {base: khah}
+    - {base: fatha}
+    - {base: waw, len_allowed: [2, 4, 6]}
+- id: madd-aared-nastaeen
+  surah: 1
+  ayah: 5
+  rule: R189_AARED
+  rule_ar: مد عارض للسكون (نَسْتَعِينُ)
+  cite: تحفة الأطفال «ومثله العارض للسكون»
+  expert_reviewed: false
+  expect_at_end:
+    - {base: yeh_madd, len_allowed: [2, 4, 6]}
+    - {base: noon}
+
+# --- hamzat al-wasl word classes (ibtida' probes via word:) ---------------
+- id: wasl-article-fath
+  surah: 1
+  ayah: 2
+  rule: R110_WASL
+  rule_ar: همزة وصل أل تفتح ابتداءً (ٱلْحَمْدُ)
+  cite: المقدمة الجزرية 101-103
+  expert_reviewed: false
+  word: ٱلْحَمْدُ
+  expect:
+    - {base: hamza}
+    - {base: fatha}
+    - {base: lam}
+- id: wasl-noun-ibn
+  surah: 2
+  ayah: 87
+  rule: R110_WASL
+  rule_ar: كسر همزة الوصل في الأسماء السبعة (ٱبْنَ)
+  cite: الجزرية؛ هداية القاري 2:482
+  expert_reviewed: false
+  word: ٱبْنَ
+  expect:
+    - {base: hamza}
+    - {base: kasra}
+    - {base: beh}
+- id: wasl-noun-imraat
+  surah: 66
+  ayah: 10
+  rule: R110_WASL
+  rule_ar: كسر همزة الوصل (ٱمْرَأَتَ)
+  cite: الجزرية؛ هداية القاري 2:482
+  expert_reviewed: false
+  word: ٱمْرَأَتَ
+  expect:
+    - {base: hamza}
+    - {base: kasra}
+    - {base: meem}
+- id: wasl-noun-ithnayn
+  surah: 9
+  ayah: 40
+  rule: R110_WASL
+  rule_ar: كسر همزة الوصل (ٱثْنَيْنِ)
+  cite: الجزرية؛ هداية القاري 2:482
+  expert_reviewed: false
+  word: ٱثْنَيْنِ
+  expect:
+    - {base: hamza}
+    - {base: kasra}
+    - {base: theh}
+- id: wasl-verb-unzur-damm
+  surah: 4
+  ayah: 50
+  rule: R111_WASL_VERB
+  rule_ar: ضم همزة الوصل لضم ثالث الفعل الأصلي (ٱنظُرْ)
+  cite: الجزرية «واكسره حال الكسر والفتح وضم»؛ هداية القاري 2:482
+  expert_reviewed: false
+  word: ٱنظُرْ
+  expect:
+    - {base: hamza}
+    - {base: damma}
+    - {base: noon_mukhfah}
+    - {base: zah}
+- id: wasl-verb-idhab-kasr
+  surah: 20
+  ayah: 24
+  rule: R111_WASL_VERB
+  rule_ar: كسر همزة الوصل لفتح الثالث (ٱذْهَبْ)
+  cite: الجزرية؛ هداية القاري 2:482
+  expert_reviewed: false
+  word: ٱذْهَبْ
+  expect:
+    - {base: hamza}
+    - {base: kasra}
+    - {base: thal}
+- id: wasl-verb-udu-damm
+  surah: 16
+  ayah: 125
+  rule: R111_WASL_VERB
+  rule_ar: ضم همزة الوصل (ٱدْعُ)
+  cite: الجزرية؛ هداية القاري 2:482
+  expert_reviewed: false
+  word: ٱدْعُ
+  expect:
+    - {base: hamza}
+    - {base: damma}
+    - {base: dal}
+- id: wasl-verb-iqra-kasr
+  surah: 96
+  ayah: 1
+  rule: R111_WASL_VERB
+  rule_ar: كسر همزة الوصل لفتح الثالث (ٱقْرَأْ)
+  cite: الجزرية؛ هداية القاري 2:482
+  expert_reviewed: false
+  word: ٱقْرَأْ
+  expect:
+    - {base: hamza}
+    - {base: kasra}
+    - {base: qaf}
+
+# --- lam shamsiyya / qamariyya -------------------------------------------
+- id: lam-shamsi-shams
+  surah: 91
+  ayah: 1
+  rule: R133_SHAMSI
+  rule_ar: إدغام لام التعريف الشمسية (وَٱلشَّمْسِ)
+  cite: الجزرية «وأظهرن لام قمرية»؛ تحفة الأطفال
+  expert_reviewed: false
+  expect:
+    - {base: waw, kind: consonant}
+    - {base: fatha}
+    - {base: sheen, geminated: true}
+- id: lam-qamari-qamar
+  surah: 91
+  ayah: 2
+  rule: R133_QAMARI
+  rule_ar: إظهار اللام القمرية (وَٱلْقَمَرِ)
+  cite: الجزرية؛ تحفة الأطفال
+  expert_reviewed: false
+  expect:
+    - {base: lam, geminated: false}
+    - {base: qaf}
+- id: lam-shamsi-nnas
+  surah: 114
+  ayah: 1
+  rule: R133_SHAMSI
+  rule_ar: إدغام اللام الشمسية في النون مع الغنة (ٱلنَّاسِ)
+  cite: الجزرية
+  expert_reviewed: false
+  expect:
+    - {base: noon, geminated: true, ghunna: mushaddadah}
+    - {base: fatha}
+    - {base: alef_madd}
+- id: lam-qamari-hamd
+  surah: 1
+  ayah: 2
+  rule: R133_QAMARI
+  rule_ar: إظهار اللام القمرية (ٱلْحَمْدُ)
+  cite: الجزرية
+  expert_reviewed: false
+  expect:
+    - {base: lam, geminated: false}
+    - {base: hah}
+
+# --- jalala --------------------------------------------------------------
+- id: jalala-tarqeeq-after-kasr
+  surah: 1
+  ayah: 1
+  rule: R212_JALALA
+  rule_ar: ترقيق لام الجلالة بعد الكسر (بِسْمِ ٱللَّهِ)
+  cite: الجزرية «وفخم اللام من اسم الله عن فتح أو ضم»
+  expert_reviewed: false
+  expect:
+    - {base: lam, geminated: true, tafkheem: moraqaq}
+- id: jalala-tafkheem-after-fath
+  surah: 3
+  ayah: 18
+  rule: R212_JALALA
+  rule_ar: تفخيم لام الجلالة بعد الفتح (شَهِدَ ٱللَّهُ)
+  cite: الجزرية
+  expert_reviewed: false
+  expect:
+    - {base: dal}
+    - {base: fatha}
+    - {base: lam, geminated: true, tafkheem: mofakham}
+
+# --- one-off wasl coverage ------------------------------------------------
+- id: oneoff-daaf-fath
+  surah: 30
+  ayah: 54
+  rule: R012B_DAAF
+  rule_ar: ضَعْف بالفتح (المقدَّم من الشاطبية؛ الضم وجه ثانٍ بالمفتاح)
+  cite: الشاطبية بيتا 722-723؛ التيسير 174-176
+  expert_reviewed: false
+  expect:
+    - {base: dad}
+    - {base: fatha}
+    - {base: ain}
+    - {base: feh}
+- id: oneoff-yabsut-seen
+  surah: 2
+  ayah: 245
+  rule: R012_SEEN_SAD
+  rule_ar: يَبْصُۜطُ تقرأ بالسين
+  cite: الشاطبية بيتا 514-515؛ سراج القارئ 1:163
+  expert_reviewed: false
+  expect:
+    - {base: beh}
+    - {base: seen}
+    - {base: damma}
+    - {base: tah}
+- id: oneoff-bastatan-seen
+  surah: 7
+  ayah: 69
+  rule: R012_SEEN_SAD
+  rule_ar: بَصْۜطَةً تقرأ بالسين
+  cite: الشاطبية؛ هداية القاري 2:577
+  expert_reviewed: false
+  expect:
+    - {base: beh}
+    - {base: fatha}
+    - {base: seen}
+    - {base: tah}
+- id: oneoff-musaytirun-sad
+  surah: 52
+  ayah: 37
+  rule: R012_SEEN_SAD
+  rule_ar: ٱلْمُصَۣيْطِرُونَ بالصاد (المقدَّم)
+  cite: التيسير 203-204؛ النشر 2:377-378
+  expert_reviewed: false
+  expect:
+    - {base: meem}
+    - {base: damma}
+    - {base: sad}
+    - {base: fatha}
+    - {base: yeh}
+- id: oneoff-bimusaytir-sad
+  surah: 88
+  ayah: 22
+  rule: R012_SEEN_SAD
+  rule_ar: بِمُصَيْطِرٍ بالصاد وجهًا واحدًا
+  cite: النويري 1:310؛ لطائف الإشارات 9:266-267
+  expert_reviewed: false
+  expect:
+    - {base: meem}
+    - {base: damma}
+    - {base: sad}
+- id: oneoff-imala
+  surah: 11
+  ayah: 41
+  rule: R221_IMALA
+  rule_ar: إمالة مَجْر۪ىٰهَا
+  cite: الشاطبية؛ (الموضع الوحيد لحفص)
+  expert_reviewed: false
+  expect:
+    - {base: fatha_imala}
+- id: oneoff-tasheel
+  surah: 41
+  ayah: 44
+  rule: R222_TASHEEL
+  rule_ar: تسهيل الهمزة الثانية (ءَا۬عْجَمِىٌّ)
+  cite: الشاطبية؛ (الموضع الوحيد لحفص)
+  expert_reviewed: false
+  expect:
+    - {base: hamza_musahhala}
+
+# --- muqatta'at spell-outs ------------------------------------------------
+- id: muq-taha
+  surah: 20
+  ayah: 1
+  rule: R011_MUQATTAAT
+  rule_ar: طه تهجّى طَا هَا بالقصر (من حي طاهر)
+  cite: تحفة الأطفال؛ النشر 1:346
+  expert_reviewed: false
+  expect:
+    - {base: tah}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2}
+    - {base: heh}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2}
+- id: muq-yaseen-seen
+  surah: 36
+  ayah: 1
+  rule: R011_MUQATTAAT
+  rule_ar: سِينْ من يسٓ بمد لازم حرفي
+  cite: النشر 1:346
+  expert_reviewed: false
+  expect:
+    - {base: seen}
+    - {base: kasra}
+    - {base: yeh_madd, len_allowed: [6]}
+    - {base: noon}
+- id: muq-hameem
+  surah: 40
+  ayah: 1
+  rule: R011_MUQATTAAT
+  rule_ar: حمٓ — حَا بالقصر ثم مِيمْ باللازم
+  cite: النشر 1:346
+  expert_reviewed: false
+  expect:
+    - {base: hah}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2}
+    - {base: meem}
+    - {base: kasra}
+    - {base: yeh_madd, len_allowed: [6]}
+    - {base: meem}

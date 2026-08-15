@@ -1,0 +1,132 @@
+# Differential triage vs the reference engine quran_transcript 0.5.2 (SPEC-000).
+# Every persistent disagreement cluster gets a verdict here. Agreement % is
+# informational; the GATE is: zero untriaged clusters, zero open our-bug.
+
+- id: DV-001
+  cluster: leen-idgham drops the host fatha (theirs عَصووَ, ours عَصَووَ)
+  examples: [2:61, 2:137, 3:188, 5:93, 7:95]
+  verdict: their-bug
+  citation: >
+    ʿaṣaw + wa- = idgham mutamathilayn of the leen waw; the sad keeps its
+    fatha (ʿaṣawwa-). Dropping the host vowel leaves an unpronounceable
+    cluster. Classical form: ما عصوا وكانوا -> 'aSaw-wakaanuu.
+
+- id: DV-002
+  cluster: the third alif of فَادَّارَأْتُمْ (2:72) — seat of the hamza, not a madd
+  examples: [2:72]
+  verdict: RESOLVED by classical sources (2026-08-15) — both engines were wrong;
+    ours fixed (was muttasil-4), the reference engine still emits a phantom
+    tabee'i-2 there (their-bug).
+  ruling: >
+    The word has three written alifs: the wasl alif, the madd alif AFTER THE
+    DAL (the tafaa'ul alif), and a third that is only the written chair of
+    the sakin hamza — never pronounced. The spoken form is fa-ddaa-RA'-tum:
+    plain fatha on the reh, hamza sakinah directly after it, and the only
+    madd is the dal's alif at two counts. There is no muttasil in the word.
+  citations:
+    - "دليل الحيران على مورد الظمآن (المارغني) ج1 ص415: «وألفاه هما التي بعد الدال، وهي ألف تفاعل، والتي بعد الراء وهي صورة الهمزة»"
+    - "ورد الطائف في شرح روضة الطرائف في رسم المصحف ج1 ص230: «في لفظة فَادَّارَأْتُمْ ثلاث ألفات: الأولى ألف الوصل، والثانية حرف مد ولين وهي للبناء، والثالثة سرجٌ للهمزة الساكنة»"
+    - "المدخل لدراسة القرآن الكريم ج1 ص339: «إلا ما استثني مثل فَادَّارَأْتُمْ ورِءْيًا، فحذف الحرف فيهما وكتبت الهمزة مفردة»"
+    - "لطائف الإشارات لفنون القراءات (القسطلاني) ج2 ص216، ج3 ص216: حذف «الألفين الأخيرين... للتخفيف وكراهة اجتماع الأمثال»"
+    - "هداية القاري إلى تجويد كلام الباري (المرصفي) ج1 ص280: تعريف المتصل «أن يقع الهمز بعد حرف المد واللين في كلمة واحدة» — غير متحقق هنا لتوسط الراء"
+    - "التمهيد في علم التجويد (ابن الجزري) ج1 ص161"
+  engineering: >
+    Decoder rule: a dagger alif immediately preceding a combining-hamza
+    segment (Tanzil form), or a madda-less dagger whose next cluster is a
+    line-hamza with sukun (KFGQPC form), is the hamza's seat — suppressed.
+    Corpus-unique to 2:72 (asserted in tests/test_2_72_seat_dagger.py).
+
+- id: DV-003
+  cluster: madd NOT shortened before hamzat-wasl verbs (theirs قُولُوا۟ ٱنظُرُوا۟ keeps ۥۥ)
+  examples: [2:104, 2:256(لَا ٱنفِصَامَ)]
+  verdict: their-bug
+  citation: >
+    Iltiqa' al-sakinayn: a madd letter meeting the following sakin is
+    shortened (qulu-nZuruu, la-nfiSaama). Their aared/shortening ops anchor
+    to end-of-string and skip medial junctions.
+
+- id: DV-004
+  cluster: taa marbuta + fath-tanween at waqf -> theirs emits ta+alif ('iwad on marbuta)
+  examples: [56:7 ثَلَٰثَةً]
+  verdict: their-bug
+  citation: >
+    الوقف على تاء التأنيث المربوطة المنونة يكون بالهاء الساكنة لا بالألف —
+    'iwad applies to tanween fath EXCEPT on taa marbuta (thalaathah, not
+    thalaathataa).
+
+- id: DV-005
+  cluster: jalala alif behavior at scattered sites (their للَه without اا)
+  examples: [82:19]
+  verdict: open-to-verify
+  note: >
+    Their AddAlifIsmAllah appears order-sensitive vs CleanEnd at ayah-final
+    position. Ours emits the alif (lillaah with aared at waqf). Needs a
+    direct probe of their output at 82:19 before assigning their-bug.
+
+- id: DV-006
+  cluster: pausal glide over-classified as aared (ours WAS aared-4 at فَنَسِيَ)
+  examples: [20:88, 7:196-class]
+  verdict: our-bug-FIXED
+  citation: >
+    A word-final madd letter has no following consonant, so aared cannot
+    apply; the pausal yaa of nasiya is a plain 2-count madd. Fixed to
+    R180_PAUSAL_GLIDE with fixed {2}; the differential caught it.
+
+- id: DV-008
+  cluster: letter-name junction tajweed unapplied by the oracle (their طسٓ noon izhar before تِلْكَ)
+  examples: [27:1]
+  verdict: RESOLVED — consensus (ijma') for IKHFA; ours correct, reference
+    engine's izhar is a bug. (2026-08-15, sourced.)
+  citations:
+    - "حجة القراءات (ابن زنجلة) ج1 ص521-522: «نونُ سين مخفاةٌ عند التاء غيرُ مدغمةٍ إجماعًا، ولم يختلفوا عند التاء كما اختلفوا عند الميم والواو»"
+    - "العنوان في القراءات السبع ج1 ص142: «ولا خلاف في إخفاء النون عند التاء من طس تلك»"
+    - "الوجيز (الأهوازي) ج1 ص83-84: «وأجمعوا على إخفاء النون وإبقاء غنتها عند التاء من طس تلك»"
+    - "الوافي في شرح الشاطبية ج1 ص136-137: «اتفق القراء على إخفاء نون طس عند التاء من تلك»"
+    - "المحتسب (ابن جني) ج1 ص241: جريان أحكام النون الساكنة بين أسماء حروف الهجاء (عين صاد، عين سين قاف)"
+  note: >
+    The general principle is likewise sourced: noon-sakinah rules RUN between
+    the spelled letter-names and following words; the يس/ن izhar before waw
+    is a transmitted exception specific to those sites (see SPEC-011).
+
+- id: DV-010
+  cluster: their ghunna repeat is position-dependent (mid-ayah 4, ayah-final 3)
+  examples: [55:39 جَآنّ -> theirs ننن, mid-ayah إِنَّ -> theirs نننن]
+  verdict: their-inconsistency
+  citation: >
+    The Ghonna op's ghonna_len=3 path fires at final position while the
+    golden convention is 4 — the internal 3-vs-4 inconsistency suspected
+    from code reading, now confirmed with corpus evidence. Ours is a
+    uniform CONVENTION (4) with realized lengths left to alignment.
+
+- id: DV-011
+  cluster: leen copies semantics (theirs = consonant + len copies)
+  examples: [55:17, 106:4, 19:1 'ayn]
+  verdict: representation-diff
+  note: adopted in oracle/expand.py (ch * (1+len)); our canonical leen = 2
+    (qasr mashhur), 'ayn {4,6} canonical 4 — matches their output exactly.
+
+- id: S1B-AUDIT
+  cluster: muaalem label variance audit (plan Phase III S1b)
+  measured: >
+    moshaf_11.0 (Abdel Rashid Soufi), 10,363 rows, aared-position final-madd
+    run lengths: {2: 5521, 4: 129, 6: 17} — 97.4% constant at the moshaf's
+    configured qasr value; the 4/6 tail is lazim/muttasil-waqf finals caught
+    by the crude pattern, not per-utterance variance.
+  verdict: >
+    CONFIRMED prescription: labels are constant per moshaf (the dataset author hand-set
+    MoshafAttributes per moshaf), never per-utterance observation. All
+    muaalem tiers route through S3 alignment; each moshaf's configured
+    lengths serve as the S3 imputation PRIOR (better than global canonical).
+    Cross-reciter measurement deferred until other moshaf datasets are local.
+
+- id: DV-013
+  cluster: 17:7 لِيَسُوءُوا cross-edition rasm variant — RESOLVED by the rasm literature
+  verdict: resolved (2026-08-15) — recitation restores the rasm-elided first waw
+  ruling: >
+    The 'Uthmani rasm writes one waw (al-Muhkam 1:168-169 "اجتمعت المصاحف
+    على حذف إحدى الواوين"); the recited form is li-yasuu'uu — "همزة بين
+    واوين" (al-Hujja 5:85) — with muttasil on the restored waw (Dalil
+    al-Hayran 1:405-406 puts the madd sign on the restored letter "لوجود
+    سببه"). Tanzil encodes the restoration (small waw + madda); KFGQPC
+    prints the bare rasm; R013 restores it, and the phone-level
+    cross-edition whitelist is now EMPTY.

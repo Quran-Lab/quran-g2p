@@ -1,0 +1,452 @@
+# Pausal forms (SPEC-120s), haa al-kinaya farsh (SPEC-183), the seven
+# alifs (SPEC-184), haa as-sakt, istifham sites — the sourced farsh as
+# reviewable golden rows (mirrors the python goldens for the expert packet).
+
+# --- pausal --------------------------------------------------------------
+- id: pausal-iskan-alamin
+  surah: 1
+  ayah: 2
+  rule: R120_ISKAN
+  rule_ar: إسكان آخر الآية وقفًا (ٱلْعَٰلَمِينَ — لا حركة بعد النون)
+  cite: النشر 2:120 (الوقف بالسكون هو الأصل)
+  expert_reviewed: false
+  expect_at_end:
+    - {base: noon}
+- id: pausal-marbuta-qaria
+  surah: 101
+  ayah: 1
+  rule: R122_MARBUTA
+  rule_ar: تاء مربوطة تُوقف عليها هاءً (ٱلْقَارِعَةُ)
+  cite: النشر 2:129؛ هداية القاري
+  expert_reviewed: false
+  expect_at_end:
+    - {base: heh}
+- id: pausal-marbuta-mid-wasl-teh
+  surah: 2
+  ayah: 25
+  rule: R122_MARBUTA
+  rule_ar: التاء المربوطة تاء في الوصل (ثَمَرَةٍ ... مِن ثَمَرَةٍ رِّزْقًا)
+  cite: النشر 2:129
+  expert_reviewed: false
+  expect:
+    - {base: theh}
+    - {base: fatha}
+    - {base: meem}
+    - {base: fatha}
+    - {base: reh}
+    - {base: fatha}
+    - {base: teh}
+- id: pausal-iwad-khusr
+  surah: 103
+  ayah: 2
+  rule: R121_IWAD
+  rule_ar: تنوين الكسر يحذف وقفًا بلا عوض (خُسْرٍ — الوقف على الراء ساكنة)
+  cite: النشر 2:120
+  expert_reviewed: false
+  expect_at_end:
+    - {base: reh}
+- id: pausal-iwad-ahad-noon-gone
+  surah: 112
+  ayah: 1
+  rule: R121_IWAD
+  rule_ar: تنوين الضم يحذف وقفًا (أَحَدٌ — لا نون في الوقف)
+  cite: النشر 2:120
+  expert_reviewed: false
+  expect_at_end:
+    - {base: hah}
+    - {base: fatha}
+    - {base: dal, qalqalah: any}
+- id: pausal-iwad-fath-alif
+  surah: 78
+  ayah: 16
+  rule: R121_IWAD
+  rule_ar: تنوين النصب يبدل ألفًا وقفًا (أَلْفَافًا)
+  cite: النشر 2:120؛ تحفة الأطفال
+  expert_reviewed: false
+  expect_at_end:
+    - {base: feh}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2}
+
+# --- haa al-kinaya farsh (SPEC-183) --------------------------------------
+- id: haa-yardahu-qasr
+  surah: 39
+  ayah: 7
+  rule: R183_HAA_KINAYA
+  rule_ar: يَرْضَهُ بضم بلا صلة (القصر لحفص)
+  cite: الشاطبية بيت 164؛ سراج القارئ 1:47؛ النشر 1:306
+  expert_reviewed: false
+  expect:
+    - {base: dad}
+    - {base: fatha}
+    - {base: heh}
+    - {base: damma}
+    - {base: lam}
+- id: haa-fihi-muhanan-silah
+  surah: 25
+  ayah: 69
+  rule: R183_HAA_KINAYA
+  rule_ar: فِيهِۦ مُهَانًا بالصلة رغم الياء الساكنة قبلها (انفراد حفص)
+  cite: الشاطبية بيت 159 «وفيه مهانا معه حفص»؛ فتح الوصيد 1:317-320
+  expert_reviewed: false
+  expect:
+    - {base: heh}
+    - {base: kasra}
+    - {base: yeh_madd}
+    - {base: meem}
+    - {base: damma}
+- id: haa-arjih-iskan
+  surah: 7
+  ayah: 111
+  rule: R183_HAA_KINAYA
+  rule_ar: أَرْجِهْ بإسكان الهاء
+  cite: الشاطبية بيتا 166-167؛ سراج القارئ 1:48
+  expert_reviewed: false
+  expect:
+    - {base: jeem}
+    - {base: kasra}
+    - {base: heh}
+    - {base: waw, kind: consonant}
+- id: haa-falqih-iskan
+  surah: 27
+  ayah: 28
+  rule: R183_HAA_KINAYA
+  rule_ar: فَأَلْقِهْ بإسكان الهاء
+  cite: الشاطبية بيت 161؛ سراج القارئ 1:46
+  expert_reviewed: false
+  expect:
+    - {base: qaf}
+    - {base: kasra}
+    - {base: heh}
+    - {base: hamza}
+- id: haa-yattaqhi-qaf-sakin
+  surah: 24
+  ayah: 52
+  rule: R183_HAA_KINAYA
+  rule_ar: وَيَتَّقْهِ بسكون القاف وقصر الهاء
+  cite: الشاطبية «وقل بسكون القاف والقصر حفصهم»؛ هداية القاري 1:359
+  expert_reviewed: false
+  expect:
+    - {base: qaf}
+    - {base: heh}
+    - {base: kasra}
+    - {base: feh}
+- id: haa-ansaniihu-damm
+  surah: 18
+  ayah: 63
+  rule: R183_HAA_KINAYA
+  rule_ar: أَنسَىٰنِيهُ بضم الهاء بلا صلة
+  cite: الشاطبية بيت 165؛ التيسير 1:30؛ النشر 1:305
+  expert_reviewed: false
+  expect:
+    - {base: yeh_madd}
+    - {base: heh}
+    - {base: damma}
+    - {base: hamza}
+- id: haa-alayhu-damm
+  surah: 48
+  ayah: 10
+  rule: R183_HAA_KINAYA
+  rule_ar: عَلَيْهُ ٱللَّهَ بضم الهاء
+  cite: الشاطبية بيت 165؛ النشر 1:305
+  expert_reviewed: false
+  expect:
+    - {base: heh}
+    - {base: damma}
+    - {base: lam, geminated: true}
+
+# --- the seven alifs (SPEC-184) ------------------------------------------
+- id: alif7-zununa-waqf
+  surah: 33
+  ayah: 10
+  rule: R190_SEVEN_ALIFS
+  rule_ar: ٱلظُّنُونَا۠ تثبت ألفها وقفًا (رأس آية، ألف الإطلاق)
+  cite: الشاطبية «وحق صحاب قصر وصل الظنون...»؛ التيسير 1:177-178
+  expert_reviewed: false
+  expect_at_end:
+    - {base: noon}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2}
+- id: alif7-rasula-waqf
+  surah: 33
+  ayah: 66
+  rule: R190_SEVEN_ALIFS
+  rule_ar: ٱلرَّسُولَا۠ تثبت ألفها وقفًا
+  cite: التيسير 1:177-178؛ حجة القراءات 1:572-574
+  expert_reviewed: false
+  expect_at_end:
+    - {base: lam}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2}
+- id: alif7-sabila-waqf
+  surah: 33
+  ayah: 67
+  rule: R190_SEVEN_ALIFS
+  rule_ar: ٱلسَّبِيلَا۠ تثبت ألفها وقفًا
+  cite: التيسير 1:177-178
+  expert_reviewed: false
+  expect_at_end:
+    - {base: lam}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2}
+- id: alif7-ana-wasl-drop
+  surah: 2
+  ayah: 258
+  rule: R190_SEVEN_ALIFS
+  rule_ar: أَنَا۠ تحذف ألفها وصلًا (أَنَا۠ أُحْىِۦ — النون تصل الهمزة)
+  cite: جمال القراء 1:747-748؛ الوافي 1:222-223
+  expert_reviewed: false
+  expect:
+    - {base: hamza}
+    - {base: fatha}
+    - {base: noon}
+    - {base: fatha}
+    - {base: hamza}
+    - {base: damma}
+- id: alif7-lakinna-wasl-drop
+  surah: 18
+  ayah: 38
+  rule: R190_SEVEN_ALIFS
+  rule_ar: لَّٰكِنَّا۠ تحذف ألفها وصلًا (لَٰكِنَّ هُوَ)
+  cite: الحجة للفارسي 5:144-146؛ حجة القراءات 1:416-417
+  expert_reviewed: false
+  expect:
+    - {base: kaf}
+    - {base: kasra}
+    - {base: noon, geminated: true}
+    - {base: fatha}
+    - {base: heh}
+    - {base: damma}
+- id: alif7-qawarira1-waqf
+  surah: 76
+  ayah: 15
+  rule: R190_SEVEN_ALIFS
+  rule_ar: قَوَارِيرَا۠ الأولى تثبت ألفها وقفًا (رأس آية)
+  cite: التيسير 1:217-218؛ السبعة 1:664-665
+  expert_reviewed: false
+  expect_at_end:
+    - {base: reh}
+    - {base: fatha}
+    - {base: alef_madd, len_canonical: 2}
+- id: alif7-qawarira2-no-alif
+  surah: 76
+  ayah: 16
+  rule: R190_SEVEN_ALIFS
+  rule_ar: قَوَارِيرَا۟ الثانية لا تُلفظ ألفها أبدًا (وصلها بفتحة إلى مِن)
+  cite: التيسير 1:217-218؛ جامع البيان 4:1678-1679
+  expert_reviewed: false
+  expect:
+    - {base: yeh_madd}
+    - {base: reh}
+    - {base: fatha}
+    - {base: meem}
+    - {base: kasra}
+- id: alif7-salasila-wasl
+  surah: 76
+  ayah: 4
+  rule: R190_SEVEN_ALIFS
+  rule_ar: سَلَٰسِلَا۟ وصلًا بفتحة بلا تنوين ولا ألف (الرسم بالصفر المدور
+    يختار الحذف وقفًا؛ الإثبات وجه ثانٍ)
+  cite: طيبة النشر (سلاسلا نوّن)؛ النويري 2:603؛ العميد 1:160-161
+  expert_reviewed: false
+  expect:
+    - {base: seen}
+    - {base: kasra}
+    - {base: lam}
+    - {base: fatha}
+    - {base: waw, kind: consonant}
+    - {base: fatha}
+
+# --- haa as-sakt ----------------------------------------------------------
+- id: haa-sakt-kitabiyah
+  surah: 69
+  ayah: 19
+  rule: R123_HAA_SAKT
+  rule_ar: هاء السكت ساكنة آخر الآية (كِتَٰبِيَهْ)
+  cite: الإقناع 1:244؛ لطائف الإشارات 9:75
+  expert_reviewed: false
+  expect_at_end:
+    - {base: yeh, kind: consonant}
+    - {base: fatha}
+    - {base: heh}
+- id: haa-sakt-maliyah
+  surah: 69
+  ayah: 28
+  rule: R123_HAA_SAKT
+  rule_ar: هاء السكت (مَالِيَهْ)
+  cite: الإقناع 1:244
+  expert_reviewed: false
+  expect_at_end:
+    - {base: heh}
+- id: haa-sakt-sultaniyah
+  surah: 69
+  ayah: 29
+  rule: R123_HAA_SAKT
+  rule_ar: هاء السكت (سُلْطَٰنِيَهْ)
+  cite: الإقناع 1:244
+  expert_reviewed: false
+  expect_at_end:
+    - {base: heh}
+- id: haa-sakt-mahiyah
+  surah: 101
+  ayah: 10
+  rule: R123_HAA_SAKT
+  rule_ar: هاء السكت (مَا هِيَهْ)
+  cite: الإقناع 1:244
+  expert_reviewed: false
+  expect_at_end:
+    - {base: heh}
+- id: haa-sakt-yatasannah-wasl
+  surah: 2
+  ayah: 259
+  rule: R123_HAA_SAKT
+  rule_ar: هاء السكت ثابتة وصلًا لحفص (لَمْ يَتَسَنَّهْ وَٱنظُرْ)
+  cite: الإقناع 1:244 (من يثبتها يثبتها ساكنة وصلًا ووقفًا)
+  expert_reviewed: false
+  expect:
+    - {base: noon, geminated: true}
+    - {base: fatha}
+    - {base: heh}
+    - {base: waw, kind: consonant}
+- id: haa-sakt-iqtadih-wasl
+  surah: 6
+  ayah: 90
+  rule: R123_HAA_SAKT
+  rule_ar: هاء السكت في ٱقْتَدِهْ ساكنة وصلًا لحفص
+  cite: الإقناع 1:244؛ النشر 2:142
+  expert_reviewed: false
+  expect:
+    - {base: dal}
+    - {base: kasra}
+    - {base: heh}
+    - {base: qaf}
+
+# --- istifham + wasl sites (ibdal default) -------------------------------
+- id: istifham-aalaan-10-91
+  surah: 10
+  ayah: 91
+  rule: R014_ISTIFHAM
+  rule_ar: ءَآلْـَٰٔنَ بالإبدال مع الإشباع (المقدَّم)
+  cite: الشاطبية أبيات 192-194؛ النشر 1:377-378
+  expert_reviewed: false
+  expect:
+    - {base: hamza}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [6]}
+    - {base: lam}
+- id: istifham-aallahu-10-59
+  surah: 10
+  ayah: 59
+  rule: R014_ISTIFHAM
+  rule_ar: ءَآللَّهُ بالإبدال (لام الجلالة بعدها مشددة)
+  cite: الشاطبية أبيات 192-194؛ سراج القارئ 1:66-67
+  expert_reviewed: false
+  expect:
+    - {base: hamza}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [6]}
+    - {base: lam, geminated: true}
+- id: istifham-aaldhakarayn-6-143
+  surah: 6
+  ayah: 143
+  rule: R014_ISTIFHAM
+  rule_ar: ءَآلذَّكَرَيْنِ بالإبدال (الشمسية بعدها)
+  cite: الشاطبية أبيات 192-194
+  expert_reviewed: false
+  expect:
+    - {base: hamza}
+    - {base: fatha}
+    - {base: alef_madd, len_allowed: [6]}
+    - {base: thal, geminated: true}
+
+# --- noon al-wiqaya + junction extras ------------------------------------
+- id: wiqaya-khayran
+  surah: 2
+  ayah: 180
+  rule: R131_WIQAYA
+  rule_ar: نون الوقاية مكسورة بين التنوين وهمزة الوصل (خَيْرًا ٱلْوَصِيَّةُ)
+  cite: (التقاء الساكنين — SPEC-130)؛ هداية القاري
+  expert_reviewed: false
+  expect:
+    - {base: noon}
+    - {base: kasra}
+    - {base: lam}
+    - {base: waw}
+- id: junction-madd-shortening
+  surah: 2
+  ayah: 24
+  rule: R131_SHORTEN
+  rule_ar: قصر مد الصلة قبل همزة الوصل (فَٱتَّقُوا۟ ٱلنَّارَ — واو الجماعة
+    تختصر عند الوصل)
+  cite: (التقاء الساكنين)
+  expert_reviewed: false
+  expect:
+    - {base: qaf}
+    - {base: damma}
+    - {base: noon, geminated: true}
+- id: ghunna-axis-naqis-waw
+  surah: 2
+  ayah: 7
+  rule: R141_NAQIS_GHUNNA
+  rule_ar: غنة على واو الإدغام الناقص من غير تشديد (غِشَٰوَةٌ وَلَهُمْ)
+  cite: النشر 2:23
+  expert_reviewed: false
+  expect:
+    - {base: waw, ghunna: idgham, geminated: false}
+    - {base: fatha}
+    - {base: lam}
+- id: ghunna-axis-naqis-yeh
+  surah: 99
+  ayah: 7
+  rule: R141_NAQIS_GHUNNA
+  rule_ar: غنة على ياء الإدغام الناقص (خَيْرًا يَرَهُۥ)
+  cite: النشر 2:23
+  expert_reviewed: false
+  expect:
+    - {base: yeh, ghunna: idgham, geminated: false}
+    - {base: fatha}
+    - {base: reh}
+- id: tawkeed-lanasfaan-iqlab
+  surah: 96
+  ayah: 15
+  rule: R143_IQLAB
+  rule_ar: نون التوكيد الخفيفة رسمت تنوينًا وتقلب ميمًا قبل الباء
+    (لَنَسْفَعًۢا بِٱلنَّاصِيَةِ)؛ والوقف عليها بالألف بالإجماع
+  cite: سراج القارئ 129 (ط. الشاملة) «كونا ولنسفعا... أجمعوا على الوقف
+    عليه بالألف»؛ تحفة الأطفال (الإقلاب)
+  expert_reviewed: false
+  expect:
+    - {base: feh}
+    - {base: fatha}
+    - {base: ain}
+    - {base: fatha}
+    - {base: meem_mukhfah}
+    - {base: beh}
+- id: tawkeed-layakoonan-idgham
+  surah: 12
+  ayah: 32
+  rule: R141_IDGHAM_GHUNNA
+  rule_ar: نون التوكيد الخفيفة تدغم في الميم وصلًا (وَلَيَكُونًا مِّنَ
+    ٱلصَّٰغِرِينَ)؛ والوقف عليها بالألف
+  cite: سراج القارئ 129 (ط. الشاملة)؛ النشر 2:22
+  expert_reviewed: false
+  expect:
+    - {base: kaf}
+    - {base: damma}
+    - {base: waw_madd}
+    - {base: noon, kind: consonant}
+    - {base: fatha}
+    - {base: meem, geminated: true}
+- id: mutamathil-yudrikkum
+  surah: 4
+  ayah: 78
+  rule: R160_MUTAMATHIL
+  rule_ar: إدغام مثلين صغير للكاف في الكاف (يُدْرِككُّمُ ٱلْمَوْتُ)
+  cite: الجزرية «وأولى مثل وجنس إن سكن أدغم»؛ النشر 2:18
+  expert_reviewed: false
+  expect:
+    - {base: reh}
+    - {base: kasra}
+    - {base: kaf, geminated: true}
+    - {base: damma}
+    - {base: meem}
