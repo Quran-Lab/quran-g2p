@@ -39,7 +39,7 @@ CATEGORY = {
     "madd_2": {"R180", "R181", "R134"},
     "qalqalah": {"R200", "R201", "R202", "R161"},
     "hamzat_wasl": {"TEXT:0671"},
-    "silent": {"TEXT:06DF", "ABSENT"},
+    "silent": {"TEXT:06DF", "ABSENT", "R012"},  # their silent-sad = our recorded seen-substitution
     "lam_shamsiyyah": {"R133"},
 }
 

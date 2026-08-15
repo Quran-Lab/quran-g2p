@@ -5,7 +5,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/tests-425%20passing-brightgreen" alt="tests">
   <img src="https://img.shields.io/badge/riwaya-Hafs%20%CA%BFan%20%CA%BFAsim%20(al--Shatibiyyah)-0b3d2e" alt="riwaya">
-  <img src="https://img.shields.io/badge/license-Apache--2.0-blue" alt="license">
+  <img src="https://img.shields.io/badge/license-Quran--Lab%20NPL--1.1-8a6d00" alt="license">
 </p>
 
 A clean-room, specification-first grapheme-to-phoneme engine for Quranic
@@ -86,7 +86,7 @@ Over all 6,236 ayat:
 
 | oracle | result |
 |---|---|
-| **Trigger-span dataset** (independent, Dar al-Maarifah-derived; ~60,000 annotations across 18 rule categories) | 17/18 categories at **1.0000 recall**; the 3 corpus-wide misses are documented representation variants |
+| **Trigger-span dataset** (independent, Dar al-Maarifah-derived; 60,057 annotations across 18 rule categories) | **60,056 of 60,057 matched**: 17/18 categories at 1.0000 recall, madd classes at 0.9999; the single residual annotation corpus-wide is a cited dataset error at 17:7, where the rasm literature rules for the engine (restored-waw muttasil, not tabee'i: al-Hujja 5:85, al-Muhkam 1:168) |
 | **KFGQPC dabt witnesses** (~8,900 tanween sites) | **100% agreement** between derived rules and the written izhar, open-tanween, and iqlab forms |
 | **Cross-edition phone equality** (Tanzil vs KFGQPC) | **6,236/6,236 identical, no exceptions** (the last rasm variant, 17:7, resolved by the rasm literature; see the register) |
 | **Reference-engine differential** (char-level, whole corpus) | 98.9% ayah-exact; **every** remaining cluster carries a recorded verdict, including six classes where the classical sources rule against the reference implementation |
@@ -236,9 +236,11 @@ above any engine, including this one.
 
 ## License
 
-The code and specification are released under the **Apache License 2.0**
-(see `LICENSE`). The vendored texts in `data/` remain under their upstream
-terms as noted above.
+The code, specification, and artifacts are released under the
+**Quran-Lab No-Profit License, Version 1.1 (NPL-1.1)**: free to use, run,
+copy, and adapt for non-profit purposes; no profit may be obtained from
+it or from derivatives (see `LICENSE` for the exact terms). The vendored
+texts in `data/` remain under their own upstream terms as noted above.
 
 ## Citation
 
