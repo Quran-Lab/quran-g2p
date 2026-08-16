@@ -57,9 +57,15 @@ def _docstring_linenos(tree):
 def test_no_arabic_literals_outside_codepoints():
     # Docstrings are exempt: Arabic RULE NAMES in prose aid review and never
     # enter logic. The ban targets literals used as values/comparisons.
+    # rules/registry.py is likewise exempt: its Arabic strings are the
+    # rulings' names and classical citations (display/review metadata,
+    # asserted by the register gate to never feed engine logic) — the
+    # engine's phonological literals remain confined to codepoints.py.
     violations = []
     for path in _iter_src_files():
         if path.name == "codepoints.py":
+            continue
+        if path.name == "registry.py" and path.parent.name == "rules":
             continue
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         doclines = _docstring_linenos(tree)

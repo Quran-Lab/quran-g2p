@@ -120,7 +120,7 @@
   ayah: 3
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للقاف (رَزَقْنَٰهُمْ)
-  cite: تحفة الأطفال «قطب جد»؛ النشر 1:203
+  cite: الشاطبية بيت 1159 «وفي قطب جد خمس قلقلة»؛ النشر 1:203
   expert_reviewed: false
   expect:
     - {base: qaf, qalqalah: any}
@@ -130,7 +130,7 @@
   ayah: 4
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للطاء الساكنة (أَطْعَمَهُم)
-  cite: تحفة الأطفال؛ النشر 1:203
+  cite: الشاطبية بيت 1159؛ النشر 1:203
   expert_reviewed: false
   expect:
     - {base: tah, qalqalah: any}
@@ -140,7 +140,7 @@
   ayah: 4
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للباء (قَبْلِكَ)
-  cite: تحفة الأطفال؛ النشر 1:203
+  cite: الشاطبية بيت 1159؛ النشر 1:203
   expert_reviewed: false
   expect:
     - {base: beh, qalqalah: any}
@@ -150,7 +150,7 @@
   ayah: 19
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للجيم الساكنة (يَجْعَلُونَ)
-  cite: تحفة الأطفال؛ النشر 1:203
+  cite: الشاطبية بيت 1159؛ النشر 1:203
   expert_reviewed: false
   expect:
     - {base: jeem, qalqalah: any}
@@ -160,7 +160,7 @@
   ayah: 9
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للدال الساكنة (قَدْ أَفْلَحَ)
-  cite: تحفة الأطفال؛ النشر 1:203
+  cite: الشاطبية بيت 1159؛ النشر 1:203
   expert_reviewed: false
   expect:
     - {base: dal, qalqalah: any}
@@ -169,7 +169,7 @@
   ayah: 1
   rule: R201_QALQALAH_KUBRA
   rule_ar: قلقلة كبرى وقفًا (ٱلْفَلَقِ)
-  cite: تحفة الأطفال؛ هداية القاري 1:84-87
+  cite: الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87
   expert_reviewed: false
   expect_at_end:
     - {base: qaf, qalqalah: any}
@@ -178,7 +178,7 @@
   ayah: 1
   rule: R201_QALQALAH_KUBRA
   rule_ar: قلقلة كبرى وقفًا مع التشديد (وَتَبَّ)
-  cite: تحفة الأطفال؛ هداية القاري 1:84-87
+  cite: الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87
   expert_reviewed: false
   expect_at_end:
     - {base: beh, geminated: true, qalqalah: any}
@@ -187,7 +187,7 @@
   ayah: 1
   rule: R201_QALQALAH_KUBRA
   rule_ar: قلقلة كبرى وقفًا (أَحَدٌ — بعد حذف التنوين)
-  cite: تحفة الأطفال؛ هداية القاري 1:84-87
+  cite: الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87
   expert_reviewed: false
   expect_at_end:
     - {base: dal, qalqalah: any}
@@ -196,7 +196,7 @@
   ayah: 20
   rule: R201_QALQALAH_KUBRA
   rule_ar: قلقلة كبرى وقفًا للطاء (مُّحِيطُۢ)
-  cite: تحفة الأطفال؛ هداية القاري 1:84-87
+  cite: الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87
   expert_reviewed: false
   expect_at_end:
     - {base: tah, qalqalah: any}
@@ -205,7 +205,7 @@
   ayah: 5
   rule: R201_QALQALAH_KUBRA
   rule_ar: قلقلة كبرى وقفًا للجيم (بَهِيجٍ)
-  cite: تحفة الأطفال؛ هداية القاري 1:84-87
+  cite: الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87
   expert_reviewed: false
   expect_at_end:
     - {base: jeem, qalqalah: any}

@@ -319,7 +319,7 @@
   ayah: 2
   rule: R142_IDGHAM_BILA_GHUNNA
   rule_ar: إدغام بلا غنة في اللام (هُدًى لِّلْمُتَّقِينَ)
-  cite: تحفة الأطفال «واللام والرا ثم كررنه»؛ النشر 2:24
+  cite: تحفة الأطفال «في اللام والرا ثم كررنه»؛ النشر 2:24
   expert_reviewed: false
   expect:
     - {base: lam, geminated: true}

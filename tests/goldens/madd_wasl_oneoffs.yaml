@@ -224,7 +224,7 @@
   ayah: 1
   rule: R188_LEEN
   rule_ar: مد لين وقفًا (قُرَيْشٍ)
-  cite: الشاطبية «وإن تسكن اليا بين فتح ومسكن»؛ النشر 1:333
+  cite: الشاطبية باب المد؛ النشر 1:333
   expert_reviewed: false
   expect:
     - {base: reh}
@@ -246,7 +246,7 @@
   ayah: 5
   rule: R189_AARED
   rule_ar: مد عارض للسكون (نَسْتَعِينُ)
-  cite: تحفة الأطفال «ومثله العارض للسكون»
+  cite: تحفة الأطفال «ومثل ذا إن عرض السكون»
   expert_reviewed: false
   expect_at_end:
     - {base: yeh_madd, len_allowed: [2, 4, 6]}
@@ -357,7 +357,7 @@
   ayah: 1
   rule: R133_SHAMSI
   rule_ar: إدغام لام التعريف الشمسية (وَٱلشَّمْسِ)
-  cite: الجزرية «وأظهرن لام قمرية»؛ تحفة الأطفال
+  cite: تحفة الأطفال «للام أل حالان قبل الأحرف»؛ النشر 2:18-19
   expert_reviewed: false
   expect:
     - {base: waw, kind: consonant}
