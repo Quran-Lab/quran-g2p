@@ -247,10 +247,33 @@ the final release gate. The machine validation above is necessary, not
 sufficient, and the maintainers hold the tradition's own standard, التلقي,
 above any engine, including this one.
 
-The review is underway: an ijazah-holding hafiz (Hafs 'an 'Asim) is
-independently ruling on each of the 195 entries in the rulings register.
-Every entry carries its classical citation, and any disagreement is
-adjudicated against the cited texts. Live status:
+The review is underway: each of the 195 entries in the rulings register
+is being independently ruled on (صحيح / خطأ / فيه وجهان, with correction
+and reason for every خطأ) by a reviewer whose credentials are documented
+with the maintainers, scans on file:
+
+- **hafiz of the entire Quran**, board-examined by Wifaq al-Madaris
+  al-Salafiyyah (Pakistan), grade mumtaz, 1443/2022
+- holder of a **written ijazah in Hafs 'an 'Asim via tariq
+  al-Shatibiyyah** (1434/2013) whose text carries the authorization to
+  transmit — وقد أجزته أن يقرئ غيره كما قرأ — and a connected sanad
+  (الإسناد المتصل) to the Prophet ﷺ
+- full-Quran **tajweed certificate** (mumtaz, 377/400) on the classical
+  curriculum: al-Muqaddimah al-Jazariyyah, Tuhfat al-Atfal, Jamal
+  al-Qur'an, Fawa'id Makkiyyah, Taysir al-Tajweed
+- certified by the **Prophet's Mosque Qur'an program** in Madinah
+  (10 ajza', 96.94%); currently a Shari'ah student at the Islamic
+  University of Madinah
+
+Before engagement the reviewer passed a blind screening: ten rulings,
+three of which carried deliberately planted errors — all three caught,
+zero false alarms on the seven true rulings. Verdicts are given from
+his own knowledge, independently of the engine and its sources; any
+disagreement is adjudicated against the cited classical texts, and the
+golden rows' `expert_reviewed` flags flip only on confirmed verdicts.
+The reviewer is anonymized here pending his preference.
+
+Live status:
 
 <p align="center">
   <img src="https://quran-g2p-review-status.mostafa0333.workers.dev/progress.svg" alt="live expert review status" width="680">
