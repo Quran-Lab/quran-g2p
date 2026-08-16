@@ -256,7 +256,7 @@ with the maintainers, scans on file:
   al-Salafiyyah (Pakistan), grade mumtaz, 1443/2022
 - holder of a **written ijazah in Hafs 'an 'Asim via tariq
   al-Shatibiyyah** (1434/2013) whose text carries the authorization to
-  transmit — وقد أجزته أن يقرئ غيره كما قرأ — and a connected sanad
+  transmit (وقد أجزته أن يقرئ غيره كما قرأ) and a connected sanad
   (الإسناد المتصل) to the Prophet ﷺ
 - full-Quran **tajweed certificate** (mumtaz, 377/400) on the classical
   curriculum: al-Muqaddimah al-Jazariyyah, Tuhfat al-Atfal, Jamal
@@ -266,7 +266,7 @@ with the maintainers, scans on file:
   University of Madinah
 
 Before engagement the reviewer passed a blind screening: ten rulings,
-three of which carried deliberately planted errors — all three caught,
+three of which carried deliberately planted errors: all three caught,
 zero false alarms on the seven true rulings. Verdicts are given from
 his own knowledge, independently of the engine and its sources; any
 disagreement is adjudicated against the cited classical texts, and the
