@@ -2,7 +2,7 @@
 
 Every classical reference in the rulings register (`src/quran_g2p/rules/registry.py`) checked against the Shamela library: the cited book must exist in the corpus, the cited volume:page (or bayt number) must exist in the Shamela print, and the ruling's topic keywords must appear at the cited location (±3 pages of edition drift tolerated). Quoted matn snippets are additionally verified verbatim, character-stream, inside the matns themselves. Regenerate with `python tools/audit_citations.py`.
 
-**130 references checked: 124 verified, 6 descriptive notes, 0 failures.**
+**133 references checked: 126 verified, 7 descriptive notes, 0 failures.**
 
 | ruling | reference | status |
 |---|---|---|
@@ -55,6 +55,9 @@ Every classical reference in the rulings register (`src/quran_g2p/rules/registry
 | `R135_MEEM_ALLAH` | السبعة [السبعة 1:199] | OK |
 | `R135_MEEM_ALLAH` | غيث النفع [غيث النفع 1:129-130] | OK |
 | `R135_MEEM_ALLAH` | النويري [النويري 2:231] | OK |
+| `R136_BASMALA_JOINS` | الشاطبية [الشاطبية أبيات 100-107 «وبسمل بين ] | OK |
+| `R136_BASMALA_JOINS` | غيث النفع [غيث النفع 1:270] | OK |
+| `R136_BASMALA_JOINS` | البدور الزاهرة 1:133 | NOTE |
 | `R140_IZHAR` | تحفة الأطفال [تحفة الأطفال «للحلق ست»] | OK-BOOK |
 | `R140_IZHAR` | هداية القاري [هداية القاري 1:181] | OK |
 | `R140_IZHAR_HALQI` | تحفة الأطفال [تحفة الأطفال «للحلق ست»] | OK-BOOK |

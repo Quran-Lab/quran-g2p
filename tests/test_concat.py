@@ -106,3 +106,18 @@ def test_word_indices_are_global():
     n2 = len(TB.ayah(AyahRef(112, 2)).split(" "))
     n3 = len(TB.ayah(AyahRef(112, 3)).split(" "))
     assert max(p.word_index for p in seg.phones) == n1 + n2 + n3 - 1
+
+
+def test_forbidden_fourth_basmala_join_raises():
+    # وصل آخر السورة بالبسملة والوقف عليها: الوجه الممنوع (الشاطبية بيت 107)
+    import pytest
+    with pytest.raises(ValueError, match="R136_BASMALA_JOINS"):
+        concat((114, 6), (1, 1))
+
+
+def test_legal_basmala_joins_still_compose():
+    # wasl al-jamee' (surah end + basmala + next surah's opening) and
+    # basmala-with-opening both stay legal
+    assert concat((113, 5), (1, 1), (114, 1)).segments
+    assert concat((1, 1), (114, 1)).segments
+    assert concat((1, 1),).segments

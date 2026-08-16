@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tests-524%20passing-brightgreen" alt="tests">
+  <img src="https://img.shields.io/badge/tests-527%20passing-brightgreen" alt="tests">
   <img src="https://img.shields.io/badge/riwaya-Hafs%20%CA%BFan%20%CA%BFAsim%20(al--Shatibiyyah)-0b3d2e" alt="riwaya">
   <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fquran-g2p-review-status.mostafa0333.workers.dev%2Fbadge.json" alt="expert review">
   <img src="https://img.shields.io/badge/license-Quran--Lab%20NPL--1.1-8a6d00" alt="license">
@@ -30,7 +30,7 @@ building open technology in the service of the Quran.
 | `src/quran_g2p/` | the engine: pinned text loading, orthographic decode, 14 rule phases, typed phone IR with full provenance |
 | `spec/` | the normative specification, every rule with its classical basis |
 | `artifacts/tokenizer_tj1/` | `tokens.txt` (234 tokens including the `~` ghunna axis, blank last, hash-manifested), `vocab_manifest.json`, `ayah_tokens.jsonl`, `rule_index.jsonl` (set-valued prescriptions), `quran_labels_v1.jsonl` (dual-format labels), `bijection_old250.json` (warm-start map) |
-| `tests/` | 524 tests: golden ayat (201 reviewable YAML rows in `tests/goldens/`), corpus invariants, oracle gates, a 25-mutant seeded-bug drill, frozen determinism hash |
+| `tests/` | 527 tests: golden ayat (204 reviewable YAML rows in `tests/goldens/`), corpus invariants, oracle gates, a 25-mutant seeded-bug drill, frozen determinism hash |
 | `tests/verdicts/` | the differential triage record: every disagreement with quran-transcript, verdicted with citations |
 
 ## Quick start
@@ -39,7 +39,7 @@ building open technology in the service of the Quran.
 git clone https://github.com/Muno459/quran-g2p
 cd quran-g2p
 pip install -e .
-python -m pytest tests/   # 524 tests, no GPU needed
+python -m pytest tests/   # 527 tests, no GPU needed
 ```
 
 ```python
@@ -234,7 +234,7 @@ closed on any drift.
 
 ## Status
 
-The engine is feature-complete and green (524 tests): the core rule
+The engine is feature-complete and green (527 tests): the core rule
 pipeline, mid-ayah waqf and resume segmentation with the full waqf farsh,
 tagged waqf-variant enumeration (rawm/ishmam and the transmitted site
 wajhs), the wasl concat phase across ayah and surah boundaries, the token
@@ -247,7 +247,7 @@ the final release gate. The machine validation above is necessary, not
 sufficient, and the maintainers hold the tradition's own standard, التلقي,
 above any engine, including this one.
 
-The review is underway: each of the 201 entries in the rulings register
+The review is underway: each of the 204 entries in the rulings register
 is being independently ruled on (صحيح / خطأ / فيه وجهان, with correction
 and reason for every خطأ) by a reviewer whose credentials are documented
 with the maintainers, scans on file:

@@ -41,6 +41,19 @@ def phonemize_concat(items: list[tuple[AyahRef, str]], edition: str,
     from .phonemize import PhonemizeResult, Segment, _run_phases
     config = config or HafsConfig()
 
+    # R136_BASMALA_JOINS: a breath group that joins anything to the basmala
+    # and then STOPS on it composes the forbidden fourth wajh — وصل البسملة
+    # بآخر السورة والوقف عليها (الشاطبية بيت 107 «ومهما تصلها مع أواخر
+    # سورة فلا تقفن الدهر فيها»; هداية القاري الباب الثامن عشر). The three
+    # legal joins compose as documented in the module docstring.
+    rule_id = "R136_BASMALA_JOINS"
+    if len(items) >= 2 and items[-1][0] == AyahRef(1, 1):
+        raise ValueError(
+            f"{rule_id}: a group must not END on the basmala after "
+            "joining it to a preceding item (the forbidden fourth wajh, "
+            "al-Shatibiyyah bayt 107); stop before the basmala (two "
+            "calls) or include the next surah's opening in the group")
+
     merged_segs = []
     merged_clusters = []
     trace: list[RuleApp] = []

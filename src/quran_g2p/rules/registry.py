@@ -219,6 +219,14 @@ RULINGS: tuple[Ruling, ...] = (
          "SPEC-011",
          "السبعة 1:199؛ غيث النفع 1:129-130؛ النويري 2:231",
          ("sup-alm-allah",)),
+    Ruling("R136_BASMALA_JOINS", "P5",
+         "البسملة بين السورتين وأوجه وصلها والوجه الممنوع",
+         "basmala between surahs: the three legal joins, the forbidden fourth",
+         "SPEC-005",
+         "الشاطبية أبيات 100-107 «وبسمل بين السورتين بسنة»؛ غيث النفع 1:270؛ البدور الزاهرة 1:133",
+         ("sup2-basmala-joins",),
+         note="enforced structurally: phonemize_concat refuses a group that "
+              "ends on the basmala after joining it to a preceding item"),
     # ---------------------------------------- P6 noon sakinah and tanween
     Ruling("R140_IZHAR", "P6",
          "الإظهار الحلقي للنون الساكنة",

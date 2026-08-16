@@ -7,7 +7,7 @@ engine can actually cite. Every ruling is stated for the expert
 reviewer by the golden rows listed in its **review** column
 (`tests/goldens/`), each of which carries the fuller citation.
 
-61 rules. Ids are stable and append-only.
+62 rules. Ids are stable and append-only.
 
 ## P1 - Orthographic decode
 
@@ -50,6 +50,7 @@ reviewer by the golden rows listed in its **review** column
 | `R133_R160_IDGHAM_KAMIL` | الإدغام الكامل (اللام الشمسية والمثلان المتصلان) / complete idgham: lam shamsiyya and adjacent mithlayn | تحفة الأطفال «للام أل حالان قبل الأحرف»؛ النشر 2:18-19 | `lam-shamsi-shams`, `lam-shamsi-nnas`, `mutamathil-yudrikkum` |
 | `R134_LAM_JALALA_ALIF` | ألف لفظ الجلالة المحذوفة رسمًا / the dagger alif of the jalala | الجزرية «وفخم اللام من اسم الله عن فتح أو ضم» | `jalala-tarqeeq-after-kasr`, `jalala-tafkheem-after-fath` |
 | `R135_MEEM_ALLAH` | وصل الٓمٓ بلفظ الجلالة (فتح الميم وبقاء اللازم) / alif-lam-meem joined to the jalala, 3:1-2 | السبعة 1:199؛ غيث النفع 1:129-130؛ النويري 2:231 | `sup-alm-allah` |
+| `R136_BASMALA_JOINS` | البسملة بين السورتين وأوجه وصلها والوجه الممنوع / basmala between surahs: the three legal joins, the forbidden fourth | الشاطبية أبيات 100-107 «وبسمل بين السورتين بسنة»؛ غيث النفع 1:270؛ البدور الزاهرة 1:133 | `sup2-basmala-joins` *(enforced structurally: phonemize_concat refuses a group that ends on the basmala after joining it to a preceding item)* |
 
 ## P6 - Noon sakinah and tanween
 
