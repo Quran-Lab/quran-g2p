@@ -247,8 +247,9 @@ sufficient, and the maintainers hold the tradition's own standard, التلقي,
 above any engine, including this one.
 
 The review is underway: an ijazah-holding hafiz (Hafs 'an 'Asim) is
-working through all 195 rulings against the cited sources, ruling by
-ruling. Its live status:
+independently ruling on each of the 195 entries in the rulings register.
+Every entry carries its classical citation, and any disagreement is
+adjudicated against the cited texts. Live status:
 
 <p align="center">
   <img src="https://quran-g2p-review-status.mostafa0333.workers.dev/progress.svg" alt="live expert review status" width="680">
