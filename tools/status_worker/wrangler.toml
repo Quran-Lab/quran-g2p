@@ -1,0 +1,8 @@
+name = "quran-g2p-review-status"
+main = "worker.mjs"
+compatibility_date = "2026-08-01"
+account_id = "a04f68eb4a3c42642bb23718c532d0b4"
+
+# The review sheet id is a secret:  wrangler secret put SHEET_ID
+# The worker serves aggregate counts only (/progress.svg, /badge.json,
+# /status.json); no sheet content or link is ever exposed.

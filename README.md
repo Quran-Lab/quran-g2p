@@ -29,7 +29,7 @@ building open technology in the service of the Quran.
 | `src/quran_g2p/` | the engine: pinned text loading, orthographic decode, 14 rule phases, typed phone IR with full provenance |
 | `spec/` | the normative specification, every rule with its classical basis |
 | `artifacts/tokenizer_tj1/` | `tokens.txt` (234 tokens including the `~` ghunna axis, blank last, hash-manifested), `vocab_manifest.json`, `ayah_tokens.jsonl`, `rule_index.jsonl` (set-valued prescriptions), `quran_labels_v1.jsonl` (dual-format labels), `bijection_old250.json` (warm-start map) |
-| `tests/` | 497 tests: golden ayat (177 reviewable YAML rows in `tests/goldens/`), corpus invariants, oracle gates, a 25-mutant seeded-bug drill, frozen determinism hash |
+| `tests/` | 515 tests: golden ayat (195 reviewable YAML rows in `tests/goldens/`), corpus invariants, oracle gates, a 25-mutant seeded-bug drill, frozen determinism hash |
 | `tests/verdicts/` | the differential triage record: every disagreement with quran-transcript, verdicted with citations |
 
 ## Quick start
@@ -232,7 +232,7 @@ closed on any drift.
 
 ## Status
 
-The engine is feature-complete and green (497 tests): the core rule
+The engine is feature-complete and green (515 tests): the core rule
 pipeline, mid-ayah waqf and resume segmentation with the full waqf farsh,
 tagged waqf-variant enumeration (rawm/ishmam and the transmitted site
 wajhs), the wasl concat phase across ayah and surah boundaries, the token
@@ -244,6 +244,14 @@ A human expert review pass over the golden set and the rulings register is
 the final release gate. The machine validation above is necessary, not
 sufficient, and the maintainers hold the tradition's own standard, التلقي,
 above any engine, including this one.
+
+The review is underway: an ijazah-holding hafiz (Hafs 'an 'Asim) is
+working through all 195 rulings against the cited sources, ruling by
+ruling. Its live status:
+
+<p align="center">
+  <img src="https://quran-g2p-review-status.mostafa0333.workers.dev/progress.svg" alt="live expert review status" width="680">
+</p>
 
 ## License
 
