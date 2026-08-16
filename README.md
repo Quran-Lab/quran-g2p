@@ -217,15 +217,16 @@ closed on any drift.
 - **[quran-tajweed](https://github.com/cpfair/quran-tajweed)** tajweed
   span annotations (Dar al-Maarifah-derived), with the project's own
   pinned base text: the independent trigger-span oracle.
-- **quran-transcript** by Abdullah Aml (the المعلم القرآني project): the
-  pioneering open tajweed phonetizer. This engine was built clean-room
-  from the classical sources and shares none of its code, but
-  quran-transcript served as the differential baseline for our
-  validation: a character-level comparison across all 6,236 ayat, on
-  which the two independent implementations agree at 98.9%. Every
-  divergence carries a sourced verdict in `tests/verdicts/`. That a
-  volunteer-built system stood at this level against a specification
-  built directly from the books is a testament to its author's care.
+- **[quran-transcript](https://github.com/obadx/quran-transcript)**
+  ([on Hugging Face](https://huggingface.co/obadx)): the pioneering open
+  tajweed phonetizer. This engine was built clean-room from the
+  classical sources and shares none of its code, but quran-transcript
+  served as the differential baseline for our validation: a
+  character-level comparison across all 6,236 ayat, on which the two
+  independent implementations agree at 98.9%. Every divergence carries
+  a sourced verdict in `tests/verdicts/`. That a volunteer-built system
+  stood at this level against a specification built directly from the
+  books is a testament to its author's care.
 - **The Quranic Arabic Corpus** morphology v0.4 by Kais Dukes
   ([corpus.quran.com](https://corpus.quran.com)), vendored verbatim with
   its GPL copyright block intact and pinned by SHA-256: the POS oracle
