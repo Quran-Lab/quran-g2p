@@ -3,8 +3,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tests-497%20passing-brightgreen" alt="tests">
+  <img src="https://img.shields.io/badge/tests-515%20passing-brightgreen" alt="tests">
   <img src="https://img.shields.io/badge/riwaya-Hafs%20%CA%BFan%20%CA%BFAsim%20(al--Shatibiyyah)-0b3d2e" alt="riwaya">
+  <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fquran-g2p-review-status.mostafa0333.workers.dev%2Fbadge.json" alt="expert review">
   <img src="https://img.shields.io/badge/license-Quran--Lab%20NPL--1.1-8a6d00" alt="license">
 </p>
 
