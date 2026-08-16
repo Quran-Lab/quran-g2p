@@ -24,7 +24,7 @@ reviewer by the golden rows listed in its **review** column
 | id | الحكم | sources | review |
 |---|---|---|---|
 | `R110_WASL_START` | أحكام الابتداء بهمزة الوصل (الفتح والكسر والضم) / hamzat al-wasl vowel at ibtida' | المقدمة الجزرية 101-103 | `wasl-article-fath`, `wasl-noun-ibn`, `wasl-noun-imraat`, `wasl-noun-ithnayn`, `wasl-verb-unzur-damm`, `wasl-verb-idhab-kasr`, `wasl-verb-udu-damm`, `wasl-verb-iqra-kasr` |
-| `R110_BADAL_IBTIDA` | إبدال الهمزة الساكنة حرف مد عند الابتداء (ٱئْتِ: إِيتِ) / sakin hamza becomes a madd letter at ibtida' | الجزرية؛ هداية القاري 2:482؛ النشر 1:390 | `sup2-wasl-badal-hamza` |
+| `R110_BADAL_IBTIDA` | إبدال الهمزة الساكنة حرف مد عند الابتداء (ٱئْتِ: إِيتِ) / sakin hamza becomes a madd letter at ibtida' | الجزرية؛ هداية القاري 2:482؛ النشر 1:343 «حرف المد إذا وقع بعد همزة الوصل حالة الابتداء نحو ايت بقرآن» | `sup2-wasl-badal-hamza` |
 | `R112_STRIP_INITIAL_SHADDA` | تخفيف الشدة المرسومة أول الآية عند الابتداء (لَّيْسَ: لَيْسَ) / ayah-initial junction shadda degeminates at ibtida' | (ضبط المصحف؛ علامة إدغام المتماثلين والمتقاربين بين الآيتين؛ المحكم في نقط المصاحف للداني) | `sup2-ibtida-shadda` |
 
 ## P4 - Pausal (waqf)
@@ -43,7 +43,7 @@ reviewer by the golden rows listed in its **review** column
 | id | الحكم | sources | review |
 |---|---|---|---|
 | `R130_WASL_ELISION` | سقوط همزة الوصل درجًا / hamzat al-wasl elided inside connected speech | (التقاء الساكنين)؛ هداية القاري | `wiqaya-khayran`, `junction-madd-shortening`, `sup-naql-49-11`, `lam-shamsi-shams` *(the elision principle is exercised and stated across the junction and lam-altta'reef rows)* |
-| `R131_MADD_SHORTENING` | قصر حرف المد لالتقاء الساكنين / madd letter shortened before hamzat-al-wasl sakin | (التقاء الساكنين) | `junction-madd-shortening` |
+| `R131_MADD_SHORTENING` | قصر حرف المد لالتقاء الساكنين / madd letter shortened before hamzat-al-wasl sakin | هداية القاري 2:599 «يحذف حرف المد لالتقاء الساكنين» | `junction-madd-shortening` |
 | `R131_NOON_WIQAYA` | نون الوقاية بين التنوين وهمزة الوصل / noon al-wiqaya resolving tanween + wasl | (التقاء الساكنين)؛ هداية القاري | `wiqaya-khayran` |
 | `R132_SAKT` | سكتات حفص اللازمة من طريق الشاطبية / the four obligatory sakts | الشاطبية بيتا 830-831؛ النشر 1:240-241؛ سراج القارئ 1:277 | `sup-sakt-class`, `sup-sakt-75-27` |
 | `R132_MALIYAH_SAKT` | وجها وصل مَالِيَهْ هَلَكَ (السكت المقدم والإدغام) / maliyah-halak wasl wajhan | النشر 2:21-22؛ هداية القاري 1:236-237؛ فتح الوصيد 1:434؛ غيث النفع 1:601 | `sup2-maliyah-wasl` |
@@ -107,7 +107,7 @@ reviewer by the golden rows listed in its **review** column
 
 | id | الحكم | sources | review |
 |---|---|---|---|
-| `R200_QALQALAH_SUGHRA` | القلقلة الصغرى / qalqalah sughra | الشاطبية بيت 1159 «وفي قطب جد خمس قلقلة»؛ النشر 1:203 | `qlq-sughra-qaf`, `qlq-sughra-tah`, `qlq-sughra-beh`, `qlq-sughra-jeem`, `qlq-sughra-dal` |
+| `R200_QALQALAH_SUGHRA` | القلقلة الصغرى / qalqalah sughra | الشاطبية بيت 1158 «وفي قطب جد خمس قلقلة»؛ النشر 1:203 | `qlq-sughra-qaf`, `qlq-sughra-tah`, `qlq-sughra-beh`, `qlq-sughra-jeem`, `qlq-sughra-dal` |
 | `R201_QALQALAH_KUBRA` | القلقلة الكبرى / qalqalah kubra (waqf) | الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87 | `qlq-kubra-falaq`, `qlq-kubra-ahad`, `qlq-kubra-muheet`, `qlq-kubra-bahij` |
 | `R202_QALQALAH_AKBAR` | القلقلة الأكبر (الموقوف عليه مشددًا) / qalqalah akbar (waqf on mushaddad) | الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87 | `qlq-kubra-tabb`, `sup2-qalqalah-akbar` |
 
@@ -115,11 +115,11 @@ reviewer by the golden rows listed in its **review** column
 
 | id | الحكم | sources | review |
 |---|---|---|---|
-| `R210_ISTILA` | تفخيم حروف الاستعلاء ومراتبه / isti'la tafkheem and its maraatib | المقدمة الجزرية أبيات 20-26؛ النويري 1:237-238 | `sup-sifat-sets`, `sup2-tafkheem-maratib` *(the letter set is stated by the sifat row, the grading by the maraatib row)* |
+| `R210_ISTILA` | تفخيم حروف الاستعلاء ومراتبه / isti'la tafkheem and its maraatib | المقدمة الجزرية (باب صفات الحروف)؛ النويري 1:237-238 | `sup-sifat-sets`, `sup2-tafkheem-maratib` *(the letter set is stated by the sifat row, the grading by the maraatib row)* |
 | `R211_REH` | أحكام الراء تفخيمًا وترقيقًا / the raa decision table | الجزرية باب الراءات؛ هداية القاري 1:130 | `ra-fath-tafkheem`, `ra-damm-tafkheem`, `ra-kasr-tarqeeq`, `ra-sakin-after-fath`, `ra-sakin-after-damm`, `ra-sakin-after-kasr-tarqeeq`, `ra-sakin-kasr-istila-mirsad`, `ra-firq-wasl-tarqeeq`, `ra-nudhur-waqf-tarqeeq`, `ra-yasr-waqf-tarqeeq`, `ra-fajr-waqf-tafkheem`, `ra-khabir-waqf-tarqeeq` |
 | `R211_WAQF_KHILAF` | فرش راءات الوقف الخلافية (مصر، القطر، أسر) / the waqf raa khilaf words | النشر 2:105، 2:110؛ النويري 2:33؛ هداية القاري 1:130-133 | `sup-misr-qitr-asr` |
 | `R212_LAM_JALALA` | تفخيم لام الجلالة وترقيقها / lam al-jalala tafkheem/tarqeeq | الجزرية «وفخم اللام من اسم الله عن فتح أو ضم» | `jalala-tarqeeq-after-kasr`, `jalala-tafkheem-after-fath` |
-| `R214_IKHFA_TAFKHEEM` | تبعية غنة الإخفاء لما بعدها تفخيمًا وترقيقًا / ikhfa ghunna follows the trigger's tafkheem | هداية القاري 1:181-182؛ لطائف الإشارات 1:366-367 | `sup-ghunna-tabiyya`, `ikhfa-sad-mofakham`, `ikhfa-tah-mofakham`, `ikhfa-qaf-mofakham` |
+| `R214_IKHFA_TAFKHEEM` | تبعية غنة الإخفاء لما بعدها تفخيمًا وترقيقًا / ikhfa ghunna follows the trigger's tafkheem | هداية القاري 1:181-182 | `sup-ghunna-tabiyya`, `ikhfa-sad-mofakham`, `ikhfa-tah-mofakham`, `ikhfa-qaf-mofakham` |
 
 ## P13 - One-offs
 

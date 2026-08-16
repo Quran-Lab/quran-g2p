@@ -120,7 +120,7 @@
   ayah: 3
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للقاف (رَزَقْنَٰهُمْ)
-  cite: الشاطبية بيت 1159 «وفي قطب جد خمس قلقلة»؛ النشر 1:203
+  cite: الشاطبية بيت 1158 «وفي قطب جد خمس قلقلة»؛ النشر 1:203
   expert_reviewed: false
   expect:
     - {base: qaf, qalqalah: any}
@@ -130,7 +130,7 @@
   ayah: 4
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للطاء الساكنة (أَطْعَمَهُم)
-  cite: الشاطبية بيت 1159؛ النشر 1:203
+  cite: الشاطبية بيت 1158؛ النشر 1:203
   expert_reviewed: false
   expect:
     - {base: tah, qalqalah: any}
@@ -140,7 +140,7 @@
   ayah: 4
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للباء (قَبْلِكَ)
-  cite: الشاطبية بيت 1159؛ النشر 1:203
+  cite: الشاطبية بيت 1158؛ النشر 1:203
   expert_reviewed: false
   expect:
     - {base: beh, qalqalah: any}
@@ -150,7 +150,7 @@
   ayah: 19
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للجيم الساكنة (يَجْعَلُونَ)
-  cite: الشاطبية بيت 1159؛ النشر 1:203
+  cite: الشاطبية بيت 1158؛ النشر 1:203
   expert_reviewed: false
   expect:
     - {base: jeem, qalqalah: any}
@@ -160,7 +160,7 @@
   ayah: 9
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للدال الساكنة (قَدْ أَفْلَحَ)
-  cite: الشاطبية بيت 1159؛ النشر 1:203
+  cite: الشاطبية بيت 1158؛ النشر 1:203
   expert_reviewed: false
   expect:
     - {base: dal, qalqalah: any}
