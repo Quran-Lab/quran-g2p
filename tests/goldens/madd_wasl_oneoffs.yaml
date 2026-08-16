@@ -235,7 +235,7 @@
   ayah: 4
   rule: R188_LEEN
   rule_ar: مد لين وقفًا (خَوْفِۭ)
-  cite: الشاطبية؛ النشر 1:333
+  cite: الشاطبية باب المد؛ النشر 1:333
   expert_reviewed: false
   expect:
     - {base: khah}
