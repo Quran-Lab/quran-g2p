@@ -64,7 +64,7 @@ export function renderSvg(s, asOf) {
   const fill = Math.max(pct * BAR_W, s.reviewed > 0 ? 6 : 0);
   return `<svg width="${W}" height="150" viewBox="0 0 ${W} 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Expert review: ${s.reviewed} of ${s.total} rulings reviewed">
   <rect width="${W}" height="150" rx="12" fill="#0f172a"/>
-  <text x="24" y="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2.5" fill="#94a3b8">IJAZAH EXPERT REVIEW — LIVE</text>
+  <text x="24" y="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2.5" fill="#94a3b8">IJAZAH EXPERT REVIEW · LIVE</text>
   <text x="24" y="72" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#f8fafc">${s.reviewed} / ${s.total}<tspan font-size="15" font-weight="400" fill="#94a3b8" dx="10">rulings reviewed · ${pctTxt}%</tspan></text>
   <rect x="24" y="88" width="${BAR_W}" height="10" rx="5" fill="#1e293b"/>
   <rect x="24" y="88" width="${fill.toFixed(1)}" height="10" rx="5" fill="#10b981"/>
