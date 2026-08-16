@@ -96,7 +96,7 @@ export function renderSvg(s, asOf) {
   <text x="200" y="127" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#e2e8f0">${s.khata} in adjudication</text>
   <circle cx="368" cy="122" r="5" fill="#38bdf8"/>
   <text x="380" y="127" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#e2e8f0">${s.wajhan} two-wajh</text>
-  <text x="${W - 24}" y="127" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">as of ${asOf} UTC · auto-updating</text>
+  <text x="${W - 24}" y="34" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">as of ${asOf} UTC · auto-updating</text>
 </svg>`;
 }
 
@@ -122,7 +122,7 @@ export function renderDualSvg(s1, s2, agree, asOf) {
   ${bar(s1, 62, "Reviewer 1 · hafiz, ijazah in Hafs ʿan ʿAsim")}
   ${bar(s2, 128, "Reviewer 2 · hafiz, ijazah in Hafs ʿan ʿAsim (sanad muttasil)")}
   ${agreeLine}
-  <text x="${W - 24}" y="209" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">as of ${asOf} UTC · auto-updating</text>
+  <text x="${W - 24}" y="209" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">as of ${asOf} UTC · live</text>
 </svg>`;
 }
 
