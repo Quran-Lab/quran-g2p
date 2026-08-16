@@ -45,6 +45,28 @@ export function computeStats(rows) {
   return s;
 }
 
+export function computeAgreement(rowsA, rowsB) {
+  const verdicts = (rows) => {
+    const idx = rows[0].indexOf(VERDICT_COL);
+    const m = new Map();
+    for (const row of rows.slice(1)) {
+      const id = (row[0] || "").trim();
+      const v = idx >= 0 && idx < row.length ? row[idx].trim() : "";
+      if (id && v) m.set(id, v);
+    }
+    return m;
+  };
+  const a = verdicts(rowsA), b = verdicts(rowsB);
+  let common = 0, same = 0;
+  for (const [id, v] of a) {
+    if (b.has(id)) {
+      common++;
+      if (b.get(id) === v) same++;
+    }
+  }
+  return { common, same };
+}
+
 export function renderBadge(s) {
   const color =
     s.total > 0 && s.reviewed === s.total
@@ -78,14 +100,40 @@ export function renderSvg(s, asOf) {
 </svg>`;
 }
 
-async function loadStats(env) {
-  const url = `https://docs.google.com/spreadsheets/d/${env.SHEET_ID}/export?format=csv`;
+export function renderDualSvg(s1, s2, agree, asOf) {
+  const W = 680, BAR_W = 632;
+  const bar = (s, y, label) => {
+    const pct = s.total ? s.reviewed / s.total : 0;
+    const pctTxt = (pct * 100).toFixed(1).replace(/\.0$/, "");
+    const fill = Math.max(pct * BAR_W, s.reviewed > 0 ? 6 : 0);
+    return `
+  <text x="24" y="${y}" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#94a3b8">${label}</text>
+  <text x="24" y="${y + 27}" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#f8fafc">${s.reviewed} / ${s.total}<tspan font-size="13" font-weight="400" fill="#94a3b8" dx="8">rulings · ${pctTxt}%</tspan></text>
+  <rect x="24" y="${y + 38}" width="${BAR_W}" height="9" rx="4.5" fill="#1e293b"/>
+  <rect x="24" y="${y + 38}" width="${fill.toFixed(1)}" height="9" rx="4.5" fill="#10b981"/>`;
+  };
+  const agreeLine = agree.common > 0
+    ? `<circle cx="30" cy="204" r="5" fill="#38bdf8"/>
+  <text x="42" y="209" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#e2e8f0">agreement ${agree.same}/${agree.common} on doubly-reviewed rulings</text>`
+    : "";
+  return `<svg width="${W}" height="232" viewBox="0 0 ${W} 232" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two independent expert reviews">
+  <rect width="${W}" height="232" rx="12" fill="#0f172a"/>
+  <text x="24" y="34" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2.5" fill="#94a3b8">IJAZAH EXPERT REVIEW · TWO INDEPENDENT REVIEWERS</text>
+  ${bar(s1, 62, "Reviewer 1 · hafiz, ijazah in Hafs ʿan ʿAsim")}
+  ${bar(s2, 128, "Reviewer 2 · hafiz, ijazah in Hafs ʿan ʿAsim (sanad muttasil)")}
+  ${agreeLine}
+  <text x="${W - 24}" y="209" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">as of ${asOf} UTC · auto-updating</text>
+</svg>`;
+}
+
+async function loadRows(env, id) {
+  const url = `https://docs.google.com/spreadsheets/d/${id}/export?format=csv`;
   const res = await fetch(url, {
     headers: { "User-Agent": "Mozilla/5.0 (quran-g2p review status)" },
     cf: { cacheTtl: 60, cacheEverything: true },
   });
   if (!res.ok) throw new Error(`sheet fetch ${res.status}`);
-  return computeStats(parseCsv(await res.text()));
+  return parseCsv(await res.text());
 }
 
 export default {
@@ -95,29 +143,45 @@ export default {
       "Cache-Control": "public, max-age=60",
       "Access-Control-Allow-Origin": "*",
     };
-    let stats;
+    const wantsSecond =
+      env.SHEET_ID_2 && (path === "/dual.svg" || path === "/status.json" || path === "/");
+    let rows1, rows2 = null;
     try {
-      stats = await loadStats(env);
+      rows1 = await loadRows(env, env.SHEET_ID);
+      if (wantsSecond) rows2 = await loadRows(env, env.SHEET_ID_2);
     } catch (e) {
       return new Response(`status unavailable: ${e.message}`, {
         status: 503,
         headers: { "Cache-Control": "no-store" },
       });
     }
+    const stats = computeStats(rows1);
     const asOf = new Date().toISOString().slice(0, 16).replace("T", " ");
     if (path === "/progress.svg")
       return new Response(renderSvg(stats, asOf), {
         headers: { ...headers, "Content-Type": "image/svg+xml" },
       });
+    if (path === "/dual.svg") {
+      if (!rows2) return new Response("second reviewer not configured", { status: 404 });
+      const s2 = computeStats(rows2);
+      const agree = computeAgreement(rows1, rows2);
+      return new Response(renderDualSvg(stats, s2, agree, asOf), {
+        headers: { ...headers, "Content-Type": "image/svg+xml" },
+      });
+    }
     if (path === "/badge.json")
       return new Response(renderBadge(stats), {
         headers: { ...headers, "Content-Type": "application/json" },
       });
-    if (path === "/status.json" || path === "/")
-      return new Response(
-        JSON.stringify({ ...stats, as_of_utc: asOf }, null, 2),
-        { headers: { ...headers, "Content-Type": "application/json" } },
-      );
+    if (path === "/status.json" || path === "/") {
+      const body = { ...stats, as_of_utc: asOf };
+      if (rows2) {
+        body.reviewer2 = computeStats(rows2);
+        body.agreement = computeAgreement(rows1, rows2);
+      }
+      return new Response(JSON.stringify(body, null, 2),
+        { headers: { ...headers, "Content-Type": "application/json" } });
+    }
     return new Response("not found", { status: 404 });
   },
 };

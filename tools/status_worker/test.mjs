@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { computeStats, parseCsv, renderBadge, renderSvg } from "./worker.mjs";
+import { computeAgreement, computeStats, parseCsv, renderBadge, renderDualSvg,
+         renderSvg } from "./worker.mjs";
 
 const HEADER = "#,الموضع,نص الآية,الحكم المذكور,المصدر,صحيح/خطأ,ملاحظات";
 
@@ -42,6 +43,31 @@ test("renderSvg shows fraction, breakdown, date", () => {
   assert.ok(svg.includes("1 confirmed"));
   assert.ok(svg.includes("1 in adjudication"));
   assert.ok(svg.includes("2026-08-16"));
+});
+
+test("computeAgreement pairs rows by id, counts only doubly-filled", () => {
+  const a = parseCsv(sheet("صحيح", "خطأ", "صحيح", ""));
+  const b = parseCsv(sheet("صحيح", "صحيح", "", "خطأ"));
+  const g = computeAgreement(a, b);
+  assert.equal(g.common, 2);   // rows 1 and 2 filled in both
+  assert.equal(g.same, 1);     // row 1 matches, row 2 differs
+});
+
+test("renderDualSvg shows both reviewers and agreement when present", () => {
+  const s1 = computeStats(parseCsv(sheet("صحيح", "خطأ", "صحيح")));
+  const s2 = computeStats(parseCsv(sheet("صحيح", "", "")));
+  const svg = renderDualSvg(s1, s2, { common: 1, same: 1 }, "2026-08-16");
+  assert.ok(svg.startsWith("<svg"));
+  assert.ok(svg.includes("3 / 3"));
+  assert.ok(svg.includes("1 / 3"));
+  assert.ok(svg.includes("TWO INDEPENDENT"));
+  assert.ok(svg.includes("agreement 1/1"));
+});
+
+test("renderDualSvg hides agreement line when no common rows", () => {
+  const s = computeStats(parseCsv(sheet("", "", "")));
+  const svg = renderDualSvg(s, s, { common: 0, same: 0 }, "2026-08-16");
+  assert.ok(!svg.includes("agreement"));
 });
 
 test("renderBadge colors: blue in progress, brightgreen when done+clean", () => {
