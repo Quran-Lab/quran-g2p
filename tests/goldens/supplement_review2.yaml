@@ -1,0 +1,74 @@
+# Supplement 2 (post-audit 2026-08-16): four rulings implemented in the
+# engine that the reviewable set did not yet state explicitly.
+
+- id: sup2-qalqalah-akbar
+  surah: 111
+  ayah: 1
+  rule: R202_QALQALAH_AKBAR
+  rule_ar: مراتب القلقلة ثلاث؛ صغرى للساكن الموصول، كبرى للموقوف عليه مخففًا،
+    وأكبر للموقوف عليه مشددًا نحو وَتَبَّ (وأصل الباب الجزرية «وبيّن
+    مقلقلًا إن سكنا»، وبعض أهل الأداء يقتصر على مرتبتين)
+  cite: هداية القاري 1:84-85؛ بغية المستفيد 1:50-52؛ غاية المريد 1:146
+  expert_reviewed: false
+  expect_at_end:
+    - {base: beh, geminated: true, qalqalah: akbar}
+- id: sup2-maliyah-wasl
+  surah: 69
+  ayah: 28
+  rule: R132_MALIYAH_SAKT
+  rule_ar: وصل مَالِيَهْ (69:28) بـ هَلَكَ (69:29) فيه وجهان لحفص؛
+    المقدَّم الإظهار مع سكتة لطيفة على هاء السكت من غير قطع نفس، والثاني
+    إدغام الهاء في الهاء
+  cite: النشر 2:21-22؛ هداية القاري 1:236-237؛ فتح الوصيد 1:434؛ غيث
+    النفع 1:601
+  expert_reviewed: false
+  review_only: true
+- id: sup2-ibtida-shadda
+  surah: 2
+  ayah: 177
+  rule: R112_STRIP_INITIAL_SHADDA
+  rule_ar: الشدة المرسومة على أول حرف من الآية (نحو لَّيْسَ) علامة إدغام
+    آخر الآية السابقة فيه حال الوصل؛ فعند الابتداء بالآية يُقرأ الحرف
+    مخففًا بلا تشديد (لَيْسَ)
+  cite: (ضبط المصحف؛ علامة إدغام المتماثلين والمتقاربين بين الآيتين؛
+    المحكم في نقط المصاحف للداني)
+  expert_reviewed: false
+  word: لَّي
+  expect:
+    - {base: lam, geminated: false}
+    - {base: fatha}
+  forbid:
+    - {base: lam, geminated: true}
+- id: sup2-istifham-tasheel
+  surah: 10
+  ayah: 51
+  rule: R014B_ISTIFHAM_TASHEEL
+  rule_ar: همزة الاستفهام الداخلة على همزة الوصل في المواضع الثلاثة
+    (ءَآلْـَٰٔنَ، ءَآللَّهُ، ءَآلذَّكَرَيْنِ) فيها وجهان؛ إبدال همزة
+    الوصل ألفًا مشبعة وهو المقدَّم، أو تسهيلها بين بين بلا مد
+  cite: الشاطبية أبيات 192-194؛ النشر 1:377-378
+  expert_reviewed: false
+  review_only: true
+- id: sup2-wasl-badal-hamza
+  surah: 10
+  ayah: 15
+  rule: R110_BADAL_IBTIDA
+  rule_ar: الابتداء بنحو ٱئْتِ؛ تُحرَّك همزة الوصل بالكسر وتُبدل الهمزة
+    الساكنة بعدها حرف مد من جنس حركة الابتداء، فيُبتدأ إِيتِ بياء مدية
+  cite: الجزرية؛ هداية القاري 2:482؛ النشر 1:390
+  expert_reviewed: false
+  word: ٱئْ
+  expect:
+    - {base: hamza}
+    - {base: kasra}
+    - {base: yeh_madd}
+- id: sup2-tafkheem-maratib
+  surah: 1
+  ayah: 1
+  rule: R210_MARATIB
+  rule_ar: مراتب التفخيم خمس على المشهور؛ المفتوح وبعده ألف، فالمفتوح،
+    فالمضموم، فالساكن (بحسب حركة ما قبله)، فالمكسور
+  cite: التمهيد لابن الجزري (باب التفخيم)؛ جهد المقل للمرعشي؛ هداية
+    القاري 1:116-118
+  expert_reviewed: false
+  review_only: true
