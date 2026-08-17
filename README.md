@@ -64,12 +64,11 @@ behind every ruling in this repository:
    method. It implements it. The books give exhaustiveness, the sanad
    gives authority, and the gates let neither stand alone.
 
-**What this project is not.** It is not a fatwa source and not a marja'.
-It does not replace learning the Quran from the mouths of scholars, and
-its outputs must not be used as the final judge of anyone's recitation.
-Like any software, it can contain errors; that is precisely why the
-review above exists and why every ruling carries a source the reader can
-check.
+**Scope of authority.** The engine rules on text, not on people.
+Certifying reciters remains the sanad's work, and learning the Quran
+still happens at the mouths of scholars; this project is built to serve
+that transmission, not to sit above it. Where it could err, it shows its
+sources and its live review, so correction always has a public path.
 
 ## What is in the box
 
