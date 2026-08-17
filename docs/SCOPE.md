@@ -42,6 +42,37 @@ out of scope.
 | النبر وإبراز التشديد عند الوقف على المشدد | suprasegmental articulation quality; the phone layer carries the gemination itself (`geminated=true` at waqf), the stress prominence is not a phonemic token |
 | ياءات الإضافة والزوائد (Shatibiyyah farsh) | Hafs's choices are already encoded in the pinned mushaf text (harakat and rasm); the only within-Hafs waqf khilaf, آتَىٰنِ, has its own row |
 
+## The full-content sweep
+
+Beyond the chapter inventory above, every page of the source corpus was
+swept for rulings: the full text of هداية القاري, غاية المريد, العميد,
+التمهيد لابن الجزري, and الوجيز, plus the Hafs-relevant pages of النشر,
+التيسير, غيث النفع, إبراز المعاني (شرح الشاطبية), and شرح طيبة النشر
+للنويري. An LLM pass extracted candidate rulings page by page (1,095
+three-page chunks, roughly 3,300 pages, 7,553 raw ruling lines), a
+second pass consolidated them into 723 distinct rulings, and a third
+pass matched each against the register, the review rows, and the
+declared scope classes: 348 covered, 375 out of scope with a stated
+class, and 0 gaps.
+
+The matcher itself is validated, not trusted: hiding real register
+entries flips their verdicts to GAP (5/5 in the blind control), and
+when an entry with a twin row is hidden the matcher finds the twin
+(4/4), so a genuinely missing ruling cannot be waved through. Covered
+verdicts were adversarially re-checked in sample, all out-of-scope
+verdicts of the qira'at books were read by hand, and the register was
+reverse-grounded against the extraction output.
+
+One defect in the sweep was found and fixed after the first run: the
+Hafs page filter was not robust to vocalized prints (حَفْص with
+harakat), which had excluded most of النشر and التيسير proper. The
+missed pages were swept with the fixed filter and produced 212 further
+distinct rulings: 63 covered, 149 out of scope (qira'at farsh of other
+readers, and Hafs word-readings already encoded in the mushaf text),
+and again 0 gaps. The fix and the delta are part of this record on
+purpose: the sweep is a measurement, and measurements state their
+corrections.
+
 Anything found missing by a future sweep belongs in the register and the
 review sheet, not silently in code: the register gate enforces that
 path.
