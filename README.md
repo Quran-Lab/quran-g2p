@@ -23,6 +23,48 @@ silent default.
 Built and maintained by **Quran Lab**, a waqf (non-profit endowment)
 building open technology in the service of the Quran.
 
+## Methodology, stated plainly
+
+So that no reader mistakes what this project is and is not, the pipeline
+behind every ruling in this repository:
+
+1. **Machine-assisted extraction.** Large-language-model passes over the
+   classical books (the Shamela prints of the Shatibiyyah and its
+   commentaries, al-Nashr, al-Taysir, Hidayat al-Qari, and the rest of
+   the bibliography) indexed candidate rulings. This step is a card
+   catalogue, not an authority: nothing enters the engine on the
+   LLM's word.
+2. **Page-verified citations.** Every citation in the rulings register
+   was then verified against the printed texts themselves: the cited
+   book must exist in the corpus, the cited volume:page or bayt must
+   exist in that print, and the ruling's subject must appear at that
+   location. Quoted matn lines are verified verbatim. The full audit is
+   committed at `docs/CITATION-AUDIT.md` and regenerable with
+   `tools/audit_citations.py`.
+3. **A gate-enforced register.** Each engine rule is bound to its
+   classical citation and to the review rows that state it
+   (`docs/RULINGS-REGISTER.md`); the test suite fails if any rule lacks
+   either. Machine validation (five independent oracles, the behavioral
+   audits, 25+9 seeded-bug drills) proves the engine implements the
+   register faithfully.
+4. **Independent human review.** An ijazah-holding hafiz (sanad in Hafs
+   'an 'Asim), screened beforehand with planted errors, rules on every
+   entry from his own talaqqi. He is deliberately NOT shown our
+   citations while judging, so his verdicts are evidence, not echo.
+   Disagreements are adjudicated against the cited texts, and the live
+   status of this review is shown below.
+5. **The standing rule.** التلقي عن المشايخ المتقنين is the tradition's
+   own standard and it stands above every layer of this apparatus,
+   including the machine ones. This engine is a tool in service of that
+   standard, never a substitute for it.
+
+**What this project is not.** It is not a fatwa source and not a marja'.
+It does not replace learning the Quran from the mouths of scholars, and
+its outputs must not be used as the final judge of anyone's recitation.
+Like any software, it can contain errors; that is precisely why the
+review above exists and why every ruling carries a source the reader can
+check.
+
 ## What is in the box
 
 | artifact | contents |
@@ -247,17 +289,6 @@ A human expert review pass over the golden set and the rulings register is
 the final release gate. The machine validation above is necessary, not
 sufficient, and the maintainers hold the tradition's own standard, التلقي,
 above any engine, including this one.
-
-**Methodology transparency.** The initial extraction and indexing of
-rulings from the classical texts was machine-assisted (LLM passes over
-the source books, followed by page-level verification of every citation
-against the printed texts). No ruling stands on that extraction alone:
-each entry carries its written source, the whole register is being
-independently reviewed by an ijazah-holding hafiz who judges from his
-own talaqqi (not from our citations), and disagreements are adjudicated
-against the cited texts. The tradition's own standard, التلقي عن
-المشايخ, remains above every layer of this apparatus, including the
-machine ones.
 
 The review is underway: each of the 208 entries in the rulings register
 is being independently ruled on (صحيح / خطأ / فيه وجهان, with correction
