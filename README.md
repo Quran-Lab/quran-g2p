@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tests-537%20passing-brightgreen" alt="tests">
+  <img src="https://img.shields.io/badge/tests-547%20passing-brightgreen" alt="tests">
   <img src="https://img.shields.io/badge/riwaya-Hafs%20%CA%BFan%20%CA%BFAsim%20(al--Shatibiyyah)-0b3d2e" alt="riwaya">
   <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fquran-g2p-review-status.mostafa0333.workers.dev%2Fbadge.json" alt="expert review">
   <img src="https://img.shields.io/badge/license-Quran--Lab%20NPL--1.1-8a6d00" alt="license">
@@ -30,7 +30,7 @@ building open technology in the service of the Quran.
 | `src/quran_g2p/` | the engine: pinned text loading, orthographic decode, 14 rule phases, typed phone IR with full provenance |
 | `spec/` | the normative specification, every rule with its classical basis |
 | `artifacts/tokenizer_tj1/` | `tokens.txt` (234 tokens including the `~` ghunna axis, blank last, hash-manifested), `vocab_manifest.json`, `ayah_tokens.jsonl`, `rule_index.jsonl` (set-valued prescriptions), `quran_labels_v1.jsonl` (dual-format labels), `bijection_old250.json` (warm-start map) |
-| `tests/` | 537 tests: golden ayat (208 reviewable YAML rows in `tests/goldens/`), corpus invariants, oracle gates, a 25-mutant seeded-bug drill, frozen determinism hash |
+| `tests/` | 547 tests: golden ayat (208 reviewable YAML rows in `tests/goldens/`), corpus invariants, oracle gates, a 25-mutant seeded-bug drill, frozen determinism hash |
 | `tests/verdicts/` | the differential triage record: every disagreement with quran-transcript, verdicted with citations |
 
 ## Quick start
@@ -39,7 +39,7 @@ building open technology in the service of the Quran.
 git clone https://github.com/Muno459/quran-g2p
 cd quran-g2p
 pip install -e .
-python -m pytest tests/   # 537 tests, no GPU needed
+python -m pytest tests/   # 547 tests, no GPU needed
 ```
 
 ```python
@@ -93,6 +93,7 @@ Over all 6,236 ayat:
 | **Differential vs quran-transcript** (char-level, whole corpus) | 98.9% ayah-exact; **every** remaining cluster carries a recorded verdict, including six classes where the classical sources rule against it |
 | **QAC morphology cross-check** (the Quranic Arabic Corpus, Kais Dukes; pinned sha256) | every hamzat-al-wasl word class-checked against the POS tags: **~2,000 unique word/class pairs, zero disagreements** (the oracle caught and fixed one ibtida' bug on first contact) |
 | **Seeded-bug drill** | 25 hand-designed mutants, 100% kill rate |
+| **Variant-path behavioral audit** (tools/behavioral_audit/) | all 6,236 ayat x waqf variants, all 71,245 mid-ayah stop positions, all 6,118 consecutive-ayah junctions: every doctrine-derived invariant holds; guarded by a 9-mutant drill on the variant/waqf/junction paths (100% kill) |
 | **Determinism** | frozen corpus hash; every intentional change logged with its ruling |
 
 ## Rulings register (site → ruling → sources)
@@ -234,7 +235,7 @@ closed on any drift.
 
 ## Status
 
-The engine is feature-complete and green (537 tests): the core rule
+The engine is feature-complete and green (547 tests): the core rule
 pipeline, mid-ayah waqf and resume segmentation with the full waqf farsh,
 tagged waqf-variant enumeration (rawm/ishmam and the transmitted site
 wajhs), the wasl concat phase across ayah and surah boundaries, the token
