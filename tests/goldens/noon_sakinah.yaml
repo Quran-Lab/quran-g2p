@@ -288,14 +288,19 @@
   expect:
     - {base: noon, geminated: true}
 - id: idgham-meem-kamil
-  surah: 2
-  ayah: 8
+  surah: 86
+  ayah: 6
   rule: R141_IDGHAM_GHUNNA
-  rule_ar: إدغام كامل بغنة في الميم (مَن يَقُولُ... وَمِنَ ٱلنَّاسِ مَن)
+  # Adjudicated 2026-08-18 (docs/ADJUDICATIONS.md #1): the row used to
+  # pair this kamil-meem label with the 2:8 yeh example; the reviewer
+  # ruled خطأ and the dabt agrees (no shadda on يَقُولُ, shadda on
+  # مَّآءٍ). Restored to a true meem site; the yeh example lives in
+  # idgham-yeh-naqis.
+  rule_ar: إدغام كامل بغنة في الميم (مِن مَّآءٍ دَافِقٍ)
   cite: تحفة الأطفال؛ النشر 2:22
   expert_reviewed: false
   expect:
-    - {base: yeh, ghunna: idgham}
+    - {base: meem, geminated: true, ghunna: mushaddadah}
 - id: idgham-yeh-naqis
   surah: 88
   ayah: 2
