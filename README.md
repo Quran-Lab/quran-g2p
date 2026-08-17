@@ -56,10 +56,14 @@ behind every ruling in this repository:
    source texts; the books enter only at the adjudication stage, where
    any disagreement is settled against the cited passages. The live
    status of this review is shown below.
-5. **The standing rule.** التلقي عن المشايخ المتقنين is the tradition's
-   own standard and it stands above every layer of this apparatus,
-   including the machine ones. This engine is a tool in service of that
-   standard, never a substitute for it.
+5. **The method itself is the tradition's.** الرواية والدراية,
+   transmission and verification together, finally given machinery
+   equal to it. Ibn al-Jazari assembled al-Nashr exactly this way:
+   gather every written source, then verify every reading through
+   living chains, and accept only what both attest. This project does
+   not argue with that method; it implements it. The books supply
+   exhaustiveness, the sanad supplies authority, and the gates let
+   neither stand alone.
 
 **What this project is not.** It is not a fatwa source and not a marja'.
 It does not replace learning the Quran from the mouths of scholars, and
