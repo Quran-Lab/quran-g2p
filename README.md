@@ -56,14 +56,13 @@ behind every ruling in this repository:
    source texts; the books enter only at the adjudication stage, where
    any disagreement is settled against the cited passages. The live
    status of this review is shown below.
-5. **The method itself is the tradition's.** الرواية والدراية,
-   transmission and verification together, finally given machinery
-   equal to it. Ibn al-Jazari assembled al-Nashr exactly this way:
-   gather every written source, then verify every reading through
-   living chains, and accept only what both attest. This project does
-   not argue with that method; it implements it. The books supply
-   exhaustiveness, the sanad supplies authority, and the gates let
-   neither stand alone.
+5. **The method is the tradition's own.** الرواية والدراية:
+   transmission and verification, at last given machinery. Ibn
+   al-Jazari built al-Nashr exactly this way: every written source
+   gathered, every reading verified through living chains, nothing
+   accepted without both. This project does not argue with that
+   method. It implements it. The books give exhaustiveness, the sanad
+   gives authority, and the gates let neither stand alone.
 
 **What this project is not.** It is not a fatwa source and not a marja'.
 It does not replace learning the Quran from the mouths of scholars, and
