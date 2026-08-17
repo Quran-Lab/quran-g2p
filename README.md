@@ -48,10 +48,13 @@ behind every ruling in this repository:
    audits, 25+9 seeded-bug drills) proves the engine implements the
    register faithfully.
 4. **Independent human review.** An ijazah-holding hafiz (sanad in Hafs
-   'an 'Asim), screened beforehand with planted errors, rules on every
-   entry from his own talaqqi. He is deliberately NOT shown our
-   citations while judging, so his verdicts are evidence, not echo.
-   Disagreements are adjudicated against the cited texts, and the live
+   'an 'Asim) rules on every entry from his own talaqqi. Each row shows
+   its citation as a reference, but his verdict must come from his own
+   knowledge, and that this actually happens was measured rather than
+   assumed: in the blind screening, deliberately planted errors dressed
+   in the same citation format were all caught. He is not given our
+   source texts; the books enter only at the adjudication stage, where
+   any disagreement is settled against the cited passages. The live
    status of this review is shown below.
 5. **The standing rule.** التلقي عن المشايخ المتقنين is the tradition's
    own standard and it stands above every layer of this apparatus,
