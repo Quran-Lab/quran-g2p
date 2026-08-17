@@ -43,7 +43,7 @@ reviewer by the golden rows listed in its **review** column
 | id | الحكم | sources | review |
 |---|---|---|---|
 | `R130_WASL_ELISION` | سقوط همزة الوصل درجًا / hamzat al-wasl elided inside connected speech | (التقاء الساكنين)؛ هداية القاري | `wiqaya-khayran`, `junction-madd-shortening`, `sup-naql-49-11`, `lam-shamsi-shams` *(the elision principle is exercised and stated across the junction and lam-altta'reef rows)* |
-| `R131_MADD_SHORTENING` | قصر حرف المد لالتقاء الساكنين / madd letter shortened before hamzat-al-wasl sakin | هداية القاري 2:599 «يحذف حرف المد لالتقاء الساكنين» | `junction-madd-shortening` |
+| `R131_MADD_SHORTENING` | حذف حرف المد لالتقاء الساكنين / madd letter shortened before hamzat-al-wasl sakin | هداية القاري 2:599 «يحذف حرف المد لالتقاء الساكنين» | `junction-madd-shortening` |
 | `R131_NOON_WIQAYA` | نون الوقاية بين التنوين وهمزة الوصل / noon al-wiqaya resolving tanween + wasl | (التقاء الساكنين)؛ هداية القاري | `wiqaya-khayran` |
 | `R132_SAKT` | سكتات حفص اللازمة من طريق الشاطبية / the four obligatory sakts | الشاطبية بيتا 830-831؛ النشر 1:240-241؛ سراج القارئ 1:277 | `sup-sakt-class`, `sup-sakt-75-27` |
 | `R132_MALIYAH_SAKT` | وجها وصل مَالِيَهْ هَلَكَ (السكت المقدم والإدغام) / maliyah-halak wasl wajhan | النشر 2:21-22؛ هداية القاري 1:236-237؛ فتح الوصيد 1:434؛ غيث النفع 1:601 | `sup2-maliyah-wasl` |

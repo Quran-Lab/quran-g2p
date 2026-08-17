@@ -178,7 +178,7 @@ RULINGS: tuple[Ruling, ...] = (
          note="the elision principle is exercised and stated across the "
               "junction and lam-altta'reef rows"),
     Ruling("R131_MADD_SHORTENING", "P5",
-         "قصر حرف المد لالتقاء الساكنين",
+         "حذف حرف المد لالتقاء الساكنين",
          "madd letter shortened before hamzat-al-wasl sakin",
          "SPEC-131",
          "هداية القاري 2:599 «يحذف حرف المد لالتقاء الساكنين»",

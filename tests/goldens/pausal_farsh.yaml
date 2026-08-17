@@ -376,9 +376,13 @@
   surah: 2
   ayah: 24
   rule: R131_SHORTEN
-  rule_ar: قصر مد الصلة قبل همزة الوصل (فَٱتَّقُوا۟ ٱلنَّارَ — واو الجماعة
-    تختصر عند الوصل)
-  cite: (التقاء الساكنين)
+  # Label-audit fix 2026-08-18 (ADJUDICATIONS #2): the label called this
+  # "madd al-silah" - silah belongs exclusively to haa al-damir. The
+  # classical statement is deletion of the madd letter at iltiqa'
+  # al-sakinayn (Hidayat al-Qari 2:599, quoted verbatim in the cite).
+  rule_ar: حذف حرف المد لالتقاء الساكنين وصلًا (فَٱتَّقُوا۟ ٱلنَّارَ — تسقط
+    الواو وتبقى الضمة)
+  cite: هداية القاري 2:599 «يحذف حرف المد لالتقاء الساكنين»
   expert_reviewed: false
   expect:
     - {base: qaf}

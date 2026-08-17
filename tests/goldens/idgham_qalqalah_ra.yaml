@@ -11,7 +11,7 @@
   expert_reviewed: false
   expect:
     - {base: tah, qalqalah: null}
-    - {base: teh}
+    - {base: teh, geminated: false}
 - id: naqis-tah-ahatt
   surah: 27
   ayah: 22
@@ -21,7 +21,7 @@
   expert_reviewed: false
   expect:
     - {base: tah, qalqalah: null}
-    - {base: teh}
+    - {base: teh, geminated: false}
 - id: naqis-tah-farrattum
   surah: 12
   ayah: 80
@@ -31,7 +31,7 @@
   expert_reviewed: false
   expect:
     - {base: tah, qalqalah: null}
-    - {base: teh}
+    - {base: teh, geminated: false}
 - id: mutajanis-teh-tah
   surah: 3
   ayah: 69

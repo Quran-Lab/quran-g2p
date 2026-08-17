@@ -442,10 +442,14 @@
     - {base: meem_mukhfah}
     - {base: beh}
 - id: iqlab-tanween
-  surah: 2
-  ayah: 181
+  surah: 22
+  ayah: 61
   rule: R143_IQLAB
-  rule_ar: إقلاب تنوين (سَمِيعٌ عَلِيمٌ؟ لا — سَمِيعٌ بـ...)
+  # Label-audit fix 2026-08-18 (ADJUDICATIONS #2): the row carried
+  # authoring debris and anchored 2:181, whose iqlab site is a noon
+  # (famam badalahu), not a tanween. Moved to a true tanween site with
+  # the iqlab meem in the dabt.
+  rule_ar: إقلاب تنوين (سَمِيعٌۢ بَصِيرٌ)
   cite: تحفة الأطفال؛ هداية القاري 1:186
   expert_reviewed: false
   expect:
@@ -507,7 +511,7 @@
   surah: 2
   ayah: 10
   rule: R151_IDGHAM_MITHLAYN
-  rule_ar: إدغام مثلين صغير (لَهُم مَّا? — وَلَهُم عَذَابٌ... مَرَضٌ)
+  rule_ar: إدغام مثلين صغير (قُلُوبِهِم مَّرَضٌ)
   cite: تحفة الأطفال «والثاني إدغام بمثلها أتى»
   expert_reviewed: false
   expect:

@@ -48,3 +48,41 @@ the defect was in one row's example pairing, not in any hukm or in
 engine behavior. The review's first خطأ is also its first proof of
 independence: a reviewer who catches what the machines cannot is
 exactly what he was engaged for.
+
+## #2 — proactive label audit after #1 (2026-08-18)
+
+Adjudication #1 exposed a defect *class*: a row's human-facing label
+contradicting its own example, invisible to the machine gates because
+labels are prose. Rather than wait for the reviewer to find the next
+one, all 208 rows were audited through two independent nets: a
+mechanical checker (quoted fragments must occur in the row's ayah;
+idgham letter/kamil/naqis wording must agree with the expect block) and
+an LLM coherence read of every label against its full ayah. Findings:
+
+- **`meem-idgham-lahum-ma` (sheet row 137):** label carried authoring
+  debris — «(لَهُم مَّا? — وَلَهُم عَذَابٌ... مَرَضٌ)», including a
+  literal question mark and a non-idgham fragment. The true site,
+  قُلُوبِهِم مَّرَضٌ, sat at the label's tail and is what the expect
+  block always asserted. Label rewritten to the site alone.
+- **`iqlab-tanween` (sheet row 131):** label carried frozen
+  deliberation — «(سَمِيعٌ عَلِيمٌ؟ لا — سَمِيعٌ بـ...)» — and the row
+  anchored 2:181, whose iqlab site is a *noon* (فَمَنۢ بَدَّلَهُ), not
+  a tanween; the expect block passed through the wrong mechanism.
+  Re-anchored to a true tanween site, 22:61 «سَمِيعٌۢ بَصِيرٌ», iqlab
+  meem in the dabt, engine verified.
+- **`junction-madd-shortening` (sheet row 172):** label called the
+  واو الجماعة shortening «مد الصلة» — silah belongs exclusively to haa
+  al-damir — and its cite was a placeholder. Relabeled to the classical
+  statement, حذف حرف المد لالتقاء الساكنين, and cited to هداية القاري
+  2:599 where that wording is verbatim. The registry name for
+  R131_MADD_SHORTENING was aligned to the same nass.
+- **`naqis-tah-basatta` / `-ahatt` / `-farrattum`:** expects now pin
+  `geminated: false` on the teh, matching the naqis doctrine and the
+  engine (previously unasserted).
+
+All three mislabeled rows sat AHEAD of the reviewer's position (he was
+at 129; the rows are 131, 137, 172), so no verdict was invalidated. The
+class is now closed structurally: `tests/test_row_labels.py` runs the
+mechanical checks as a permanent gate, self-checked against synthetic
+broken rows — including a resurrected copy of the #1 defect — so the
+detector cannot pass vacuously.
