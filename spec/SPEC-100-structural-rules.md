@@ -291,6 +291,12 @@ ishmam×3 + rawm·2) — العميد 1:102; القول السديد 1:128; ظا
 pass: rawm/ishmam in haa al-damir (the khilaf answer was cut; not
 asserted).
 
+Muttasil at waqf x rawm (2026-08-17, from the full-book sweep): with
+pure sukun and with ishmam the muttasil runs {4,5,6}; with rawm it is
+wasl-like and reverts to {4,5} - the waqf-only 6 falls away (ظاهرة المد
+في الأداء القرآني 1:408-409; العميد 1:102). Implemented in the rawm
+variant builder and covered by the goldens' rawm row.
+
 ## SPEC-004b — the harakah as time-unit: the alignment doctrine (2026-08-15)
 
 THE foundational nusus for the S3/S4 duration pipeline:

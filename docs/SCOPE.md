@@ -39,6 +39,7 @@ out of scope.
 | المقطوع والموصول (13) | rasm conventions governing permissible mid-phrase stops; same input-domain reason |
 | الاستعاذة (17) | pre-recitation formula, not mushaf text; the ASR pipeline handles it as preamble audio, not as phonemized ayah content |
 | التكبير (20) | transmitted for the ending surahs via al-Tayyibah's Makki turuq, not via al-Shatibiyyah for Hafs |
+| النبر وإبراز التشديد عند الوقف على المشدد | suprasegmental articulation quality; the phone layer carries the gemination itself (`geminated=true` at waqf), the stress prominence is not a phonemic token |
 | ياءات الإضافة والزوائد (Shatibiyyah farsh) | Hafs's choices are already encoded in the pinned mushaf text (harakat and rasm); the only within-Hafs waqf khilaf, آتَىٰنِ, has its own row |
 
 Anything found missing by a future sweep belongs in the register and the

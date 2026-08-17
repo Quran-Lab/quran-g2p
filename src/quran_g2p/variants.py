@@ -81,6 +81,19 @@ def _rawm(seg_phones, haraka):
         if p.word_index == word and p.length is not None \
                 and p.length.kind == "free" and 2 in p.length.allowed:
             p = _replace(p, length=_QASR, provenance=p.provenance + (app,))
+        elif p.word_index == word and p.length is not None \
+                and p.length.kind == "free" and 6 in p.length.allowed:
+            # Rawm is wasl-like: the muttasil's waqf-only 6 falls away and
+            # the madd reverts to its wasl set {4,5} (with pure sukun and
+            # ishmam all three run) — ظاهرة المد في الأداء القرآني
+            # 1:408-409; العميد 1:102.
+            na = frozenset(p.length.allowed - {6})
+            ns = frozenset(p.length.scoring - {6}) or na
+            canon = (p.length.canonical if p.length.canonical in na
+                     else min(na))
+            p = _replace(p, length=LengthSpec(kind="free", allowed=na,
+                                              canonical=canon, scoring=ns),
+                         provenance=p.provenance + (app,))
         out.append(p)
     # the final letter is no longer fully sakin: qalqalah off
     out[-1] = _replace(out[-1], qalqalah=None,

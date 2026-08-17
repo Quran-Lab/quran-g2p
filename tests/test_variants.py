@@ -133,3 +133,24 @@ def test_aataani_hadhf_variant_at_stop():
     seg_vars = variants_of(27, 36, stops=[k])[0]
     alt = next(v for v in seg_vars if "aataani_hadhf" in v.tags)
     assert alt.phones[-1].base is Base.NOON
+
+
+def test_rawm_on_muttasil_drops_the_six():
+    # 14:27 ends يَشَآءُ (muttasil, marfoo): pure sukun and ishmam keep
+    # {4,5,6}; rawm is wasl-like, so the madd reverts to {4,5} with no 6
+    # (ظاهرة المد في الأداء القرآني 1:408-409)
+    variants = variants_of(14, 27)[-1]
+    by_mode = {}
+    for v in variants:
+        by_mode.setdefault(v.mode, v)
+    def muttasil(v):
+        madds = [p for p in v.phones
+                 if p.kind == "madd" and p.length is not None
+                 and p.length.kind == "free" and 4 in p.length.allowed]
+        return madds[-1]
+    # same physical phone in every mode: the finder cannot drift
+    spans = {muttasil(by_mode[m]).src_span for m in ("sukun", "ishmam", "rawm")}
+    assert len(spans) == 1
+    assert 6 in muttasil(by_mode["sukun"]).length.allowed
+    assert 6 in muttasil(by_mode["ishmam"]).length.allowed
+    assert muttasil(by_mode["rawm"]).length.allowed == frozenset({4, 5})
