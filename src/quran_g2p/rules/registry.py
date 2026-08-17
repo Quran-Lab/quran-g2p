@@ -493,11 +493,20 @@ RULINGS: tuple[Ruling, ...] = (
 )
 
 
+def _well_formed_id(rid: str) -> bool:
+    """R + three digits + optional [A-Z0-9_] tail, checked without regex:
+    the engine bans pattern matching outright (tests/test_no_regex_rules.py)."""
+    if len(rid) < 4 or rid[0] != "R" or not rid[1:4].isdigit():
+        return False
+    tail = rid[4:]
+    return all(c == "_" or c.isdigit() or (c.isupper() and c.isascii())
+               for c in tail)
+
+
 def _validate() -> None:
-    import re
     seen: set[str] = set()
     for r in RULINGS:
-        if not re.fullmatch(r"R\d{3}[A-Z0-9_]*", r.id):
+        if not _well_formed_id(r.id):
             raise ValueError(f"malformed rule id: {r.id}")
         if r.id in seen:
             raise ValueError(f"duplicate rule id: {r.id}")
