@@ -40,12 +40,21 @@ worked.
 **Resolution:** the row is restored to its intended kamil-meem example,
 «مِن مَّآءٍ دَافِقٍ» (86:6), with the expect block pinning
 `meem, geminated, mushaddad ghunna`. The naqis-yeh example remains
-covered by `idgham-yeh-naqis` (88:2). The corrected row returns to the
-reviewer with `expert_reviewed: false` for a fresh verdict.
+covered by `idgham-yeh-naqis` (88:2). The reviewer was informed of the
+adjudication outcome, his catch was credited to him verbatim in this
+record, and the corrected row was returned to him with
+`expert_reviewed: false` and its verdict cell cleared, so that row 116
+receives a fresh, independent verdict on the new content rather than
+inheriting any prior one. No other row's verdict was touched.
 
-**Score-keeping note:** the register's *rulings* remain unfalsified;
-the defect was in one row's example pairing, not in any hukm or in
-engine behavior. The review's first خطأ is also its first proof of
+**What this was, and was not.** The defect was confined to one row's
+human-facing label: a kamil-meem heading pasted over a naqis-yeh
+example. It was **not** an engine error — the engine's output at 2:8
+was, and had always been, the correct naqis-yeh reading, in agreement
+with the reviewer and with the mushaf's dabt — and it was **not** a
+wrong ruling in the register: the kamil/naqis division itself is stated
+correctly in R141 and in the sibling rows. The register's rulings
+remain unfalsified. The review's first خطأ is also its first proof of
 independence: a reviewer who catches what the machines cannot is
 exactly what he was engaged for.
 
