@@ -248,6 +248,17 @@ the final release gate. The machine validation above is necessary, not
 sufficient, and the maintainers hold the tradition's own standard, التلقي,
 above any engine, including this one.
 
+**Methodology transparency.** The initial extraction and indexing of
+rulings from the classical texts was machine-assisted (LLM passes over
+the source books, followed by page-level verification of every citation
+against the printed texts). No ruling stands on that extraction alone:
+each entry carries its written source, the whole register is being
+independently reviewed by an ijazah-holding hafiz who judges from his
+own talaqqi (not from our citations), and disagreements are adjudicated
+against the cited texts. The tradition's own standard, التلقي عن
+المشايخ, remains above every layer of this apparatus, including the
+machine ones.
+
 The review is underway: each of the 208 entries in the rulings register
 is being independently ruled on (صحيح / خطأ / فيه وجهان, with correction
 and reason for every خطأ) by a reviewer whose credentials are documented
