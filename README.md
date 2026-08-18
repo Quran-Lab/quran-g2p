@@ -311,10 +311,13 @@ with the maintainers, scans on file:
 
 Before engagement the reviewer passed a blind screening: ten rulings,
 three of which carried deliberately planted errors: all three caught,
-zero false alarms on the seven true rulings. Verdicts are given from
-his own knowledge, independently of the engine and its sources; any
-disagreement is adjudicated against the cited classical texts, and the
-golden rows' `expert_reviewed` flags flip only on confirmed verdicts.
+zero false alarms on the seven true rulings. The same screening has
+since failed other candidate reviewers — a filter that everyone passes
+proves nothing, so the fails are part of what the passes mean. Verdicts
+are given from his own knowledge, independently of the engine and its
+sources; any disagreement is adjudicated against the cited classical
+texts on the public record (`docs/ADJUDICATIONS.md`), and the golden
+rows' `expert_reviewed` flags flip only on confirmed verdicts.
 The reviewer is anonymized here pending his preference.
 
 Live status:
