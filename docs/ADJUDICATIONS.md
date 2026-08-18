@@ -109,3 +109,34 @@ in the golden row, the canonical CSV, and the live sheet (E69). The
 ruling itself and the reviewer's صحيح verdict on it are unaffected: the
 hukm (damm of hamzat al-wasl for damm-third verbs) was always right;
 only the quoted line of verse was wrong.
+
+## #4 — «نون الوقاية» terminology + the iltiqa' mechanics, row 171 (2026-08-18)
+
+**Reviewer's two notes, verbatim in substance:** (1) «نون الوقاية» is
+the grammarians' term for the noon between a verb and ياء المتكلم
+(أكرمني، أعطاني), not for the tanween's noon at this junction; (2) at
+wasl the iltiqa' al-sakinayn in «خَيْرًا ٱلْوَصِيَّةُ» is between the
+tanween's noon and لام التعريف, because hamzat al-wasl drops — so the
+accurate statement is «نون التنوين مكسورة لالتقاء الساكنين بينها وبين
+لام التعريف».
+
+**Adjudication: upheld on both counts.** A corpus survey found
+«نون الوقاية» nowhere in هداية القاري، النشر، غاية المريد، or التمهيد —
+the tajweed literature's own idiom is كسر التنوين للساكنين, stated
+verbatim in النشر 2:315 («بِالنَّصْبِ وَالتَّنْوِينِ وَكَسْرِهِ
+لِلسَّاكِنَيْنِ», a Hafs-relevant farsh entry). And the mechanics are
+as the reviewer says: the dropped hamza is the orthographic trigger,
+not a party to the clash; the second sakin is the letter after it.
+
+**Resolution:** row 171's label now reads «كسر نون التنوين لالتقاء
+الساكنين بينها وبين الساكن بعد همزة الوصل الساقطة وصلًا», its cite
+carries the verbatim النشر 2:315 line, and the register entry
+R131_NOON_WIQAYA was renamed to match (the frozen rule id itself is an
+internal identifier and stays, per the append-only manifest). Engine
+behavior was never in question — it emits the kasra'd noon at every
+such junction, verified corpus-wide in the behavioral sweep.
+
+**Note for the record:** the red-team pass (547 attacks) did not catch
+this; the sanad-holder did. Istilah precision is exactly where the
+human layer outperforms every machine layer, which is why he is in the
+loop.

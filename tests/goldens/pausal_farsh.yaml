@@ -364,8 +364,14 @@
   surah: 2
   ayah: 180
   rule: R131_WIQAYA
-  rule_ar: نون الوقاية مكسورة بين التنوين وهمزة الوصل (خَيْرًا ٱلْوَصِيَّةُ)
-  cite: (التقاء الساكنين — SPEC-130)؛ هداية القاري
+  # Adjudicated 2026-08-18 (#4): the reviewer noted "noon al-wiqaya"
+  # is the grammarians' term for the yaa-mutakallim noon, and that at
+  # wasl the clash is with the sakin AFTER the dropped hamza. Both
+  # upheld; the books' idiom is kasr al-tanween lil-sakinayn
+  # (al-Nashr 2:315 verbatim).
+  rule_ar: كسر نون التنوين لالتقاء الساكنين بينها وبين الساكن بعد همزة
+    الوصل الساقطة وصلًا (خَيْرًا ٱلْوَصِيَّةُ)
+  cite: النشر 2:315 «بالنصب والتنوين وكسره للساكنين»؛ هداية القاري
   expert_reviewed: false
   expect:
     - {base: noon}
