@@ -95,3 +95,17 @@ class is now closed structurally: `tests/test_row_labels.py` runs the
 mechanical checks as a permanent gate, self-checked against synthetic
 broken rows — including a resurrected copy of the #1 defect — so the
 detector cannot pass vacuously.
+
+## #3 — spliced shahid in the unzur-damm cite (2026-08-18)
+
+Found by the red-team pass, confirmed against the print. Row 68's cite
+quoted الجزرية as «واكسره حال الكسر والفتح **وضم**» — but the print
+reads «وَاكْسِرْهُ حَالَ الْكَسْرِ وَالْفَتْحِ وَفِي الْأَسْمَاءِ...»;
+the وضم was spliced from the neighbouring hukm. The correct shahid for
+damm is the *preceding* bayt, «وَابْدَأْ بِهَمْزِ الْوَصْلِ مِنْ فِعْلٍ
+بِضَمْ إِنْ كَانَ ثَالِثٌ مِنَ الْفِعْلِ يُضَمْ», verified in the print
+(bab hamz al-wasl, p. 22 of the pinned edition). The cite was corrected
+in the golden row, the canonical CSV, and the live sheet (E69). The
+ruling itself and the reviewer's صحيح verdict on it are unaffected: the
+hukm (damm of hamzat al-wasl for damm-third verbs) was always right;
+only the quoted line of verse was wrong.
