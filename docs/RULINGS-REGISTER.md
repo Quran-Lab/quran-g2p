@@ -17,7 +17,7 @@ reviewer by the golden rows listed in its **review** column
 | `R012_SEEN_SAD` | ما يقرأ بالسين أو الصاد (يبصط، بصطة، المصيطرون، بمصيطر) / seen/sad khilaf words | الشاطبية بيتا 514-515؛ سراج القارئ 1:163 | `oneoff-yabsut-seen`, `oneoff-bastatan-seen`, `oneoff-musaytirun-sad`, `oneoff-bimusaytir-sad` |
 | `R012B_DAAF_DAMM` | ضَعْف: الفتح المقدم والضم وجه ثان / daaf fath (preferred) / damm wajh, 30:54 | الشاطبية بيتا 722-723؛ التيسير 174-176 | `oneoff-daaf-fath` |
 | `R013_ELIDED_WAW_LIYASUU` | لِيَسُوءُوا: إثبات الواو المحذوفة رسمًا والمد المتصل عليها / restored elided waw, 17:7 | الحجة للقراء السبعة 5:85؛ المحكم في نقط المصاحف 1:168؛ دليل الحيران 1:405-406 | `sup-17-7-waw-restored` |
-| `R014B_ISTIFHAM_TASHEEL` | تسهيل همزة الوصل بعد همزة الاستفهام (الوجه الثاني) / istifham tasheel wajh (ibdal preferred) | الشاطبية أبيات 192-194؛ النشر 1:377-378 | `sup2-istifham-tasheel` |
+| `R014B_ISTIFHAM_TASHEEL` | تسهيل همزة الوصل بعد همزة الاستفهام (الوجه الثاني) / istifham tasheel wajh (ibdal preferred) | الشاطبية أبيات 192-194؛ النشر 1:377 «وقال آخرون: تسهل بين بين» | `sup2-istifham-tasheel` |
 
 ## P3 - Ibtida'
 
@@ -31,12 +31,12 @@ reviewer by the golden rows listed in its **review** column
 
 | id | الحكم | sources | review |
 |---|---|---|---|
-| `R120_ISKAN` | الإسكان للوقف / iskan al-waqf | النشر 2:120 (الوقف بالسكون هو الأصل) | `pausal-iskan-alamin` |
+| `R120_ISKAN` | الإسكان للوقف / iskan al-waqf | النشر 2:120 «فأما السكون فهو الأصل في الوقف على الكلم المتحركة وصلا» | `pausal-iskan-alamin` |
 | `R121_MADD_EWAD` | مد العوض عن تنوين النصب وقفًا / madd al-'iwad at waqf | تحفة الأطفال؛ هداية القاري | `madd-iwad`, `pausal-iwad-fath-alif` |
 | `R121_EWAD_SEAT_SILENT` | ألف تنوين النصب المرسومة لا تُنطق وصلًا / the tanween-fath seat alif is silent in wasl | النشر 2:120؛ تحفة الأطفال | `pausal-iwad-fath-alif`, `pausal-iwad-khusr` *(the wasl-silence is the stated complement of the waqf ibdal ruling on these rows)* |
 | `R122_TAA_MARBUTA_WAQF` | الوقف على التاء المربوطة هاءً / taa marbuta read as haa at waqf | النشر 2:129؛ هداية القاري | `pausal-marbuta-qaria`, `pausal-marbuta-mid-wasl-teh` |
-| `R123_RAWM` | الروم / rawm (partial haraka at waqf) | الشاطبية أبيات 368-373؛ النشر 2:121؛ التيسير 58-59 | `sup-rawm-general`, `sup-rawm-exclusions`, `sup-rawm-haa-damir` |
-| `R123_ISHMAM` | الإشمام / ishmam (lip-rounding at waqf, damm only) | الشاطبية أبيات 368-373؛ النشر 2:121؛ التيسير 58-59 | `sup-rawm-general` |
+| `R123_RAWM` | الروم / rawm (partial haraka at waqf) | الشاطبية أبيات 368-373؛ النشر 2:121 «وأما الروم فهو عند القراء عبارة عن النطق ببعض الحركة»؛ التيسير 58-59 | `sup-rawm-general`, `sup-rawm-exclusions`, `sup-rawm-haa-damir` |
+| `R123_ISHMAM` | الإشمام / ishmam (lip-rounding at waqf, damm only) | الشاطبية أبيات 368-373؛ النشر 2:121 «وأما الإشمام فهو عبارة عن الإشارة إلى الحركة من غير تصويت»؛ التيسير 58-59 | `sup-rawm-general` |
 
 ## P5 - Junction (wasl)
 
@@ -93,7 +93,7 @@ reviewer by the golden rows listed in its **review** column
 | `R181_BADAL` | مد البدل / madd al-badal (2) | الشاطبية باب المد؛ النشر 1:339 | `madd-badal` |
 | `R183_SILAH_WAQF_DROP` | سقوط صلة هاء الضمير وقفًا / silah dropped at waqf | الشاطبية أبيات 158-159؛ سراج القارئ 1:45 | `madd-silah-sughra`, `pausal-iskan-alamin` *(stated jointly by the silah row and the waqf-iskan row)* |
 | `R184_SILAH_KUBRA` | الصلة الكبرى قبل الهمز / silah kubra before hamza | الشاطبية بيت 158؛ النشر 1:306 | `madd-silah-kubra` |
-| `R185_MUTTASIL` | المد الواجب المتصل / madd muttasil (4-5) | الشاطبية باب المد؛ النشر 1:315 | `madd-muttasil-jaa`, `madd-muttasil-samaa` |
+| `R185_MUTTASIL` | المد الواجب المتصل / madd muttasil (4-5) | الشاطبية باب المد؛ النشر 1:315 «فوجب أن لا يعتقد أن قصر المتصل جائز عند أحد من القراء» | `madd-muttasil-jaa`, `madd-muttasil-samaa` |
 | `R185_MUTTASIL_WAQF` | المتصل الموقوف عليه (جواز الست) / muttasil at waqf admits 6 | الشاطبية باب المد؛ النشر 1:315-346؛ هداية القاري | `sup-madd-amounts` |
 | `R186_MUNFASIL` | المد الجائز المنفصل / madd munfasil (4-5) | الشاطبية؛ النشر 1:322 | `madd-munfasil-bima-unzila` |
 | `R187_LAZIM_MUTHAQQAL` | المد اللازم الكلمي / madd lazim kalimi (6) | تحفة الأطفال «ولازم إن السكون أصلا»؛ النشر 1:342 | `madd-lazim-daalleen`, `madd-lazim-haaqqah`, `madd-lazim-taammah`, `madd-lazim-mukhaffaf-aalaan` |
@@ -117,10 +117,10 @@ reviewer by the golden rows listed in its **review** column
 | id | الحكم | sources | review |
 |---|---|---|---|
 | `R210_ISTILA` | تفخيم حروف الاستعلاء ومراتبه / isti'la tafkheem and its maraatib | المقدمة الجزرية (باب صفات الحروف)؛ النويري 1:237-238 | `sup-sifat-sets`, `sup2-tafkheem-maratib` *(the letter set is stated by the sifat row, the grading by the maraatib row)* |
-| `R211_REH` | أحكام الراء تفخيمًا وترقيقًا / the raa decision table | الجزرية باب الراءات؛ هداية القاري 1:130 | `ra-fath-tafkheem`, `ra-damm-tafkheem`, `ra-kasr-tarqeeq`, `ra-sakin-after-fath`, `ra-sakin-after-damm`, `ra-sakin-after-kasr-tarqeeq`, `ra-sakin-kasr-istila-mirsad`, `ra-firq-wasl-tarqeeq`, `ra-nudhur-waqf-tarqeeq`, `ra-yasr-waqf-tarqeeq`, `ra-fajr-waqf-tafkheem`, `ra-khabir-waqf-tarqeeq` |
-| `R211_WAQF_KHILAF` | فرش راءات الوقف الخلافية (مصر، القطر، أسر) / the waqf raa khilaf words | النشر 2:105، 2:110؛ النويري 2:33؛ هداية القاري 1:130-133 | `sup-misr-qitr-asr` |
+| `R211_REH` | أحكام الراء تفخيمًا وترقيقًا / the raa decision table | الجزرية باب الراءات «ورقق الراء إذا ما كسرت»؛ هداية القاري 1:130 | `ra-fath-tafkheem`, `ra-damm-tafkheem`, `ra-kasr-tarqeeq`, `ra-sakin-after-fath`, `ra-sakin-after-damm`, `ra-sakin-after-kasr-tarqeeq`, `ra-sakin-kasr-istila-mirsad`, `ra-firq-wasl-tarqeeq`, `ra-nudhur-waqf-tarqeeq`, `ra-yasr-waqf-tarqeeq`, `ra-fajr-waqf-tafkheem`, `ra-khabir-waqf-tarqeeq` |
+| `R211_WAQF_KHILAF` | فرش راءات الوقف الخلافية (مصر، القطر، أسر) / the waqf raa khilaf words | النشر 2:105، 2:110؛ النويري 2:33 «وأختار في مصر التفخيم وفي القطر الترقيق نظرا للوصل وعملا بالأصل»؛ هداية القاري 1:130-133 | `sup-misr-qitr-asr` |
 | `R212_LAM_JALALA` | تفخيم لام الجلالة وترقيقها / lam al-jalala tafkheem/tarqeeq | الجزرية «وفخم اللام من اسم الله عن فتح أو ضم» | `jalala-tarqeeq-after-kasr`, `jalala-tafkheem-after-fath` |
-| `R214_IKHFA_TAFKHEEM` | تبعية غنة الإخفاء لما بعدها تفخيمًا وترقيقًا / ikhfa ghunna follows the trigger's tafkheem | هداية القاري 1:181-182 | `sup-ghunna-tabiyya`, `ikhfa-sad-mofakham`, `ikhfa-tah-mofakham`, `ikhfa-qaf-mofakham` |
+| `R214_IKHFA_TAFKHEEM` | تبعية غنة الإخفاء لما بعدها تفخيمًا وترقيقًا / ikhfa ghunna follows the trigger's tafkheem | هداية القاري 1:181 «ومن تمام كيفية أدائها اتباعها لما بعدها من الحروف تفخيما وترقيقا» | `sup-ghunna-tabiyya`, `ikhfa-sad-mofakham`, `ikhfa-tah-mofakham`, `ikhfa-qaf-mofakham` |
 
 ## P13 - One-offs
 
