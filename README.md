@@ -23,46 +23,42 @@ silent default.
 Built and maintained by **Quran Lab**, a waqf (non-profit endowment)
 building open technology in the service of the Quran.
 
-## Methodology, stated plainly
+## How it was built and verified
 
-So that no reader mistakes what this project is and is not, the pipeline
-behind every ruling in this repository:
+So the reader can weigh the work, the pipeline behind every ruling:
 
-1. **Machine-assisted extraction.** Large-language-model passes over the
-   classical books (the Shamela prints of the Shatibiyyah and its
-   commentaries, al-Nashr, al-Taysir, Hidayat al-Qari, and the rest of
-   the bibliography) indexed candidate rulings. This step is a card
-   catalogue, not an authority: nothing enters the engine on the
-   LLM's word.
+1. **Indexed from the books.** Machine-assisted passes read the classical
+   literature page by page — the Shamela prints of the Shatibiyyah and
+   its commentaries, al-Nashr, al-Taysir, Hidayat al-Qari, and the rest
+   of the bibliography — and indexed every candidate ruling. The index
+   is a card catalogue, not an authority: nothing enters the engine on a
+   model's word.
 2. **Page-verified citations.** Every citation in the rulings register
-   was then verified against the printed texts themselves: the cited
-   book must exist in the corpus, the cited volume:page or bayt must
-   exist in that print, and the ruling's subject must appear at that
-   location. Quoted matn lines are verified verbatim. The full audit is
-   committed at `docs/CITATION-AUDIT.md` and regenerable with
+   is checked against the printed texts themselves: the cited book must
+   exist in the corpus, the cited volume:page or bayt must exist in that
+   print, and the ruling's subject must appear at that location. Quoted
+   matn lines are verified verbatim. The audit is committed at
+   `docs/CITATION-AUDIT.md` and regenerable with
    `tools/audit_citations.py`.
 3. **A gate-enforced register.** Each engine rule is bound to its
-   classical citation and to the review rows that state it
-   (`docs/RULINGS-REGISTER.md`); the test suite fails if any rule lacks
-   either. Machine validation (five independent oracles, the behavioral
-   audits, 25+9 seeded-bug drills) proves the engine implements the
-   register faithfully.
-4. **Independent human review.** An ijazah-holding hafiz (sanad in Hafs
-   'an 'Asim) rules on every entry from his own talaqqi. Each row shows
-   its citation as a reference, but his verdict must come from his own
-   knowledge, and that this actually happens was measured rather than
-   assumed: in the blind screening, deliberately planted errors dressed
-   in the same citation format were all caught. He is not given our
-   source texts; the books enter only at the adjudication stage, where
-   any disagreement is settled against the cited passages. The live
-   status of this review is shown below.
+   classical citation and its review rows (`docs/RULINGS-REGISTER.md`);
+   the engine refuses to even import if a rule lacks either. Five
+   independent oracles, corpus-wide behavioral audits, and seeded-bug
+   drills prove the engine implements the register faithfully.
+4. **Blinded sanad review, measured rather than assumed.** An
+   ijazah-holding hafiz (sanad in Hafs 'an 'Asim) rules on every entry
+   from his own talaqqi. His independence was measured: in the blind
+   screening, deliberately planted errors dressed in the real citation
+   format were all caught. Disagreements are adjudicated against the
+   cited passages, on the public record (`docs/ADJUDICATIONS.md`), and
+   the live status of the review is shown below.
 5. **The method is the tradition's own.** الرواية والدراية:
    transmission and verification, at last given machinery. Ibn
    al-Jazari built al-Nashr exactly this way: every written source
    gathered, every reading verified through living chains, nothing
-   accepted without both. This project does not argue with that
-   method. It implements it. The books give exhaustiveness, the sanad
-   gives authority, and the gates let neither stand alone.
+   accepted without both. This project does not argue with that method.
+   It implements it. The books give exhaustiveness, the sanad gives
+   authority, and the gates let neither stand alone.
 
 **Scope of authority.** The engine rules on text, not on people.
 Certifying reciters remains the sanad's work, and learning the Quran
