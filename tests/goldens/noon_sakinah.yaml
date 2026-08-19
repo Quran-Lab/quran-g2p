@@ -10,7 +10,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء حقيقي قبل التاء (مِن تَحْتِهَا)
   cite: تحفة الأطفال «صف ذا ثنا...»؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: teh}
@@ -20,7 +20,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الثاء (مِن ثَمَرَةٍ)
   cite: تحفة الأطفال؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: theh}
@@ -30,7 +30,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الجيم (نَجَّيْنَٰكُم — بل أَنجَيْنَٰكُم)
   cite: تحفة الأطفال؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: jeem}
@@ -40,7 +40,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الدال (مِن دُونِ)
   cite: تحفة الأطفال؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: dal}
@@ -50,7 +50,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الذال (مَن ذَا ٱلَّذِى)
   cite: تحفة الأطفال؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: thal}
@@ -60,7 +60,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الزاي (وَأَنزَلَ)
   cite: تحفة الأطفال؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: zain}
@@ -70,7 +70,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل السين (ٱلْإِنسَٰنِ)
   cite: تحفة الأطفال؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: seen}
@@ -80,7 +80,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الشين (أَنشَأَكُم)
   cite: تحفة الأطفال؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: sheen}
@@ -90,7 +90,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الصاد مع تفخيم الغنة (مِن صَلْصَٰلٍ)
   cite: تحفة الأطفال؛ لطائف الإشارات 1:366-367 (تفخيم الغنة بحسب ما بعدها)
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah, tafkheem: mofakham}
     - {base: sad}
@@ -100,7 +100,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الضاد (مَّنضُودٍ)
   cite: تحفة الأطفال؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: dad}
@@ -110,7 +110,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الطاء مع تفخيم الغنة (مِن طِينٍ)
   cite: تحفة الأطفال؛ لطائف الإشارات 1:366-367
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah, tafkheem: mofakham}
     - {base: tah}
@@ -120,7 +120,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الظاء (يَنظُرُونَ)
   cite: تحفة الأطفال؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: zah}
@@ -130,7 +130,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الفاء (أَنفُسَكُمْ)
   cite: تحفة الأطفال؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: feh}
@@ -140,7 +140,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل القاف مع تفخيم الغنة (مِن قَبْلُ)
   cite: تحفة الأطفال؛ لطائف الإشارات 1:366-367
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah, tafkheem: mofakham}
     - {base: qaf}
@@ -150,7 +150,7 @@
   rule: R144_IKHFA
   rule_ar: إخفاء قبل الكاف (مَن كَانَ)
   cite: تحفة الأطفال؛ هداية القاري 1:187
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon_mukhfah}
     - {base: kaf}
@@ -162,7 +162,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار قبل الهمزة (مَنْ ءَامَنَ)
   cite: تحفة الأطفال «للحلق ست»؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: hamza}
@@ -172,7 +172,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار في كلمة (وَيَنْـَٔوْنَ)
   cite: تحفة الأطفال؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: hamza}
@@ -182,7 +182,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار قبل الهاء (مِنْ هَادٍ)
   cite: تحفة الأطفال؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: heh}
@@ -192,7 +192,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار قبل العين (أَنْعَمْتَ)
   cite: تحفة الأطفال؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: ain}
@@ -202,7 +202,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار قبل الحاء (وَٱنْحَرْ)
   cite: تحفة الأطفال؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: hah}
@@ -212,7 +212,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار قبل الغين (مِّنْ غِلٍّ)
   cite: تحفة الأطفال؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: ghain}
@@ -222,7 +222,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار في كلمة (فَسَيُنْغِضُونَ)
   cite: تحفة الأطفال؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: ghain}
@@ -232,7 +232,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار قبل الخاء (مَنْ خَشِيَ)
   cite: تحفة الأطفال؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: khah}
@@ -242,7 +242,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار في كلمة (وَٱلْمُنْخَنِقَةُ)
   cite: تحفة الأطفال؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: khah}
@@ -252,7 +252,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار تنوين قبل الحاء (حَكِيمٍ حَمِيدٍ)
   cite: تحفة الأطفال؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: hah}
@@ -262,7 +262,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار تنوين قبل العين (غِشَٰوَةٌ وَ... عَذَابٌ عَظِيمٌ)
   cite: تحفة الأطفال؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: ain}
@@ -272,7 +272,7 @@
   rule: R140_IZHAR
   rule_ar: إظهار (مِنْهُ)
   cite: تحفة الأطفال؛ هداية القاري 1:181
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: heh}
@@ -284,7 +284,7 @@
   rule: R141_IDGHAM_GHUNNA
   rule_ar: إدغام كامل بغنة في النون (لَن نَّصْبِرَ)
   cite: تحفة الأطفال «في يرملون»؛ النشر 2:22
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, geminated: true}
 - id: idgham-meem-kamil
@@ -298,7 +298,7 @@
   # idgham-yeh-naqis.
   rule_ar: إدغام كامل بغنة في الميم (مِن مَّآءٍ دَافِقٍ)
   cite: تحفة الأطفال؛ النشر 2:22
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem, geminated: true, ghunna: mushaddadah}
 - id: idgham-yeh-naqis
@@ -307,7 +307,7 @@
   rule: R141_IDGHAM_GHUNNA
   rule_ar: إدغام ناقص بغنة في الياء (وُجُوهٌ يَوْمَئِذٍ)
   cite: تحفة الأطفال؛ النشر 2:23 (الإدغام الناقص في الواو والياء)
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: yeh, ghunna: idgham, geminated: false}
 - id: idgham-waw-naqis
@@ -316,7 +316,7 @@
   rule: R141_IDGHAM_GHUNNA
   rule_ar: إدغام ناقص بغنة في الواو (مِن وَلِىٍّ)
   cite: تحفة الأطفال؛ النشر 2:23
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: waw, ghunna: idgham, geminated: false}
 - id: idgham-lam
@@ -325,7 +325,7 @@
   rule: R142_IDGHAM_BILA_GHUNNA
   rule_ar: إدغام بلا غنة في اللام (هُدًى لِّلْمُتَّقِينَ)
   cite: تحفة الأطفال «في اللام والرا ثم كررنه»؛ النشر 2:24
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: lam, geminated: true}
     - {base: kasra}
@@ -336,7 +336,7 @@
   rule: R142_IDGHAM_BILA_GHUNNA
   rule_ar: إدغام بلا غنة في الراء (هُدًى مِّن رَّبِّهِمْ)
   cite: تحفة الأطفال؛ النشر 2:24
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: reh, geminated: true}
 - id: izhar-mutlaq-dunya
@@ -345,7 +345,7 @@
   rule: R141_IZHAR_MUTLAQ
   rule_ar: إظهار مطلق في كلمة (ٱلدُّنْيَا)
   cite: تحفة الأطفال «إلا إذا كانا بكلمة»؛ النشر 2:23
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: yeh}
@@ -355,7 +355,7 @@
   rule: R141_IZHAR_MUTLAQ
   rule_ar: إظهار مطلق (بُنْيَٰنٌ)
   cite: النشر 2:23
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: yeh}
@@ -365,7 +365,7 @@
   rule: R141_IZHAR_MUTLAQ
   rule_ar: إظهار مطلق (قِنْوَانٌ)
   cite: النشر 2:23
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: waw}
@@ -375,7 +375,7 @@
   rule: R141_IZHAR_MUTLAQ
   rule_ar: إظهار مطلق (صِنْوَانٌ)
   cite: النشر 2:23
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: waw}
@@ -386,7 +386,7 @@
   rule_ar: نون «يس» تبقى نونًا خالصة آخر الآية (الإظهار عند واو 36:2 وصلًا
     — طور الوصل بين الآيات؛ لا إدغام يمسّها هنا)
   cite: الشاطبية بيت 281؛ فتح الوصيد 1:444-445
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: noon, ghunna: null, geminated: false}
 - id: izhar-noon-qalam
@@ -396,7 +396,7 @@
   rule_ar: نون «ن» تبقى نونًا خالصة آخر الآية (الإظهار عند واو 68:1 داخلها
     وصلًا)
   cite: الشاطبية بيت 281؛ النشر 2:17-18
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, ghunna: asl}
     - {base: waw, kind: consonant}
@@ -406,7 +406,7 @@
   rule: R141_IDGHAM_GHUNNA
   rule_ar: إدغام تنوين في الميم (مَثَلًا مَّا)
   cite: تحفة الأطفال؛ النشر 2:22
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem, geminated: true}
     - {base: fatha}
@@ -416,7 +416,7 @@
   rule: R141_IDGHAM_GHUNNA
   rule_ar: إدغام تنوين في الواو ناقصًا (خَيْرٌ وَأَبْقَىٰ)
   cite: تحفة الأطفال؛ النشر 2:23
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: waw, ghunna: idgham, geminated: false}
 
@@ -427,7 +427,7 @@
   rule: R143_IQLAB
   rule_ar: إقلاب (مِنۢ بَعْدِ)
   cite: تحفة الأطفال «والثالث الإقلاب»؛ هداية القاري 1:186
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem_mukhfah}
     - {base: beh}
@@ -437,7 +437,7 @@
   rule: R143_IQLAB
   rule_ar: إقلاب في كلمة (أَنۢبِئْهُم)
   cite: تحفة الأطفال؛ هداية القاري 1:186
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem_mukhfah}
     - {base: beh}
@@ -451,7 +451,7 @@
   # the iqlab meem in the dabt.
   rule_ar: إقلاب تنوين (سَمِيعٌۢ بَصِيرٌ)
   cite: تحفة الأطفال؛ هداية القاري 1:186
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem_mukhfah}
     - {base: beh}
@@ -461,7 +461,7 @@
   rule: R143_IQLAB
   rule_ar: إقلاب (مِنۢ بَقْلِهَا)
   cite: تحفة الأطفال؛ هداية القاري 1:186
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem_mukhfah}
     - {base: beh}
@@ -471,7 +471,7 @@
   rule: R143_IQLAB
   rule_ar: إقلاب (أَنۢ بُورِكَ)
   cite: تحفة الأطفال؛ هداية القاري 1:186
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem_mukhfah}
     - {base: beh}
@@ -481,7 +481,7 @@
   rule: R143_IQLAB
   rule_ar: إقلاب تنوين (عَلِيمٌۢ بِذَاتِ ٱلصُّدُورِ)
   cite: تحفة الأطفال؛ هداية القاري 1:186
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem_mukhfah}
     - {base: beh}
@@ -493,7 +493,7 @@
   rule: R150_IKHFA_SHAFAWI
   rule_ar: إخفاء شفوي (تَرْمِيهِم بِحِجَارَةٍ)
   cite: تحفة الأطفال «فالأول الإخفاء عند الباء»؛ هداية القاري 1:191-196
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem_mukhfah}
     - {base: beh}
@@ -503,7 +503,7 @@
   rule: R150_IKHFA_SHAFAWI
   rule_ar: إخفاء شفوي (يَعْتَصِم بِٱللَّهِ)
   cite: تحفة الأطفال؛ هداية القاري 1:191-196
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem_mukhfah}
     - {base: beh}
@@ -513,7 +513,7 @@
   rule: R151_IDGHAM_MITHLAYN
   rule_ar: إدغام مثلين صغير (قُلُوبِهِم مَّرَضٌ)
   cite: تحفة الأطفال «والثاني إدغام بمثلها أتى»
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem, geminated: true}
 - id: meem-izhar-alayhim
@@ -522,7 +522,7 @@
   rule: R152_IZHAR_SHAFAWI
   rule_ar: إظهار شفوي (عَلَيْهِمْ وَلَا؛ الميم عند الواو تظهر)
   cite: تحفة الأطفال «واحذر لدى واو وفا»؛ هداية القاري 1:192
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem, geminated: false}
     - {base: waw, kind: consonant}
@@ -532,7 +532,7 @@
   rule: R152_IZHAR_SHAFAWI
   rule_ar: إظهار شفوي عند الفاء (وَلَهُمْ فِيهَا)
   cite: تحفة الأطفال «واحذر لدى واو وفا»
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem, geminated: false}
     - {base: feh}
@@ -542,7 +542,7 @@
   rule: R152_IZHAR_SHAFAWI
   rule_ar: إظهار شفوي (قُلُوبِهِمْ وَعَلَىٰ)
   cite: تحفة الأطفال
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem, geminated: false}
     - {base: waw, kind: consonant}

@@ -8,7 +8,7 @@
   rule: R161_MUTAJANIS
   rule_ar: إدغام ناقص للطاء في التاء مع بقاء الإطباق (بَسَطتَ)، ولا قلقلة
   cite: الجزرية «وبين الإطباق من أحطت مع بسطت»؛ النشر 2:19
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: tah, qalqalah: null}
     - {base: teh, geminated: false}
@@ -18,7 +18,7 @@
   rule: R161_MUTAJANIS
   rule_ar: إدغام ناقص (أَحَطتُ)
   cite: الجزرية؛ النشر 2:19
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: tah, qalqalah: null}
     - {base: teh, geminated: false}
@@ -28,7 +28,7 @@
   rule: R161_MUTAJANIS
   rule_ar: إدغام ناقص (فَرَّطتُمْ)
   cite: الجزرية؛ النشر 2:19
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: tah, qalqalah: null}
     - {base: teh, geminated: false}
@@ -38,7 +38,7 @@
   rule: R161_MUTAJANIS
   rule_ar: إدغام التاء في الطاء (وَدَّت طَّآئِفَةٌ)
   cite: النشر 2:18؛ هداية القاري 1:252
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: tah, geminated: true}
 - id: mutajanis-teh-dal
@@ -47,7 +47,7 @@
   rule: R161_MUTAJANIS
   rule_ar: إدغام التاء في الدال (أُجِيبَت دَّعْوَتُكُمَا)
   cite: النشر 2:18
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: dal, geminated: true}
 - id: mutajanis-dal-teh
@@ -56,7 +56,7 @@
   rule: R161_MUTAJANIS
   rule_ar: إدغام الدال في التاء (قَد تَّبَيَّنَ)
   cite: النشر 2:18
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: teh, geminated: true}
 - id: mutajanis-thal-zah
@@ -65,7 +65,7 @@
   rule: R161_MUTAJANIS
   rule_ar: إدغام الذال في الظاء (إِذ ظَّلَمُوٓا۟)
   cite: النشر 2:18
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: zah, geminated: true}
 - id: mutajanis-theh-thal
@@ -74,7 +74,7 @@
   rule: R161_MUTAJANIS
   rule_ar: إدغام الثاء في الذال قولًا واحدًا (يَلْهَث ذَّٰلِكَ)
   cite: الشاطبية بيت 284؛ سراج القارئ 1:100-101
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: thal, geminated: true}
 - id: mutajanis-beh-meem
@@ -83,7 +83,7 @@
   rule: R161_MUTAJANIS
   rule_ar: إدغام الباء في الميم قولًا واحدًا (ٱرْكَب مَّعَنَا)
   cite: الشاطبية بيت 284؛ إبراز المعاني 1:199-200
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem, geminated: true}
 - id: mutaqarib-qaf-kaf
@@ -92,7 +92,7 @@
   rule: R162_MUTAQARIB
   rule_ar: إدغام القاف في الكاف كاملًا (نَخْلُقكُّم)
   cite: النشر 1:221، 2:19-20؛ فريدة الدهر 1:444-445
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: kaf, geminated: true}
 - id: mutaqarib-lam-reh
@@ -101,7 +101,7 @@
   rule: R162_MUTAQARIB
   rule_ar: إدغام اللام في الراء (قُل رَّبِّ)
   cite: النشر 2:18
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: reh, geminated: true}
 - id: mutaqarib-bal-rafa
@@ -110,7 +110,7 @@
   rule: R162_MUTAQARIB
   rule_ar: إدغام اللام في الراء (بَل رَّفَعَهُ)
   cite: النشر 2:18
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: reh, geminated: true}
 
@@ -121,7 +121,7 @@
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للقاف (رَزَقْنَٰهُمْ)
   cite: الشاطبية بيت 1158 «وفي قطب جد خمس قلقلة»؛ النشر 1:203
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: qaf, qalqalah: any}
     - {base: noon}
@@ -131,7 +131,7 @@
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للطاء الساكنة (أَطْعَمَهُم)
   cite: الشاطبية بيت 1158؛ النشر 1:203
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: tah, qalqalah: any}
     - {base: ain}
@@ -141,7 +141,7 @@
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للباء (قَبْلِكَ)
   cite: الشاطبية بيت 1158؛ النشر 1:203
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: beh, qalqalah: any}
     - {base: lam}
@@ -151,7 +151,7 @@
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للجيم الساكنة (يَجْعَلُونَ)
   cite: الشاطبية بيت 1158؛ النشر 1:203
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: jeem, qalqalah: any}
     - {base: ain}
@@ -161,7 +161,7 @@
   rule: R200_QALQALAH
   rule_ar: قلقلة صغرى للدال الساكنة (قَدْ أَفْلَحَ)
   cite: الشاطبية بيت 1158؛ النشر 1:203
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: dal, qalqalah: any}
 - id: qlq-kubra-falaq
@@ -170,7 +170,7 @@
   rule: R201_QALQALAH_KUBRA
   rule_ar: قلقلة كبرى وقفًا (ٱلْفَلَقِ)
   cite: الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: qaf, qalqalah: any}
 - id: qlq-kubra-tabb
@@ -179,7 +179,7 @@
   rule: R201_QALQALAH_KUBRA
   rule_ar: قلقلة كبرى وقفًا مع التشديد (وَتَبَّ)
   cite: الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: beh, geminated: true, qalqalah: any}
 - id: qlq-kubra-ahad
@@ -188,7 +188,7 @@
   rule: R201_QALQALAH_KUBRA
   rule_ar: قلقلة كبرى وقفًا (أَحَدٌ — بعد حذف التنوين)
   cite: الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: dal, qalqalah: any}
 - id: qlq-kubra-muheet
@@ -197,7 +197,7 @@
   rule: R201_QALQALAH_KUBRA
   rule_ar: قلقلة كبرى وقفًا للطاء (مُّحِيطُۢ)
   cite: الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: tah, qalqalah: any}
 - id: qlq-kubra-bahij
@@ -206,7 +206,7 @@
   rule: R201_QALQALAH_KUBRA
   rule_ar: قلقلة كبرى وقفًا للجيم (بَهِيجٍ)
   cite: الجزرية «وبينن مقلقلًا إن سكنا وإن يكن في الوقف كان أبينا»؛ هداية القاري 1:84-87
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: jeem, qalqalah: any}
 
@@ -217,7 +217,7 @@
   rule: R211_RA
   rule_ar: تفخيم الراء المفتوحة (رَبِّ)
   cite: الجزرية باب الراءات؛ هداية القاري 1:130
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: reh, tafkheem: mofakham}
     - {base: fatha}
@@ -227,7 +227,7 @@
   rule: R211_RA
   rule_ar: تفخيم الراء المضمومة (رُزِقْنَا)
   cite: الجزرية؛ هداية القاري 1:130
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: reh, tafkheem: mofakham}
     - {base: damma}
@@ -237,7 +237,7 @@
   rule: R211_RA
   rule_ar: ترقيق الراء المكسورة (رِزْقًا)
   cite: الجزرية «ورقق الراء إذا ما كسرت»
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: reh, tafkheem: moraqaq}
     - {base: kasra}
@@ -247,7 +247,7 @@
   rule: R211_RA
   rule_ar: تفخيم الراء الساكنة بعد فتح (مَرْيَمَ)
   cite: الجزرية؛ هداية القاري 1:131
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem}
     - {base: fatha}
@@ -259,7 +259,7 @@
   rule: R211_RA
   rule_ar: تفخيم الراء الساكنة بعد ضم (ٱلْقُرْءَانُ)
   cite: الجزرية؛ هداية القاري 1:131
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: qaf}
     - {base: damma}
@@ -270,7 +270,7 @@
   rule: R211_RA
   rule_ar: ترقيق الراء الساكنة بعد كسر (فِرْعَوْنَ)
   cite: الجزرية «إن لم تكن من قبل حرف استعلا»
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: feh}
     - {base: kasra}
@@ -281,7 +281,7 @@
   rule: R211_RA
   rule_ar: تفخيم الراء الساكنة بعد كسر قبل استعلاء متصل (مِرْصَادًا)
   cite: الجزرية «إن لم تكن من قبل حرف استعلا»؛ هداية القاري 1:131
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem}
     - {base: kasra}
@@ -293,7 +293,7 @@
   rule: R211_RA
   rule_ar: تفخيم الراء قبل الاستعلاء (قِرْطَاسٍ)
   cite: الجزرية؛ هداية القاري 1:131
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: qaf}
     - {base: kasra}
@@ -305,7 +305,7 @@
   rule: R211_RA
   rule_ar: تفخيم الراء قبل الاستعلاء (فِرْقَةٍ)
   cite: الجزرية؛ هداية القاري 1:131
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: feh}
     - {base: kasra}
@@ -317,7 +317,7 @@
   rule: R211_RA_KHILAF
   rule_ar: ترقيق راء فِرْقٍ وصلًا (الوجه المأخوذ به؛ الاستعلاء مكسور فضعف)
   cite: فتح الوصيد 1:526؛ سراج القارئ 1:120
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: feh}
     - {base: kasra}
@@ -329,7 +329,7 @@
   rule: R211_RA_KHILAF
   rule_ar: ترقيق راء نُذُرِ وقفًا (المقدَّم؛ لمحذوف الياء)
   cite: النشر 2:110؛ هداية القاري 1:132
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: reh, tafkheem: moraqaq}
 - id: ra-yasr-waqf-tarqeeq
@@ -338,7 +338,7 @@
   rule: R211_RA_KHILAF
   rule_ar: ترقيق راء يَسْرِ وقفًا (الأولى)
   cite: النشر 2:110-111
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: reh, tafkheem: moraqaq}
 - id: ra-tafkheem-inherits-vowel
@@ -347,7 +347,7 @@
   rule: R213_INHERIT
   rule_ar: "تبع الحركةُ الراءَ المفخمة (رَّبِّهِمْ: الفتحة مفخمة تبعًا)"
   cite: (وراثة الحركة لحكم حرفها — SPEC-213)
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: reh, geminated: true, tafkheem: mofakham}
     - {base: fatha, tafkheem: mofakham}
@@ -357,7 +357,7 @@
   rule: R211_RA
   rule_ar: ترقيق الراء المكسورة (رِئَآءَ)
   cite: الجزرية
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: reh, tafkheem: moraqaq}
     - {base: kasra}
@@ -368,7 +368,7 @@
   rule_ar: تفخيم راء الفجر وقفًا (ساكنة بعد ساكن قبله فتح — العبرة بما قبل
     الساكن)
   cite: الجزرية باب الراءات؛ هداية القاري 1:131
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: reh, tafkheem: mofakham}
 - id: ra-khabir-waqf-tarqeeq
@@ -377,7 +377,7 @@
   rule: R211_RA
   rule_ar: ترقيق الراء وقفًا بعد ياء مدية (لَخَبِيرٌ)
   cite: الجزرية؛ هداية القاري 1:132
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: reh, tafkheem: moraqaq}
 
@@ -388,7 +388,7 @@
   rule: R170_GHUNNA
   rule_ar: غنة النون المشددة (ٱلنَّاسِ) — أكمل المراتب
   cite: تحفة الأطفال «وغن ميمًا ثم نونًا شددا»؛ لطائف الإشارات 1:350
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, geminated: true, ghunna: mushaddadah}
 - id: ghunna-meem-amma
@@ -397,7 +397,7 @@
   rule: R170_GHUNNA
   rule_ar: غنة الميم المشددة (عَمَّ يَتَسَآءَلُونَ)
   cite: تحفة الأطفال؛ لطائف الإشارات 1:350
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: ain}
     - {base: fatha}
@@ -408,7 +408,7 @@
   rule: R170_GHUNNA
   rule_ar: غنة النون المشددة (إِنَّ)
   cite: تحفة الأطفال
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: hamza}
     - {base: kasra}
@@ -419,7 +419,7 @@
   rule: R170_GHUNNA
   rule_ar: غنة الميم المشددة (ثُمَّ)
   cite: تحفة الأطفال
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: theh}
     - {base: damma}

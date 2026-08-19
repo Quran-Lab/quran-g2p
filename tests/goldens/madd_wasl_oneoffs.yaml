@@ -8,7 +8,7 @@
   rule: R180_TABEEI
   rule_ar: مد طبيعي (قَالَ)
   cite: تحفة الأطفال «والمد أصلي وفرعي له»
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: qaf}
     - {base: fatha}
@@ -20,7 +20,7 @@
   rule: R182_MUTTASIL
   rule_ar: مد واجب متصل (جَآءَ)
   cite: الشاطبية باب المد؛ النشر 1:315
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: jeem}
     - {base: fatha}
@@ -32,7 +32,7 @@
   rule: R182_MUTTASIL
   rule_ar: مد متصل (ٱلسَّمَآءِ)
   cite: الشاطبية؛ النشر 1:315
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem}
     - {base: fatha}
@@ -45,7 +45,7 @@
   rule: R183_MUNFASIL
   rule_ar: مد جائز منفصل (بِمَآ أُنزِلَ)
   cite: الشاطبية؛ النشر 1:322
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem}
     - {base: fatha}
@@ -58,7 +58,7 @@
   rule: R184_LAZIM
   rule_ar: مد لازم كلمي مثقل (ٱلضَّآلِّينَ)
   cite: تحفة الأطفال «ولازم إن السكون أصلا»؛ النشر 1:342
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: dad, geminated: true}
     - {base: fatha}
@@ -70,7 +70,7 @@
   rule: R184_LAZIM
   rule_ar: مد لازم كلمي مثقل (ٱلْحَآقَّةُ)
   cite: النشر 1:342
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: hah}
     - {base: fatha}
@@ -82,7 +82,7 @@
   rule: R184_LAZIM
   rule_ar: مد لازم كلمي مثقل (ٱلطَّآمَّةُ)
   cite: النشر 1:342
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: tah, geminated: true}
     - {base: fatha}
@@ -94,7 +94,7 @@
   rule: R184_LAZIM
   rule_ar: مد لازم كلمي مخفف على وجه الإبدال (ءَآلْـَٰٔنَ)
   cite: الشاطبية أبيات 192-194؛ النشر 1:377-378
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: hamza}
     - {base: fatha}
@@ -106,7 +106,7 @@
   rule: R184_LAZIM_HARFI
   rule_ar: مد لازم حرفي (لَامْ من الٓمٓ)
   cite: تحفة الأطفال «واللازم الحرفي أول السور»؛ النشر 1:346
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: lam}
     - {base: fatha}
@@ -118,7 +118,7 @@
   rule: R184_LAZIM_HARFI
   rule_ar: مد لازم حرفي (مِيمْ من الٓمٓ)
   cite: النشر 1:346
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem}
     - {base: kasra}
@@ -130,7 +130,7 @@
   rule: R184_LAZIM_HARFI
   rule_ar: مد لازم حرفي (كَافْ من كٓهيعٓصٓ)
   cite: النشر 1:346
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: kaf}
     - {base: fatha}
@@ -142,7 +142,7 @@
   rule: R184_LAZIM_HARFI
   rule_ar: مد لازم حرفي (صَادْ من كٓهيعٓصٓ)
   cite: النشر 1:346
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: sad}
     - {base: fatha}
@@ -154,7 +154,7 @@
   rule: R011_MUQATTAAT
   rule_ar: هَا مقصورة حركتين (من حي طهر)
   cite: تحفة الأطفال «وذاك أيضًا في فواتح السور في لفظ حي طاهر»
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: heh}
     - {base: fatha}
@@ -166,7 +166,7 @@
   rule: R185_AIN
   rule_ar: عَيْن بمد اللين المشبع (وجهان 4/6) ونونها تخفى في صاد بالإجماع
   cite: الشاطبية بيت 177؛ هداية القاري 1:343؛ حجة القراءات 1:521-522
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: ain}
     - {base: fatha}
@@ -178,7 +178,7 @@
   rule: R186_SILAH
   rule_ar: صلة صغرى (إِنَّهُۥ هُوَ)
   cite: الشاطبية أبيات 158-159؛ سراج القارئ 1:45
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: heh}
     - {base: damma}
@@ -190,7 +190,7 @@
   rule: R186_SILAH_KUBRA
   rule_ar: صلة كبرى قبل الهمز (مَالَهُۥٓ أَخْلَدَهُۥ)
   cite: الشاطبية بيت 158؛ النشر 1:306
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: heh}
     - {base: damma}
@@ -202,7 +202,7 @@
   rule: R181_BADAL
   rule_ar: مد بدل (ءَامَنُوا)
   cite: الشاطبية باب المد؛ النشر 1:339
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: hamza}
     - {base: fatha}
@@ -214,7 +214,7 @@
   rule: R187_IWAD
   rule_ar: مد عوض وقفًا على التنوين المنصوب (عَظِيمًا)
   cite: تحفة الأطفال؛ هداية القاري
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: meem}
     - {base: fatha}
@@ -225,7 +225,7 @@
   rule: R188_LEEN
   rule_ar: مد لين وقفًا (قُرَيْشٍ)
   cite: الشاطبية باب المد؛ النشر 1:333
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: reh}
     - {base: fatha}
@@ -236,7 +236,7 @@
   rule: R188_LEEN
   rule_ar: مد لين وقفًا (خَوْفِۭ)
   cite: الشاطبية باب المد؛ النشر 1:333
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: khah}
     - {base: fatha}
@@ -247,7 +247,7 @@
   rule: R189_AARED
   rule_ar: مد عارض للسكون (نَسْتَعِينُ)
   cite: تحفة الأطفال «ومثل ذا إن عرض السكون»
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: yeh_madd, len_allowed: [2, 4, 6]}
     - {base: noon}
@@ -259,7 +259,7 @@
   rule: R110_WASL
   rule_ar: همزة وصل أل تفتح ابتداءً (ٱلْحَمْدُ)
   cite: المقدمة الجزرية 101-103
-  expert_reviewed: false
+  expert_reviewed: true
   word: ٱلْحَمْدُ
   expect:
     - {base: hamza}
@@ -271,7 +271,7 @@
   rule: R110_WASL
   rule_ar: كسر همزة الوصل في الأسماء السبعة (ٱبْنَ)
   cite: الجزرية؛ هداية القاري 2:482
-  expert_reviewed: false
+  expert_reviewed: true
   word: ٱبْنَ
   expect:
     - {base: hamza}
@@ -283,7 +283,7 @@
   rule: R110_WASL
   rule_ar: كسر همزة الوصل (ٱمْرَأَتَ)
   cite: الجزرية؛ هداية القاري 2:482
-  expert_reviewed: false
+  expert_reviewed: true
   word: ٱمْرَأَتَ
   expect:
     - {base: hamza}
@@ -295,7 +295,7 @@
   rule: R110_WASL
   rule_ar: كسر همزة الوصل (ٱثْنَيْنِ)
   cite: الجزرية؛ هداية القاري 2:482
-  expert_reviewed: false
+  expert_reviewed: true
   word: ٱثْنَيْنِ
   expect:
     - {base: hamza}
@@ -308,7 +308,7 @@
   rule_ar: ضم همزة الوصل لضم ثالث الفعل الأصلي (ٱنظُرْ)
   cite: الجزرية «وابدأ بهمز الوصل من فعل بضم إن كان ثالث من الفعل يضم»؛
     هداية القاري 2:482
-  expert_reviewed: false
+  expert_reviewed: true
   word: ٱنظُرْ
   expect:
     - {base: hamza}
@@ -321,7 +321,7 @@
   rule: R111_WASL_VERB
   rule_ar: كسر همزة الوصل لفتح الثالث (ٱذْهَبْ)
   cite: الجزرية؛ هداية القاري 2:482
-  expert_reviewed: false
+  expert_reviewed: true
   word: ٱذْهَبْ
   expect:
     - {base: hamza}
@@ -333,7 +333,7 @@
   rule: R111_WASL_VERB
   rule_ar: ضم همزة الوصل (ٱدْعُ)
   cite: الجزرية؛ هداية القاري 2:482
-  expert_reviewed: false
+  expert_reviewed: true
   word: ٱدْعُ
   expect:
     - {base: hamza}
@@ -345,7 +345,7 @@
   rule: R111_WASL_VERB
   rule_ar: كسر همزة الوصل لفتح الثالث (ٱقْرَأْ)
   cite: الجزرية؛ هداية القاري 2:482
-  expert_reviewed: false
+  expert_reviewed: true
   word: ٱقْرَأْ
   expect:
     - {base: hamza}
@@ -359,7 +359,7 @@
   rule: R133_SHAMSI
   rule_ar: إدغام لام التعريف الشمسية (وَٱلشَّمْسِ)
   cite: تحفة الأطفال «للام أل حالان قبل الأحرف»؛ النشر 2:18-19
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: waw, kind: consonant}
     - {base: fatha}
@@ -370,7 +370,7 @@
   rule: R133_QAMARI
   rule_ar: إظهار اللام القمرية (وَٱلْقَمَرِ)
   cite: الجزرية؛ تحفة الأطفال
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: lam, geminated: false}
     - {base: qaf}
@@ -380,7 +380,7 @@
   rule: R133_SHAMSI
   rule_ar: إدغام اللام الشمسية في النون مع الغنة (ٱلنَّاسِ)
   cite: الجزرية
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, geminated: true, ghunna: mushaddadah}
     - {base: fatha}
@@ -391,7 +391,7 @@
   rule: R133_QAMARI
   rule_ar: إظهار اللام القمرية (ٱلْحَمْدُ)
   cite: الجزرية
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: lam, geminated: false}
     - {base: hah}
@@ -403,7 +403,7 @@
   rule: R212_JALALA
   rule_ar: ترقيق لام الجلالة بعد الكسر (بِسْمِ ٱللَّهِ)
   cite: الجزرية «وفخم اللام من اسم الله عن فتح أو ضم»
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: lam, geminated: true, tafkheem: moraqaq}
 - id: jalala-tafkheem-after-fath
@@ -412,7 +412,7 @@
   rule: R212_JALALA
   rule_ar: تفخيم لام الجلالة بعد الفتح (شَهِدَ ٱللَّهُ)
   cite: الجزرية
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: dal}
     - {base: fatha}
@@ -425,7 +425,7 @@
   rule: R012B_DAAF
   rule_ar: ضَعْف بالفتح (المقدَّم من الشاطبية؛ الضم وجه ثانٍ بالمفتاح)
   cite: الشاطبية بيتا 722-723؛ التيسير 174-176
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: dad}
     - {base: fatha}
@@ -437,7 +437,7 @@
   rule: R012_SEEN_SAD
   rule_ar: يَبْصُۜطُ تقرأ بالسين
   cite: الشاطبية بيتا 514-515؛ سراج القارئ 1:163
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: beh}
     - {base: seen}
@@ -449,7 +449,7 @@
   rule: R012_SEEN_SAD
   rule_ar: بَصْۜطَةً تقرأ بالسين
   cite: الشاطبية؛ هداية القاري 2:577
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: beh}
     - {base: fatha}
@@ -461,7 +461,7 @@
   rule: R012_SEEN_SAD
   rule_ar: ٱلْمُصَۣيْطِرُونَ بالصاد (المقدَّم)
   cite: التيسير 203-204؛ النشر 2:377-378
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem}
     - {base: damma}
@@ -474,7 +474,7 @@
   rule: R012_SEEN_SAD
   rule_ar: بِمُصَيْطِرٍ بالصاد وجهًا واحدًا
   cite: النويري 1:310؛ لطائف الإشارات 9:266-267
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: meem}
     - {base: damma}
@@ -485,7 +485,7 @@
   rule: R221_IMALA
   rule_ar: إمالة مَجْر۪ىٰهَا
   cite: الشاطبية؛ (الموضع الوحيد لحفص)
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: fatha_imala}
 - id: oneoff-tasheel
@@ -494,7 +494,7 @@
   rule: R222_TASHEEL
   rule_ar: تسهيل الهمزة الثانية (ءَا۬عْجَمِىٌّ)
   cite: الشاطبية؛ (الموضع الوحيد لحفص)
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: hamza_musahhala}
 
@@ -505,7 +505,7 @@
   rule: R011_MUQATTAAT
   rule_ar: طه تهجّى طَا هَا بالقصر (من حي طاهر)
   cite: تحفة الأطفال؛ النشر 1:346
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: tah}
     - {base: fatha}
@@ -519,7 +519,7 @@
   rule: R011_MUQATTAAT
   rule_ar: سِينْ من يسٓ بمد لازم حرفي
   cite: النشر 1:346
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: seen}
     - {base: kasra}
@@ -531,7 +531,7 @@
   rule: R011_MUQATTAAT
   rule_ar: حمٓ — حَا بالقصر ثم مِيمْ باللازم
   cite: النشر 1:346
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: hah}
     - {base: fatha}

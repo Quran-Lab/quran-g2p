@@ -13,7 +13,7 @@
     الكلمة ألف التفاعل بعد الدال بمقدار حركتين، ولا متصل فيها
   cite: دليل الحيران 1:415؛ ورد الطائف 1:230؛ لطائف الإشارات 2:216؛ هداية
     القاري 1:280
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: reh}
     - {base: fatha, kind: vowel}
@@ -26,7 +26,7 @@
     (همزة بين واوين)، والمد عليها متصل لوقوع الهمز بعدها في كلمة
   cite: الحجة للقراء السبعة 5:85؛ المحكم في نقط المصاحف 1:168؛ دليل
     الحيران 1:405-406
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: seen}
     - {base: damma}
@@ -40,7 +40,7 @@
     36:52، مَنْ رَاقٍ 75:27، بَلْ رَانَ 83:14) لازمة في الوصل، بلا تنفس،
     وتمنع جريان الإدغام والإخفاء عبر موضعها
   cite: الشاطبية بيتا 830-831؛ النشر 1:240-241؛ سراج القارئ 1:277
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-sakt-75-27
   surah: 75
@@ -49,7 +49,7 @@
   rule_ar: وَقِيلَ مَنْ ۜ رَاقٍ — الإظهار مع السكت على نون (مَنْ)، ولا
     إدغام بلا غنة رغم التقاء النون بالراء
   cite: الشاطبية بيت 831؛ النشر 1:240
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, sakt_after: true}
     - {base: reh}
@@ -61,7 +61,7 @@
     في المصاحف، والاختلاس (ويسميه كثيرون الروم) وجه ثانٍ صحيح مقروء به،
     وقدّمه بعض المحققين
   cite: الشاطبية؛ هداية القاري 1:259-261؛ النشر 2:126
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-naql-49-11
   surah: 49
@@ -70,7 +70,7 @@
   rule_ar: بِئْسَ ٱلِٱسْمُ — وصلًا تسقط همزتا الوصل وتُقرأ اللام بكسرتها
     المرسومة (بِئْسَ لِسْمُ)
   cite: (الرسم والضبط؛ هداية القاري 2:488)
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: seen}
     - {base: fatha}
@@ -85,7 +85,7 @@
     التفخيم»)، وعلى ٱلْقِطْرِ 34:12 بالترقيق، وعلى أَسْرِ/فَأَسْرِ
     بالترقيق المقدَّم لكسرة البناء
   cite: النشر 2:105، 2:110؛ النويري 2:33؛ هداية القاري 1:130-133
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-aataani-wajh
   surah: 27
@@ -95,7 +95,7 @@
     المقدَّم في الأداء) وحذفها والوقف على النون؛ وفي الوصل تثبت الياء
     مفتوحة
   cite: الشاطبية بيت 429؛ هداية القاري 2:544-545؛ إبراز المعاني 1:309
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-rawm-general
   surah: 2
@@ -105,7 +105,7 @@
     يدخلان المفتوح؛ والعارض مع الروم بالقصر فقط، والمتصل الموقوف عليه
     مع الروم أربع أو خمس كوصله ولا ست معه
   cite: الشاطبية أبيات 368-373؛ النشر 2:121؛ التيسير 58-59
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-rawm-exclusions
   surah: 101
@@ -114,7 +114,7 @@
   rule_ar: لا روم ولا إشمام في هاء التأنيث (الموقوف عليها هاءً) ولا في
     ميم الجمع ولا في عارض الحركة
   cite: النشر 2:122-124، 2:126
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-rawm-haa-damir
   surah: 24
@@ -125,7 +125,7 @@
     الساكنة، ويجوزان بعد الفتح والألف والساكن الصحيح (نحو وَيَتَّقْهِ
     لحفص بالروم)
   cite: النشر 2:124-125؛ الإتحاف 1:135-136؛ هداية القاري 1:322، 1:327-328
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-alm-allah
   surah: 3
@@ -135,7 +135,7 @@
     الساكنين، وتُفخَّم لام الجلالة، ويبقى المد اللازم في الياء على
     الإشباع (والقصر وجه، ولا توسُّط)
   cite: السبعة 1:199؛ غيث النفع 1:129-130؛ النويري 2:231
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-haa-sakt-wasl
   surah: 2
@@ -144,7 +144,7 @@
   rule_ar: هاء السكت ثابتة ساكنة وصلًا ووقفًا لحفص في مواضعها (لَمْ
     يَتَسَنَّهْ، ٱقْتَدِهْ، وأخواتها)، ولا يدخلها روم ولا إشمام
   cite: الإقناع 1:244؛ النشر 2:142؛ لطائف الإشارات 9:75
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: noon, geminated: true}
     - {base: fatha}
@@ -157,7 +157,7 @@
   rule_ar: الوقف على أَيُّهَ في مواضعها الثلاث (الزخرف 49، النور 31،
     الرحمن 31) بالهاء الساكنة دون ألف اتباعًا للرسم
   cite: الشاطبية بيت 382؛ النشر 2:141-142؛ غيث النفع 531، 568
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-sifat-sets
   surah: 1
@@ -168,7 +168,7 @@
     ظ)، القلقلة (قطب جد)، الصفير (ص ز س)، الانحراف (ل ر)، التكرير (ر)،
     التفشي (ش)، الاستطالة (ض)، الإذلاق (فر من لب)
   cite: المقدمة الجزرية أبيات 20-26؛ النويري 1:237-238
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-alif-tabiyya
   surah: 1
@@ -177,7 +177,7 @@
   rule_ar: الألف المدية لا توصف بتفخيم ولا ترقيق استقلالًا بل تتبع ما
     قبلها — تفخَّم بعد المفخم وترقَّق بعد المرقق
   cite: النشر 1:215-216؛ هداية القاري 1:118؛ غاية المريد 1:158-159
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-ghunna-tabiyya
   surah: 15
@@ -186,7 +186,7 @@
   rule_ar: غنة النون المخفاة تتبع ما بعدها — تُفخَّم عند خمسة أحرف فقط هي
     ص ض ط ظ ق، وترقَّق فيما سواها
   cite: هداية القاري 1:181-182؛ لطائف الإشارات 1:366-367
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup-madd-amounts
   surah: 1
@@ -197,5 +197,5 @@
     يزيد اللين على العارض، والطبيعي والبدل والعوض والصلة الصغرى حركتان،
     والصلة الكبرى كالمنفصل
   cite: الشاطبية باب المد؛ النشر 1:315-346؛ هداية القاري
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true

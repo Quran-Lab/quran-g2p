@@ -9,7 +9,7 @@
     وأكبر للموقوف عليه مشددًا نحو وَتَبَّ (وأصل الباب الجزرية «وبيّن
     مقلقلًا إن سكنا»، وبعض أهل الأداء يقتصر على مرتبتين)
   cite: هداية القاري 1:84-85؛ بغية المستفيد 1:50-52؛ غاية المريد 1:146
-  expert_reviewed: false
+  expert_reviewed: true
   expect_at_end:
     - {base: beh, geminated: true, qalqalah: akbar}
 - id: sup2-maliyah-wasl
@@ -21,7 +21,7 @@
     إدغام الهاء في الهاء
   cite: النشر 2:21-22؛ هداية القاري 1:236-237؛ فتح الوصيد 1:434؛ غيث
     النفع 1:601
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup2-ibtida-shadda
   surah: 2
@@ -32,7 +32,7 @@
     مخففًا بلا تشديد (لَيْسَ)
   cite: (ضبط المصحف؛ علامة إدغام المتماثلين والمتقاربين بين الآيتين؛
     المحكم في نقط المصاحف للداني)
-  expert_reviewed: false
+  expert_reviewed: true
   word: لَّي
   expect:
     - {base: lam, geminated: false}
@@ -47,7 +47,7 @@
     (ءَآلْـَٰٔنَ، ءَآللَّهُ، ءَآلذَّكَرَيْنِ) فيها وجهان؛ إبدال همزة
     الوصل ألفًا مشبعة وهو المقدَّم، أو تسهيلها بين بين بلا مد
   cite: الشاطبية أبيات 192-194؛ النشر 1:377-378
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup2-wasl-badal-hamza
   surah: 10
@@ -56,7 +56,7 @@
   rule_ar: الابتداء بنحو ٱئْتِ؛ تُحرَّك همزة الوصل بالكسر وتُبدل الهمزة
     الساكنة بعدها حرف مد من جنس حركة الابتداء، فيُبتدأ إِيتِ بياء مدية
   cite: الجزرية؛ هداية القاري 2:482؛ النشر 1:390
-  expert_reviewed: false
+  expert_reviewed: true
   word: ٱئْ
   expect:
     - {base: hamza}
@@ -70,7 +70,7 @@
     فالمضموم، فالساكن (بحسب حركة ما قبله)، فالمكسور
   cite: التمهيد لابن الجزري (باب التفخيم)؛ جهد المقل للمرعشي؛ هداية
     القاري 1:116-118
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup2-basmala-joins
   surah: 1
@@ -84,7 +84,7 @@
     والتوبة ثلاثة أوجه بلا بسملة (الوقف والسكت والوصل)
   cite: الشاطبية أبيات 100-107؛ غيث النفع 1:270؛ البدور الزاهرة 1:133؛
     هداية القاري (الباب الثامن عشر)
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup2-taa-maftuha-waqf
   surah: 43
@@ -95,7 +95,7 @@
     بالهاء
   cite: الجزرية (باب التاءات) «ورحمتا الزخرف بالتا زبره»؛ هداية القاري
     (الباب الرابع عشر)
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup2-idgham-taxonomy
   surah: 2
@@ -106,7 +106,7 @@
     والمتباعدان لا إدغام فيهما بحال
   cite: هداية القاري (الباب التاسع والعاشر)؛ النشر (باب الإدغام
     الصغير)؛ المقدمة الجزرية
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup2-ittikhadh-izhar
   surah: 2
@@ -119,7 +119,7 @@
     لغيره من القراء؛ وضبط المصحف شاهد بالسكون عليهما
   cite: الشاطبية أبيات 279-284؛ إبراز المعاني (شرح البيتين)؛ هداية
     القاري (باب الاتخاذ عن المتولي)
-  expert_reviewed: false
+  expert_reviewed: true
   expect:
     - {base: thal}
     - {base: teh}
@@ -133,7 +133,7 @@
     بالوجهين والألفات السبع
   cite: غاية المريد (باب الحذف والإثبات)؛ هداية القاري (الباب السادس
     عشر)؛ الوجيز (باب الإثبات والحذف)
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup2-qalqalah-tabiyya
   surah: 2
@@ -143,7 +143,7 @@
     القاف والطاء ويرقَّق في الباء والجيم والدال، ولا يمال إلى حركة
     بعينها
   cite: هداية القاري (كيفية أداء القلقلة)؛ غاية المريد (القلقلة)
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true
 - id: sup2-lamat-sawakin
   surah: 16
@@ -155,5 +155,5 @@
     رَّفَعَهُ) وما استثني بالسكت (بَلْ ۜ رَانَ)
   cite: هداية القاري (الباب الثامن في اللامات الساكنة)؛ المقدمة
     الجزرية (باب اللامات)
-  expert_reviewed: false
+  expert_reviewed: true
   review_only: true

@@ -3,7 +3,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tests-549%20passing-brightgreen" alt="tests">
+  <img src="https://img.shields.io/badge/tests-552-brightgreen" alt="tests">
+  <img src="https://img.shields.io/badge/expert%20review-208%2F208%20%C2%B7%200%20%D8%AE%D8%B7%D8%A3-0b3d2e" alt="review complete">
   <img src="https://img.shields.io/badge/riwaya-Hafs%20%CA%BFan%20%CA%BFAsim%20(al--Shatibiyyah)-0b3d2e" alt="riwaya">
   <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fquran-g2p-review-status.mostafa0333.workers.dev%2Fbadge.json" alt="expert review">
   <img src="https://img.shields.io/badge/license-Quran--Lab%20NPL--1.1-8a6d00" alt="license">
@@ -45,13 +46,16 @@ So the reader can weigh the work, the pipeline behind every ruling:
    the engine refuses to even import if a rule lacks either. Five
    independent oracles, corpus-wide behavioral audits, and seeded-bug
    drills prove the engine implements the register faithfully.
-4. **Blinded sanad review, measured rather than assumed.** An
-   ijazah-holding hafiz (sanad in Hafs 'an 'Asim) rules on every entry
-   from his own talaqqi. His independence was measured: in the blind
+4. **Blinded sanad review, measured rather than assumed — and now
+   complete.** An ijazah-holding hafiz (sanad in Hafs 'an 'Asim) ruled
+   on all 208 entries from his own talaqqi: **191 confirmed, 17
+   confirmed while documenting a second transmitted wajh, zero rulings
+   judged wrong.** His independence was measured: in the blind
    screening, deliberately planted errors dressed in the real citation
-   format were all caught. Disagreements are adjudicated against the
-   cited passages, on the public record (`docs/ADJUDICATIONS.md`), and
-   the live status of the review is shown below.
+   format were all caught. Every disagreement raised along the way was
+   adjudicated against the cited passages, on the public record
+   (`docs/ADJUDICATIONS.md`), and the final tally is generated live
+   from the review sheet below.
 5. **The method is the tradition's own.** الرواية والدراية:
    transmission and verification, at last given machinery. Ibn
    al-Jazari built al-Nashr exactly this way: every written source
@@ -73,7 +77,7 @@ sources and its live review, so correction always has a public path.
 | `src/quran_g2p/` | the engine: pinned text loading, orthographic decode, 14 rule phases, typed phone IR with full provenance |
 | `spec/` | the normative specification, every rule with its classical basis |
 | `artifacts/tokenizer_tj1/` | `tokens.txt` (234 tokens including the `~` ghunna axis, blank last, hash-manifested), `vocab_manifest.json`, `ayah_tokens.jsonl`, `rule_index.jsonl` (set-valued prescriptions), `quran_labels_v1.jsonl` (dual-format labels), `bijection_old250.json` (warm-start map) |
-| `tests/` | 549 tests: golden ayat (208 reviewable YAML rows in `tests/goldens/`), corpus invariants, oracle gates, a 25-mutant seeded-bug drill, frozen determinism hash |
+| `tests/` | 552 tests: golden ayat (208 expert-reviewed YAML rows in `tests/goldens/`), corpus invariants, oracle gates, a 25-mutant seeded-bug drill, frozen determinism hash |
 | `tests/verdicts/` | the differential triage record: every disagreement with quran-transcript, verdicted with citations |
 
 ## Quick start
@@ -291,10 +295,17 @@ the final release gate. The machine validation above is necessary, not
 sufficient, and the maintainers hold the tradition's own standard, التلقي,
 above any engine, including this one.
 
-The review is underway: each of the 208 entries in the rulings register
-is being independently ruled on (صحيح / خطأ / فيه وجهان, with correction
-and reason for every خطأ) by a reviewer whose credentials are documented
-with the maintainers, scans on file:
+**That review is now complete (Rabi' al-Awwal 1448 / August 2026).**
+Each of the 208 entries in the rulings register was independently ruled
+on (صحيح / خطأ / فيه وجهان, with correction and reason required for any
+خطأ). The outcome: **191 entries confirmed, 17 marked فيه وجهان —
+agreements in substance that document a second transmitted wajh — and
+zero rulings judged wrong.** The review's scrutiny did surface four
+defects in row *labels*; each was adjudicated against the cited
+classical texts on the public record (`docs/ADJUDICATIONS.md`), each
+proved a labeling slip rather than an engine error, and each is now
+guarded by a permanent automated gate. The reviewer's credentials are
+documented with the maintainers, scans on file:
 
 - **hafiz of the entire Quran**, board-examined by Wifaq al-Madaris
   al-Salafiyyah (Pakistan), grade mumtaz, 1443/2022
@@ -314,8 +325,8 @@ three of which carried deliberately planted errors: all three caught,
 zero false alarms on the seven true rulings. The same screening has
 since failed other candidate reviewers — a filter that everyone passes
 proves nothing, so the fails are part of what the passes mean. Verdicts
-are given from his own knowledge, independently of the engine and its
-sources; any disagreement is adjudicated against the cited classical
+were given from his own knowledge, independently of the engine and its
+sources; every disagreement was adjudicated against the cited classical
 texts on the public record (`docs/ADJUDICATIONS.md`), and the golden
 rows' `expert_reviewed` flags flip only on confirmed verdicts.
 The reviewer is anonymized here pending his preference.
@@ -333,7 +344,7 @@ arbitration seals the register at the tradition's highest academic
 rank. Disagreements at any layer resolve the same way — against the
 cited classical texts, on the public record.
 
-Live status:
+Final tally, generated live from the review sheet:
 
 <p align="center">
   <img src="https://quran-g2p-review-status.mostafa0333.workers.dev/progress.svg" alt="live expert review status" width="680">
