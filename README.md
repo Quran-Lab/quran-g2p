@@ -320,6 +320,19 @@ texts on the public record (`docs/ADJUDICATIONS.md`), and the golden
 rows' `expert_reviewed` flags flip only on confirmed verdicts.
 The reviewer is anonymized here pending his preference.
 
+**Above the review sits a third, stricter layer.** Formal scholarly
+arbitration (تحكيم علمي) of the complete register is now underway by a
+serving **professor at the Department of Qira'at, Umm al-Qura
+University in Makkah**, engaged through a formal invitation stating
+scope, independence protocol, and honorarium; he rules on every entry
+from his own knowledge, and will be named here upon completion at his
+preference. The ladder is deliberate: machine validation proves the
+engine implements the register; the ijazah-holder's row-by-row review
+proves the rulings match the transmitted riwaya; the professor's
+arbitration seals the register at the tradition's highest academic
+rank. Disagreements at any layer resolve the same way — against the
+cited classical texts, on the public record.
+
 Live status:
 
 <p align="center">
