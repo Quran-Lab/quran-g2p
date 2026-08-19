@@ -29,9 +29,9 @@ building open technology in the service of the Quran.
 So the reader can weigh the work, the pipeline behind every ruling:
 
 1. **Indexed from the books.** Machine-assisted passes read the classical
-   literature page by page — the Shamela prints of the Shatibiyyah and
+   literature page by page (the Shamela prints of the Shatibiyyah and
    its commentaries, al-Nashr, al-Taysir, Hidayat al-Qari, and the rest
-   of the bibliography — and indexed every candidate ruling. The index
+   of the bibliography) and indexed every candidate ruling. The index
    is a card catalogue, not an authority: nothing enters the engine on a
    model's word.
 2. **Page-verified citations.** Every citation in the rulings register
@@ -46,7 +46,7 @@ So the reader can weigh the work, the pipeline behind every ruling:
    the engine refuses to even import if a rule lacks either. Five
    independent oracles, corpus-wide behavioral audits, and seeded-bug
    drills prove the engine implements the register faithfully.
-4. **Blinded sanad review, measured rather than assumed — and now
+4. **Blinded sanad review, measured rather than assumed, and now
    complete.** An ijazah-holding hafiz (sanad in Hafs 'an 'Asim) ruled
    on all 208 entries from his own talaqqi: **191 confirmed, 17
    confirmed while documenting a second transmitted wajh, zero rulings
@@ -298,8 +298,8 @@ above any engine, including this one.
 **That review is now complete (Rabi' al-Awwal 1448 / August 2026).**
 Each of the 208 entries in the rulings register was independently ruled
 on (صحيح / خطأ / فيه وجهان, with correction and reason required for any
-خطأ). The outcome: **191 entries confirmed, 17 marked فيه وجهان —
-agreements in substance that document a second transmitted wajh — and
+خطأ). The outcome: **191 entries confirmed, 17 marked فيه وجهان
+(agreements in substance that document a second transmitted wajh), and
 zero rulings judged wrong.** The review's scrutiny did surface four
 defects in row *labels*; each was adjudicated against the cited
 classical texts on the public record (`docs/ADJUDICATIONS.md`), each
@@ -323,7 +323,7 @@ documented with the maintainers, scans on file:
 Before engagement the reviewer passed a blind screening: ten rulings,
 three of which carried deliberately planted errors: all three caught,
 zero false alarms on the seven true rulings. The same screening has
-since failed other candidate reviewers — a filter that everyone passes
+since failed other candidate reviewers; a filter that everyone passes
 proves nothing, so the fails are part of what the passes mean. Verdicts
 were given from his own knowledge, independently of the engine and its
 sources; every disagreement was adjudicated against the cited classical
@@ -341,7 +341,7 @@ preference. The ladder is deliberate: machine validation proves the
 engine implements the register; the ijazah-holder's row-by-row review
 proves the rulings match the transmitted riwaya; the professor's
 arbitration seals the register at the tradition's highest academic
-rank. Disagreements at any layer resolve the same way — against the
+rank. Disagreements at any layer resolve the same way: against the
 cited classical texts, on the public record.
 
 Final tally, generated live from the review sheet:
