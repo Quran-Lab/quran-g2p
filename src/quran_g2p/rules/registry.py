@@ -1,5 +1,10 @@
 """Ordered rule pipeline and the append-only RuleId registry.
 
+«لِأَنَّ الْقِرَاءَةَ سُنَّةٌ مُتَّبَعَةٌ يَلْزَمُ قَبُولُهَا وَالْمَصِيرُ إِلَيْهَا» — ابن الجزري، النشر 1:11
+"For recitation is a followed transmission: its acceptance is binding."
+Nothing here was reasoned into existence: every ruling below is relayed
+from the books, cited to its print, and judged by the people of the chain.
+
 RuleIds are stable public identifiers: spec files, golden tests, provenance
 chains, verdicts, and export artifacts all reference them. NEVER rename or
 reuse an id; retired rules keep their id with a tombstone comment.

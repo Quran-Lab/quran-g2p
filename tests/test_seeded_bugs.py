@@ -1,4 +1,8 @@
-"""Seeded-bug drill (A6 criterion 6): each hand-designed mutant must be
+"""«فَٱرْجِعِ ٱلْبَصَرَ هَلْ تَرَىٰ مِن فُطُورٍ ۝ ثُمَّ ٱرْجِعِ ٱلْبَصَرَ كَرَّتَيْنِ يَنقَلِبْ إِلَيْكَ ٱلْبَصَرُ خَاسِئًا وَهُوَ حَسِيرٌ» — الملك 3–4
+"Return your gaze: do you see any flaw? Then return your gaze twice again —
+your sight will come back to you humbled and weary." (al-Mulk 3–4)
+
+Seeded-bug drill (A6 criterion 6): each hand-designed mutant must be
 KILLED by at least one harness detector. This measures the harness, not the
 engine — a surviving mutant means a blind spot, and the kill matrix documents
 which layer catches which failure class.
