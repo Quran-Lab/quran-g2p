@@ -86,7 +86,7 @@ sources and its live review, so correction always has a public path.
 git clone https://github.com/Muno459/quran-g2p
 cd quran-g2p
 pip install -e .
-python -m pytest tests/   # 549 tests, no GPU needed
+python -m pytest tests/   # 552 tests, no GPU needed
 ```
 
 ```python
