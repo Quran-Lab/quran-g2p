@@ -14,7 +14,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from audit_row_labels import TRANSFORMED_OK, check_rows  # noqa: E402
+from audit_row_labels import SECOND_WAJH_DOC_OK, TRANSFORMED_OK, check_rows  # noqa: E402
 from quran_g2p.textbank import TextBank  # noqa: E402
 
 GOLDENS = Path(__file__).resolve().parents[1] / "tests" / "goldens"
@@ -67,3 +67,5 @@ def test_allowlist_points_at_live_rows():
     ids = {r["id"] for r in _rows()}
     stale = set(TRANSFORMED_OK) - ids
     assert not stale, f"TRANSFORMED_OK entries for deleted rows: {stale}"
+    stale2 = set(SECOND_WAJH_DOC_OK) - ids
+    assert not stale2, f"SECOND_WAJH_DOC_OK entries for deleted rows: {stale2}"

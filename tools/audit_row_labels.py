@@ -39,6 +39,15 @@ LETTER_BASE = {
     "النون": "noon", "الهاء": "heh", "الواو": "waw", "الياء": "yeh",
 }
 
+# rows whose label DOCUMENTS a second transmitted wajh whose behavior the
+# expect deliberately does not assert (the muqaddam is asserted instead).
+# Each entry carries the review provenance that authorized the wording.
+SECOND_WAJH_DOC_OK = {
+    "mutaqarib-qaf-kaf": "S1 supplementary answer (Shaikh Sami Almadani): "
+                         "state the khilaf; kamil is the asserted muqaddam, "
+                         "naqis documented per al-Nashr 1:221",
+}
+
 # rows whose parenthetical is legitimately NOT verbatim mushaf text
 TRANSFORMED_OK = {
     "qlq-kubra-ahad": "pausal form after tanween drop",
@@ -136,7 +145,8 @@ def check_rows(rows, tb):
                    if isinstance(e, dict) and "geminated" in e}
             if "كامل" in label and True not in gem:
                 fails.append((rid, "L2", "kamil label, no geminated:true"))
-            if "ناقص" in label and False not in gem:
+            if ("ناقص" in label and False not in gem
+                    and rid not in SECOND_WAJH_DOC_OK):
                 fails.append((rid, "L2", "naqis label, no geminated:false"))
 
         if label.startswith("قلقلة") and expects:
