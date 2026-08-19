@@ -298,7 +298,7 @@ recovery gate before any corpus relabeling) and the ASR integration.
 
 A human expert review pass over the golden set and the rulings register is
 the final release gate. The machine validation above is necessary, not
-sufficient, and the maintainers hold the tradition's own standard, التلقي,
+sufficient, and the maintainer holds the tradition's own standard, التلقي,
 above any engine, including this one.
 
 **That review is now complete (Rabi' al-Awwal 1448 / August 2026).**
@@ -311,7 +311,7 @@ defects in row *labels*; each was adjudicated against the cited
 classical texts on the public record (`docs/ADJUDICATIONS.md`), each
 proved a labeling slip rather than an engine error, and each is now
 guarded by a permanent automated gate. The reviewer's credentials are
-documented with the maintainers, scans on file:
+documented with the maintainer, scans on file:
 
 - **hafiz of the entire Quran**, board-examined by Wifaq al-Madaris
   al-Salafiyyah (Pakistan), grade mumtaz, 1443/2022

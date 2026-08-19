@@ -4,7 +4,7 @@ Every خطأ verdict from the expert review is adjudicated here against the
 cited texts, per the protocol stated in the README: the reviewer
 (Shaikh Sami Almadani, credited at his own preference) rules from his
 own talaqqi; disagreements are settled by the classical sources,
-never by the maintainers' opinion. This file is the permanent public
+never by the maintainer's opinion. This file is the permanent public
 record of those adjudications.
 
 ## #1 — row 116, `idgham-meem-kamil` (2026-08-18)
