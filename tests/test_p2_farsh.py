@@ -97,3 +97,22 @@ def test_ayyuha_waqf_on_haa():
     ph = stop_after_word(43, 49, "يُّه")
     assert ph[-1].base is Base.HEH
     assert ph[-1].kind == "consonant"
+
+
+def _skel(w):
+    return "".join(c for c in w if not (0x064B <= ord(c) <= 0x0652
+                                        or ord(c) in (0x0670, 0x0653)))
+
+
+def test_open_taa_stops_as_taa_not_haa():
+    # 43:32 رَحْمَتَ is written with OPEN taa (rasm), so waqf keeps the
+    # taa sakinah; the haa conversion (R122) triggers on taa MARBUTA only
+    # (al-Nashr 2:131-133, statement row sup2-taa-maftuha-waqf).
+    ref = AyahRef(43, 32)
+    words = TB.ayah(ref).split(" ")
+    k = next(i for i, w in enumerate(words) if "رحمت" in _skel(w))
+    res = phonemize(TB.ayah(ref), edition="tanzil", ref=ref,
+                    waqf=WaqfSpec(stops=(k,)))
+    ph = res.segments[0].phones
+    assert ph[-1].base is Base.TEH      # open taa stands at waqf
+    assert ph[-1].base is not Base.HEH  # and is never converted to haa
