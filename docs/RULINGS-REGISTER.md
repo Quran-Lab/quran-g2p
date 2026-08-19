@@ -69,7 +69,7 @@ reviewer by the golden rows listed in its **review** column
 
 | id | الحكم | sources | review |
 |---|---|---|---|
-| `R150_IKHFA_SHAFAWI` | الإخفاء الشفوي / ikhfa shafawi | تحفة الأطفال «فالأول الإخفاء عند الباء»؛ هداية القاري 1:191 | `meem-ikhfa-tarmihim`, `meem-ikhfa-yatasim` |
+| `R150_IKHFA_SHAFAWI` | الإخفاء الشفوي / ikhfa shafawi | تحفة الأطفال «فالأول الإخفاء عند الباء»؛ هداية القاري 1:191-196 | `meem-ikhfa-tarmihim`, `meem-ikhfa-yatasim` |
 
 ## P8 - General idgham
 

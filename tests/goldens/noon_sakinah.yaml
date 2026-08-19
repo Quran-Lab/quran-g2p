@@ -492,7 +492,7 @@
   ayah: 4
   rule: R150_IKHFA_SHAFAWI
   rule_ar: إخفاء شفوي (تَرْمِيهِم بِحِجَارَةٍ)
-  cite: تحفة الأطفال «فالأول الإخفاء عند الباء»؛ هداية القاري 1:191
+  cite: تحفة الأطفال «فالأول الإخفاء عند الباء»؛ هداية القاري 1:191-196
   expert_reviewed: false
   expect:
     - {base: meem_mukhfah}
@@ -502,7 +502,7 @@
   ayah: 101
   rule: R150_IKHFA_SHAFAWI
   rule_ar: إخفاء شفوي (يَعْتَصِم بِٱللَّهِ)
-  cite: تحفة الأطفال؛ هداية القاري 1:191
+  cite: تحفة الأطفال؛ هداية القاري 1:191-196
   expert_reviewed: false
   expect:
     - {base: meem_mukhfah}

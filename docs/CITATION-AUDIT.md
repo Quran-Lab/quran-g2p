@@ -2,7 +2,7 @@
 
 Every classical reference in the rulings register (`src/quran_g2p/rules/registry.py`) checked against the Shamela library: the cited book must exist in the corpus, the cited volume:page (or bayt number) must exist in the Shamela print, and the ruling's topic keywords must appear at the cited location (±3 pages of edition drift tolerated). Quoted matn snippets are additionally verified verbatim, character-stream, inside the matns themselves. Regenerate with `python tools/audit_citations.py`.
 
-**133 references checked: 127 verified, 6 descriptive notes, 0 failures.**
+**133 references checked: 128 verified, 5 descriptive notes, 0 failures.**
 
 | ruling | reference | status |
 |---|---|---|
@@ -16,7 +16,7 @@ Every classical reference in the rulings register (`src/quran_g2p/rules/registry
 | `R013_ELIDED_WAW_LIYASUU` | المحكم في نقط المصاحف [المحكم في نقط المصاحف 1:168] | OK |
 | `R013_ELIDED_WAW_LIYASUU` | دليل الحيران [دليل الحيران 1:405-406] | OK |
 | `R014B_ISTIFHAM_TASHEEL` | الشاطبية [الشاطبية أبيات 192-194] | OK |
-| `R014B_ISTIFHAM_TASHEEL` | النشر [النشر 1:377-378] | OK |
+| `R014B_ISTIFHAM_TASHEEL` | النشر [النشر 1:377 «وقال آخرون: تسهل بين ] | OK |
 | `R110_WASL_START` | المقدمة الجزرية [المقدمة الجزرية 101-103] | OK-BOOK |
 | `R110_BADAL_IBTIDA` | الجزرية [الجزرية] | OK-BOOK |
 | `R110_BADAL_IBTIDA` | هداية القاري [هداية القاري 2:482] | OK |
@@ -24,7 +24,7 @@ Every classical reference in the rulings register (`src/quran_g2p/rules/registry
 | `R112_STRIP_INITIAL_SHADDA` | (ضبط المصحف | NOTE |
 | `R112_STRIP_INITIAL_SHADDA` | علامة إدغام المتماثلين والمتقاربين بين ا | NOTE |
 | `R112_STRIP_INITIAL_SHADDA` | المحكم في نقط المصاحف [المحكم في نقط المصاحف للداني)] | OK-BOOK |
-| `R120_ISKAN` | النشر [النشر 2:120 (الوقف بالسكون هو الأص] | OK |
+| `R120_ISKAN` | النشر [النشر 2:120 «فأما السكون فهو الأصل] | OK |
 | `R121_MADD_EWAD` | تحفة الأطفال [تحفة الأطفال] | OK-BOOK |
 | `R121_MADD_EWAD` | هداية القاري [هداية القاري] | OK-BOOK |
 | `R121_EWAD_SEAT_SILENT` | النشر [النشر 2:120] | OK |
@@ -32,15 +32,15 @@ Every classical reference in the rulings register (`src/quran_g2p/rules/registry
 | `R122_TAA_MARBUTA_WAQF` | النشر [النشر 2:129] | OK |
 | `R122_TAA_MARBUTA_WAQF` | هداية القاري [هداية القاري] | OK-BOOK |
 | `R123_RAWM` | الشاطبية [الشاطبية أبيات 368-373] | OK |
-| `R123_RAWM` | النشر [النشر 2:121] | OK |
+| `R123_RAWM` | النشر [النشر 2:121 «وأما الروم فهو عند ال] | OK |
 | `R123_RAWM` | التيسير [التيسير 58-59] | OK-BOOK |
 | `R123_ISHMAM` | الشاطبية [الشاطبية أبيات 368-373] | OK |
-| `R123_ISHMAM` | النشر [النشر 2:121] | OK |
+| `R123_ISHMAM` | النشر [النشر 2:121 «وأما الإشمام فهو عبار] | OK |
 | `R123_ISHMAM` | التيسير [التيسير 58-59] | OK-BOOK |
 | `R130_WASL_ELISION` | (التقاء الساكنين) | NOTE |
 | `R130_WASL_ELISION` | هداية القاري [هداية القاري] | OK-BOOK |
 | `R131_MADD_SHORTENING` | هداية القاري [هداية القاري 2:599 «يحذف حرف المد ] | OK |
-| `R131_NOON_WIQAYA` | (التقاء الساكنين) | NOTE |
+| `R131_NOON_WIQAYA` | النشر [النشر 2:315 «بالنصب والتنوين وكسره] | OK |
 | `R131_NOON_WIQAYA` | هداية القاري [هداية القاري] | OK-BOOK |
 | `R132_SAKT` | الشاطبية [الشاطبية بيتا 830-831] | OK |
 | `R132_SAKT` | النشر [النشر 1:240-241] | OK |
@@ -75,7 +75,7 @@ Every classical reference in the rulings register (`src/quran_g2p/rules/registry
 | `R144_IKHFA` | تحفة الأطفال [تحفة الأطفال «صف ذا ثنا...»] | OK-BOOK |
 | `R144_IKHFA` | هداية القاري [هداية القاري 1:187] | OK |
 | `R150_IKHFA_SHAFAWI` | تحفة الأطفال [تحفة الأطفال «فالأول الإخفاء عند ا] | OK-BOOK |
-| `R150_IKHFA_SHAFAWI` | هداية القاري [هداية القاري 1:191] | OK |
+| `R150_IKHFA_SHAFAWI` | هداية القاري [هداية القاري 1:191-196] | OK |
 | `R160_MUTAMATHILAYN` | الجزرية [الجزرية «وأولي مثل وجنس إن سكن» أد] | OK-BOOK |
 | `R160_MUTAMATHILAYN` | النشر [النشر 2:18] | OK |
 | `R161_NAQIS_TA_NO_QALQALAH` | الجزرية [الجزرية «وبين الإطباق من أحطت مع ب] | OK-BOOK |
@@ -92,7 +92,7 @@ Every classical reference in the rulings register (`src/quran_g2p/rules/registry
 | `R184_SILAH_KUBRA` | الشاطبية [الشاطبية بيت 158] | OK |
 | `R184_SILAH_KUBRA` | النشر [النشر 1:306] | OK |
 | `R185_MUTTASIL` | الشاطبية [الشاطبية باب المد] | OK-BOOK |
-| `R185_MUTTASIL` | النشر [النشر 1:315] | OK |
+| `R185_MUTTASIL` | النشر [النشر 1:315 «فوجب أن لا يعتقد أن ق] | OK |
 | `R185_MUTTASIL_WAQF` | الشاطبية [الشاطبية باب المد] | OK-BOOK |
 | `R185_MUTTASIL_WAQF` | النشر [النشر 1:315-346] | OK |
 | `R185_MUTTASIL_WAQF` | هداية القاري [هداية القاري] | OK-BOOK |
@@ -122,13 +122,13 @@ Every classical reference in the rulings register (`src/quran_g2p/rules/registry
 | `R202_QALQALAH_AKBAR` | هداية القاري [هداية القاري 1:84-87] | OK |
 | `R210_ISTILA` | المقدمة الجزرية [المقدمة الجزرية (باب صفات الحروف)] | OK-BOOK |
 | `R210_ISTILA` | النويري [النويري 1:237-238] | OK |
-| `R211_REH` | الجزرية [الجزرية باب الراءات] | OK-BOOK |
+| `R211_REH` | الجزرية [الجزرية باب الراءات «ورقق الراء إذ] | OK-BOOK |
 | `R211_REH` | هداية القاري [هداية القاري 1:130] | OK |
 | `R211_WAQF_KHILAF` | النشر [النشر 2:105، 2:110] | OK |
-| `R211_WAQF_KHILAF` | النويري [النويري 2:33] | OK |
+| `R211_WAQF_KHILAF` | النويري [النويري 2:33 «وأختار في مصر التفخي] | OK |
 | `R211_WAQF_KHILAF` | هداية القاري [هداية القاري 1:130-133] | OK |
 | `R212_LAM_JALALA` | الجزرية [الجزرية «وفخم اللام من اسم الله عن] | OK-BOOK |
-| `R214_IKHFA_TAFKHEEM` | هداية القاري [هداية القاري 1:181-182] | OK |
+| `R214_IKHFA_TAFKHEEM` | هداية القاري [هداية القاري 1:181 «ومن تمام كيفية] | OK |
 | `R220_ISHMAM` | الشاطبية [الشاطبية] | OK-BOOK |
 | `R220_ISHMAM` | هداية القاري [هداية القاري 1:259-261] | OK |
 | `R220_ISHMAM` | النشر [النشر 2:126] | OK |
