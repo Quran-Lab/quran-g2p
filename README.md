@@ -279,6 +279,12 @@ closed on any drift.
   ([corpus.quran.com](https://corpus.quran.com)), vendored verbatim with
   its GPL copyright block intact and pinned by SHA-256: the POS oracle
   for the hamzat al-wasl word classes (see the validation table).
+- **Shaikh Sami Almadani**, hafiz and holder of a written ijazah in
+  Hafs 'an 'Asim with a connected sanad, who reviewed all 208 entries
+  of the rulings register from his own talaqqi, ruling by ruling. His
+  catches, documented second wujuh, and adjudicated corrections are
+  part of the public record; the register is stronger in his wording
+  than it was in ours.
 
 ## Status
 
@@ -329,7 +335,8 @@ were given from his own knowledge, independently of the engine and its
 sources; every disagreement was adjudicated against the cited classical
 texts on the public record (`docs/ADJUDICATIONS.md`), and the golden
 rows' `expert_reviewed` flags flip only on confirmed verdicts.
-The reviewer is anonymized here pending his preference.
+The reviewer is credited, at his own preference, as **Shaikh Sami
+Almadani**.
 
 **Above the review sits a third, stricter layer.** Formal scholarly
 arbitration (تحكيم علمي) of the complete register is now underway by a
