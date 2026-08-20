@@ -56,13 +56,16 @@ So the reader can weigh the work, the pipeline behind every ruling:
    adjudicated against the cited passages, on the public record
    (`docs/ADJUDICATIONS.md`), and the final tally is generated live
    from the review sheet below.
-5. **Scholarly arbitration, complete.** Above that review, the complete
-   register was formally arbitrated (تحكيم علمي) by a serving professor
-   at the Department of Qira'at, Umm al-Qura University in Makkah,
-   ruling on every entry from his own learning with no contact with the
-   first reviewer; he is credited by academic title at his own request.
-   Two independent chains of transmission have now each confirmed the
-   register in full.
+5. **Sealed at the top of the discipline.** The complete register then
+   underwent formal scholarly arbitration (تحكيم علمي) by a serving
+   professor at the Department of Qira'at, Umm al-Qura University in
+   Makkah, the city where the revelation began. He ruled on all 208
+   entries from what he received before his own teachers and shaykhs
+   («وفق ما تلقيته وقرأته على أساتذتي ومشايخي», his words), blind to the
+   first reviewer and his verdicts, and confirmed the register. At his
+   own request he is credited by rank alone: the work needed his
+   judgment, not his name. Two unbroken chains have now examined every
+   ruling independently. Both reached the same answer.
 6. **The method is the tradition's own.** الرواية والدراية:
    transmission and verification, at last given machinery. Ibn
    al-Jazari built al-Nashr exactly this way: every written source
