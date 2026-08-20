@@ -141,3 +141,66 @@ such junction, verified corpus-wide in the behavioral sweep.
 this; the sanad-holder did. Istilah precision is exactly where the
 human layer outperforms every machine layer, which is why he is in the
 loop.
+
+---
+
+## 5. قلقلة كبرى vs أكبر on وَتَبَّ (111:1)
+
+**Raised by:** the arbitrating professor of Qira'at, in the formal
+tahkeem of the complete register.
+
+**Verdict given:** خطأ on the row labelled «قلقلة كبرى وقفًا مع التشديد
+(وَتَبَّ)», with the note that the register appears to adopt the
+two-grade division of qalqalah while others divide it into three
+(صغرى / كبرى / أكبر), «ولا مشاحة في الاصطلاح».
+
+**Adjudication: the arbitrator is upheld.** The register does not use
+the two-grade division; it uses three, and carries a dedicated ruling
+for the third (`R202_QALQALAH_AKBAR`, sourced in the Jazariyyah's
+«وبيّن مقلقلًا إن سكنا» chapter and the maratib literature). The engine
+already assigns `qalqalah="akbar"` to the geminated beh of وَتَبَّ at
+waqf, and the statement row on qalqalah grades states all three
+correctly. The defect was in this row's label alone, which said كبرى
+where the engine, the register entry, and the project's own statement
+row all say أكبر: a prose slip that made the register look internally
+inconsistent to a reader checking it, exactly as he read it.
+
+**Resolution:** the label now reads «قلقلة أكبر وقفًا مع التشديد
+(وَتَبَّ)». No engine change: its output at 111:1 was already أكبر and
+is unchanged, as the frozen determinism hash confirms.
+
+**Note for the record:** this is the fifth adjudication and the fifth
+time the finding was a labelling defect rather than an engine error.
+Two independent reviewers, with no contact between them, have now each
+caught prose slips of this same class. That is the pattern the machine
+layers cannot see and the human layer reliably can.
+
+---
+
+## 6. Tafkheem of the ikhfa ghunna: five letters or seven
+
+**Raised by:** the arbitrating professor of Qira'at.
+
+**Verdict given:** خطأ on the statement row «غنة النون المخفاة تتبع ما
+بعدها — تُفخَّم عند خمسة أحرف فقط هي ص ض ط ظ ق»، with the note
+«تُفخَّم عند سبعة أحرف».
+
+**Adjudication: no change; the row stands as written, and the
+difference is one of scope rather than of ruling.** The isti'la letters
+are indeed seven (خ ص ض ط ظ غ ق), and the general principle is exactly
+as he states: the ghunna follows what comes after it. The row, however,
+is stated of النون المخفاة specifically, and the noon can only be
+mukhfah before the fifteen ikhfa letters. Two of the seven isti'la
+letters, خاء and غين, are letters of izhar halqi: the noon before them
+is izhar and is never mukhfah, so those two positions cannot arise for
+an ikhfa ghunna at all. Within ikhfa the reachable isti'la set is
+therefore exactly the five named. هداية القاري 1:181-182 states the
+mirror rule and enumerates that same five-letter set by istiqra'.
+
+**Resolution:** the row is unchanged, and this entry records both the
+objection and the reasoning so the scope distinction is explicit on the
+record rather than implicit in the wording. The engine's own
+implementation is correct by the same reachability: its isti'la table
+carries all seven letters, and the ghunna-tafkheem rule fires only on a
+mukhfah noon, which the upstream izhar rule guarantees never occurs
+before خاء or غين.
