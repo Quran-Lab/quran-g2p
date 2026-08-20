@@ -197,9 +197,17 @@ an ikhfa ghunna at all. Within ikhfa the reachable isti'la set is
 therefore exactly the five named. هداية القاري 1:181-182 states the
 mirror rule and enumerates that same five-letter set by istiqra'.
 
-**Resolution:** the row is unchanged, and this entry records both the
-objection and the reasoning so the scope distinction is explicit on the
-record rather than implicit in the wording. The engine's own
+**Resolution, completed after correspondence:** the reachability
+reasoning was put back to the arbitrator, and he confirmed it in full
+for the riwaya of Hafs («صدقتم، هو كذلك في رواية حفص»), adding the
+comparative note that in the riwaya of Abu Ja'far the noon IS mukhfah
+before خاء and غين, so there the ghunna's tafkheem reaches all seven
+isti'la letters. His standing ruling was that the row's original
+wording, while substantively correct for Hafs, could mislead a reader
+into thinking the isti'la letters number five; at his direction the
+row now states the seven isti'la letters explicitly and then confines
+the Hafs ikhfa-ghunna to the five reachable ones. The wording change
+is his; the substance was confirmed on both sides. The engine's own
 implementation is correct by the same reachability: its isti'la table
 carries all seven letters, and the ghunna-tafkheem rule fires only on a
 mukhfah noon, which the upstream izhar rule guarantees never occurs
