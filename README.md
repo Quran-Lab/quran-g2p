@@ -338,18 +338,29 @@ rows' `expert_reviewed` flags flip only on confirmed verdicts.
 The reviewer is credited, at his own preference, as **Shaikh Sami
 Almadani**.
 
-**Above the review sits a third, stricter layer.** Formal scholarly
-arbitration (تحكيم علمي) of the complete register is now underway by a
-serving **professor at the Department of Qira'at, Umm al-Qura
-University in Makkah**, engaged through a formal invitation stating
-scope, independence protocol, and honorarium; he rules on every entry
-from his own knowledge, and will be named here upon completion at his
-preference. The ladder is deliberate: machine validation proves the
-engine implements the register; the ijazah-holder's row-by-row review
-proves the rulings match the transmitted riwaya; the professor's
-arbitration seals the register at the tradition's highest academic
-rank. Disagreements at any layer resolve the same way: against the
-cited classical texts, on the public record.
+**Above the review sits a third, stricter layer, and it too is now
+complete.** Formal scholarly arbitration (تحكيم علمي) of the complete
+register was carried out by a serving **professor at the Department of
+Qira'at, Umm al-Qura University in Makkah**, engaged through a formal
+invitation stating scope, independence protocol, and honorarium, with
+no contact between him and the first reviewer. He ruled on every entry
+from his own learning, in his own words «وفق ما تلقيته وقرأته على
+أساتذتي ومشايخي» (according to what I received and read before my
+teachers and shaykhs), and delivered his verdicts with 46 written
+notes. His objections were adjudicated against the cited classical
+texts on the same public record (`docs/ADJUDICATIONS.md`, entries 5
+and 6): one label corrected at his direction, with no engine change,
+and one row upheld with the reasoning documented. At his own request
+he is credited here by academic title only, without his name.
+
+The ladder held as designed: machine validation proves the engine
+implements the register; the ijazah-holder's row-by-row review proves
+the rulings match the transmitted riwaya; the professor's arbitration
+seals the register at the tradition's highest academic rank. **Two
+independent chains of transmission, with no contact between them, have
+now each confirmed the register in full.** Disagreements at every
+layer resolved the same way: against the cited classical texts, on
+the public record.
 
 Final tally, generated live from the review sheet:
 
