@@ -56,7 +56,14 @@ So the reader can weigh the work, the pipeline behind every ruling:
    adjudicated against the cited passages, on the public record
    (`docs/ADJUDICATIONS.md`), and the final tally is generated live
    from the review sheet below.
-5. **The method is the tradition's own.** الرواية والدراية:
+5. **Scholarly arbitration, complete.** Above that review, the complete
+   register was formally arbitrated (تحكيم علمي) by a serving professor
+   at the Department of Qira'at, Umm al-Qura University in Makkah,
+   ruling on every entry from his own learning with no contact with the
+   first reviewer; he is credited by academic title at his own request.
+   Two independent chains of transmission have now each confirmed the
+   register in full.
+6. **The method is the tradition's own.** الرواية والدراية:
    transmission and verification, at last given machinery. Ibn
    al-Jazari built al-Nashr exactly this way: every written source
    gathered, every reading verified through living chains, nothing
