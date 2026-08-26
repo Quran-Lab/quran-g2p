@@ -69,7 +69,6 @@ TRANSFORMED_OK = {
     "sup-haa-sakt-wasl": "family list spans ayat",
     "sup2-ittikhadh-izhar": "family list spans many ayat",
     "sup2-hadhf-ithbat": "family list spans many ayat",
-    "ikhfa-jeem": "contrast note (najjaynakum vs anjaynakum)",
     "wasl-verb-unzur-damm": "ibtida form",
     "sup2-istifham-tasheel": "sister-sites list spans ayat",
     "sup2-lamat-sawakin": "multi-site statement row",
