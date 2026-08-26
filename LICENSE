@@ -1,16 +1,20 @@
 Quran-Lab No-Profit License
-Version 1.1 (NPL-1.1)
+Version 1.2 (NPL-1.2)
 
 Copyright (c) 2026 Muno459 / Quran-Lab
 
 This work, including its source code, specification documents, data
-artifacts, token lexicon, generated labels, and any file distributed
-alongside it (the "Work"), is made available under the following terms.
-By downloading, using, running, copying, or adapting the Work, you agree
+artifacts, token lexicon, generated labels, model weights, and any file
+distributed alongside it (the "Work"), is made available under the following
+terms. By downloading, using, running, copying, or adapting the Work, you agree
 to these terms. If you do not agree, you may not use the Work.
 
-Changes from Version 1.0: the attribution requirement has been removed. No
-credit of any kind is required. Everything else is unchanged.
+Changes from Version 1.1: the condition is now stated as attaching to the Work
+itself rather than to the user or their organisation. Charging for the Work, for
+access to it, or for any feature it powers remains prohibited. Earning a living
+by your own labour alongside the Work is not restricted, and was never intended
+to be. Section 13 states plainly that this License is not a ruling on anyone's
+livelihood. Version 1.1 removed the attribution requirement; that remains so.
 
 1. DEFINITIONS
 
@@ -23,55 +27,58 @@ credit of any kind is required. Everything else is unchanged.
    using the Work or its outputs, and any model, file, or artifact
    produced from the Work or from another Derivative.
 
-   "Profit" means any financial gain, revenue, or benefit obtained in
-   connection with the Work or a Derivative, whether direct or indirect. This
-   includes sale, licensing for a fee, paid products or features, paid
-   subscriptions, advertising revenue, and use as part of, or in support of,
-   any revenue-generating product, service, or operation.
+   "Charge" means requiring or accepting payment of any kind for the Work, for
+   access to the Work, or for any feature, capability, or output that the Work
+   provides. This includes sale, licensing for a fee, rental, a paid product or
+   feature, a paid subscription, a paywall, a trial that later requires payment,
+   and advertising revenue earned on a feature the Work powers.
 
    "Hosted Service" means making the Work or a Derivative available to other
    people over a network, for example through an API, a web application, or an
    inference endpoint.
 
-   "Local Use" means running the Work or a Derivative for yourself, on your
-   own device or infrastructure, without making it available to other people
-   over a network.
+   "Local Use" means running the Work or a Derivative on your own device or
+   infrastructure, for yourself or for those you teach or serve directly,
+   without making it available to other people over a network.
 
    "Cost Recovery" means charging the users of a Hosted Service no more than
    the actual, documented, strictly necessary direct costs of operating that
    service for those users, such as compute, storage, and bandwidth. Cost
    Recovery does not include any margin, markup, profit, salaries beyond
-   direct operation, or overhead unrelated to running the service, and never
-   includes any amount that yields Profit.
+   direct operation, or overhead unrelated to running the service.
 
 2. GRANT
 
    Subject to the conditions below, You are granted a worldwide, royalty-free,
    non-exclusive, non-transferable license to use, run, copy, and create
-   Derivatives of the Work, solely for non-profit purposes.
+   Derivatives of the Work.
 
-3. NO PROFIT
+3. THE WORK IS NOT FOR SALE
 
-   You may not use the Work or any Derivative to obtain Profit. No sale, no
-   paid product or feature, no paid subscription, no advertising monetization,
-   and no use as part of or in support of any revenue-generating product,
-   service, or operation is permitted.
+   You may not Charge for the Work or for any Derivative. It may not be sold,
+   licensed for a fee, rented, or supplied for payment, and neither the Work nor
+   any feature it powers may be placed behind a payment, a subscription, a
+   paywall, or advertising.
 
-   This applies to the app or service as a whole, not only to the feature that
-   uses the Work. An application that charges its users for anything, even for
-   features unrelated to the Work, is a revenue-generating product and is not
-   permitted to include the Work.
+   This condition attaches to the Work, not to You. Your own labour remains your
+   own. A teacher may charge for teaching, a developer may draw a salary, and an
+   organisation may earn from products, services and activities that do not
+   include the Work or any feature it powers. What may never be charged for is
+   the Work itself, access to it, or a feature that depends on it.
 
-4. LOCAL USE MUST BE FREE
+4. LOCAL USE
 
-   Local Use must be free of charge. No money may change hands in connection
-   with Local Use of the Work or a Derivative.
+   Local Use is always permitted and is never a Charge. Running the Work on your
+   own device, for yourself or for your own students, is not selling it, and
+   nothing in this License restricts payment You receive for your own teaching,
+   services, or labour, so long as the Work itself is not what is being sold and
+   no one is charged for access to it or to a feature it powers.
 
 5. HOSTED SERVICE: COST RECOVERY ONLY
 
-   You may operate the Work or a Derivative as a Hosted Service only on a
-   Cost Recovery basis. You may recover from users no more than Cost Recovery
-   as defined above, and never any amount that yields Profit. On reasonable
+   You may operate the Work or a Derivative as a Hosted Service free of charge,
+   or on a Cost Recovery basis. You may recover from users no more than Cost
+   Recovery as defined above, and never any amount beyond it. On reasonable
    request, You must be able to demonstrate that the amounts charged do not
    exceed Cost Recovery.
 
@@ -88,9 +95,10 @@ credit of any kind is required. Everything else is unchanged.
 7. SHARE-ALIKE
 
    You must distribute and make available every Derivative under this same
-   License, Version 1.1, with no additional or different terms. You may not
-   sublicense the Work or a Derivative under any other license, and You may
-   not relicense a Derivative to remove or weaken these terms.
+   License, either Version 1.2 or any later version published by Quran-Lab, with
+   no additional or different terms. You may not sublicense the Work or a
+   Derivative under any other license, and You may not relicense a Derivative to
+   remove or weaken these terms.
 
 8. UPSTREAM COMPONENTS
 
@@ -103,10 +111,10 @@ credit of any kind is required. Everything else is unchanged.
 
 9. NO COMMERCIAL LICENSE
 
-   There is no commercial license for this Work and none will be granted. It
-   is not available for a fee, a revenue share, a one-time payment, or any
-   other arrangement. If your use requires Profit as defined above, you do not
-   have a license under these terms and no separate license is obtainable.
+   There is no license to Charge for this Work, and none will be granted. The
+   right to sell the Work, to place it or a feature it powers behind a payment,
+   or to charge for access to it, is not available for a fee, a revenue share, a
+   one-time payment, or any other arrangement.
 
 10. TERMINATION
 
@@ -125,6 +133,12 @@ credit of any kind is required. Everything else is unchanged.
 
    This License text sets out the author's terms of use for the Work. It is
    not, and does not constitute, legal advice.
+
+13. NOT A RULING ON ANYONE'S LIVELIHOOD
+
+   This License states the conditions on which this Work is given. It is not a
+   ruling on anyone's livelihood, and nothing in it says that taking a wage for
+   teaching the Quran, or for any other lawful work, is impermissible.
 
 ---
 

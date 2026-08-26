@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/expert%20review-208%2F208%20%C2%B7%200%20%D8%AE%D8%B7%D8%A3-0b3d2e" alt="review complete">
   <img src="https://img.shields.io/badge/riwaya-Hafs%20%CA%BFan%20%CA%BFAsim%20(al--Shatibiyyah)-0b3d2e" alt="riwaya">
   <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fquran-g2p-review-status.mostafa0333.workers.dev%2Fbadge.json" alt="expert review">
-  <img src="https://img.shields.io/badge/license-Quran--Lab%20NPL--1.1-8a6d00" alt="license">
+  <img src="https://img.shields.io/badge/license-Quran--Lab%20NPL--1.2-8a6d00" alt="license">
 </p>
 
 A clean-room, specification-first grapheme-to-phoneme engine for Quranic
@@ -402,10 +402,13 @@ Final tally, generated live from the review sheet:
 ## License
 
 The code, specification, and artifacts are released under the
-**Quran-Lab No-Profit License, Version 1.1 (NPL-1.1)**: free to use, run,
-copy, and adapt for non-profit purposes; no profit may be obtained from
-it or from derivatives (see `LICENSE` for the exact terms). The vendored
-texts in `data/` remain under their own upstream terms as noted above.
+**Quran-Lab No-Profit License, Version 1.2 (NPL-1.2)**: free to use, run,
+copy, and adapt. The work itself is never for sale, so you may not charge
+for it, for access to it, or for any feature it powers. What you earn from
+your own teaching, services, or labour is your own, and this is a condition
+on the work rather than a ruling on anyone's livelihood (see `LICENSE` for
+the exact terms). The vendored texts in `data/` remain under their own
+upstream terms as noted above.
 
 ## Citation
 
