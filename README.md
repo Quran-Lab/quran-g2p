@@ -56,16 +56,23 @@ So the reader can weigh the work, the pipeline behind every ruling:
    adjudicated against the cited passages, on the public record
    (`docs/ADJUDICATIONS.md`), and the final tally is generated live
    from the review sheet below.
-5. **Sealed at the top of the discipline.** The complete register then
-   underwent formal scholarly arbitration (تحكيم علمي) by a serving
-   professor at the Department of Qira'at, Umm al-Qura University in
-   Makkah, the city where the revelation began. He ruled on all 208
-   entries from what he received before his own teachers and shaykhs
-   («وفق ما تلقيته وقرأته على أساتذتي ومشايخي», his words), blind to the
-   first reviewer and his verdicts, and confirmed the register. At his
-   own request he is credited by rank alone: the work needed his
-   judgment, not his name. Two unbroken chains have now examined every
-   ruling independently. Both reached the same answer.
+5. **Sealed at the top of the discipline, twice.** The complete
+   register then underwent formal scholarly arbitration (تحكيم علمي)
+   by two serving professors of Qira'at at Umm al-Qura University in
+   Makkah, the city where the revelation began, each engaged
+   separately and blind to every other reviewer and his verdicts. The
+   first ruled on all 208 entries from what he received before his own
+   teachers and shaykhs («وفق ما تلقيته وقرأته على أساتذتي ومشايخي»,
+   his words) and confirmed the register. The second ruled on every
+   row of the full instrument, and his independence was measured the
+   same way as the first reviewer's: every deliberately planted error
+   embedded in his copy was caught and refuted with the classical nass
+   cited back. Not one of his notes overturned a phonetic ruling; each
+   was folded into the register in his own words. Both are credited by
+   rank alone: the work needed their judgment, not their names. Three
+   unbroken chains have now examined every ruling independently. All
+   three reached the same answer, and a fourth examination is under
+   way.
 6. **The method is the tradition's own.** الرواية والدراية:
    transmission and verification, at last given machinery. Ibn
    al-Jazari built al-Nashr exactly this way: every written source
@@ -363,14 +370,28 @@ and 6): one label corrected at his direction, with no engine change,
 and one row upheld with the reasoning documented. At his own request
 he is credited here by academic title only, without his name.
 
+**A second arbitration, fully independent of the first, is also now
+complete.** Another serving **professor of Qira'at at Umm al-Qura
+University** examined every row of the full register, engaged
+separately and blind to both prior reviewers and their verdicts. His
+independence was measured the same way the first reviewer's was: the
+deliberately planted errors embedded in his instrument, dressed in
+the register's own citation format, were all caught and refuted with
+the classical sources cited back at us. He returned written notes on
+some forty rows, and not one overturned a phonetic ruling of the
+engine: they refine wordings, document khilaf where the books
+themselves carry two positions, and correct typography, and every one
+has been folded into the register in his own words (`tests/goldens/`).
+He is credited by rank alone.
+
 The ladder held as designed: machine validation proves the engine
 implements the register; the ijazah-holder's row-by-row review proves
-the rulings match the transmitted riwaya; the professor's arbitration
-seals the register at the tradition's highest academic rank. **Two
+the rulings match the transmitted riwaya; the professors' arbitrations
+seal the register at the tradition's highest academic rank. **Three
 independent chains of transmission, with no contact between them, have
-now each confirmed the register in full.** Disagreements at every
-layer resolved the same way: against the cited classical texts, on
-the public record.
+now each confirmed the register in full, and a fourth examination is
+under way.** Disagreements at every layer resolved the same way:
+against the cited classical texts, on the public record.
 
 Final tally, generated live from the review sheet:
 
