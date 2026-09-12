@@ -1,0 +1,331 @@
+{
+  "protocol": {
+    "edition": "tanzil",
+    "reading": "per-ayah, WaqfSpec.ayah_end(), default HafsConfig(); no phonemize_concat, no non-default wajh knobs",
+    "ayat": 6236
+  },
+  "rules": {
+    "R011_MUQATTAAT": {
+      "phones": 0,
+      "trace": 30,
+      "ayahs": 30
+    },
+    "R012B_DAAF_DAMM": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Second wajh, off by default: HafsConfig.daaf_30_54_damm is False (the fath is the preferred wajh). Fires at 30:54 when the knob is set."
+    },
+    "R012_SEEN_SAD": {
+      "phones": 0,
+      "trace": 2,
+      "ayahs": 2
+    },
+    "R013_ELIDED_WAW_LIYASUU": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Edition-dependent, not silent: fires at 17:7 under the kfgqpc rasm and not under tanzil, whose text does not present the elided waw. Silent in this table only because the frozen protocol reads tanzil."
+    },
+    "R014B_ISTIFHAM_TASHEEL": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Second wajh, off by default: HafsConfig.istifham_tasheel is False (the ibdal is the preferred wajh)."
+    },
+    "R110_BADAL_IBTIDA": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Trigger absent under the protocol: no ayah begins with hamzat al-wasl before a sakin hamza in either pinned edition (0 of 6,236 in both), so a per-ayah reading never opens a breath group on one. The sites the ruling governs are all mid-ayah, where the hamzat al-wasl elides instead."
+    },
+    "R110_WASL_START": {
+      "phones": 0,
+      "trace": 231,
+      "ayahs": 231
+    },
+    "R112_STRIP_INITIAL_SHADDA": {
+      "phones": 0,
+      "trace": 176,
+      "ayahs": 176
+    },
+    "R120_ISKAN": {
+      "phones": 0,
+      "trace": 4782,
+      "ayahs": 4782
+    },
+    "R121_EWAD_SEAT_SILENT": {
+      "phones": 0,
+      "trace": 2246,
+      "ayahs": 1611
+    },
+    "R121_MADD_EWAD": {
+      "phones": 0,
+      "trace": 911,
+      "ayahs": 911
+    },
+    "R122_TAA_MARBUTA_WAQF": {
+      "phones": 0,
+      "trace": 122,
+      "ayahs": 122
+    },
+    "R123_ISHMAM": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Waqf variant: emitted by quran_g2p.variants, which phonemize() does not enumerate. The single reading in this protocol takes pure sukun."
+    },
+    "R123_RAWM": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Waqf variant: emitted by quran_g2p.variants, which phonemize() does not enumerate. The single reading in this protocol takes pure sukun."
+    },
+    "R130_WASL_ELISION": {
+      "phones": 0,
+      "trace": 13252,
+      "ayahs": 4749
+    },
+    "R131_MADD_SHORTENING": {
+      "phones": 0,
+      "trace": 2670,
+      "ayahs": 1927
+    },
+    "R131_NOON_WIQAYA": {
+      "phones": 0,
+      "trace": 46,
+      "ayahs": 44
+    },
+    "R132_MALIYAH_SAKT": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Ayah-to-ayah junction: fires under phonemize_concat on 69:28-29 (verified directly), and can never fire in a per-ayah reading, which stops before the junction exists."
+    },
+    "R132_SAKT": {
+      "phones": 3,
+      "trace": 3,
+      "ayahs": 3
+    },
+    "R133_R160_IDGHAM_KAMIL": {
+      "phones": 1632,
+      "trace": 6958,
+      "ayahs": 3531
+    },
+    "R134_LAM_JALALA_ALIF": {
+      "phones": 2704,
+      "trace": 2704,
+      "ayahs": 1825
+    },
+    "R135_MEEM_ALLAH": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Ayah-to-ayah junction: fires under phonemize_concat on 3:1-2 (verified directly), and can never fire in a per-ayah reading."
+    },
+    "R136_BASMALA_JOINS": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Enforced structurally as a refusal: phonemize_concat rejects a group that joins the basmala to a preceding item and then stops on it (the forbidden fourth wajh). A reading that succeeds therefore never carries the id."
+    },
+    "R140_IZHAR": {
+      "phones": 1592,
+      "trace": 1592,
+      "ayahs": 1244
+    },
+    "R140_IZHAR_HALQI": {
+      "phones": 1419,
+      "trace": 1419,
+      "ayahs": 1190
+    },
+    "R141_IDGHAM_GHUNNA": {
+      "phones": 1219,
+      "trace": 1219,
+      "ayahs": 1062
+    },
+    "R141_IDGHAM_GHUNNA_NAQIS": {
+      "phones": 2430,
+      "trace": 2430,
+      "ayahs": 1729
+    },
+    "R141_IZHAR_MUTLAQ": {
+      "phones": 125,
+      "trace": 125,
+      "ayahs": 119
+    },
+    "R142_IDGHAM_BILA_GHUNNA": {
+      "phones": 697,
+      "trace": 697,
+      "ayahs": 641
+    },
+    "R143_IQLAB": {
+      "phones": 562,
+      "trace": 562,
+      "ayahs": 506
+    },
+    "R144_IKHFA": {
+      "phones": 5305,
+      "trace": 5305,
+      "ayahs": 2997
+    },
+    "R150_IKHFA_SHAFAWI": {
+      "phones": 496,
+      "trace": 496,
+      "ayahs": 453
+    },
+    "R160_MUTAMATHILAYN": {
+      "phones": 8,
+      "trace": 8,
+      "ayahs": 8
+    },
+    "R161_NAQIS_TA_NO_QALQALAH": {
+      "phones": 0,
+      "trace": 4,
+      "ayahs": 4
+    },
+    "R170_GHUNNA_MUSHADDADAH": {
+      "phones": 6072,
+      "trace": 6072,
+      "ayahs": 3485
+    },
+    "R180_PAUSAL_GLIDE": {
+      "phones": 2,
+      "trace": 2,
+      "ayahs": 2
+    },
+    "R180_TABEEI": {
+      "phones": 39681,
+      "trace": 39681,
+      "ayahs": 6005
+    },
+    "R181_BADAL": {
+      "phones": 1860,
+      "trace": 1860,
+      "ayahs": 1496
+    },
+    "R183_SILAH_WAQF_DROP": {
+      "phones": 0,
+      "trace": 28,
+      "ayahs": 28
+    },
+    "R184_SILAH_KUBRA": {
+      "phones": 324,
+      "trace": 324,
+      "ayahs": 310
+    },
+    "R185_MUTTASIL": {
+      "phones": 2180,
+      "trace": 2180,
+      "ayahs": 1605
+    },
+    "R185_MUTTASIL_WAQF": {
+      "phones": 10,
+      "trace": 10,
+      "ayahs": 10
+    },
+    "R186_MUNFASIL": {
+      "phones": 2656,
+      "trace": 2656,
+      "ayahs": 1841
+    },
+    "R187_LAZIM_MUTHAQQAL": {
+      "phones": 112,
+      "trace": 112,
+      "ayahs": 107
+    },
+    "R187_R188_LAZIM": {
+      "phones": 35,
+      "trace": 35,
+      "ayahs": 32
+    },
+    "R188_AIN_LEEN_LAZIM": {
+      "phones": 2,
+      "trace": 2,
+      "ayahs": 2
+    },
+    "R189_AARED": {
+      "phones": 4536,
+      "trace": 4536,
+      "ayahs": 4536
+    },
+    "R190B_SALASILA_ITHBAT": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Second wajh, off by default: HafsConfig.salasila_waqf_alif is False, so 76:4 takes the hadhf at waqf."
+    },
+    "R190C_AATAANI_HADHF": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Second wajh, off by default: HafsConfig.aataani_waqf_yaa is True, so 27:36 takes the ithbat and the hadhf wajh is not read."
+    },
+    "R190_LEEN": {
+      "phones": 8,
+      "trace": 8,
+      "ayahs": 8
+    },
+    "R200_QALQALAH_SUGHRA": {
+      "phones": 3414,
+      "trace": 3414,
+      "ayahs": 2373
+    },
+    "R201_QALQALAH_KUBRA": {
+      "phones": 422,
+      "trace": 422,
+      "ayahs": 422
+    },
+    "R202_QALQALAH_AKBAR": {
+      "phones": 1,
+      "trace": 1,
+      "ayahs": 1
+    },
+    "R210_ISTILA": {
+      "phones": 16635,
+      "trace": 16635,
+      "ayahs": 5245
+    },
+    "R211_REH": {
+      "phones": 9614,
+      "trace": 9614,
+      "ayahs": 4514
+    },
+    "R211_WAQF_KHILAF": {
+      "phones": 7,
+      "trace": 7,
+      "ayahs": 7
+    },
+    "R212_LAM_JALALA": {
+      "phones": 1990,
+      "trace": 1990,
+      "ayahs": 1453
+    },
+    "R214_IKHFA_TAFKHEEM": {
+      "phones": 879,
+      "trace": 879,
+      "ayahs": 768
+    },
+    "R220B_TAAMANNA_IKHTILAS": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Second wajh: emitted by quran_g2p.variants. The single reading in this protocol takes the ishmam at 12:11 (R220_ISHMAM, 1 occurrence)."
+    },
+    "R220_ISHMAM": {
+      "phones": 1,
+      "trace": 1,
+      "ayahs": 1
+    },
+    "R221_IMALA": {
+      "phones": 3,
+      "trace": 1,
+      "ayahs": 1
+    },
+    "R222_TASHEEL": {
+      "phones": 2,
+      "trace": 1,
+      "ayahs": 1
+    }
+  }
+}

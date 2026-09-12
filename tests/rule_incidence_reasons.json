@@ -1,0 +1,14 @@
+{
+  "R012B_DAAF_DAMM": "Second wajh, off by default: HafsConfig.daaf_30_54_damm is False (the fath is the preferred wajh). Fires at 30:54 when the knob is set.",
+  "R013_ELIDED_WAW_LIYASUU": "Edition-dependent, not silent: fires at 17:7 under the kfgqpc rasm and not under tanzil, whose text does not present the elided waw. Silent in this table only because the frozen protocol reads tanzil.",
+  "R014B_ISTIFHAM_TASHEEL": "Second wajh, off by default: HafsConfig.istifham_tasheel is False (the ibdal is the preferred wajh).",
+  "R110_BADAL_IBTIDA": "Trigger absent under the protocol: no ayah begins with hamzat al-wasl before a sakin hamza in either pinned edition (0 of 6,236 in both), so a per-ayah reading never opens a breath group on one. The sites the ruling governs are all mid-ayah, where the hamzat al-wasl elides instead.",
+  "R123_ISHMAM": "Waqf variant: emitted by quran_g2p.variants, which phonemize() does not enumerate. The single reading in this protocol takes pure sukun.",
+  "R123_RAWM": "Waqf variant: emitted by quran_g2p.variants, which phonemize() does not enumerate. The single reading in this protocol takes pure sukun.",
+  "R132_MALIYAH_SAKT": "Ayah-to-ayah junction: fires under phonemize_concat on 69:28-29 (verified directly), and can never fire in a per-ayah reading, which stops before the junction exists.",
+  "R135_MEEM_ALLAH": "Ayah-to-ayah junction: fires under phonemize_concat on 3:1-2 (verified directly), and can never fire in a per-ayah reading.",
+  "R136_BASMALA_JOINS": "Enforced structurally as a refusal: phonemize_concat rejects a group that joins the basmala to a preceding item and then stops on it (the forbidden fourth wajh). A reading that succeeds therefore never carries the id.",
+  "R190B_SALASILA_ITHBAT": "Second wajh, off by default: HafsConfig.salasila_waqf_alif is False, so 76:4 takes the hadhf at waqf.",
+  "R190C_AATAANI_HADHF": "Second wajh, off by default: HafsConfig.aataani_waqf_yaa is True, so 27:36 takes the ithbat and the hadhf wajh is not read.",
+  "R220B_TAAMANNA_IKHTILAS": "Second wajh: emitted by quran_g2p.variants. The single reading in this protocol takes the ishmam at 12:11 (R220_ISHMAM, 1 occurrence)."
+}

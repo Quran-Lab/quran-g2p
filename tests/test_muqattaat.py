@@ -75,5 +75,7 @@ def test_nun_68_1():
 
 def test_non_opening_ayat_untouched():
     ctx = run_ref(AyahRef(2, 2))
-    assert "hamza_a" != names(ctx.segs)[0] or True  # structural smoke
+    # ذَٰلِكَ decodes as ordinary running text: no letter-name spell-out,
+    # no madd harfi, no izhar at a name junction.
+    assert names(ctx.segs)[:4] == ["thal_a", "madd_a", "lam_i", "kaf_a"]
     assert len(ctx.segs) > 10
