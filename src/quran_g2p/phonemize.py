@@ -417,8 +417,15 @@ def _p6_p7_noon_meem(phones: list[Phone], trace) -> list[Phone]:
             # etc., and the يس/ن letter-name junctions). Only BARE noons and
             # tanween noons undergo the assimilation branches.
             if "sukun:marked" in _note(p):
-                out[i] = _with_prov(_replace(p, ghunna="asl"), p,
-                                    "R140_IZHAR", "SPEC-140", trace)
+                # The four izhar-mutlaq words (دنيا بنيان صنوان قنوان) reach
+                # this gate too: the mushaf points their noon with a marked
+                # sukun precisely BECAUSE it is izhar. Cite the specific
+                # ruling there, the general dabt witness everywhere else.
+                mutlaq = not cross_word and tgt.base in (Base.WAW, Base.YEH)
+                out[i] = _with_prov(
+                    _replace(p, ghunna="asl"), p,
+                    "R141_IZHAR_MUTLAQ" if mutlaq else "R140_IZHAR",
+                    "SPEC-141" if mutlaq else "SPEC-140", trace)
                 i += 1
                 continue
             if tgt.base in _HALQI:
@@ -433,9 +440,11 @@ def _p6_p7_noon_meem(phones: list[Phone], trace) -> list[Phone]:
                 # target phone's provenance records the same application.
                 # KAMIL targets (noon/meem) geminate — ن+م -> مّ (طسٓمٓ keeps
                 # its lazim context through the merge); waw/yeh stay naqis.
-                app = RuleApp("R141_IDGHAM_GHUNNA", "SPEC-141", p.src_span)
-                trace.append(app)
                 kamil = tgt.base in (Base.NOON, Base.MEEM)
+                app = RuleApp(
+                    "R141_IDGHAM_GHUNNA" if kamil
+                    else "R141_IDGHAM_GHUNNA_NAQIS", "SPEC-141", p.src_span)
+                trace.append(app)
                 out[i + 1] = _replace(tgt, ghunna="idgham",
                                       geminated=tgt.geminated or kamil,
                                       provenance=tgt.provenance + (app,))

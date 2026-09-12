@@ -13,7 +13,8 @@ from quran_g2p.pipeline import run as prun
 from quran_g2p.textbank import TextBank
 
 P6_RULES = {
-    "R140_IZHAR_HALQI", "R141_IDGHAM_GHUNNA", "R142_IDGHAM_BILA_GHUNNA",
+    "R140_IZHAR_HALQI", "R141_IDGHAM_GHUNNA", "R141_IDGHAM_GHUNNA_NAQIS",
+    "R142_IDGHAM_BILA_GHUNNA",
     "R143_IQLAB", "R144_IKHFA", "R131_NOON_WIQAYA", "R141_IZHAR_MUTLAQ",
 }
 
@@ -41,7 +42,8 @@ def test_tanween_dabt_agreement_whole_corpus():
                 ok = fired <= {"R140_IZHAR_HALQI", "R131_NOON_WIQAYA"}
             elif mode is TanweenMode.OPEN:
                 ok = pausal or bool(fired & {
-                    "R141_IDGHAM_GHUNNA", "R142_IDGHAM_BILA_GHUNNA", "R144_IKHFA"})
+                    "R141_IDGHAM_GHUNNA", "R141_IDGHAM_GHUNNA_NAQIS",
+                    "R142_IDGHAM_BILA_GHUNNA", "R144_IKHFA"})
             elif mode is TanweenMode.IQLAB:
                 ok = pausal or "R143_IQLAB" in fired
             else:
