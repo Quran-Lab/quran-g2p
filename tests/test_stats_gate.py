@@ -42,7 +42,11 @@ def test_oneoff_exact_counts(corpus):
     assert counts["R220_ISHMAM"] == 1        # 12:11
     assert counts["R221_IMALA"] >= 2         # reh + vowel + madd phones at 11:41
     assert counts["R222_TASHEEL"] >= 1       # 41:44
-    assert counts["R161_NAQIS_TA_NO_QALQALAH"] == 0 or True  # trace-only rule
+    # R161 is trace-only: the ruling is that the naqis taa does NOT
+    # qalqalah, so there is no phone for it to hang provenance on. That
+    # it is not silent (4 trace entries, 4 ayat) is the incidence gate's
+    # job; that no phone carries it is this one's.
+    assert counts["R161_NAQIS_TA_NO_QALQALAH"] == 0
 
 
 def test_special_phones_exact_sites(corpus):

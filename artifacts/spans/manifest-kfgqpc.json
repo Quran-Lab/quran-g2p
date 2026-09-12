@@ -1,0 +1,12 @@
+{
+  "generator": "tools/export_spans.py",
+  "edition": "kfgqpc",
+  "edition_file": "kfgqpc-hafsData_v18.json",
+  "edition_sha256": "5d8bb91726e482839d0057633cb1973031e4d706fa9604eea5e08892f20ba140",
+  "reading": "per-ayah, WaqfSpec.ayah_end(), default HafsConfig(); no phonemize_concat, no non-default wajh knobs",
+  "offsets": "character offsets into the ayah text of the pinned edition",
+  "ayat": 6236,
+  "ayat_without_spans": 0,
+  "spans": 138462,
+  "rules": 51
+}
