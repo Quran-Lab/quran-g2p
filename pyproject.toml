@@ -19,4 +19,4 @@ dev = ["pytest", "pyyaml", "openpyxl"]
 where = ["src"]
 
 [project.urls]
-Repository = "https://github.com/Muno459/quran-g2p"
+Repository = "https://github.com/Quran-Lab/quran-g2p"

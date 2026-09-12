@@ -101,7 +101,7 @@ sources and its live review, so correction always has a public path.
 ## Quick start
 
 ```bash
-git clone https://github.com/Muno459/quran-g2p
+git clone https://github.com/Quran-Lab/quran-g2p
 cd quran-g2p
 pip install -e .
 python -m pytest tests/   # 564 tests, no GPU needed
@@ -419,6 +419,6 @@ upstream terms as noted above.
   title  = {quran-g2p: a specification-first tajweed phonemizer for
             Hafs ʿan ʿAsim (tariq al-Shatibiyyah)},
   year   = {2026},
-  url    = {https://github.com/Muno459/quran-g2p}
+  url    = {https://github.com/Quran-Lab/quran-g2p}
 }
 ```
