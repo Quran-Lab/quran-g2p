@@ -14,10 +14,12 @@
 grapheme-to-phoneme engine for Quranic recitation in the riwaya of Hafs ʿan
 ʿAsim via tariq al-Shatibiyyah, built clean-room from the classical books.
 
-Every rule is cited to a printed page, ruled on by an ijazah-holding hafiz, and
-sealed by two professors of Qira'at at Umm al-Qura. Where the tradition
-transmits more than one wajh, the engine carries the choice as an explicit
-cited knob, never a silent default.
+Every rule is cited to a printed page, ruled on entry by entry by **Shaikh Sami
+Almadani** — hafiz, holder of a written ijazah in Hafs ʿan ʿAsim with a sanad
+connected to the Prophet ﷺ, certified by the Prophet's Mosque program in
+Madinah — and then sealed twice by professors of Qira'at at **Umm al-Qura
+University in Makkah**. Where the tradition transmits more than one wajh, the
+engine carries the choice as an explicit cited knob, never a silent default.
 
 Built and maintained by **Quran Lab**, a waqf building open technology in the
 service of the Quran.
@@ -44,22 +46,68 @@ class, and a **set-valued** length prescription (`allowed`, `scoring`,
 may fill: a prescription is not an observation, and the engine never pretends
 otherwise.
 
-## Why you can trust the output
+## Ruled on, entry by entry, by a connected sanad
 
-Three things have to be true, and each is proved separately.
+Every one of the **208 entries** in the rulings register was ruled on
+independently — صحيح / خطأ / فيه وجهان, a correction and a reason required for
+any خطأ — from the reviewer's own talaqqi, not from our sources.
+
+### Shaikh Sami Almadani
+
+| | |
+|---|---|
+| **Ijazah** | written **ijazah in Hafs ʿan ʿAsim via tariq al-Shatibiyyah** (1434 / 2013), carrying the authorization to transmit — «وقد أجزته أن يقرئ غيره كما قرأ» — and a **connected sanad (الإسناد المتصل) to the Prophet ﷺ** |
+| **Hifz** | **hafiz of the entire Quran**, board-examined by Wifaq al-Madaris al-Salafiyyah, grade **mumtaz**, 1443 / 2022 |
+| **Tajweed** | full-Quran certificate, **mumtaz, 377/400**, on the classical curriculum: al-Muqaddimah al-Jazariyyah, Tuhfat al-Atfal, Jamal al-Qur'an, Fawa'id Makkiyyah, Taysir al-Tajweed |
+| **Madinah** | certified by the **Prophet's Mosque Qur'an program** in Madinah (10 ajza', 96.94%); Shari'ah student at the **Islamic University of Madinah** |
+
+<p align="center">
+  <strong>His verdict on the register: 191 confirmed &middot; 0 judged wrong &middot; 17 documenting a second transmitted wajh</strong>
+</p>
+
+The seventeen are agreements in substance that document a second transmitted
+wajh. Scans of the credentials are on file with the maintainer. He is named
+here at his own preference.
+
+### The credential was tested, not taken on trust
+
+Before engagement he sat a blind screening: ten rulings, three of them carrying
+deliberately planted errors dressed in the register's own citation format.
+**All three caught. Zero false alarms on the seven true rulings.** The same
+screening has since failed other candidates — a filter everyone passes proves
+nothing, so the fails are part of what the pass means.
+
+### Then sealed twice, at the top of the discipline
+
+The complete register underwent formal scholarly arbitration (تحكيم علمي) by
+**two serving professors at the Department of Qira'at, Umm al-Qura University
+in Makkah**, engaged separately and each blind to the other and to the first
+reviewer. The first ruled on all 208 entries «وفق ما تلقيته وقرأته على أساتذتي
+ومشايخي» — according to what he received and read before his teachers and
+shaykhs — and confirmed the register. The second examined every row of the full
+instrument, caught every planted error in his copy and refuted each with the
+classical nass cited back at us, and returned some forty written notes, **not
+one of which overturned a phonetic ruling**. Both are credited by rank alone,
+at their own request.
+
+**Three unbroken chains have now examined every ruling independently, with no
+contact between them. All three reached the same answer, and a fourth
+examination is under way.** Every disagreement at every layer was adjudicated
+against the cited classical texts, on the public record.
+
+<p align="center">
+  <img src="https://quran-g2p-review-status.mostafa0333.workers.dev/progress.svg" alt="live expert review status" width="680">
+</p>
+
+→ **[The full review ladder](docs/REVIEW.md)** · [adjudications](docs/ADJUDICATIONS.md) · [how a ruling gets here](docs/METHOD.md)
+
+### And the machine half
 
 | | claim | evidence |
 |---|---|---|
 | **1** | the engine implements the register | 5 independent corpus oracles, 564 tests, a 25-mutant seeded-bug drill at 100% kill |
-| **2** | the register matches the transmitted riwaya | an ijazah-holder with a connected sanad ruled on all 208 entries: **191 confirmed, 17 second-wajh, 0 wrong** |
-| **3** | the register holds at the top of the discipline | two professors of Qira'at at **Umm al-Qura**, engaged separately and blind to each other, each confirmed it in full |
-
-Every reviewer's independence was *measured*, not assumed: deliberately planted
-errors, dressed in the register's own citation format, were embedded in each
-instrument, and every one was caught. Disagreements at every layer were
-adjudicated against the cited classical texts, on the public record.
-
-→ **[The full review ladder](docs/REVIEW.md)** · [adjudications](docs/ADJUDICATIONS.md) · [how a ruling gets here](docs/METHOD.md)
+| **2** | the register matches the transmitted riwaya | the review above: **208 / 208** |
+| **3** | the register holds at the top of the discipline | two Umm al-Qura arbitrations, both confirming in full |
 
 ## Validation
 
