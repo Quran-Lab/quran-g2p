@@ -108,7 +108,7 @@ def _junction_specials(phones, trace, refs, word_offsets):
             if (out[i].base is Base.YEH_MADD and out[i + 1].base is Base.MEEM
                     and out[i + 2].base is Base.LAM and out[i + 2].geminated):
                 app = RuleApp("R135_MEEM_ALLAH", "SPEC-011",
-                              out[i + 1].src_span)
+                              out[i + 1].src_span, "emit")
                 trace.append(app)
                 out.insert(i + 2, Phone(base=Base.FATHA, kind="vowel",
                                         geminated=False, length=None,
@@ -134,7 +134,7 @@ def _junction_specials(phones, trace, refs, word_offsets):
         for i, p in enumerate(out):
             if (p.base is Base.HEH and p.geminated
                     and p.word_index == w2):
-                app = RuleApp("R132_MALIYAH_SAKT", "SPEC-132", p.src_span)
+                app = RuleApp("R132_MALIYAH_SAKT", "SPEC-132", p.src_span, "emit")
                 trace.append(app)
                 first = Phone(base=Base.HEH, kind="consonant",
                               geminated=False, length=None, ghunna=None,

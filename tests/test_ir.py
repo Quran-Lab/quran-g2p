@@ -91,8 +91,10 @@ def test_phone_is_immutable():
 
 
 def test_provenance_chain_preserved_in_order():
-    r1 = RuleApp(rule_id="R143_IQLAB", spec="SPEC-143", trigger_span=(3, 5))
-    r2 = RuleApp(rule_id="R170_GHUNNA", spec="SPEC-170", trigger_span=(3, 5))
+    r1 = RuleApp(rule_id="R143_IQLAB", spec="SPEC-143", trigger_span=(3, 5),
+                 effect="modify")
+    r2 = RuleApp(rule_id="R170_GHUNNA", spec="SPEC-170", trigger_span=(3, 5),
+                 effect="modify")
     p = _phone(provenance=(r1, r2))
     assert [r.rule_id for r in p.provenance] == ["R143_IQLAB", "R170_GHUNNA"]
 

@@ -98,7 +98,7 @@ def test_mutant_idgham_through_marked_sukun(monkeypatch):
 
 
 def test_mutant_no_initial_shadda_strip(monkeypatch):
-    monkeypatch.setattr(PZ, "_p3_strip_initial_shadda", lambda segs, trace: segs)
+    monkeypatch.setattr(PZ, "_p3_strip_initial_shadda", lambda segs, trace, seg_apps=None: segs)
     kills = killed_by_any()
     assert "detect_initial_shadda_stripped" in kills
 

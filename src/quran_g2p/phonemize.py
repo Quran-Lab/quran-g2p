@@ -85,10 +85,20 @@ def phonemize(text: str, edition: str, ref: AyahRef | None = None,
 
 
 def _run_phases(segs, trace, config, ref, ctx):
-    segs = _p3_ibtida(segs, trace)
-    segs = _p3_strip_initial_shadda(segs, trace)
-    segs = _p4_pausal(segs, trace)
-    phones = _emit(segs, trace, config)
+    # Segment-stage rules run before any Phone exists, so they cannot attach to
+    # one directly. They register here against the SOURCE SPAN they acted on,
+    # and _emit hands the registered applications to every phone it emits from
+    # that span. Seeded with the P1 orthographic rules, which ran even earlier
+    # (R011 muqatta'at spell-out, R012 seen/sad, R013 restored waw): those
+    # produce or change phones too, and the contract is the same for them.
+    seg_apps: dict[tuple[int, int], list] = {}
+    for app in getattr(ctx, "trace", ()):
+        if app.rule_id != "EMIT" and app.effect in ("emit", "modify"):
+            seg_apps.setdefault(app.trigger_span, []).append(app)
+    segs = _p3_ibtida(segs, trace, seg_apps)
+    segs = _p3_strip_initial_shadda(segs, trace, seg_apps)
+    segs = _p4_pausal(segs, trace, seg_apps)
+    phones = _emit(segs, trace, config, seg_apps)
     phones = _p6_p7_noon_meem(phones, trace)
     phones = _p8_mutamathilayn(phones, trace)
     phones = _p10_madd(phones, trace, config)
@@ -102,7 +112,7 @@ def _run_phases(segs, trace, config, ref, ctx):
 
 # --- P3 -----------------------------------------------------------------
 
-def _p3_ibtida(segs, trace):
+def _p3_ibtida(segs, trace, seg_apps=None):
     if not segs:
         return segs
     head = segs[0]
@@ -158,7 +168,10 @@ def _p3_ibtida(segs, trace):
         note = f"verb->{vq.value}"
     resolved = ConsSeg(Base.HAMZA, vq, None, None, False, "wasl",
                        head.madda, False, head.span, head.word_index)
-    trace.append(RuleApp("R110_WASL_START", "SPEC-110", head.span, note=note))
+    wasl_app = RuleApp("R110_WASL_START", "SPEC-110", head.span, "emit",
+                       note=note)
+    trace.append(wasl_app)
+    _record(seg_apps, head.span, wasl_app)
     out = [resolved] + segs[1:]
     # Badal at ibtida' (اؤتمن -> أُوتُمِن; ائتوني -> إِيتُوني): the sakin
     # hamza right after the resolved wasl-hamza becomes the madd letter of
@@ -166,13 +179,13 @@ def _p3_ibtida(segs, trace):
     if (len(out) > 1 and isinstance(out[1], ConsSeg)
             and out[1].letter is Base.HAMZA and out[1].vowel is None
             and out[1].tanween is None):
-        trace.append(RuleApp("R110_BADAL_IBTIDA", "SPEC-110", out[1].span))
+        trace.append(RuleApp("R110_BADAL_IBTIDA", "SPEC-110", out[1].span, "emit"))
         out[1] = MaddSeg(vq, MaddSource.PLAIN_ALEF, False, out[1].span,
                          out[1].word_index)
     return out
 
 
-def _p3_strip_initial_shadda(segs, trace):
+def _p3_strip_initial_shadda(segs, trace, seg_apps=None):
     """R112: an ayah-initial shadda encodes idgham with the PREVIOUS ayah's
     final letter (wasl dabt); at ibtida' it degeminates (لَّيْسَ -> laysa,
     مَّا -> maa, رَّبَّنَا -> rabbanaa)."""
@@ -184,13 +197,16 @@ def _p3_strip_initial_shadda(segs, trace):
         segs[0] = ConsSeg(head.letter, head.vowel, head.tanween, head.sukun,
                           False, head.hamza_carrier, head.madda,
                           head.iqlab_mark, head.span, head.word_index)
-        trace.append(RuleApp("R112_STRIP_INITIAL_SHADDA", "SPEC-110", head.span))
+        shadda_app = RuleApp("R112_STRIP_INITIAL_SHADDA", "SPEC-110",
+                             head.span, "modify")
+        trace.append(shadda_app)
+        _record(seg_apps, head.span, shadda_app)
     return segs
 
 
 # --- P4 -----------------------------------------------------------------
 
-def _p4_pausal(segs, trace):
+def _p4_pausal(segs, trace, seg_apps=None):
     if not segs:
         return segs
     out = list(segs)
@@ -205,8 +221,8 @@ def _p4_pausal(segs, trace):
             out[-1] = ConsSeg(prev.letter, None, None, SukunKind.MARKED,
                               prev.shadda, prev.hamza_carrier, prev.madda,
                               False, prev.span, prev.word_index)
-            trace.append(RuleApp("R183_SILAH_WAQF_DROP", "SPEC-183", prev.span))
-            trace.append(RuleApp("R120_ISKAN", "SPEC-120", prev.span,
+            trace.append(RuleApp("R183_SILAH_WAQF_DROP", "SPEC-183", prev.span, "delete"))
+            trace.append(RuleApp("R120_ISKAN", "SPEC-120", prev.span, "delete",
                                  note=f"silah:{prev.vowel.value if prev.vowel else '?'}"))
             return out
         # R121 madd al-'iwad: a final madd seat after tanween-fath replaces
@@ -217,7 +233,9 @@ def _p4_pausal(segs, trace):
             out[-2] = ConsSeg(prev.letter, VQ.A, None, None, prev.shadda,
                               prev.hamza_carrier, prev.madda, False,
                               prev.span, prev.word_index)
-            trace.append(RuleApp("R121_MADD_EWAD", "SPEC-121", prev.span))
+            ewad_app = RuleApp("R121_MADD_EWAD", "SPEC-121", prev.span, "emit")
+            trace.append(ewad_app)
+            _record(seg_apps, prev.span, ewad_app)
         return out  # ends in a madd letter (aared/'iwad classified in P10)
     if not isinstance(last, ConsSeg):
         return out
@@ -227,7 +245,10 @@ def _p4_pausal(segs, trace):
     if letter is Base.TEH_MARBUTA:
         letter = Base.HEH
         vowel, tanween = None, None
-        trace.append(RuleApp("R122_TAA_MARBUTA_WAQF", "SPEC-122", last.span))
+        marbuta_app = RuleApp("R122_TAA_MARBUTA_WAQF", "SPEC-122",
+                              last.span, "modify")
+        trace.append(marbuta_app)
+        _record(seg_apps, last.span, marbuta_app)
     elif tanween is not None:
         if tanween.quality is VQ.A:
             # R121 'iwad WITHOUT a written seat (إِنشَآءً: hamza after a madd
@@ -238,18 +259,20 @@ def _p4_pausal(segs, trace):
                               last.span, last.word_index)
             out.append(MaddSeg(VQ.A, MaddSource.PLAIN_ALEF, False,
                                last.span, last.word_index))
-            trace.append(RuleApp("R121_MADD_EWAD", "SPEC-121", last.span,
-                                 note="seatless"))
+            seatless_app = RuleApp("R121_MADD_EWAD", "SPEC-121", last.span,
+                                   "emit", note="seatless")
+            trace.append(seatless_app)
+            _record(seg_apps, last.span, seatless_app)
             return out
         # damm/kasr tanween drop at waqf (R120).
         q = tanween.quality.value
         tanween = None
-        trace.append(RuleApp("R120_ISKAN", "SPEC-120", last.span,
+        trace.append(RuleApp("R120_ISKAN", "SPEC-120", last.span, "delete",
                              note=f"tanween:{q}"))
     elif vowel is not None:
         q = vowel.value
         vowel = None
-        trace.append(RuleApp("R120_ISKAN", "SPEC-120", last.span,
+        trace.append(RuleApp("R120_ISKAN", "SPEC-120", last.span, "delete",
                              note=f"iskan:{q}"))
     out[-1] = ConsSeg(letter, vowel, tanween, last.sukun or SukunKind.MARKED,
                       last.shadda, last.hamza_carrier, last.madda,
@@ -264,7 +287,23 @@ def _mark_pausal(seg: ConsSeg) -> ConsSeg:
 
 # --- P5 + emission -------------------------------------------------------
 
-def _emit(segs, trace, config: HafsConfig) -> list[Phone]:
+def _record(seg_apps, span, app):
+    """Register a segment-stage application against the span it acted on."""
+    if seg_apps is not None:
+        seg_apps.setdefault(span, []).append(app)
+
+
+def _replace_phone(phone, app):
+    from dataclasses import replace as _replace
+    return _replace(phone, provenance=phone.provenance + (app,))
+
+
+def _replace_phone_many(phone, apps):
+    from dataclasses import replace as _replace
+    return _replace(phone, provenance=phone.provenance + tuple(apps))
+
+
+def _emit(segs, trace, config: HafsConfig, seg_apps=None) -> list[Phone]:
     phones: list[Phone] = []
     pending_ghunna: set[int] = set()   # seg indices, per call
     pending_apps: dict[int, RuleApp] = {}
@@ -279,7 +318,7 @@ def _emit(segs, trace, config: HafsConfig) -> list[Phone]:
                 # 'iwad seat after tanween-fath: silent in wasl (R121); at
                 # waqf P4 already converted the tanween so this branch only
                 # sees true wasl contexts.
-                trace.append(RuleApp("R121_EWAD_SEAT_SILENT", "SPEC-121", seg.span))
+                trace.append(RuleApp("R121_EWAD_SEAT_SILENT", "SPEC-121", seg.span, "delete"))
                 continue
             # Provisional tabee'i {2}; P10 reclassifies (muttasil/lazim/aared…)
             # and the madd-sign witness accounting catches anything it misses.
@@ -291,12 +330,12 @@ def _emit(segs, trace, config: HafsConfig) -> list[Phone]:
         if seg.letter is Base.HAMZAT_WASL:
             # mid-segment wasl: elided (R130) — with the two R131 iltiqa'
             # al-sakinayn junction effects the elision exposes:
-            trace.append(RuleApp("R130_WASL_ELISION", "SPEC-130", seg.span))
+            trace.append(RuleApp("R130_WASL_ELISION", "SPEC-130", seg.span, "delete"))
             if phones and phones[-1].kind == "madd":
                 # madd letter meets the article/verb sakin: shortened away
                 # (قَالُوا ٱدْعُ, فِي ٱلْأَرْضِ, ٱهْدِنَا ٱلصِّرَٰطَ).
                 phones.pop()
-                trace.append(RuleApp("R131_MADD_SHORTENING", "SPEC-131", seg.span))
+                trace.append(RuleApp("R131_MADD_SHORTENING", "SPEC-131", seg.span, "delete"))
             elif phones and _is_tanween_noon(phones[-1]):
                 # tanween before wasl: noon al-wiqaya takes kasra
                 # (خَيْرًا ٱلْوَصِيَّةُ -> khayran i-l-wasiyyah). The kasra
@@ -306,20 +345,24 @@ def _emit(segs, trace, config: HafsConfig) -> list[Phone]:
                               "moraqaq", False, None, (), prev.src_span,
                               prev.word_index)
                 phones.append(kasra)
-                trace.append(RuleApp("R131_NOON_WIQAYA", "SPEC-131", seg.span))
+                wiqaya_app = RuleApp("R131_NOON_WIQAYA", "SPEC-131", seg.span, "emit")
+                trace.append(wiqaya_app)
+                phones[-1] = _replace_phone(phones[-1], wiqaya_app)
             continue
 
         if seg.sukun is SukunKind.BARE and isinstance(nxt, ConsSeg) and nxt.shadda:
             if seg.letter is Base.NOON and nxt.letter in (Base.WAW, Base.YEH):
                 # R141 naqis idgham: noon deleted, ghunna rides the target.
-                trace.append(RuleApp("R141_IDGHAM_GHUNNA_NAQIS", "SPEC-141", seg.span))
+                trace.append(RuleApp("R141_IDGHAM_GHUNNA_NAQIS", "SPEC-141", seg.span, "modify"))
                 pending_ghunna.add(idx + 1)
                 continue
             # kamil idgham: article lam / mutamathilayn first letter (R133/R160)
-            app = RuleApp("R133_R160_IDGHAM_KAMIL", "SPEC-133", seg.span)
+            app = RuleApp("R133_R160_IDGHAM_KAMIL", "SPEC-133", seg.span, "modify")
             trace.append(app)
-            if seg.word_index != nxt.word_index:
-                pending_apps[idx + 1] = app  # cross-word: mark the target
+            # Mark the target either way. The geminated letter is the phone
+            # this ruling produced, and a same-word lam shamsiyya is no less an
+            # application of it than a cross-word one.
+            pending_apps[idx + 1] = app
             continue
 
         letter = seg.letter
@@ -355,17 +398,33 @@ def _emit(segs, trace, config: HafsConfig) -> list[Phone]:
         if (seg.letter is Base.LAM and seg.shadda and seg.vowel is VQ.A
                 and isinstance(nxt, ConsSeg) and nxt.letter is Base.HEH
                 and _is_jalala_word(segs, seg.word_index)):
+            # One application, recorded once: the SAME object goes into the
+            # trace and onto the phone it created, so the two can be matched by
+            # identity (tests/test_attribution.py). A second, equal-but-distinct
+            # RuleApp here would look like an unattributed application.
+            jalala = RuleApp("R134_LAM_JALALA_ALIF", "SPEC-134", seg.span, "emit")
             phones.append(Phone(Base.ALEF_MADD, "madd", False, _TABEEI, None,
                                 None, "moraqaq", False, None,
-                                (RuleApp("R134_LAM_JALALA_ALIF", "SPEC-134", seg.span),),
+                                (jalala,),
                                 seg.span, seg.word_index))
-            trace.append(RuleApp("R134_LAM_JALALA_ALIF", "SPEC-134", seg.span))
+            trace.append(jalala)
+
+    # Hand the segment-stage applications to the phones they produced or
+    # changed. Matching is by source span, which survives every seg rebuild in
+    # P3/P4, and by identity, so a phone that already received the application
+    # through pending_apps is not given it twice.
+    if seg_apps:
+        for i, ph in enumerate(phones):
+            pending = [a for a in seg_apps.get(ph.src_span, ())
+                       if not any(a is x for x in ph.provenance)]
+            if pending:
+                phones[i] = _replace_phone_many(ph, pending)
     return phones
 
 
 def _phone(base: Base, kind: str, seg, geminated: bool = False,
            length: LengthSpec | None = None, ghunna=None, note: str = "") -> Phone:
-    prov = (RuleApp("EMIT", "SPEC-003", seg.span, note=note),) if note else ()
+    prov = (RuleApp("EMIT", "SPEC-003", seg.span, "emit", note=note),) if note else ()
     return Phone(base, kind, geminated, length, ghunna, None, "moraqaq", False,
                  None, prov, seg.span, seg.word_index)
 
@@ -443,7 +502,8 @@ def _p6_p7_noon_meem(phones: list[Phone], trace) -> list[Phone]:
                 kamil = tgt.base in (Base.NOON, Base.MEEM)
                 app = RuleApp(
                     "R141_IDGHAM_GHUNNA" if kamil
-                    else "R141_IDGHAM_GHUNNA_NAQIS", "SPEC-141", p.src_span)
+                    else "R141_IDGHAM_GHUNNA_NAQIS", "SPEC-141", p.src_span,
+                        "modify")
                 trace.append(app)
                 out[i + 1] = _replace(tgt, ghunna="idgham",
                                       geminated=tgt.geminated or kamil,
@@ -455,7 +515,7 @@ def _p6_p7_noon_meem(phones: list[Phone], trace) -> list[Phone]:
                 out[i] = _with_prov(_replace(p, ghunna="asl"), p,
                                     "R141_IZHAR_MUTLAQ", "SPEC-141", trace)
             elif tgt.base in _IDGHAM_PLAIN_TARGETS and cross_word:
-                app = RuleApp("R142_IDGHAM_BILA_GHUNNA", "SPEC-142", p.src_span)
+                app = RuleApp("R142_IDGHAM_BILA_GHUNNA", "SPEC-142", p.src_span, "modify")
                 trace.append(app)
                 out[i + 1] = _replace(tgt, provenance=tgt.provenance + (app,))
                 del out[i]
@@ -474,9 +534,10 @@ def _p6_p7_noon_meem(phones: list[Phone], trace) -> list[Phone]:
     return out
 
 
-def _with_prov(newp: Phone, old: Phone, rule_id: str, spec: str, trace) -> Phone:
+def _with_prov(newp: Phone, old: Phone, rule_id: str, spec: str, trace,
+               effect: str = "modify") -> Phone:
     from dataclasses import replace as _replace
-    app = RuleApp(rule_id, spec, old.src_span)
+    app = RuleApp(rule_id, spec, old.src_span, effect)
     trace.append(app)
     return _replace(newp, provenance=old.provenance + (app,))
 
@@ -498,7 +559,7 @@ def _p8_mutamathilayn(phones: list[Phone], trace) -> list[Phone]:
                 and p.base is nxt.base and not p.geminated
                 and not p.sakt_after
                 and (i + 2 < len(out) and out[i + 2].kind == "vowel")):
-            app = RuleApp("R160_MUTAMATHILAYN", "SPEC-160", p.src_span)
+            app = RuleApp("R160_MUTAMATHILAYN", "SPEC-160", p.src_span, "modify")
             trace.append(app)
             out[i + 1] = _replace(nxt, geminated=True,
                                   provenance=nxt.provenance + (app,))
@@ -552,7 +613,7 @@ def _p11_qalqalah(phones: list[Phone], trace) -> list[Phone]:
         # naqis-idgham retention (بَسَطتَ class): tah kept sakin before teh —
         # itbaq retained, qalqalah suppressed (SPEC-161).
         if p.base is Base.TAH and nxt is not None and nxt.base is Base.TEH:
-            trace.append(RuleApp("R161_NAQIS_TA_NO_QALQALAH", "SPEC-161", p.src_span))
+            trace.append(RuleApp("R161_NAQIS_TA_NO_QALQALAH", "SPEC-161", p.src_span, "state"))
             continue
         if i == n - 1:
             grade = "akbar" if p.geminated else "kubra"
@@ -692,7 +753,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
         i = idxs[-1] if base is None else idxs[0]
         if i >= len(out) - 1:
             continue  # sakt needs a continuation: moot at a segment end
-        app = RuleApp("R132_SAKT", "SPEC-132", out[i].src_span)
+        app = RuleApp("R132_SAKT", "SPEC-132", out[i].src_span, "modify")
         trace.append(app)
         out[i] = _replace(out[i], sakt_after=True,
                           provenance=out[i].provenance + (app,))
@@ -710,7 +771,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
                      None)
         if reh_i is None:
             return out  # site in the other waqf segment
-        app = RuleApp("R221_IMALA", "SPEC-221", out[reh_i].src_span)
+        app = RuleApp("R221_IMALA", "SPEC-221", out[reh_i].src_span, "modify")
         trace.append(app)
         host = out[reh_i]
         madd = out[reh_i + 1]
@@ -734,7 +795,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
                       None)
         if target is None:
             return out  # site in the other waqf segment
-        app = RuleApp("R222_TASHEEL", "SPEC-222", out[target].src_span)
+        app = RuleApp("R222_TASHEEL", "SPEC-222", out[target].src_span, "modify")
         trace.append(app)
         host = out[target]
         out[target:target + 1] = [
@@ -755,7 +816,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
                     and p.length is not None
                     and p.length.allowed == frozenset({6})
                     and i >= 2 and out[i - 2].base is Base.HAMZA):
-                app = RuleApp("R014B_ISTIFHAM_TASHEEL", "SPEC-012", p.src_span)
+                app = RuleApp("R014B_ISTIFHAM_TASHEEL", "SPEC-012", p.src_span, "modify")
                 trace.append(app)
                 out[i:i + 1] = [
                     Phone(Base.HAMZA_MUSAHHALA, "consonant", False, None, None,
@@ -777,7 +838,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
                     and out[i + 1].base is Base.FATHA):
                 nxt_cons = next((q for q in out[i + 2:] if q.kind == "consonant"), None)
                 if nxt_cons is not None and nxt_cons.base is Base.AIN:
-                    app = RuleApp("R012B_DAAF_DAMM", "SPEC-012", p.src_span)
+                    app = RuleApp("R012B_DAAF_DAMM", "SPEC-012", p.src_span, "modify")
                     trace.append(app)
                     out[i + 1] = _replace(out[i + 1], base=Base.DAMMA)
 
@@ -787,7 +848,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
         noon_i = next((i for i, p in enumerate(out)
                        if p.base is Base.NOON and p.geminated), None)
         if noon_i is not None:
-            app = RuleApp("R220_ISHMAM", "SPEC-220", out[noon_i].src_span)
+            app = RuleApp("R220_ISHMAM", "SPEC-220", out[noon_i].src_span, "modify")
             trace.append(app)
             out[noon_i] = _replace(out[noon_i],
                                    provenance=out[noon_i].provenance + (app,))
@@ -798,7 +859,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
             and len(out) >= 3 and out[-1].base is Base.LAM
             and out[-1].kind == "consonant"
             and out[-2].base is Base.KASRA and out[-3].base is Base.SEEN):
-        app = RuleApp("R190B_SALASILA_ITHBAT", "SPEC-184", out[-1].src_span)
+        app = RuleApp("R190B_SALASILA_ITHBAT", "SPEC-184", out[-1].src_span, "emit")
         trace.append(app)
         lam = out[-1]
         out.append(Phone(base=Base.FATHA, kind="vowel", geminated=False,
@@ -818,7 +879,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
     if (key == (27, 36) and config is not None and not config.aataani_waqf_yaa
             and len(out) >= 3 and out[-1].base is Base.YEH_MADD
             and out[-2].base is Base.KASRA and out[-3].base is Base.NOON):
-        app = RuleApp("R190C_AATAANI_HADHF", "SPEC-184", out[-1].src_span)
+        app = RuleApp("R190C_AATAANI_HADHF", "SPEC-184", out[-1].src_span, "delete")
         trace.append(app)
         out = out[:-2]
         out[-1] = _replace(out[-1], provenance=out[-1].provenance + (app,))
@@ -870,7 +931,7 @@ def _p12b_waqf_ra_khilaf(phones: list[Phone], trace, config: HafsConfig) -> list
     level = "mofakham" if knob else "moraqaq"
     rank = 4 if knob else None
     if out[-1].tafkheem != level:
-        app = RuleApp("R211_WAQF_KHILAF", "SPEC-210", out[-1].src_span, note=note)
+        app = RuleApp("R211_WAQF_KHILAF", "SPEC-210", out[-1].src_span, "modify", note=note)
         trace.append(app)
         out[-1] = _replace(out[-1], tafkheem=level, tafkheem_rank=rank,
                            provenance=out[-1].provenance + (app,))
@@ -986,7 +1047,7 @@ def _p10_madd(phones: list[Phone], trace, config: HafsConfig) -> list[Phone]:
                 and out[i - 2].kind == "consonant"
                 and out[i - 2].base is Base.HAMZA):
             rule_id = "R181_BADAL"
-        app = RuleApp(rule_id, spec, out[i].src_span)
+        app = RuleApp(rule_id, spec, out[i].src_span, "modify")
         trace.append(app)
         out[i] = _replace(out[i], length=length,
                           provenance=out[i].provenance + (app,))
@@ -1002,7 +1063,7 @@ def _p10_madd(phones: list[Phone], trace, config: HafsConfig) -> list[Phone]:
             and ((out[-1].base is Base.YEH and out[-2].base is Base.KASRA)
                  or (out[-1].base is Base.WAW and out[-2].base is Base.DAMMA))):
         p = out[-1]
-        app = RuleApp("R180_PAUSAL_GLIDE", "SPEC-180", p.src_span)
+        app = RuleApp("R180_PAUSAL_GLIDE", "SPEC-180", p.src_span, "modify")
         trace.append(app)
         madd_base = Base.YEH_MADD if p.base is Base.YEH else Base.WAW_MADD
         out[-1] = _replace(
@@ -1041,7 +1102,7 @@ def _p10_madd(phones: list[Phone], trace, config: HafsConfig) -> list[Phone]:
             # the three madhahib of al-Nashr incl. Tayyibah qasr.
             length = _free({4, 6}, config.madd_ain_len, {2, 4, 6})
             rule_id = "R188_AIN_LEEN_LAZIM"
-        app = RuleApp(rule_id, "SPEC-190", p.src_span)
+        app = RuleApp(rule_id, "SPEC-190", p.src_span, "modify")
         trace.append(app)
         out[i] = _replace(p, length=length, provenance=p.provenance + (app,))
     return out

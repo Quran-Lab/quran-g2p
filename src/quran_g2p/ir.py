@@ -99,11 +99,29 @@ class LengthSpec:
             )
 
 
+#: What a rule did to the phone stream. The field is required, with no default,
+#: so a new rule cannot be written without declaring it.
+#:
+#:   emit   - caused phone(s) to exist
+#:   modify - changed an existing phone's attributes
+#:   delete - caused phone(s) NOT to exist
+#:   state  - ruled that something does not apply here, changing nothing
+#:
+#: The contract this buys, enforced by tests/test_attribution.py: every emit and
+#: modify application MUST appear in the provenance of a phone in the output.
+#: A rule that changes what is recited and cannot point at what it changed is
+#: not attributable, and the suite refuses it. delete and state have nothing to
+#: point at by definition; they are anchored by `trigger_span` alone, and may
+#: also attach to a surviving neighbour where one exists.
+Effect = Literal["emit", "modify", "delete", "state"]
+
+
 @dataclass(frozen=True)
 class RuleApp:
     rule_id: str
     spec: str
     trigger_span: tuple[int, int]
+    effect: Effect
     note: str = ""
 
 

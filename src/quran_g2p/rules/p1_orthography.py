@@ -132,7 +132,7 @@ class R012SeenSadKhilaf:
         ctx.segs[i] = ConsSeg(Base.SEEN, old.vowel, old.tanween, old.sukun, old.shadda,
                               old.hamza_carrier, old.madda, old.iqlab_mark,
                               old.span, old.word_index)
-        ctx.trace.append(RuleApp(self.rule_id, self.spec, old.span, note=knob))
+        ctx.trace.append(RuleApp(self.rule_id, self.spec, old.span, "modify", note=knob))
 
 
 @register
@@ -170,11 +170,16 @@ class R011Muqattaat:
                            and name_idx == len(seq) - 1)
             out.extend(_name_segs(k, seq, seg.span, name_idx, madda,
                                   noon_marked=noon_marked))
+            # One application per letter, keyed by the letter it spells out, so
+            # the phones of each name can point at the ruling that made them.
+            # A single ayah-level record could not: the spell-out produces
+            # phones at as many source spans as there are letters.
+            ctx.trace.append(RuleApp(self.rule_id, self.spec, seg.span, "emit",
+                                     note=f"{key} {k}"))
         shift = len(seq) - 1
         if shift:
             rest = [_shift_word(s, shift) for s in rest]
         ctx.segs = out + rest
-        ctx.trace.append(RuleApp(self.rule_id, self.spec, (0, 0), note=f"{key} {seq}"))
 
 
 def _shift_word(seg, shift: int):
@@ -215,7 +220,7 @@ class R013ElidedWawLiyasuu:
                 madd = MaddSeg(VQ.U, MaddSource.SMALL_WAW, True,
                                seg.span, seg.word_index)
                 ctx.segs = ctx.segs[: i + 1] + [madd] + ctx.segs[i + 1:]
-                ctx.trace.append(RuleApp(self.rule_id, self.spec, seg.span))
+                ctx.trace.append(RuleApp(self.rule_id, self.spec, seg.span, "emit"))
                 return
 
 

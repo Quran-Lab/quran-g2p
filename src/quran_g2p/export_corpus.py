@@ -51,8 +51,9 @@ def export_corpus(out_dir: Path, edition: str = "tanzil",
         ft.write(json.dumps(header, ensure_ascii=False) + "\n")
         fr.write(json.dumps(header, ensure_ascii=False) + "\n")
         for ref in tb.refs():
-            (seg,) = phonemize(tb.ayah(ref), edition=edition, ref=ref,
-                               config=config).segments
+            result = phonemize(tb.ayah(ref), edition=edition, ref=ref,
+                               config=config)
+            (seg,) = result.segments
             tokens = [t.text for t in phones_to_tokens(seg.phones)]
             n_tokens += len(tokens)
             ft.write(json.dumps(
@@ -74,7 +75,18 @@ def export_corpus(out_dir: Path, edition: str = "tanzil",
                     "rules": rules, "span": list(p.src_span),
                     "word": p.word_index,
                 })
-            fr.write(json.dumps(
-                {"surah": ref.surah, "ayah": ref.ayah, "phones": entries},
-                ensure_ascii=False) + "\n")
+            # Rulings whose content is that a phone is NOT there cannot ride
+            # on one: an elided hamzat al-wasl, a haraka removed at waqf, a
+            # taa that does not qalqalah. They are recorded per ayah with the
+            # span they acted on, so a consumer reading this file sees the
+            # whole register and not only the part that survived into phones.
+            events = [{"rule": a.rule_id, "effect": a.effect,
+                       "span": list(a.trigger_span)}
+                      for a in result.trace
+                      if a.rule_id != "EMIT"
+                      and a.effect in ("delete", "state")]
+            row = {"surah": ref.surah, "ayah": ref.ayah, "phones": entries}
+            if events:
+                row["events"] = events
+            fr.write(json.dumps(row, ensure_ascii=False) + "\n")
     return {"ayat": tb.n_ayat, "tokens": n_tokens}

@@ -75,7 +75,7 @@ def _iskan_info(seg_phones, trace):
 
 def _rawm(seg_phones, haraka):
     word = seg_phones[-1].word_index
-    app = RuleApp("R123_RAWM", "SPEC-123", seg_phones[-1].src_span)
+    app = RuleApp("R123_RAWM", "SPEC-123", seg_phones[-1].src_span, "modify")
     out = []
     for p in seg_phones:
         if p.word_index == word and p.length is not None \
@@ -108,7 +108,7 @@ def _rawm(seg_phones, haraka):
 
 
 def _ishmam(seg_phones):
-    app = RuleApp("R123_ISHMAM", "SPEC-123", seg_phones[-1].src_span)
+    app = RuleApp("R123_ISHMAM", "SPEC-123", seg_phones[-1].src_span, "modify")
     out = list(seg_phones)
     out[-1] = _replace(out[-1], pausal_role="ishmam",
                        provenance=out[-1].provenance + (app,))
@@ -118,7 +118,7 @@ def _ishmam(seg_phones):
 def _taamanna_ikhtilas(seg_phones):
     """12:11: break the idgham, ikhtilas damma on the first noon (the
     wajh al-Marsafi prefers; the printed dabt's ishmam is canonical)."""
-    app = RuleApp("R220B_TAAMANNA_IKHTILAS", "SPEC-013b", (0, 0))
+    app = RuleApp("R220B_TAAMANNA_IKHTILAS", "SPEC-013b", (0, 0), "modify")
     for i, p in enumerate(seg_phones):
         if p.base is Base.NOON and p.geminated:
             first = _replace(p, geminated=False, ghunna=None,
