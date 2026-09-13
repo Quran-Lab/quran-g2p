@@ -6,7 +6,6 @@
   <img src="https://img.shields.io/badge/tests-564-brightgreen" alt="tests">
   <img src="https://img.shields.io/badge/expert%20review-208%2F208%20%C2%B7%200%20%D8%AE%D8%B7%D8%A3-0b3d2e" alt="review complete">
   <img src="https://img.shields.io/badge/riwaya-Hafs%20%CA%BFan%20%CA%BFAsim%20(al--Shatibiyyah)-0b3d2e" alt="riwaya">
-  <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fquran-g2p-review-status.mostafa0333.workers.dev%2Fbadge.json" alt="expert review">
   <img src="https://img.shields.io/badge/license-Quran--Lab%20NPL--1.2-8a6d00" alt="license">
 </p>
 
@@ -14,12 +13,13 @@
 grapheme-to-phoneme engine for Quranic recitation in the riwaya of Hafs ʿan
 ʿAsim via tariq al-Shatibiyyah, built clean-room from the classical books.
 
-Every rule is cited to a printed page, ruled on entry by entry by **Shaikh Sami
-Almadani** — hafiz, holder of a written ijazah in Hafs ʿan ʿAsim with a sanad
-connected to the Prophet ﷺ, certified by the Prophet's Mosque program in
-Madinah — and then sealed twice by professors of Qira'at at **Umm al-Qura
-University in Makkah**. Where the tradition transmits more than one wajh, the
-engine carries the choice as an explicit cited knob, never a silent default.
+Every rule is cited to a printed page and ruled on entry by entry by **Shaikh
+Sami Almadani**: hafiz, holder of a written ijazah in Hafs ʿan ʿAsim with a
+sanad connected to the Prophet ﷺ, certified by the Prophet's Mosque program in
+Madinah. The register was then sealed twice by professors of Qira'at at **Umm
+al-Qura University in Makkah**. Where the tradition transmits more than one
+wajh, the engine carries the choice as an explicit cited knob, never a silent
+default.
 
 Built and maintained by **Quran Lab**, a waqf building open technology in the
 service of the Quran.
@@ -49,14 +49,15 @@ otherwise.
 ## Ruled on, entry by entry, by a connected sanad
 
 Every one of the **208 entries** in the rulings register was ruled on
-independently — صحيح / خطأ / فيه وجهان, a correction and a reason required for
-any خطأ — from the reviewer's own talaqqi, not from our sources.
+independently, from the reviewer's own talaqqi rather than from our sources.
+Each verdict is صحيح, خطأ or فيه وجهان, with a correction and a reason required
+for any خطأ.
 
 ### Shaikh Sami Almadani
 
-| | |
+| qualification | detail |
 |---|---|
-| **Ijazah** | written **ijazah in Hafs ʿan ʿAsim via tariq al-Shatibiyyah** (1434 / 2013), carrying the authorization to transmit — «وقد أجزته أن يقرئ غيره كما قرأ» — and a **connected sanad (الإسناد المتصل) to the Prophet ﷺ** |
+| **Ijazah** | written **ijazah in Hafs ʿan ʿAsim via tariq al-Shatibiyyah** (1434 / 2013), carrying the authorization to transmit («وقد أجزته أن يقرئ غيره كما قرأ») and a **connected sanad (الإسناد المتصل) to the Prophet ﷺ** |
 | **Hifz** | **hafiz of the entire Quran**, board-examined by Wifaq al-Madaris al-Salafiyyah, grade **mumtaz**, 1443 / 2022 |
 | **Tajweed** | full-Quran certificate, **mumtaz, 377/400**, on the classical curriculum: al-Muqaddimah al-Jazariyyah, Tuhfat al-Atfal, Jamal al-Qur'an, Fawa'id Makkiyyah, Taysir al-Tajweed |
 | **Madinah** | certified by the **Prophet's Mosque Qur'an program** in Madinah (10 ajza', 96.94%); Shari'ah student at the **Islamic University of Madinah** |
@@ -74,7 +75,7 @@ here at his own preference.
 Before engagement he sat a blind screening: ten rulings, three of them carrying
 deliberately planted errors dressed in the register's own citation format.
 **All three caught. Zero false alarms on the seven true rulings.** The same
-screening has since failed other candidates — a filter everyone passes proves
+screening has since failed other candidates. A filter everyone passes proves
 nothing, so the fails are part of what the pass means.
 
 ### Then sealed twice, at the top of the discipline
@@ -83,8 +84,8 @@ The complete register underwent formal scholarly arbitration (تحكيم علم�
 **two serving professors at the Department of Qira'at, Umm al-Qura University
 in Makkah**, engaged separately and each blind to the other and to the first
 reviewer. The first ruled on all 208 entries «وفق ما تلقيته وقرأته على أساتذتي
-ومشايخي» — according to what he received and read before his teachers and
-shaykhs — and confirmed the register. The second examined every row of the full
+ومشايخي» (according to what he received and read before his teachers and
+shaykhs) and confirmed the register. The second examined every row of the full
 instrument, caught every planted error in his copy and refuted each with the
 classical nass cited back at us, and returned some forty written notes, **not
 one of which overturned a phonetic ruling**. Both are credited by rank alone,
@@ -96,14 +97,14 @@ examination is under way.** Every disagreement at every layer was adjudicated
 against the cited classical texts, on the public record.
 
 <p align="center">
-  <img src="https://quran-g2p-review-status.mostafa0333.workers.dev/progress.svg" alt="live expert review status" width="680">
+  <img src="assets/review-status.svg" alt="Expert review: 208 of 208 rulings reviewed, 191 confirmed, 17 two-wajh, 0 judged wrong" width="680">
 </p>
 
 → **[The full review ladder](docs/REVIEW.md)** · [adjudications](docs/ADJUDICATIONS.md) · [how a ruling gets here](docs/METHOD.md)
 
 ### And the machine half
 
-| | claim | evidence |
+| # | claim | evidence |
 |---|---|---|
 | **1** | the engine implements the register | 5 independent corpus oracles, 564 tests, a 25-mutant seeded-bug drill at 100% kill |
 | **2** | the register matches the transmitted riwaya | the review above: **208 / 208** |
@@ -114,7 +115,7 @@ against the cited classical texts, on the public record.
 Over all 6,236 ayat. The first five are independent oracles; the last two are
 gates the engine must survive against itself.
 
-| oracle | result |
+| check | result |
 |---|---|
 | **Trigger-span dataset** (Dar al-Maarifah-derived; 60,057 annotations, 18 categories) | **60,056 / 60,057**. The one exception is an error in *their* file (17:7, read off the bare rasm); the engine refuses to reproduce it |
 | **KFGQPC dabt witnesses** (~8,900 tanween sites) | **100%** agreement with the written izhar, open-tanween and iqlab forms |
@@ -126,7 +127,7 @@ gates the engine must survive against itself.
 
 ## What is in the box
 
-| | |
+| path | contents |
 |---|---|
 | `src/quran_g2p/` | the engine: pinned text loading, orthographic decode, 14 rule phases, typed phone IR carrying full provenance |
 | `spec/` | the normative specification, every rule with its classical basis |
@@ -143,8 +144,8 @@ gates the engine must survive against itself.
   quantifies ghunna, sakt is «لطيفة» and not a count (al-Nashr 1:240), and the
   free madds are transmitted as ranges.
 - **The mushaf's own pointing is an oracle.** Two independently pinned editions
-  decode into one shared representation, and their dabt layers — open-tanween
-  forms, sukun conventions, iqlab meems, sakt seens — are asserted against
+  decode into one shared representation, and their dabt layers (open-tanween
+  forms, sukun conventions, iqlab meems, sakt seens) are asserted against
   corpus-wide.
 - **Nothing enters on a model's word.** No hand-typed Arabic in code, no imports
   from the quarantined reference adapter (both structurally enforced), and a
@@ -157,7 +158,7 @@ of scholars; this is built to serve that transmission, not to sit above it.
 
 ## Documentation
 
-| | |
+| document | what is in it |
 |---|---|
 | [REVIEW.md](docs/REVIEW.md) | the three chains, the credentials, the blind screenings |
 | [ADJUDICATIONS.md](docs/ADJUDICATIONS.md) | every disagreement, resolved against the cited texts |

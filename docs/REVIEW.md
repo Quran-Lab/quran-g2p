@@ -94,8 +94,8 @@ now each confirmed the register in full, and a fourth examination is
 under way.** Disagreements at every layer resolved the same way:
 against the cited classical texts, on the public record.
 
-Final tally, generated live from the review sheet:
+Final tally:
 
 <p align="center">
-  <img src="https://quran-g2p-review-status.mostafa0333.workers.dev/progress.svg" alt="live expert review status" width="680">
+  <img src="../assets/review-status.svg" alt="Expert review: 208 of 208 rulings reviewed, 191 confirmed, 17 two-wajh, 0 judged wrong" width="680">
 </p>
