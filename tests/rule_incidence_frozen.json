@@ -6,8 +6,8 @@
   },
   "rules": {
     "R011_MUQATTAAT": {
-      "phones": 0,
-      "trace": 30,
+      "phones": 294,
+      "trace": 78,
       "ayahs": 30
     },
     "R012B_DAAF_DAMM": {
@@ -17,7 +17,7 @@
       "reason": "Second wajh, off by default: HafsConfig.daaf_30_54_damm is False (the fath is the preferred wajh). Fires at 30:54 when the knob is set."
     },
     "R012_SEEN_SAD": {
-      "phones": 0,
+      "phones": 3,
       "trace": 2,
       "ayahs": 2
     },
@@ -40,12 +40,12 @@
       "reason": "Trigger absent under the protocol: no ayah begins with hamzat al-wasl before a sakin hamza in either pinned edition (0 of 6,236 in both), so a per-ayah reading never opens a breath group on one. The sites the ruling governs are all mid-ayah, where the hamzat al-wasl elides instead."
     },
     "R110_WASL_START": {
-      "phones": 0,
+      "phones": 462,
       "trace": 231,
       "ayahs": 231
     },
     "R112_STRIP_INITIAL_SHADDA": {
-      "phones": 0,
+      "phones": 352,
       "trace": 176,
       "ayahs": 176
     },
@@ -60,12 +60,12 @@
       "ayahs": 1611
     },
     "R121_MADD_EWAD": {
-      "phones": 0,
+      "phones": 1823,
       "trace": 911,
       "ayahs": 911
     },
     "R122_TAA_MARBUTA_WAQF": {
-      "phones": 0,
+      "phones": 122,
       "trace": 122,
       "ayahs": 122
     },
@@ -92,7 +92,7 @@
       "ayahs": 1927
     },
     "R131_NOON_WIQAYA": {
-      "phones": 0,
+      "phones": 46,
       "trace": 46,
       "ayahs": 44
     },
@@ -108,7 +108,7 @@
       "ayahs": 3
     },
     "R133_R160_IDGHAM_KAMIL": {
-      "phones": 1632,
+      "phones": 6958,
       "trace": 6958,
       "ayahs": 3531
     },

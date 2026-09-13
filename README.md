@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/tests-564-brightgreen" alt="tests">
+  <img src="https://img.shields.io/badge/tests-576-brightgreen" alt="tests">
   <img src="https://img.shields.io/badge/expert%20review-208%2F208%20%C2%B7%200%20%D8%AE%D8%B7%D8%A3-0b3d2e" alt="review complete">
   <img src="https://img.shields.io/badge/riwaya-Hafs%20%CA%BFan%20%CA%BFAsim%20(al--Shatibiyyah)-0b3d2e" alt="riwaya">
   <img src="https://img.shields.io/badge/license-Quran--Lab%20NPL--1.2-8a6d00" alt="license">
@@ -106,7 +106,7 @@ against the cited classical texts, on the public record.
 
 | # | claim | evidence |
 |---|---|---|
-| **1** | the engine implements the register | 5 independent corpus oracles, 564 tests, a 25-mutant seeded-bug drill at 100% kill |
+| **1** | the engine implements the register | 5 independent corpus oracles, 576 tests, a 25-mutant seeded-bug drill at 100% kill |
 | **2** | the register matches the transmitted riwaya | the review above: **208 / 208** |
 | **3** | the register holds at the top of the discipline | two Umm al-Qura arbitrations, both confirming in full |
 
@@ -124,6 +124,7 @@ gates the engine must survive against itself.
 | **Differential vs quran-transcript** (char-level) | 98.9% ayah-exact; **every** residual carries a recorded verdict |
 | **Variant-path audit** | all waqf variants, 71,245 mid-ayah stops, 6,118 ayah junctions; 9-mutant drill, 100% kill |
 | **Rule incidence** | 62 rules, and any rule that fires nowhere must say why or the suite fails ([docs](docs/INCIDENCE.md)) |
+| **Attribution** | every ruling that changes the recitation names the phone it changed, every deviation names the ruling behind it, and no ruling is shadowed by a more general one ([docs](docs/ATTRIBUTION.md)) |
 
 ## What is in the box
 
@@ -134,7 +135,7 @@ gates the engine must survive against itself.
 | `docs/RULINGS-REGISTER.md` | 62 rulings, each bound to its citation and its review rows. The engine refuses to import if a rule lacks either |
 | `artifacts/tokenizer_tj1/` | 234-token lexicon with the `~` ghunna axis, ayah tokens, set-valued rule index, dual-format labels, warm-start bijection |
 | `artifacts/spans/` | the same rulings as character offsets: 138,461 spans over all 6,236 ayat, edition SHA-256 in the manifest, for consumers that cannot run Python |
-| `tests/` | 564 tests: 208 expert-reviewed golden rows, corpus invariants, oracle gates, seeded-bug drills, frozen determinism hash |
+| `tests/` | 576 tests: 208 expert-reviewed golden rows, corpus invariants, oracle gates, seeded-bug drills, frozen determinism hash |
 | `tests/verdicts/` | every disagreement with quran-transcript, verdicted with citations |
 
 ## Design commitments
@@ -167,6 +168,7 @@ of scholars; this is built to serve that transmission, not to sit above it.
 | [SCOPE.md](docs/SCOPE.md) | the chapter-by-chapter sweep of the manuals: what is covered, and what is out of scope and why |
 | [METHOD.md](docs/METHOD.md) · [CITATION-AUDIT.md](docs/CITATION-AUDIT.md) | how a ruling gets in, and the page-by-page check that it is where we say it is |
 | [INCIDENCE.md](docs/INCIDENCE.md) | which rules fire, and what a silence is allowed to mean |
+| [ATTRIBUTION.md](docs/ATTRIBUTION.md) | why every phone is the way it is, and the gates that keep it answerable |
 | [BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) · [SOURCES.md](docs/SOURCES.md) | the works cited, and the vendored texts with their terms |
 
 ## Development
@@ -175,7 +177,7 @@ of scholars; this is built to serve that transmission, not to sit above it.
 git clone https://github.com/Quran-Lab/quran-g2p
 cd quran-g2p
 pip install -e .
-python -m pytest tests/   # 564 tests, no GPU needed
+python -m pytest tests/   # 576 tests, no GPU needed
 ```
 
 ## License

@@ -158,7 +158,7 @@ def test_mutant_rawm_keeps_muttasil_six(monkeypatch):
     def old_rawm(seg_phones, haraka):
         word = seg_phones[-1].word_index
         from quran_g2p.ir import Phone, RuleApp
-        app = RuleApp("R123_RAWM", "SPEC-123", seg_phones[-1].src_span)
+        app = RuleApp("R123_RAWM", "SPEC-123", seg_phones[-1].src_span, "modify")
         out = []
         for p in seg_phones:
             if p.word_index == word and p.length is not None \
@@ -222,13 +222,13 @@ def test_mutant_ishmam_mutates_phones(monkeypatch):
 
 def test_mutant_iskan_skipped_midstop(monkeypatch):
     orig = PZ._p4_pausal
-    monkeypatch.setattr(PZ, "_p4_pausal", lambda segs, trace: segs)
+    monkeypatch.setattr(PZ, "_p4_pausal", lambda segs, trace, seg_apps=None: segs)
     assert "detect_stop_metamorphic" in killed()
 
 
 def test_mutant_resume_keeps_gemination(monkeypatch):
     monkeypatch.setattr(PZ, "_p3_strip_initial_shadda",
-                        lambda segs, trace: segs)
+                        lambda segs, trace, seg_apps=None: segs)
     ks = killed()
     assert "detect_stop_metamorphic" in ks or \
         "detect_variant_invariants" in ks
