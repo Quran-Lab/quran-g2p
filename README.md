@@ -92,8 +92,7 @@ one of which overturned a phonetic ruling**. Both are credited by rank alone,
 at their own request.
 
 **Three unbroken chains have now examined every ruling independently, with no
-contact between them. All three reached the same answer, and a fourth
-examination is under way.** Every disagreement at every layer was adjudicated
+contact between them, and all three reached the same answer.** Every disagreement at every layer was adjudicated
 against the cited classical texts, on the public record.
 
 <p align="center">

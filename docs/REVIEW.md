@@ -1,7 +1,7 @@
 # The review ladder
 
 Three independent chains of transmission have examined every ruling in the
-register, with no contact between them, and a fourth examination is under way.
+register, with no contact between them.
 This is the full record: who reviewed what, how their independence was
 measured, and what each found. The adjudications themselves are in
 [ADJUDICATIONS.md](ADJUDICATIONS.md).
@@ -90,8 +90,7 @@ implements the register; the ijazah-holder's row-by-row review proves
 the rulings match the transmitted riwaya; the professors' arbitrations
 seal the register at the tradition's highest academic rank. **Three
 independent chains of transmission, with no contact between them, have
-now each confirmed the register in full, and a fourth examination is
-under way.** Disagreements at every layer resolved the same way:
+now each confirmed the register in full.** Disagreements at every layer resolved the same way:
 against the cited classical texts, on the public record.
 
 Final tally:

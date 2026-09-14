@@ -45,9 +45,8 @@ so a reader can weigh the work rather than take it on trust.
    cited back. Not one of his notes overturned a phonetic ruling; each
    was folded into the register in his own words. Both are credited by
    rank alone: the work needed their judgment, not their names. Three
-   unbroken chains have now examined every ruling independently. All
-   three reached the same answer, and a fourth examination is under
-   way.
+   unbroken chains have now examined every ruling independently, and all
+   three reached the same answer.
 6. **The method is the tradition's own.** الرواية والدراية:
    transmission and verification, at last given machinery. Ibn
    al-Jazari built al-Nashr exactly this way: every written source
