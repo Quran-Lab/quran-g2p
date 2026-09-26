@@ -55,12 +55,20 @@ def expand(phones: list[Phone], ghunna_repeat: int = 4,
             # ikhfa carrier, or where an idgham consumed the previous word's
             # last letter (R141/R142 provenance on the target). Wasl-elision
             # junctions keep their space.
-            rules = {a.rule_id for a in p.provenance}
+            # R133 must be CROSS-word: its trigger (the consumed letter) ends
+            # before this phone's own text starts, i.e. across the space. The
+            # sun-letter article (ٱللَّهِ, ٱلرَّحْمَٰنِ) carries R133 too since
+            # full attribution, but its trigger is inside the same word.
+            cross = any(
+                a.rule_id in {"R141_IDGHAM_GHUNNA", "R141_IDGHAM_GHUNNA_NAQIS",
+                              "R142_IDGHAM_BILA_GHUNNA", "R160_MUTAMATHILAYN"}
+                or (a.rule_id == "R133_R160_IDGHAM_KAMIL"
+                    and a.trigger_span[1] < p.src_span[0])
+                for a in p.provenance)
             merged = (
                 (prev_phone is not None and prev_phone.base in
                  (Base.NOON_MUKHFAH, Base.MEEM_MUKHFAH))
-                or bool(rules & {"R141_IDGHAM_GHUNNA", "R142_IDGHAM_BILA_GHUNNA",
-                                 "R133_R160_IDGHAM_KAMIL", "R160_MUTAMATHILAYN"})
+                or cross
             )
             if not merged:
                 out.append(" ")
