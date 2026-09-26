@@ -25,7 +25,12 @@ from quran_g2p.tokenlayer import phones_to_tokens
 #   PHONES UNTOUCHED, proven by git: sole src delta = tokenlayer.py). The
 #   2,430 tanween/noon->waw/yeh targets gain the marker (و~َ ي~َ ...);
 #   vocab 229 -> 234, blank 228 -> 233.
-FROZEN = "5c7e21d33000f204f74b967d61da6e1ab6700a8e15f1e4d497935740586d5619"
+# 2026-09-26 — sakin reh after a kasra of the PREVIOUS word (hamzat al-wasl
+#   dropped in wasl) is mofakham: رَبِّ ٱرْحَمْهُمَا, أَمِ ٱرْتَابُوٓا۟, إِنِ
+#   ٱرْتَبْتُمْ, لِمَنِ ٱرْتَضَىٰ ... Found by the two-way audit against the
+#   KFGQPC colour-coded Madinah mushaf. Deltas verified: 5:106, 17:24, 21:28,
+#   23:99, 24:50, 24:55, 65:4, 72:27 only.
+FROZEN = "ebb0f10e1403edf262083fa79b5b78a7a9edd95782c1ec70b4ffcad73d174ff9"
 
 
 def corpus_hash() -> str:

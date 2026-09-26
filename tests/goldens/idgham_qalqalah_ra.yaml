@@ -275,6 +275,39 @@
     - {base: feh}
     - {base: kasra}
     - {base: reh, tafkheem: moraqaq}
+- id: ra-sakin-kasr-munfasil-irhamhuma
+  surah: 17
+  ayah: 24
+  rule: R211_RA
+  rule_ar: تفخيم الراء الساكنة بعد كسر منفصل في الوصل (رَبِّ ٱرْحَمْهُمَا)
+  cite: "kasra of the previous word (the hamzat al-wasl drops in wasl) is not the reh's own original kasra; colour-coded Madinah mushaf (KFGQPC V4) marks it mofakham. Primary citation pending the expert packet."
+  expert_reviewed: false
+  expect:
+    - {base: beh}
+    - {base: kasra}
+    - {base: reh, tafkheem: mofakham}
+- id: ra-sakin-kasr-munfasil-irtabu
+  surah: 24
+  ayah: 50
+  rule: R211_RA
+  rule_ar: تفخيم الراء الساكنة بعد كسر منفصل في الوصل (أَمِ ٱرْتَابُوٓا۟)
+  cite: "kasra of the previous word (the hamzat al-wasl drops in wasl) is not the reh's own original kasra; colour-coded Madinah mushaf (KFGQPC V4) marks it mofakham. Primary citation pending the expert packet."
+  expert_reviewed: false
+  expect:
+    - {base: meem}
+    - {base: kasra}
+    - {base: reh, tafkheem: mofakham}
+- id: ra-sakin-kasr-munfasil-irtabtum
+  surah: 5
+  ayah: 106
+  rule: R211_RA
+  rule_ar: تفخيم الراء الساكنة بعد كسر منفصل في الوصل (إِنِ ٱرْتَبْتُمْ)
+  cite: "kasra of the previous word (the hamzat al-wasl drops in wasl) is not the reh's own original kasra; colour-coded Madinah mushaf (KFGQPC V4) marks it mofakham. Primary citation pending the expert packet."
+  expert_reviewed: false
+  expect:
+    - {base: noon}
+    - {base: kasra}
+    - {base: reh, tafkheem: mofakham}
 - id: ra-sakin-kasr-istila-mirsad
   surah: 78
   ayah: 21

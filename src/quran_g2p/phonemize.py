@@ -956,6 +956,12 @@ def _reh_level(out, i, n, config) -> str:
             host = out[i - 2] if i > 1 else None
             if i - 2 == 0 and host is not None and host.base is Base.HAMZA:
                 return "mofakham"
+            # kasra munfasil: in wasl the hamzat al-wasl drops and the sakin
+            # reh follows the PREVIOUS word's kasra (رَبِّ ٱرْحَمْهُمَا، أَمِ
+            # ٱرْتَابُوٓا۟، إِنِ ٱرْتَبْتُمْ، لِمَنِ ٱرْتَضَىٰ): tarqeeq needs an
+            # original kasra in the reh's own word, so this is tafkheem.
+            if prev.word_index != out[i].word_index:
+                return "mofakham"
             # same-word isti'la after the sakin reh -> tafkheem (قِرْطَاس
             # مِرْصَاد); a MAKSUR isti'la letter is weakened and the wajhan
             # run (فِرْقٍ 26:63, the sole site — wajhan jayyidan per al-Dani,
