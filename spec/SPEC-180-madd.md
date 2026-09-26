@@ -35,8 +35,13 @@ separate judgment). `realized_len` stays None until forced alignment.
 - next = HAMZA: same word -> muttasil; hamza segment-final with 'arid sukun ->
   muttasil-waqf (R191 strongest-cause: also aared by position; muttasil wins,
   both retained in provenance); cross-word -> munfasil (silah source -> R184).
-  Fused ha-tanbih/ya-nida (هَٰٓؤُلَآءِ, يَٰٓأَيُّهَا) classify muttasil by the
-  same-word test — identical Shatibiyyah lengths; tagged CONVENTION.
+  Fused ha-tanbih/ya-nida (هَٰٓؤُلَآءِ, هَٰٓأَنتُمْ, يَٰٓأَيُّهَا, يَٰٓـَٔادَمُ) are
+  separate words joined in the rasm: munfasil hukmi (R186), detected as a
+  word-initial YEH/HEH + fatha + dagger madd before the hamza (optional wa-/fa-
+  proclitic). Lengths are identical under Shatibiyyah. The Dar al-Maarifah
+  colour mushaf (cpfair transcription) colours yaa ayyuhaa and haa antum
+  munfasil but haa'ulaa'i and yaa aadamu muttasil; the engine keeps the one
+  class for the one construction.
 - next geminated -> lazim muthaqqal.
 - next sakin: 'ARID (P4 iskan/taa-marbuta provenance) & final -> aared;
   ASLI -> lazim (mukhaffaf آلْآنَ 10:51,91 and every letter-name junction —

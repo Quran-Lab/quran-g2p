@@ -798,9 +798,10 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
         app = RuleApp("R222_TASHEEL", "SPEC-222", out[target].src_span, "modify")
         trace.append(app)
         host = out[target]
+        kept = _retract_madd_class(trace, host)
         out[target:target + 1] = [
             Phone(Base.HAMZA_MUSAHHALA, "consonant", False, None, None, None,
-                  "moraqaq", False, None, host.provenance + (app,),
+                  "moraqaq", False, None, kept + (app,),
                   host.src_span, host.word_index),
             Phone(Base.FATHA, "vowel", False, None, None, None, "moraqaq",
                   False, None, (app,), host.src_span, host.word_index),
@@ -818,9 +819,10 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
                     and i >= 2 and out[i - 2].base is Base.HAMZA):
                 app = RuleApp("R014B_ISTIFHAM_TASHEEL", "SPEC-012", p.src_span, "modify")
                 trace.append(app)
+                kept = _retract_madd_class(trace, p)
                 out[i:i + 1] = [
                     Phone(Base.HAMZA_MUSAHHALA, "consonant", False, None, None,
-                          None, "moraqaq", False, None, p.provenance + (app,),
+                          None, "moraqaq", False, None, kept + (app,),
                           p.src_span, p.word_index),
                     Phone(Base.FATHA, "vowel", False, None, None, None,
                           "moraqaq", False, None, (app,), p.src_span,
@@ -986,6 +988,44 @@ def _free(allowed, canonical, scoring):
     return LengthSpec("free", frozenset(allowed), canonical, frozenset(scoring))
 
 
+_MADD_CLASS_IDS = frozenset({
+    "R180_TABEEI", "R181_BADAL", "R184_SILAH_KUBRA", "R185_MUTTASIL",
+    "R185_MUTTASIL_WAQF", "R186_MUNFASIL", "R187_LAZIM_MUTHAQQAL",
+    "R187_R188_LAZIM", "R188_AIN_LEEN_LAZIM", "R189_AARED", "R190_LEEN"})
+
+
+def _retract_madd_class(trace, phone: Phone) -> tuple:
+    """A later phase replaced this madd phone with a non-madd (tasheel): drop
+    the P10 class ruling from the trace and return the cleaned provenance, so
+    no span export reports a madd the phone stream does not contain."""
+    stale = [a for a in phone.provenance
+             if a.rule_id in _MADD_CLASS_IDS]
+    for a in stale:
+        if a in trace:
+            trace.remove(a)
+    return tuple(a for a in phone.provenance if a not in stale)
+
+
+def _fused_particle(out: list[Phone], i: int) -> bool:
+    """Dagger-alif madd of a vocative ya' / attention ha' written joined to
+    the following word: word-initial YEH/HEH + fatha + dagger madd (optionally
+    after a one-letter wa-/fa- proclitic)."""
+    p = out[i]
+    if "src:dagger_alef" not in _note(p) or i < 2:
+        return False
+    host, vowel = out[i - 2], out[i - 1]
+    if host.base not in (Base.YEH, Base.HEH) or vowel.base is not Base.FATHA:
+        return False
+    if host.word_index != p.word_index:
+        return False
+    k = i - 3
+    if k < 0 or out[k].word_index != p.word_index:
+        return True
+    return (k >= 1 and out[k].base is Base.FATHA
+            and out[k - 1].base in (Base.WAW, Base.FEH)
+            and (k - 2 < 0 or out[k - 2].word_index != p.word_index))
+
+
 def _p10_madd(phones: list[Phone], trace, config: HafsConfig) -> list[Phone]:
     from dataclasses import replace as _replace
 
@@ -1017,6 +1057,16 @@ def _p10_madd(phones: list[Phone], trace, config: HafsConfig) -> list[Phone]:
                 if hamza_final_arid:
                     return (_free({4, 5, 6}, config.madd_muttasil_waqf_len, {4, 5, 6}),
                             "R185_MUTTASIL_WAQF", "SPEC-185")
+                if nxt.word_index == p.word_index and _fused_particle(out, i):
+                    # ya' al-nida' / ha' al-tanbih written joined to the next
+                    # word (يَٰٓأَيُّهَا هَٰٓؤُلَآءِ هَٰٓأَنتُمْ يَٰٓـَٔادَمُ): the
+                    # particle is its own word, so the madd is munfasil
+                    # hukmi, not muttasil (the same-word test would say
+                    # muttasil only because of the joined rasm). Lengths are
+                    # identical in Hafs/Shatibiyyah; the class matters for
+                    # labels, span export and non-default knob settings.
+                    return (_free({4, 5}, config.madd_munfasil_len, {2, 3, 4, 5, 6}),
+                            "R186_MUNFASIL", "SPEC-186")
                 if nxt.word_index == p.word_index:
                     return (_free({4, 5}, config.madd_muttasil_len, {4, 5, 6}),
                             "R185_MUTTASIL", "SPEC-185")

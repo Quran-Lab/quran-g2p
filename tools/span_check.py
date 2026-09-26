@@ -33,7 +33,7 @@ CATEGORY = {
     "idghaam_mutaqaribayn": {"R133", "R160"},
     "ghunnah": {"R170"},
     "madd_muttasil": {"R185"},
-    "madd_munfasil": {"R186", "R184", "R185"},  # fused ha-tanbih: ours muttasil (CONVENTION)
+    "madd_munfasil": {"R186", "R184"},
     "madd_6": {"R187", "R188"},
     "madd_246": {"R189", "R190", "R180_PAUSAL"},
     "madd_2": {"R180", "R181", "R134"},
@@ -42,6 +42,30 @@ CATEGORY = {
     "silent": {"TEXT:06DF", "ABSENT", "R012"},  # their silent-sad = our recorded seen-substitution
     "lam_shamsiyyah": {"R133"},
 }
+
+
+# Residuals verdicted ayah by ayah (category, surah, ayah). Anything missed
+# outside this table fails the gate; anything in it that stops missing does too.
+#   * madd_munfasil on a same-word waw + hamza (tabuu'a, tanuu'u, al-suu'aa):
+#     one word, so muttasil; a dataset slip in the colour transcription.
+#   * madd_muttasil on the fused particles haa'ulaa'i / yaa aadamu: the same
+#     transcription colours yaa ayyuhaa and haa antum munfasil; the engine
+#     keeps the one class (munfasil hukmi) for the one construction.
+VERDICTED = {("madd_munfasil", 5, 29), ("madd_munfasil", 28, 76),
+             ("madd_munfasil", 30, 10)}
+
+
+def _fused_particle_at(plain: str, w0: int) -> bool:
+    """annotation starts on the dagger madd of word-initial yaa/haa + fatha."""
+    j = w0
+    while j < len(plain) and plain[j] != "ٰ":
+        j += 1
+    if j - 2 < 0 or j - w0 > 2:
+        return False
+    host, vowel = plain[j - 2], plain[j - 1]
+    before = plain[j - 3] if j >= 3 else " "
+    lead = before == " " or (before == "َ" and j >= 4 and plain[j - 4] in "وف")
+    return host in "يه" and vowel == "َ" and lead
 
 
 def load_variant() -> dict[tuple[int, int], tuple[str, int]]:
@@ -93,7 +117,7 @@ def main() -> None:
     variant = load_variant()
     tb = TextBank.load("tanzil")
 
-    tp = Counter(); fn = Counter()
+    tp = Counter(); fn = Counter(); verdicted = Counter()
     fn_ex = defaultdict(list)
     for row in spans:
         ref = AyahRef(row["surah"], row["ayah"])
@@ -151,6 +175,12 @@ def main() -> None:
                             break
                 if hit:
                     break
+            if not hit and ((cat, ref.surah, ref.ayah) in VERDICTED or (
+                    cat == "madd_muttasil" and _fused_particle_at(plain, w0)
+                    and any(rid.startswith("R186") and any(r0 < hi and r1 > lo for r0, r1 in rr)
+                            for rid, rr in ours.items()))):
+                verdicted[cat] += 1
+                continue
             if hit:
                 tp[cat] += 1
             else:
@@ -164,6 +194,8 @@ def main() -> None:
         t, f = tp[cat], fn[cat]
         r = t / max(t + f, 1)
         print(f"{cat:26s} {t:6d} {f:5d}  {r:.4f}  {fn_ex.get(cat, [])[:3]}")
+    print(f"verdicted residuals: {dict(verdicted)}")
+    main.verdicted = verdicted
     return tp, fn, fn_ex
 
 
