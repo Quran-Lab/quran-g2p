@@ -62,3 +62,24 @@ def test_ansaniihu_18_63_and_alayhu_48_10_damm():
     # the two haraka-specials: haa takes DAMM
     assert (Base.DAMMA, Base.HAMZA) in heh_contexts(18, 63)
     assert (Base.DAMMA, Base.LAM) in heh_contexts(48, 10)
+
+
+def _madd_rules(ref_s, ref_a, word_idx):
+    from quran_g2p.textbank import TextBank, AyahRef
+    from quran_g2p.phonemize import phonemize
+    tb = TextBank.load("tanzil")
+    ref = AyahRef(ref_s, ref_a)
+    (seg,) = phonemize(tb.ayah(ref), edition="tanzil", ref=ref).segments
+    return [ra.rule_id for p in seg.phones if p.kind == "madd" and p.word_index == word_idx
+            for ra in p.provenance if ra.rule_id in ("R184_SILAH_KUBRA", "R186_MUNFASIL")]
+
+
+def test_small_glyph_verbs_are_munfasil_not_silah():
+    # the small waw/yeh writes the verb's own madd letter here; no haa al-kinaya
+    assert _madd_rules(2, 26, 3) == ["R186_MUNFASIL"]      # يَسْتَحْىِۦٓ أَن
+    assert _madd_rules(4, 135, 28) == ["R186_MUNFASIL"]    # تَلْوُۥٓا۟ أَوْ
+    assert _madd_rules(18, 16, 6) == ["R186_MUNFASIL"]     # فَأْوُۥٓا۟ إِلَى
+
+
+def test_pronoun_haa_before_hamza_stays_silah_kubra():
+    assert _madd_rules(2, 26, 36) == ["R184_SILAH_KUBRA"]  # بِهِۦٓ إِلَّا

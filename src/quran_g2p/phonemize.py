@@ -1076,7 +1076,14 @@ def _p10_madd(phones: list[Phone], trace, config: HafsConfig) -> list[Phone]:
                 if nxt.word_index == p.word_index:
                     return (_free({4, 5}, config.madd_muttasil_len, {4, 5, 6}),
                             "R185_MUTTASIL", "SPEC-185")
-                if "src:small_waw" in note or "src:small_yeh" in note:
+                if (("src:small_waw" in note or "src:small_yeh" in note)
+                        and i >= 2 and out[i - 2].base is Base.HEH
+                        and out[i - 1].kind == "vowel"):
+                    # silah kubra is the haa al-kinaya's madd before hamza.
+                    # The small waw/yeh glyph alone is not the test: the same
+                    # glyph writes the lexical madd letter of verbs such as
+                    # يَسْتَحْىِۦٓ 2:26, تَلْوُۥٓا۟ 4:135, فَأْوُۥٓا۟ 18:16,
+                    # which are plain munfasil (same Hafs lengths).
                     return (_free({4, 5}, config.madd_munfasil_len, {2, 3, 4, 5, 6}),
                             "R184_SILAH_KUBRA", "SPEC-184")
                 return (_free({4, 5}, config.madd_munfasil_len, {2, 3, 4, 5, 6}),
