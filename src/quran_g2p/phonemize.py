@@ -812,7 +812,11 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
     # 1:350 «المسهلة في زنة المحركة... لم يقع مع التسهيل اجتماع ساكنين»).
     ISTIFHAM_SITES = {(6, 143), (6, 144), (10, 51), (10, 59), (10, 91), (27, 59)}
     if (keys & ISTIFHAM_SITES) and ctx.config.istifham_tasheel:
-        for i, p in enumerate(out):
+        # every site in the breath group (a concat group can hold two: 6:143 + 6:144)
+        i = -1
+        while i + 1 < len(out):
+            i += 1
+            p = out[i]
             if (p.kind == "madd" and p.base is Base.ALEF_MADD
                     and p.length is not None
                     and p.length.allowed == frozenset({6})
@@ -828,7 +832,6 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
                           "moraqaq", False, None, (app,), p.src_span,
                           p.word_index),
                 ]
-                break
 
     # R012b — ضعف 30:54 ×3: damm wajh (Hafs' ikhtiyar; fath = the riwaya,
     # muqaddam — Shatibiyya 722-723, al-Taysir 174-176). Vowel substitution
@@ -842,13 +845,44 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
                 if nxt_cons is not None and nxt_cons.base is Base.AIN:
                     app = RuleApp("R012B_DAAF_DAMM", "SPEC-012", p.src_span, "modify")
                     trace.append(app)
-                    out[i + 1] = _replace(out[i + 1], base=Base.DAMMA)
+                    # the dad's tafkheem rank follows its haraka: fath 2 -> damm 3
+                    out[i] = _replace(p, tafkheem_rank=3,
+                                      provenance=p.provenance + (app,))
+                    out[i + 1] = _replace(out[i + 1], base=Base.DAMMA,
+                                          tafkheem_rank=3)
+
+    # R162 — نَخْلُقكُّم 77:20 naqis wajh: the qaf stays (isti'la without its
+    # release, no qalqalah) and the kaf is no longer fully geminated.
+    if (77, 20) in keys and ctx.config.nakhluqkum_naqis:
+        for i, p in enumerate(out):
+            if (p.base is Base.KAF and p.geminated and i >= 1
+                    and out[i - 1].base is Base.DAMMA
+                    and any(a.rule_id == "R133_R160_IDGHAM_KAMIL"
+                            for a in p.provenance)):
+                app = RuleApp("R162_NAKHLUQKUM_NAQIS", "SPEC-160", p.src_span, "modify")
+                trace.append(app)
+                qaf = Phone(Base.QAF, "consonant", False, None, None, None,
+                            "mofakham", False, None, (app,), p.src_span,
+                            p.word_index, tafkheem_rank=4)
+                out[i:i + 1] = [qaf, _replace(p, geminated=False,
+                                              provenance=p.provenance + (app,))]
+                break
 
     # R220 — ishmam 12:11 (Tanzil U+06EB; KFGQPC U+06EC): attribute event on
-    # the geminated noon of ta'manna.
-    if (12, 11) in keys:
+    # the geminated noon of ta'manna. The ikhtilas wajh replaces it.
+    # The site is word 5 (لَا تَأْمَ۫نَّا); a breath group that does not
+    # contain it must not touch وَإِنَّا (word 8, the next geminated noon).
+    taamanna_word = 5 + getattr(ctx, "word_offsets", {}).get((12, 11), 0)
+    if (12, 11) in keys and ctx.config.taamanna_ikhtilas:
+        from .variants import _taamanna_ikhtilas
+        alt = _taamanna_ikhtilas(out, word=taamanna_word)
+        if alt is not None:
+            trace.append(RuleApp("R220B_TAAMANNA_IKHTILAS", "SPEC-013b", (0, 0), "modify"))
+            out = list(alt)
+    elif (12, 11) in keys:
         noon_i = next((i for i, p in enumerate(out)
-                       if p.base is Base.NOON and p.geminated), None)
+                       if p.base is Base.NOON and p.geminated
+                       and p.word_index == taamanna_word), None)
         if noon_i is not None:
             app = RuleApp("R220_ISHMAM", "SPEC-220", out[noon_i].src_span, "modify")
             trace.append(app)
@@ -857,7 +891,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
 
     # R190B — سَلَٰسِلَا۟ 76:4 waqf wajhan (SPEC-184): the printed dabt is
     # hadhf (default); the ithbat wajh appends the itlaq alif on the lam.
-    if (key == (76, 4) and config is not None and config.salasila_waqf_alif
+    if ((76, 4) in keys and config is not None and config.salasila_waqf_alif
             and len(out) >= 3 and out[-1].base is Base.LAM
             and out[-1].kind == "consonant"
             and out[-2].base is Base.KASRA and out[-3].base is Base.SEEN):
@@ -878,7 +912,7 @@ def _p13_oneoffs(phones: list[Phone], trace, ref, ctx,
     # R190C — ءَاتَىٰنِۦَ 27:36 waqf wajhan (SPEC-184): ithbat of the sakin
     # yaa is muqaddam (default, the yaa stands as the madd letter); the
     # hadhf wajh stops on the sakin noon.
-    if (key == (27, 36) and config is not None and not config.aataani_waqf_yaa
+    if ((27, 36) in keys and config is not None and not config.aataani_waqf_yaa
             and len(out) >= 3 and out[-1].base is Base.YEH_MADD
             and out[-2].base is Base.KASRA and out[-3].base is Base.NOON):
         app = RuleApp("R190C_AATAANI_HADHF", "SPEC-184", out[-1].src_span, "delete")
@@ -913,9 +947,18 @@ def _p12b_waqf_ra_khilaf(phones: list[Phone], trace, config: HafsConfig) -> list
         knob = config.nudhur_waqf_tafkheem
         note = "nudhur"
     elif (letters[-3:] == (Base.YEH, Base.SEEN, Base.REH)
-            and prev is not None and prev.base is Base.SEEN):
+            and prev is not None and prev.base is Base.SEEN
+            and len(out) > 3 and out[-3].base is Base.FATHA):
+        # يَسْرِ only (fath on the yaa): ٱلْيُسْرَ 2:185 has the same three
+        # letters with damm and stays on the general rule (tafkheem)
         knob = config.yasr_waqf_tafkheem
         note = "yasr"
+    elif (letters[-3:] == (Base.QAF, Base.TAH, Base.REH)
+            and prev is not None and prev.base is Base.TAH):
+        # ٱلْقِطْرِ 34:12: tarqeeq muqaddam «وفي القطر الترقيق نظرًا للوصل»
+        # (al-Nashr 2:105); the knob was declared but never matched
+        knob = config.qitr_waqf_tafkheem
+        note = "qitr"
     elif (letters[-3:] == (Base.MEEM, Base.SAD, Base.REH)
             and prev is not None and prev.base is Base.SAD):
         # definite مِصْرَ (the tanween form ends in 'iwad alif and never

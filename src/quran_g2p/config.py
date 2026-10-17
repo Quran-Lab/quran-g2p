@@ -66,6 +66,19 @@ class HafsConfig:
     # (هداية القاري 2:544-545؛ الوجيز 1:55-56). False = hadhf wajh.
     aataani_waqf_yaa: bool = True
 
+    # --- second wajhs that were documented-only (Phase III wajh lattice) --
+    # 12:11 تَأْمَنَّا: ISHMAM with idgham is the printed dabt (default);
+    # True = the IKHTILAS wajh (idgham broken, the first noon's damma
+    # shortened) that al-Marsafi prefers (هداية القاري 1:259-261).
+    taamanna_ikhtilas: bool = False
+    # 77:20 نَخْلُقكُّم: KAMIL idgham muqaddam (default); True = the NAQIS
+    # wajh, the qaf's isti'la kept without its release before the kaf
+    # (النشر 1:221; review S1, both arbitrations).
+    nakhluqkum_naqis: bool = False
+    # 69:28 -> 69:29 مَالِيَهْ هَلَكَ in wasl: izhar WITH sakt muqaddam
+    # (default); True = the idgham of the two haas (النشر 2:21-22).
+    maliyah_wasl_idgham: bool = False
+
     # --- madd lengths (P10; SPEC-18x) -----------------------------------
     # Canonical emission choices; allowed/scoring sets live in the rules.
     madd_munfasil_len: int = 4      # {4,5} allowed (Shatibiyyah)

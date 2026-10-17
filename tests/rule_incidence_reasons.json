@@ -8,7 +8,8 @@
   "R132_MALIYAH_SAKT": "Ayah-to-ayah junction: fires under phonemize_concat on 69:28-29 (verified directly), and can never fire in a per-ayah reading, which stops before the junction exists.",
   "R135_MEEM_ALLAH": "Ayah-to-ayah junction: fires under phonemize_concat on 3:1-2 (verified directly), and can never fire in a per-ayah reading.",
   "R136_BASMALA_JOINS": "Enforced structurally as a refusal: phonemize_concat rejects a group that joins the basmala to a preceding item and then stops on it (the forbidden fourth wajh). A reading that succeeds therefore never carries the id.",
+  "R162_NAKHLUQKUM_NAQIS": "Second wajh, off by default: HafsConfig.nakhluqkum_naqis is False (the kamil idgham is the preferred wajh). Fires at 77:20 when the knob is set.",
   "R190B_SALASILA_ITHBAT": "Second wajh, off by default: HafsConfig.salasila_waqf_alif is False, so 76:4 takes the hadhf at waqf.",
   "R190C_AATAANI_HADHF": "Second wajh, off by default: HafsConfig.aataani_waqf_yaa is True, so 27:36 takes the ithbat and the hadhf wajh is not read.",
-  "R220B_TAAMANNA_IKHTILAS": "Second wajh: emitted by quran_g2p.variants. The single reading in this protocol takes the ishmam at 12:11 (R220_ISHMAM, 1 occurrence)."
+  "R220B_TAAMANNA_IKHTILAS": "Second wajh, off by default: HafsConfig.taamanna_ikhtilas is False and quran_g2p.variants tags it as an alternate. The single reading in this protocol takes the ishmam at 12:11 (R220_ISHMAM, 1 occurrence)."
 }

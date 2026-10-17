@@ -1,0 +1,289 @@
+{
+ "sites": {
+  "firq_wasl_tafkheem": [
+   [
+    26,
+    63
+   ]
+  ],
+  "nudhur_waqf_tafkheem": [
+   [
+    54,
+    16
+   ],
+   [
+    54,
+    18
+   ],
+   [
+    54,
+    21
+   ],
+   [
+    54,
+    30
+   ],
+   [
+    54,
+    37
+   ],
+   [
+    54,
+    39
+   ]
+  ],
+  "yasr_waqf_tafkheem": [
+   [
+    89,
+    4
+   ]
+  ],
+  "daaf_30_54_damm": [
+   [
+    30,
+    54
+   ]
+  ],
+  "musaytirun_52_37_seen": [
+   [
+    52,
+    37
+   ]
+  ],
+  "istifham_tasheel": [
+   [
+    6,
+    143
+   ],
+   [
+    6,
+    144
+   ],
+   [
+    10,
+    51
+   ],
+   [
+    10,
+    59
+   ],
+   [
+    10,
+    91
+   ],
+   [
+    27,
+    59
+   ]
+  ],
+  "aataani_waqf_yaa": [
+   [
+    27,
+    36
+   ]
+  ],
+  "salasila_waqf_alif": [
+   [
+    76,
+    4
+   ]
+  ],
+  "taamanna_ikhtilas": [
+   [
+    12,
+    11
+   ]
+  ],
+  "nakhluqkum_naqis": [
+   [
+    77,
+    20
+   ]
+  ],
+  "misr_waqf_tafkheem": [
+   [
+    10,
+    87
+   ],
+   [
+    12,
+    21
+   ],
+   [
+    12,
+    99
+   ],
+   [
+    43,
+    51
+   ]
+  ],
+  "qitr_waqf_tafkheem": [
+   [
+    34,
+    12
+   ]
+  ],
+  "asr_waqf_tafkheem": [
+   [
+    11,
+    81
+   ],
+   [
+    15,
+    65
+   ],
+   [
+    20,
+    77
+   ],
+   [
+    26,
+    52
+   ],
+   [
+    44,
+    23
+   ]
+  ],
+  "maliyah_wasl_idgham": [
+   [
+    69,
+    28
+   ]
+  ]
+ },
+ "words": {
+  "firq_wasl_tafkheem": {
+   "26:63": [
+    10
+   ]
+  },
+  "nudhur_waqf_tafkheem": {
+   "54:16": [
+    3
+   ],
+   "54:18": [
+    5
+   ],
+   "54:21": [
+    3
+   ],
+   "54:30": [
+    3
+   ],
+   "54:37": [
+    8
+   ],
+   "54:39": [
+    2
+   ]
+  },
+  "yasr_waqf_tafkheem": {
+   "89:4": [
+    2
+   ]
+  },
+  "daaf_30_54_damm": {
+   "30:54": [
+    4,
+    9,
+    16
+   ]
+  },
+  "musaytirun_52_37_seen": {
+   "52:37": [
+    6
+   ]
+  },
+  "istifham_tasheel": {
+   "6:143": [
+    9
+   ],
+   "6:144": [
+    7
+   ],
+   "10:51": [
+    6
+   ],
+   "10:59": [
+    13
+   ],
+   "10:91": [
+    0
+   ],
+   "27:59": [
+    8
+   ]
+  },
+  "aataani_waqf_yaa": {
+   "27:36": [
+    7
+   ]
+  },
+  "salasila_waqf_alif": {
+   "76:4": [
+    3
+   ]
+  },
+  "taamanna_ikhtilas": {
+   "12:11": [
+    5
+   ]
+  },
+  "nakhluqkum_naqis": {
+   "77:20": [
+    1
+   ]
+  },
+  "misr_waqf_tafkheem": {
+   "10:87": [
+    7
+   ],
+   "12:21": [
+    4
+   ],
+   "12:99": [
+    9
+   ],
+   "43:51": [
+    9
+   ]
+  },
+  "qitr_waqf_tafkheem": {
+   "34:12": [
+    9
+   ]
+  },
+  "asr_waqf_tafkheem": {
+   "11:81": [
+    8
+   ],
+   "15:65": [
+    0
+   ],
+   "20:77": [
+    5
+   ],
+   "26:52": [
+    4
+   ],
+   "44:23": [
+    0
+   ]
+  },
+  "maliyah_wasl_idgham": {
+   "69:28": [
+    3,
+    4
+   ]
+  }
+ },
+ "sha256": "50bd15f88bc97457988ad999ac366fb5d81d1b7a72b527753477de5a95116f82",
+ "excluded_rows": {
+  "8": "Tayyibah-only izhar of yalhath dhalika 7:176",
+  "125": "Tayyibah-only idgham of ya-sin 36:1",
+  "126": "Tayyibah-only idgham of nun 68:1",
+  "153": "single Hafs wajh (damm), 48:10"
+ }
+}

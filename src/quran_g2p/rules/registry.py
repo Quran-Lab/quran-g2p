@@ -308,6 +308,12 @@ RULINGS: tuple[Ruling, ...] = (
          "SPEC-161",
          "الجزرية «وبين الإطباق من أحطت مع بسطت»؛ النشر 2:19",
          ("naqis-tah-basatta", "naqis-tah-ahatt", "naqis-tah-farrattum")),
+    Ruling("R162_NAKHLUQKUM_NAQIS", "P8",
+         "نَخْلُقكُّم: الإدغام الناقص (الوجه الثاني، بقاء استعلاء القاف)",
+         "nakhluqkum naqis wajh (qaf isti'la kept)",
+         "SPEC-160",
+         "النشر 1:221؛ هداية القاري",
+         ("mutaqarib-qaf-kaf",)),
     # ---------------------------------------------------------- P9 ghunna
     Ruling("R170_GHUNNA_MUSHADDADAH", "P9",
          "غنة النون والميم المشددتين",

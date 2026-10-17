@@ -184,6 +184,12 @@
       "trace": 4,
       "ayahs": 4
     },
+    "R162_NAKHLUQKUM_NAQIS": {
+      "phones": 0,
+      "trace": 0,
+      "ayahs": 0,
+      "reason": "Second wajh, off by default: HafsConfig.nakhluqkum_naqis is False (the kamil idgham is the preferred wajh). Fires at 77:20 when the knob is set."
+    },
     "R170_GHUNNA_MUSHADDADAH": {
       "phones": 6072,
       "trace": 6072,
@@ -310,7 +316,7 @@
       "phones": 0,
       "trace": 0,
       "ayahs": 0,
-      "reason": "Second wajh: emitted by quran_g2p.variants. The single reading in this protocol takes the ishmam at 12:11 (R220_ISHMAM, 1 occurrence)."
+      "reason": "Second wajh, off by default: HafsConfig.taamanna_ikhtilas is False and quran_g2p.variants tags it as an alternate. The single reading in this protocol takes the ishmam at 12:11 (R220_ISHMAM, 1 occurrence)."
     },
     "R220_ISHMAM": {
       "phones": 1,

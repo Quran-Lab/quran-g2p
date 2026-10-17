@@ -95,15 +95,29 @@ def _rawm(seg_phones, haraka):
                                               canonical=canon, scoring=ns),
                          provenance=p.provenance + (app,))
         out.append(p)
-    # the final letter is no longer fully sakin: qalqalah off
-    out[-1] = _replace(out[-1], qalqalah=None,
-                       provenance=out[-1].provenance + (app,))
+    # the final letter is no longer fully sakin: qalqalah off, and its
+    # tafkheem follows the haraka it now partly carries, as in wasl: a raa
+    # with kasra is muraqqaq and with damma mofakham (89:1 وَٱلْفَجْرِ,
+    # 97:5 ٱلْفَجْرِ kept the sakin-raa tafkheem before this fix), and an
+    # isti'la letter takes its haraka rank (damm 3, kasr 5 = low).
+    last = out[-1]
+    tafkheem, rank = last.tafkheem, last.tafkheem_rank
+    if last.base is Base.REH:
+        tafkheem, rank = (("moraqaq", None) if haraka is Base.KASRA
+                          else ("mofakham", 3))
+    elif last.tafkheem != "moraqaq" and last.base is not Base.LAM:
+        tafkheem, rank = (("low_mofakham", 5) if haraka is Base.KASRA
+                          else ("mofakham", 3))
+    out[-1] = _replace(last, qalqalah=None, tafkheem=tafkheem,
+                       tafkheem_rank=rank,
+                       provenance=last.provenance + (app,))
     out.append(Phone(base=haraka, kind="vowel", geminated=False, length=None,
                      ghunna=None, qalqalah=None,
                      tafkheem=out[-1].tafkheem, sakt_after=False,
                      pausal_role="rawm", provenance=(app,),
                      src_span=out[-1].src_span,
-                     word_index=out[-1].word_index))
+                     word_index=out[-1].word_index,
+                     tafkheem_rank=out[-1].tafkheem_rank))
     return tuple(out)
 
 
@@ -115,12 +129,14 @@ def _ishmam(seg_phones):
     return tuple(out)
 
 
-def _taamanna_ikhtilas(seg_phones):
+def _taamanna_ikhtilas(seg_phones, word=5):
     """12:11: break the idgham, ikhtilas damma on the first noon (the
-    wajh al-Marsafi prefers; the printed dabt's ishmam is canonical)."""
+    wajh al-Marsafi prefers; the printed dabt's ishmam is canonical).
+    `word` is the site's word index (5 in the ayah alone): a breath group
+    without it has no ta'manna and must not touch وَإِنَّا (word 8)."""
     app = RuleApp("R220B_TAAMANNA_IKHTILAS", "SPEC-013b", (0, 0), "modify")
     for i, p in enumerate(seg_phones):
-        if p.base is Base.NOON and p.geminated:
+        if p.base is Base.NOON and p.geminated and p.word_index == word:
             first = _replace(p, geminated=False, ghunna=None,
                              provenance=p.provenance + (app,))
             mukhtalasa = Phone(base=Base.DAMMA_MUKHTALASA, kind="consonant",
@@ -136,6 +152,23 @@ def _taamanna_ikhtilas(seg_phones):
     return None
 
 
+def segment_waqf_variants(seg_phones, trace, config: HafsConfig | None = None
+                          ) -> list[WaqfVariant]:
+    """The isharah alternates (rawm, ishmam) of one breath group's stop,
+    without the pure-sukun form (= the segment as given)."""
+    out: list[WaqfVariant] = []
+    haraka, ta_marbuta, pronoun = _iskan_info(seg_phones, trace)
+    if haraka is not None:
+        prev = seg_phones[-2] if len(seg_phones) > 1 else None
+        modes = isharah_modes(haraka, prev, pronoun_haa=pronoun,
+                              ta_marbuta=ta_marbuta)
+        if "rawm" in modes:
+            out.append(WaqfVariant("rawm", _rawm(seg_phones, haraka)))
+        if "ishmam" in modes:
+            out.append(WaqfVariant("ishmam", _ishmam(seg_phones)))
+    return out
+
+
 def enumerate_variants(text: str, edition: str, ref: AyahRef | None = None,
                        config: HafsConfig | None = None,
                        waqf: WaqfSpec | None = None
@@ -147,16 +180,7 @@ def enumerate_variants(text: str, edition: str, ref: AyahRef | None = None,
     per_segment: list[list[WaqfVariant]] = []
     for si, seg in enumerate(res.segments):
         variants = [WaqfVariant("sukun", tuple(seg.phones))]
-        haraka, ta_marbuta, pronoun = _iskan_info(seg.phones, res.trace)
-        if haraka is not None:
-            prev = seg.phones[-2] if len(seg.phones) > 1 else None
-            modes = isharah_modes(haraka, prev, pronoun_haa=pronoun,
-                                  ta_marbuta=ta_marbuta)
-            if "rawm" in modes:
-                variants.append(WaqfVariant("rawm",
-                                            _rawm(seg.phones, haraka)))
-            if "ishmam" in modes:
-                variants.append(WaqfVariant("ishmam", _ishmam(seg.phones)))
+        variants += segment_waqf_variants(seg.phones, res.trace, config)
 
         if ref is not None:
             key = (ref.surah, ref.ayah)

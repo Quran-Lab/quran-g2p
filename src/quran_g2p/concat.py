@@ -34,10 +34,16 @@ from .textbank import AyahRef
 
 _IWAD = LengthSpec(kind="fixed", allowed=frozenset({2}), canonical=2,
                    scoring=frozenset({2}))
+_ALM_ALLAH = LengthSpec(kind="free", allowed=frozenset({2, 6}), canonical=6,
+                        scoring=frozenset({2, 6}))
 
 
 def phonemize_concat(items: list[tuple[AyahRef, str]], edition: str,
-                     config: HafsConfig | None = None):
+                     config: HafsConfig | None = None, waqf=None):
+    """`waqf` (WaqfSpec) takes GLOBAL word indices (the merged stream's);
+    each breath group between stops runs the phase chain on its own, as
+    `phonemize` does within one ayah, so a stop at an ayah boundary gives
+    exactly the stop-then-resume forms and a stop inside an ayah splits it."""
     from .phonemize import PhonemizeResult, Segment, _run_phases
     config = config or HafsConfig()
 
@@ -47,7 +53,8 @@ def phonemize_concat(items: list[tuple[AyahRef, str]], edition: str,
     # سورة فلا تقفن الدهر فيها»; هداية القاري الباب الثامن عشر). The three
     # legal joins compose as documented in the module docstring.
     rule_id = "R136_BASMALA_JOINS"
-    if len(items) >= 2 and items[-1][0] == AyahRef(1, 1):
+    stops = sorted(set(waqf.stops)) if waqf is not None else []
+    if len(items) >= 2 and items[-1][0] == AyahRef(1, 1) and not stops:
         raise ValueError(
             f"{rule_id}: a group must not END on the basmala after "
             "joining it to a preceding item (the forbidden fourth wajh, "
@@ -83,10 +90,38 @@ def phonemize_concat(items: list[tuple[AyahRef, str]], edition: str,
 
     mctx = SimpleNamespace(clusters=merged_clusters, config=config,
                            segs=merged_segs, word_offsets=word_offsets)
-    phones = _run_phases(merged_segs, trace, config, tuple(refs), mctx)
-    phones = _junction_specials(phones, trace, refs, word_offsets)
-    return PhonemizeResult(segments=[Segment(phones, "ayah_end")],
-                           trace=trace)
+    n_words = word_off
+    if any(k < 0 or k >= n_words - 1 for k in stops):
+        raise ValueError(f"waqf stop out of range for {n_words}-word group: {stops}")
+    bounds = stops + [n_words - 1]
+    if (stops and items[-1][0] == AyahRef(1, 1) and len(items) >= 2
+            and stops[-1] != boundaries[-1] - 1):
+        raise ValueError(f"{rule_id}: the basmala closes a breath group joined "
+                         "to the preceding item (forbidden fourth wajh)")
+    groups: list[list] = [[] for _ in bounds]
+    for seg in merged_segs:
+        for gi, k in enumerate(bounds):
+            if seg.word_index <= k:
+                groups[gi].append(seg)
+                break
+    segments = []
+    lo = 0
+    for gi, group in enumerate(groups):
+        hi = bounds[gi]
+        # refs whose words meet this group (junction specials need both sides)
+        grefs = [r for r, off in zip(refs, boundaries)
+                 if off <= hi and _item_end(boundaries, n_words, off) >= lo]
+        phones = _run_phases(group, trace, config, tuple(grefs), mctx)
+        phones = _junction_specials(phones, trace, grefs, word_offsets, config)
+        kind = "ayah_end" if gi == len(groups) - 1 else f"waqf@{hi}"
+        segments.append(Segment(phones, kind))
+        lo = hi + 1
+    return PhonemizeResult(segments=segments, trace=trace)
+
+
+def _item_end(boundaries, n_words, off):
+    i = boundaries.index(off)
+    return (boundaries[i + 1] - 1) if i + 1 < len(boundaries) else n_words - 1
 
 
 def _adjacent(refs, a, b):
@@ -97,8 +132,9 @@ def _adjacent(refs, a, b):
     return False
 
 
-def _junction_specials(phones, trace, refs, word_offsets):
+def _junction_specials(phones, trace, refs, word_offsets, config=None):
     out = list(phones)
+    config = config or HafsConfig()
 
     # الٓمٓ + ٱللَّهُ: the iltiqa gave the meem a KASRA and the jalala
     # went muraqqaq after it; the transmitted junction is FATHA with the
@@ -110,6 +146,11 @@ def _junction_specials(phones, trace, refs, word_offsets):
                 app = RuleApp("R135_MEEM_ALLAH", "SPEC-011",
                               out[i + 1].src_span, "emit")
                 trace.append(app)
+                # the meem-name madd: ishba' 6 muqaddam, qasr 2 the second
+                # wajh, no tawassut (السبعة 1:199؛ غيث النفع 1:129-130) — a
+                # set-valued length the aligner measures, never a guess.
+                out[i] = _replace(out[i], length=_ALM_ALLAH,
+                                  provenance=out[i].provenance + (app,))
                 out.insert(i + 2, Phone(base=Base.FATHA, kind="vowel",
                                         geminated=False, length=None,
                                         ghunna=None, qalqalah=None,
@@ -129,7 +170,7 @@ def _junction_specials(phones, trace, refs, word_offsets):
 
     # مَالِيَهْ هَلَكَ: R160 idghamed the two haas; the muqaddam is izhar
     # with a sakt on the first haa.
-    if _adjacent(refs, (69, 28), (69, 29)):
+    if _adjacent(refs, (69, 28), (69, 29)) and not config.maliyah_wasl_idgham:
         w2 = word_offsets[(69, 29)]
         for i, p in enumerate(out):
             if (p.base is Base.HEH and p.geminated

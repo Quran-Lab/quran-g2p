@@ -67,14 +67,16 @@ def test_anfal_tawba_iqlab():
 def test_alif_lam_meem_allah_junction():
     # 3:1 الٓمٓ + 3:2 ٱللَّهُ: the meem takes FATHA (not the general
     # iltiqa kasra), the jalala stays MOFAKHAM, and the meem-name's
-    # lazim madd keeps {6}
+    # madd is set-valued {2,6}: ishba' 6 muqaddam (canonical), qasr the
+    # second wajh, no tawassut (review row 189)
     (seg,) = concat((3, 1), (3, 2)).segments
     ph = seg.phones
     i = find_run(ph, [Base.MEEM, Base.FATHA, Base.LAM])
     assert i >= 0
     assert ph[i + 2].geminated and ph[i + 2].tafkheem == "mofakham"
     madd_before = [p for p in ph[:i] if p.kind == "madd"][-1]
-    assert madd_before.length.allowed == frozenset({6})
+    assert madd_before.length.allowed == frozenset({2, 6})
+    assert madd_before.length.canonical == 6 and 4 not in madd_before.length.scoring
 
 
 def test_maliyah_izhar_with_sakt():

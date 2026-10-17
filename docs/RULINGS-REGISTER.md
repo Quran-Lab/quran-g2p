@@ -7,7 +7,7 @@ engine can actually cite. Every ruling is stated for the expert
 reviewer by the golden rows listed in its **review** column
 (`tests/goldens/`), each of which carries the fuller citation.
 
-62 rules. Ids are stable and append-only.
+63 rules. Ids are stable and append-only.
 
 ## P1 - Orthographic decode
 
@@ -77,6 +77,7 @@ reviewer by the golden rows listed in its **review** column
 |---|---|---|---|
 | `R160_MUTAMATHILAYN` | إدغام المتماثلين الصغير / idgham mutamathilayn saghir | الجزرية «وأولي مثل وجنس إن سكن» أدغم؛ النشر 2:18 | `mutamathil-yudrikkum`, `meem-idgham-lahum-ma` |
 | `R161_NAQIS_TA_NO_QALQALAH` | الإدغام الناقص للطاء في التاء (بقاء الإطباق ولا قلقلة) / naqis taa idgham: itbaq retained, no qalqalah | الجزرية «وبين الإطباق من أحطت مع بسطت»؛ النشر 2:19 | `naqis-tah-basatta`, `naqis-tah-ahatt`, `naqis-tah-farrattum` |
+| `R162_NAKHLUQKUM_NAQIS` | نَخْلُقكُّم: الإدغام الناقص (الوجه الثاني، بقاء استعلاء القاف) / nakhluqkum naqis wajh (qaf isti'la kept) | النشر 1:221؛ هداية القاري | `mutaqarib-qaf-kaf` |
 
 ## P9 - Ghunna
 
