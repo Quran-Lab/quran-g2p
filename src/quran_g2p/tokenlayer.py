@@ -1,6 +1,8 @@
 """Token layer (Part B1, SPEC-003 exports): letter-group tokens.
 
-TOKEN := BASE (shadda?) ('^'?) ('~'?) (haraka?) (residual?) (':' LEN)?
+TOKEN := BASE (shadda?) ('^'?) ('~'?) (haraka '='?)? (residual?) (':' LEN)?
+
+('=' = rawm on the waqf haraka, tj2 only; tj1 streams never contain it.)
 
 One token = one acoustic dwell: a consonant with its gemination/tafkheem
 marker and haraka, or a madd letter with its length tag. The '^' tafkheem
@@ -46,6 +48,9 @@ _QLQ = cp.TCHEHEH            # ڇ (qalqalah residual, oracle-compatible)
 _SAKT = cp.SMALL_HIGH_SEEN   # ۜ
 
 _TAFKHEEM_AXIS = {Base.REH, Base.LAM}
+#: rawm marker (tj2), ASCII like '^' and '~'; ishmam has no marker: it is
+#: seen, not heard (يُرى ولا يُسمع), so its audio is the sukun form's.
+RAWM = "="
 
 
 @dataclass(frozen=True)
@@ -86,6 +91,10 @@ def phones_to_tokens(phones: list[Phone]) -> list[Token]:
             text += "~"
         if i + 1 < n and phones[i + 1].kind == "vowel":
             text += _VOWEL_CHAR[phones[i + 1].base]
+            if phones[i + 1].pausal_role == "rawm":
+                # rawm (tj2): the waqf haraka is reduced to about a third of
+                # itself and whispered — audible, so it gets its own marker
+                text += RAWM
             i += 1
         if p.qalqalah is not None:
             text += _QLQ
@@ -130,6 +139,8 @@ def parse_token(text: str) -> Token:
         idx += 1
     if idx < len(chars) and chars[idx] in set(_VOWEL_CHAR.values()):
         idx += 1
+        if idx < len(chars) and chars[idx] == RAWM:
+            idx += 1
     while idx < len(chars) and chars[idx] in (_QLQ, _SAKT):
         idx += 1
     if idx != len(chars):
