@@ -15,6 +15,7 @@ tokens: tafkheem (reh, lam, vowels), qalqalah, ghunna class (incl. naqis idgham 
 Ishmam is not heard (its audio is the sukun form's): no token.  Ikhtilas (12:11) is a short damma: u.
 
   phones_to_tj3(phones)       Phone IR (objects or layer dicts) -> tj3 tokens, '|' between words
+  phones_to_tj3_units(units)  the same over labeller units, plus each unit's first tj3 index
   tj2_to_tj3(tokens, vid)     a built record's tj2 units + its V_id ids -> (tj3 tokens, unit -> tj3 index of its first
                               token); every V_id phone is checked against the unit it belongs to
 """
@@ -73,14 +74,23 @@ def _emit(out: list, base: str):
 
 
 def phones_to_tj3(phones, boundaries: bool = True) -> list:
-    out, prev = [], None
-    for p in phones:
-        w = _get(p, "word_index")
-        if boundaries and prev is not None and w != prev and out and out[-1] != WORD:
-            out.append(WORD)
-        _emit(out, _get(p, "base"))
-        prev = w
-    return out
+    return phones_to_tj3_units([[p] for p in phones], boundaries)[0]
+
+
+def phones_to_tj3_units(units, boundaries: bool = True) -> tuple:
+    """units: phone lists (a labeller unit each, e.g. consonant + its vowel) -> (tj3 tokens, first): first[k] is the
+    tj3 index of the token unit k's first phone became (a madd unit: the long vowel it merged into)."""
+    out, first, prev = [], [], None
+    for unit in units:
+        for n, p in enumerate(unit):
+            w = _get(p, "word_index")
+            if boundaries and prev is not None and w != prev and out and out[-1] != WORD:
+                out.append(WORD)
+            _emit(out, _get(p, "base"))
+            if n == 0:
+                first.append(len(out) - 1)
+            prev = w
+    return out, first
 
 
 # tj2 unit -> the IR bases of its phones, in order (the V_id stream records them with BASE_MERGES applied)
