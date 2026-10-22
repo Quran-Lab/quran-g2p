@@ -35,6 +35,11 @@ LONG = {"a": "aa", "i": "ii", "u": "uu"}
 MADD_LONG = {"alef_madd": "aa", "waw_madd": "uu", "yeh_madd": "ii", "alef_imala": "aa"}
 TOKENS = [BLANK, WORD] + CONSONANTS + [IKHFA] + ["a", "i", "u", "aa", "ii", "uu"] + [FOREIGN]
 INDEX = {t: i for i, t in enumerate(TOKENS)}
+# tj3g: tj3 plus a held (geminate) token per consonant, appended (ids 38..65): the comparison arm that puts gemination
+# back on the token axis (the default keeps it on the gemination head and the timing head)
+GEMINATE = [c + cp.SHADDA for c in CONSONANTS]
+TOKENS_G = TOKENS + GEMINATE
+INDEX_G = {t: i for i, t in enumerate(TOKENS_G)}
 
 _CONS = {"hamza": cp.HAMZA, "beh": cp.BEH, "teh": cp.TEH, "theh": cp.THEH, "jeem": cp.JEEM, "hah": cp.HAH,
          "khah": cp.KHAH, "dal": cp.DAL, "thal": cp.THAL, "reh": cp.REH, "zain": cp.ZAIN, "seen": cp.SEEN,
@@ -152,3 +157,27 @@ def tj2_to_tj3(tokens, vid, id_classes) -> tuple:
     if any(x != WORD for x in ids[j:]):
         raise Tj3Error(f"V_id has {len(ids) - j} phones after the last unit")
     return out, first
+
+
+def geminate_view(tokens, units, unit_first=None) -> list:
+    """tj3 tokens -> tj3g: the token a geminate consonant unit (tj2 unit with shadda) became gets its held form.
+    unit_first: the record's tajweed.unit_first; None (units without it, e.g. crops): walked from the units, which
+    then must be the tokens without word boundaries."""
+    out = list(tokens)
+    if unit_first is None:                       # replay the rendering (a madd unit merges into the vowel before it)
+        unit_first, walk = [], []
+        for u in units:
+            n0 = len(walk)
+            for b in tj2_unit_bases(u):
+                _emit(walk, b)
+            unit_first.append(len(walk) - 1 if len(walk) == n0 else n0)
+        if walk != [t for t in tokens if t != WORD]:
+            raise Tj3Error("units do not render to these tokens")
+    for k, u in enumerate(units):
+        body = u.split(":", 1)[0]
+        if body and body[0] in _TJ2_CONS and cp.SHADDA in body:
+            i = unit_first[k]
+            if out[i] in CONSONANTS:
+                out[i] = out[i] + cp.SHADDA
+    return out
+

@@ -116,3 +116,16 @@ def test_unit_first_points_into_tokens(tb):
 def test_mismatched_vid_is_refused():
     with pytest.raises(T.Tj3Error):
         T.tj2_to_tj3([cp.BEH + cp.FATHA], [VID.index("teh"), VID.index("fatha")], VID)
+
+
+def test_geminate_view(tb):
+    phones = ayah(tb, 1, 2)                        # lillahi, rabbi: two geminates
+    toks, first = both(phones)
+    units = [t.text for t in phones_to_tokens(phones)]
+    g = T.geminate_view(toks, units, first)
+    assert sum(t in T.GEMINATE for t in g) == sum(cp.SHADDA in u.split(":")[0] for u in units) >= 2
+    assert [t[0] if t in T.GEMINATE else t for t in g] == toks and all(t in T.INDEX_G for t in g)
+    bare = [t for t in toks if t != T.WORD]        # crops: no unit_first, no boundaries
+    assert T.geminate_view(bare, units) == [t for t in g if t != T.WORD]
+    with pytest.raises(T.Tj3Error):
+        T.geminate_view(bare[:-1], units)
