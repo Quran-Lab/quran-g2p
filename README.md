@@ -133,6 +133,7 @@ gates the engine must survive against itself.
 | `spec/` | the normative specification, every rule with its classical basis |
 | `docs/RULINGS-REGISTER.md` | 62 rulings, each bound to its citation and its review rows. The engine refuses to import if a rule lacks either |
 | `artifacts/tokenizer_tj1/` | 234-token lexicon with the `~` ghunna axis, ayah tokens, set-valued rule index, dual-format labels, warm-start bijection |
+| `artifacts/tokenizer_tj3/` | the phone vocabulary for acoustic models: 38 classes, one token per sound (long vowels aa/ii/uu as one token, a geminate as one consonant). Madd counts, gemination, ghunna length, rawm and sakt are left to a timing model; tafkheem, qalqalah and ghunna class to attribute heads. `tokenlayer_tj3` renders it from phones or converts tj2 + phone ids, verified equal on all 1,069,142 lattice forms |
 | `artifacts/spans/` | the same rulings as character offsets: 138,461 spans over all 6,236 ayat, edition SHA-256 in the manifest, for consumers that cannot run Python |
 | `tests/` | 576 tests: 208 expert-reviewed golden rows, corpus invariants, oracle gates, seeded-bug drills, frozen determinism hash |
 | `tests/verdicts/` | every disagreement with quran-transcript, verdicted with citations |
