@@ -1,31 +1,89 @@
 Quran-Lab No-Profit License
-Version 1.2 (NPL-1.2)
+Version 1.3 (NPL-1.3)
 
 Copyright (c) 2026 Muno459 / Quran-Lab
 
 This work, including its source code, specification documents, data
 artifacts, token lexicon, generated labels, model weights, and any file
 distributed alongside it (the "Work"), is made available under the following
-terms. By downloading, using, running, copying, or adapting the Work, you agree
-to these terms. If you do not agree, you may not use the Work.
+terms. By downloading, using, running, copying, or adapting the Work, or by
+collecting its Outputs, you agree to these terms. If you do not agree, you may
+not use the Work.
 
-Changes from Version 1.1: the condition is now stated as attaching to the Work
-itself rather than to the user or their organisation. Charging for the Work, for
-access to it, or for any feature it powers remains prohibited. Earning a living
-by your own labour alongside the Work is not restricted, and was never intended
-to be. Section 13 states plainly that this License is not a ruling on anyone's
-livelihood. Version 1.1 removed the attribution requirement; that remains so.
+Changes from Version 1.2: this version protects the Work and its Outputs from
+being used to build other models, and from misuse. This License is now
+revocable: Quran-Lab may revoke it, for You or for everyone, and may change it,
+at any time, with or without notice, and all rights not expressly granted are
+reserved (Sections 2, 7, and 10). The Work and its Outputs may not be used to
+train, fine-tune, distil, align, or otherwise develop a machine-learning model
+without Quran-Lab's prior written permission (Section 14). A model that You
+develop or control and that is evaluated, benchmarked, ranked, or compared using
+the Work or its Outputs is a Derivative, and so is a model trained with that
+permission; each must be available to everyone, free of charge, under this
+License (Section 15). Outputs may be used only as Section 16 allows, chiefly to
+provide the feature in which the Work runs. Bulk extraction, server-side or
+batch inference without approval, circumventing protection or usage reporting,
+and evading limits or blocks are forbidden (Section 17). TajweedFormer V4 and
+later models, and other models Quran-Lab ships encrypted, are Protected Models,
+usable only through Quran-Lab's SDK (Section 18). A Hosted Service now needs
+Quran-Lab's written approval (Section 5), and Local Use means running the Work
+on Your own device. When Your rights end, You must delete the Work, its Outputs,
+and what You made from them (Section 10). Every new release is offered only
+under the latest version of this License (Section 7). New sections cover
+liability, indemnity, Quran-Lab's name, and remedies (Sections 11 and 20 to 22).
+Running the Work in applications for learners, Local Use, and modifying or
+porting the Work itself remain permitted (Section 19). Charging for the Work
+remains prohibited, the condition still attaches to the Work and not to You, and
+no attribution is required.
 
 1. DEFINITIONS
 
    "You" means the individual or entity exercising rights under this License.
 
-   "Derivative" means any work based on the Work, including any
-   modification, fork, port, translation, format conversion, or re-export,
-   any dataset, lexicon, label set, or artifact produced from the Work,
-   any machine-learning model trained, fine-tuned, aligned, or evaluated
-   using the Work or its outputs, and any model, file, or artifact
-   produced from the Work or from another Derivative.
+   "Quran-Lab" means the copyright holder named above, and any person or body,
+   including a charitable trust, to which it transfers its rights in the Work.
+
+   "Output" means anything produced by running the Work or a Derivative,
+   including transcriptions, phonemes, labels, alignments, timings, scores,
+   probabilities, logits, and embeddings, and any compilation of them or
+   dataset, file, or artifact that contains them or is produced from them.
+
+   "Train" means to train, pre-train, fine-tune, distil, align, adapt, or
+   otherwise develop a machine-learning model, including by using data as
+   training examples, as labels or targets, as a teacher, or as a reward or
+   preference signal.
+
+   "Protected Model" means TajweedFormer V4 and every later TajweedFormer model,
+   and any other model that Quran-Lab distributes encrypted for use through its
+   SDK, or designates as protected at the address from which it distributes the
+   model or in the model's card. A model whose weights Quran-Lab publishes
+   openly, such as the Zipformer models, is not a Protected Model.
+
+   "Written permission" and "written approval" mean a statement in writing,
+   including by email, sent by Quran-Lab, that names You and what it permits.
+   Nothing else is permission or approval: not access to the Work, not the
+   approval of an access request or a key, and not silence.
+
+   "Derivative" means any work based on the Work, including:
+
+   (a) any modification, fork, port, translation, format conversion,
+       quantisation, or re-export of the Work, made without Training;
+
+   (b) any dataset, lexicon, label set, file, or other artifact produced from
+       the Work, from another Derivative, or, where Section 16 allows it, from
+       Outputs;
+
+   (c) any machine-learning model Trained using the Work or its Outputs with
+       Quran-Lab's written permission under Section 14; and
+
+   (d) any machine-learning model that You develop or control and that is
+       evaluated, benchmarked, ranked, or compared using the Work or its
+       Outputs, as Section 15 describes.
+
+   A machine-learning model Trained using the Work or its Outputs without that
+   permission is not a permitted Derivative, and making one breaches this
+   License. Every condition this License places on a Derivative, including
+   Sections 3, 7, and 10, still applies to such a model.
 
    "Charge" means requiring or accepting payment of any kind for the Work, for
    access to the Work, or for any feature, capability, or output that the Work
@@ -33,13 +91,17 @@ livelihood. Version 1.1 removed the attribution requirement; that remains so.
    feature, a paid subscription, a paywall, a trial that later requires payment,
    and advertising revenue earned on a feature the Work powers.
 
-   "Hosted Service" means making the Work or a Derivative available to other
-   people over a network, for example through an API, a web application, or an
-   inference endpoint.
+   "Hosted Service" means running the Work or a Derivative for other people and
+   giving them its Outputs over a network, for example through an API, a web
+   application, or an inference endpoint. Distributing copies of the Work is not
+   a Hosted Service.
 
-   "Local Use" means running the Work or a Derivative on your own device or
-   infrastructure, for yourself or for those you teach or serve directly,
-   without making it available to other people over a network.
+   "Local Use" means running the Work or a Derivative on a personal device, such
+   as a phone, tablet, or computer, that You or the person You teach or serve
+   directly is using at that moment, for yourself or for that person, without
+   making it available to other people over a network. A server, including a
+   rented or remote server, is not a personal device, and processing
+   recordings in bulk or in batches is not Local Use.
 
    "Cost Recovery" means charging the users of a Hosted Service no more than
    the actual, documented, strictly necessary direct costs of operating that
@@ -50,8 +112,11 @@ livelihood. Version 1.1 removed the attribution requirement; that remains so.
 2. GRANT
 
    Subject to the conditions below, You are granted a worldwide, royalty-free,
-   non-exclusive, non-transferable license to use, run, copy, and create
-   Derivatives of the Work.
+   non-exclusive, non-transferable, revocable license to use, run, copy, and
+   create Derivatives of the Work. This grant does not include the right to
+   Train any machine-learning model using the Work or its Outputs, which
+   Section 14 leaves to Quran-Lab's written permission. All rights not
+   expressly granted in this License are reserved to Quran-Lab.
 
 3. THE WORK IS NOT FOR SALE
 
@@ -68,23 +133,27 @@ livelihood. Version 1.1 removed the attribution requirement; that remains so.
 
 4. LOCAL USE
 
-   Local Use is always permitted and is never a Charge. Running the Work on your
-   own device, for yourself or for your own students, is not selling it, and
-   nothing in this License restricts payment You receive for your own teaching,
-   services, or labour, so long as the Work itself is not what is being sold and
-   no one is charged for access to it or to a feature it powers.
+   Local Use is permitted, subject to Sections 14 to 18, and is never a Charge.
+   Running the Work on your own device, for yourself or for your own students,
+   is not selling it, and nothing in this License restricts payment You receive
+   for your own teaching, services, or labour, so long as the Work itself is not
+   what is being sold and no one is charged for access to it or to a feature it
+   powers.
 
-5. HOSTED SERVICE: COST RECOVERY ONLY
+5. HOSTED SERVICE: APPROVAL AND COST RECOVERY ONLY
 
-   You may operate the Work or a Derivative as a Hosted Service free of charge,
-   or on a Cost Recovery basis. You may recover from users no more than Cost
-   Recovery as defined above, and never any amount beyond it. On reasonable
-   request, You must be able to demonstrate that the amounts charged do not
-   exceed Cost Recovery.
+   You may operate the Work or a Derivative as a Hosted Service only with
+   Quran-Lab's written approval, and then only free of charge or on a Cost
+   Recovery basis. You may recover from users no more than Cost Recovery as
+   defined above, and never any amount beyond it. On reasonable request, You
+   must be able to demonstrate that the amounts charged do not exceed Cost
+   Recovery. Quran-Lab may limit or withdraw its approval at any time.
 
    Cost Recovery covers the cost of running the Work for a user. It does not
    cover development time, effort, expertise, support, or a service fee, and no
-   user may be denied the Work for declining to pay.
+   user may be denied the Work for declining to pay. A Hosted Service remains
+   subject to Sections 14 to 18, and its operator must not permit its users to
+   do what those Sections forbid.
 
 6. NO ATTRIBUTION REQUIRED
 
@@ -92,13 +161,24 @@ livelihood. Version 1.1 removed the attribution requirement; that remains so.
    form, anywhere. You must retain this License file when you distribute the
    Work or a Derivative (see Section 7), but you owe the author no mention.
 
-7. SHARE-ALIKE
+7. SHARE-ALIKE, CHANGES, AND LATER VERSIONS
 
    You must distribute and make available every Derivative under this same
-   License, either Version 1.2 or any later version published by Quran-Lab, with
-   no additional or different terms. You may not sublicense the Work or a
-   Derivative under any other license, and You may not relicense a Derivative to
-   remove or weaken these terms.
+   License, in its version then current, with no additional or different
+   terms. You may not sublicense the Work or a Derivative under any other
+   license, and You may not relicense a Derivative to remove or weaken these
+   terms.
+
+   Quran-Lab may change this License, or publish a later version of it, at any
+   time, with or without notice. Notice, when given, may be by email, in
+   Quran-Lab's developer portal, or by publication at the address where
+   Quran-Lab publishes this License. A change or a later version applies from
+   its publication there or from notice to You, whichever comes first.
+   Continuing to use the Work, its Outputs, or any Quran-Lab service after that
+   is acceptance of it. If You do not accept it, You must stop using the Work
+   and do what Section 10 requires when Your rights end. Every release of the
+   Work and every new version of a model is offered only under the latest
+   version of this License.
 
 8. UPSTREAM COMPONENTS
 
@@ -116,18 +196,56 @@ livelihood. Version 1.1 removed the attribution requirement; that remains so.
    or to charge for access to it, is not available for a fee, a revenue share, a
    one-time payment, or any other arrangement.
 
-10. TERMINATION
+10. TERMINATION, REVOCATION, AND DELETION
 
    Any use that breaches these terms immediately and automatically ends the
-   rights granted to You under this License.
+   rights granted to You under this License. Your rights also end when
+   Quran-Lab ends Your access to its service for misuse, meaning a breach of
+   this License, a breach of Quran-Lab's access terms, or conduct that Section
+   17 forbids.
 
-11. NO WARRANTY
+   This License is revocable. Quran-Lab may revoke the rights granted under
+   it, to You or to everyone, at any time and for any reason or none, with or
+   without notice. Notice, when given, may be an email to the address of Your
+   account with Quran-Lab, a notice in Quran-Lab's developer portal, or
+   publication at the address where Quran-Lab publishes this License, and the
+   rights end when it is sent or published. Where no notice is given, the
+   rights end when Quran-Lab ends Your access or otherwise records the
+   revocation.
 
-   The Work is provided "as is", without warranty of any kind, express or
-   implied, including but not limited to the warranties of merchantability,
-   fitness for a particular purpose, and noninfringement. In no event shall
-   the authors or copyright holders be liable for any claim, damages, or other
-   liability arising from or in connection with the Work or its use.
+   Within 14 days after Your rights end, for whatever reason, You must:
+
+   (a) stop all use of the Work and its Outputs;
+
+   (b) delete every copy of the Work, every Output, every Derivative, and
+       every dataset and every machine-learning model made from the Work or
+       from Outputs, that You hold or that others hold for You, except a model
+       already made available under this License, Version 1.3 or later, with
+       Quran-Lab's written permission under Section 14; and
+
+   (c) on request, confirm to Quran-Lab in writing that You have done so.
+
+   These obligations, and Sections 11, 14 to 18, and 20 to 22, survive the end
+   of Your rights.
+
+11. NO WARRANTY AND LIMITATION OF LIABILITY
+
+   The Work, its Outputs, and any service through which Quran-Lab provides
+   them are provided "as is" and "as available", without warranty of any kind,
+   express or implied, including but not limited to the warranties of
+   merchantability, fitness for a particular purpose, accuracy, availability,
+   and noninfringement. Outputs can be wrong. They are not a religious ruling
+   on anyone's recitation and do not replace a qualified teacher.
+
+   To the fullest extent the law allows, in no event shall Quran-Lab, the
+   authors or copyright holders, or their trustees, contributors, or
+   volunteers be liable for any claim, damages, or other liability, whether
+   direct, indirect, incidental, special, consequential, or exemplary,
+   including loss of data, revenue, or goodwill, arising from or in connection
+   with the Work, its Outputs, any Derivative, or their use, whether in
+   contract, tort, or otherwise, even if advised of the possibility of such
+   damages. Nothing in this License limits a liability that the law does not
+   allow to be limited.
 
 12. NOT LEGAL ADVICE
 
@@ -139,6 +257,183 @@ livelihood. Version 1.1 removed the attribution requirement; that remains so.
    This License states the conditions on which this Work is given. It is not a
    ruling on anyone's livelihood, and nothing in it says that taking a wage for
    teaching the Quran, or for any other lawful work, is impermissible.
+
+14. NO TRAINING ON THE WORK OR ITS OUTPUTS
+
+   You may not use the Work, or any Output of the Work (transcriptions,
+   phonemes, labels, alignments, timings, scores, probabilities, logits,
+   embeddings, or any data produced by running it), to train, fine-tune,
+   distil, align, or otherwise develop any machine-learning model, except with
+   Quran-Lab's prior written permission.
+
+   This applies whether the Work or its Outputs are used directly or through a
+   dataset, label set, lexicon, or other model that contains them or was
+   produced from them, and wherever the Outputs come from, including Local Use,
+   a Hosted Service, or an application, whether Yours or another person's. You
+   may not collect Outputs for that purpose or provide them to another person
+   for it, and You may not permit or help another person to do what this
+   Section forbids You to do.
+
+   Permission under this Section is given only as written permission, for a
+   named model and a named use, and may carry conditions. A model Trained with
+   that permission is a Derivative and must be made available as Section 15
+   requires.
+
+15. MODELS THAT ARE DERIVATIVES ARE AVAILABLE TO EVERYONE
+
+   Any machine-learning model that You develop or control, other than the Work
+   itself and its modifications, ports, conversions, quantisations, and
+   re-exports made without Training, and that is evaluated, benchmarked,
+   ranked, or compared using the Work or its Outputs, is a Derivative. This
+   includes using the Work or its Outputs as a reference, a judge, a baseline,
+   or a source of scores, and including the model in a leaderboard or a
+   published comparison that uses them. A model that You neither develop nor
+   control, such as another party's model that appears in the same comparison,
+   is not made a Derivative by this Section.
+
+   You must make every model that is a Derivative under this Section or under
+   Section 14 available to everyone, free of charge, under this License, at
+   least in the way Quran-Lab makes its own models available:
+
+   (a) any developer must be able to use the model, at no charge, through an
+       SDK, a library, or a download;
+
+   (b) the model must be offered under this License, with no additional or
+       stricter terms; and
+
+   (c) no one may be refused access to the model for not paying.
+
+   The model's weights need not be published openly. The model may be
+   protected, for example encrypted or licensed for each installation, as
+   Quran-Lab's own models are, so long as anyone can obtain access to it free
+   of charge and the conditions of this License pass on to everyone who uses
+   it.
+
+   You must do so no later than the first time any result of the evaluation,
+   or any Output of a model Trained under Section 14, is shared with another
+   person or published, and in any case within 30 days after the model is
+   first evaluated or, for a model Trained under Section 14, within 30 days
+   after its training ends. If You cannot do so for a model, You may not
+   evaluate, benchmark, rank, or compare it using the Work or its Outputs.
+
+16. OUTPUTS
+
+   You may use Outputs only:
+
+   (a) to provide, to the people who use it, the feature of the application or
+       of the Local Use in which the Work runs;
+
+   (b) to measure how well the Work itself performs; and
+
+   (c) for an evaluation under Section 15, to the extent that evaluation needs
+       them.
+
+   You may not collect or retain Outputs in bulk, build a dataset from them, or
+   transfer them to anyone, except as needed for one of these uses or with
+   Quran-Lab's written permission. Keeping a learner's results for that
+   learner's own progress, and sharing them with that learner or with that
+   learner's teacher, is part of providing the feature.
+
+17. PROHIBITED CONDUCT
+
+   Whatever else this License permits, You may not, and may not permit or help
+   another person to:
+
+   (a) extract Outputs in bulk or by automated means, including by scripting,
+       scraping, or driving an application that someone else has built on the
+       Work;
+
+   (b) run the Work or a Derivative on a server to process recordings for other
+       people, or process recordings in bulk or in batches for any purpose other
+       than measuring how well the Work itself performs (Section 19), without
+       Quran-Lab's written approval;
+
+   (c) circumvent, disable, or tamper with any protection, lease, attestation,
+       key, rate limit, usage reporting, or telemetry that Quran-Lab or its
+       software uses to deliver or protect the Work, or alter software so that
+       it reports less or different usage than took place;
+
+   (d) reverse engineer, decrypt, or extract a Protected Model, or the runtime
+       that protects it (the Core), except to the extent the law allows this
+       despite this restriction;
+
+   (e) use more than one account, key, or identity to evade a limit, a review,
+       or a decision of Quran-Lab;
+
+   (f) register again, or use another person's account or key, after Quran-Lab
+       has blocked or ended Your access, without its written permission; or
+
+   (g) use the Work or its Outputs to build a machine-learning model that
+       competes with the Work, except with Quran-Lab's written permission.
+       Evaluating a model under Section 15 is not, by itself, building it.
+
+   On Quran-Lab's reasonable request, You must explain in writing how You use
+   the Work and its Outputs, and confirm that You comply with this License.
+
+18. PROTECTED MODELS
+
+   Whatever else this License permits, and unless Quran-Lab gives written
+   permission, for example for an approved request for raw weights, You may use
+   a Protected Model only through Quran-Lab's official SDK and its Core, as
+   Quran-Lab distributes them, and You may not, and may not permit or help
+   another person to:
+
+   (a) extract, dump, decrypt, copy out, convert, re-host, repackage, bundle,
+       or ship a Protected Model's files, or any part of them, inside an
+       application or anywhere else;
+
+   (b) load or run a Protected Model outside that SDK; or
+
+   (c) interfere with how that SDK obtains, stores, or protects a Protected
+       Model.
+
+   A breach of this Section is a breach of this License, and Section 10 applies
+   to it. This Section does not apply to a model whose weights Quran-Lab
+   publishes openly, such as the Zipformer models; every other Section of this
+   License does.
+
+19. WHAT REMAINS PERMITTED
+
+   The following remain permitted under this License, so long as they do
+   nothing that Sections 14 to 18 forbid:
+
+   (a) running the Work or a Derivative in an application for learners, on the
+       learners' own devices, and, for a Protected Model, only through
+       Quran-Lab's SDK, and using its Outputs within that application as Section
+       16 allows;
+
+   (b) Local Use;
+
+   (c) modifying, porting, translating, converting, quantising, or
+       re-exporting the Work itself, other than a Protected Model, without
+       Training it, and distributing the result under Section 7; and
+
+   (d) measuring how well the Work itself performs, where no other
+       machine-learning model is evaluated, benchmarked, ranked, or compared.
+
+20. INDEMNITY
+
+   You will defend, indemnify, and hold harmless Quran-Lab, the authors, and
+   their trustees, contributors, and volunteers against every claim, loss,
+   liability, damage, cost, and expense, including reasonable legal fees,
+   arising from Your breach of this License or from Your use of the Work, its
+   Outputs, or any Derivative, including any application or service You build
+   on them.
+
+21. NAME AND MARKS
+
+   This License grants no right to use the names Quran Lab or Quran-Lab, their
+   logos, or the names of Quran-Lab's models and SDKs as marks. You may not use
+   any of them in a way that states or suggests that Quran-Lab endorses,
+   sponsors, or is affiliated with You, Your application, or any Derivative.
+   Stating truthfully that Your application uses the Work is permitted.
+
+22. REMEDIES
+
+   A breach of this License can cause Quran-Lab harm that money cannot put
+   right. In addition to any other remedy, Quran-Lab may seek an injunction or
+   other equitable relief to stop or prevent a breach, to the extent the law
+   allows, without having to show actual damage.
 
 ---
 

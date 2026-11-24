@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/tests-576-brightgreen" alt="tests">
   <img src="https://img.shields.io/badge/expert%20review-208%2F208%20%C2%B7%200%20%D8%AE%D8%B7%D8%A3-0b3d2e" alt="review complete">
   <img src="https://img.shields.io/badge/riwaya-Hafs%20%CA%BFan%20%CA%BFAsim%20(al--Shatibiyyah)-0b3d2e" alt="riwaya">
-  <img src="https://img.shields.io/badge/license-Quran--Lab%20NPL--1.2-8a6d00" alt="license">
+  <img src="https://img.shields.io/badge/license-Quran--Lab%20NPL--1.3-8a6d00" alt="license">
 </p>
 
 **Text in, tajweed-attributed phones out.** A specification-first
@@ -182,9 +182,10 @@ python -m pytest tests/   # 576 tests, no GPU needed
 
 ## License
 
-**Quran-Lab No-Profit License, Version 1.2 (NPL-1.2)**: free to use, run, copy
+**Quran-Lab No-Profit License, Version 1.3 (NPL-1.3)**: free to use, run, copy
 and adapt. The work itself is never for sale, so you may not charge for it, for
-access to it, or for any feature it powers. What you earn from your own
+access to it, or for any feature it powers. Neither it nor its outputs may be
+used to train a machine-learning model without Quran Lab's written permission. What you earn from your own
 teaching, services or labour is your own; this is a condition on the work, not a
 ruling on anyone's livelihood. See [LICENSE](LICENSE). The vendored texts in
 `data/` remain under their own upstream terms ([SOURCES.md](docs/SOURCES.md)).
