@@ -135,6 +135,7 @@ gates the engine must survive against itself.
 | `artifacts/tokenizer_tj1/` | 234-token lexicon with the `~` ghunna axis, ayah tokens, set-valued rule index, dual-format labels, warm-start bijection |
 | `artifacts/tokenizer_tj3/` | the phone vocabulary for acoustic models: 38 classes, one token per sound (long vowels aa/ii/uu as one token, a geminate as one consonant). Madd counts, gemination, ghunna length, rawm and sakt are left to a timing model; tafkheem, qalqalah and ghunna class to attribute heads. `tokenlayer_tj3` renders it from phones or converts tj2 + phone ids, verified equal on all 1,069,142 lattice forms |
 | `artifacts/spans/` | the same rulings as character offsets: 138,461 spans over all 6,236 ayat, edition SHA-256 in the manifest, for consumers that cannot run Python |
+| `artifacts/citations/` | every citation of the register on a page of a named print: the edition, the volume and page (and the bayt where the print numbers it), the passage found on that page, and a link to it. `tools/locate_citations.py` finds them in the Shamela text and, with `--online`, checks each passage at its link |
 | `tests/` | 576 tests: 208 expert-reviewed golden rows, corpus invariants, oracle gates, seeded-bug drills, frozen determinism hash |
 | `tests/verdicts/` | every disagreement with quran-transcript, verdicted with citations |
 
@@ -167,6 +168,7 @@ of scholars; this is built to serve that transmission, not to sit above it.
 | [NOTABLE-RULINGS.md](docs/NOTABLE-RULINGS.md) | the contested sites, where an implementation usually goes wrong |
 | [SCOPE.md](docs/SCOPE.md) | the chapter-by-chapter sweep of the manuals: what is covered, and what is out of scope and why |
 | [METHOD.md](docs/METHOD.md) · [CITATION-AUDIT.md](docs/CITATION-AUDIT.md) | how a ruling gets in, and the page-by-page check that it is where we say it is |
+| [CITATION-PAGES.md](docs/CITATION-PAGES.md) | each citation's print, volume and page, with a link to the page and how the passage was matched there |
 | [INCIDENCE.md](docs/INCIDENCE.md) | which rules fire, and what a silence is allowed to mean |
 | [ATTRIBUTION.md](docs/ATTRIBUTION.md) | why every phone is the way it is, and the gates that keep it answerable |
 | [BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) · [SOURCES.md](docs/SOURCES.md) | the works cited, and the vendored texts with their terms |

@@ -3,7 +3,9 @@
 Every work the register cites, with the volumes and pages actually used.
 The page-by-page verification of these citations is
 [CITATION-AUDIT.md](CITATION-AUDIT.md), regenerable with
-`tools/audit_citations.py`.
+`tools/audit_citations.py`. The print each page belongs to (editor,
+publisher, edition, year), the passage found on it and a link to it are in
+[CITATION-PAGES.md](CITATION-PAGES.md), from `tools/locate_citations.py`.
 
 Classical metins and their commentaries:
 
